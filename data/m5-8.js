@@ -1502,7 +1502,7 @@ TRACK.modules.push({
    "blocks": [
     {
      "type": "text",
-     "text": "Plans do not deliver projects; people do. **Lead** — stage 6 of the ZPMP Value Loop — is where a project manager earns the trust that makes every other stage work. In modern practice, the PM is less a commander and more a **multiplier**: someone who makes a group of capable people more effective together than apart."
+     "text": "Plans do not deliver projects; people do. **Lead** — stage 6 of the ZPMP Value Loop — is where a project manager earns the trust that makes every other stage work. In modern practice, the PM is less a boss and more a **multiplier**: someone who makes a group of capable people more effective together than apart."
     },
     {
      "type": "framework",
@@ -3588,7 +3588,7 @@ TRACK.modules.push({
        "text": "A simple picture of the future and how to get there."
       },
       {
-       "title": "Communicate and enlist",
+       "title": "Communicate and involve",
        "text": "Share the vision constantly through many channels; recruit volunteers."
       },
       {
