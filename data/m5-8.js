@@ -2,233 +2,253 @@ window.TRACK = window.TRACK || { modules: [], exam: [] };
 TRACK.modules.push({
  "id": "m5",
  "order": 5,
- "code": "Steer",
- "title": "Steer — Risk, Performance & Control",
- "subtitle": "Spot uncertainty early, measure progress truthfully and forecast the finish with confidence.",
+ "code": "Resource",
+ "title": "Process II: Schedule, Resources & Finance",
+ "subtitle": "Process · Tasks 4, 6 and 8 (resources, finance, schedule)",
  "outcomes": [
-  "Identify, analyse and prioritise risks using qualitative and quantitative techniques, including EMV and decision trees.",
-  "Plan owned responses for threats and opportunities and manage issues with clear escalation.",
-  "Calculate and interpret earned value measures and forecasts for a sponsor.",
-  "Use agile and flow metrics without misusing them, and build dashboards that drive decisions.",
-  "Communicate forecasts as honest ranges with confidence levels."
+  "Estimate work with predictive and agile techniques and honest ranges",
+  "Build, baseline and control schedules and release plans",
+  "Plan, acquire and optimise people and physical resources",
+  "Build budgets with the right reserves and plan financial reporting",
+  "Measure and forecast with earned value and escalate variances through governance"
  ],
  "lessons": [
   {
    "id": "m5-l1",
-   "title": "Risk Thinking & Identification",
-   "subtitle": "See uncertainty early, name it precisely and write it down where it can be managed.",
-   "minutes": 25,
+   "title": "Estimating Work: Predictive & Agile Techniques",
+   "subtitle": "Analogous, parametric, bottom-up, three-point and relative estimating, with honest ranges and real benchmarks",
+   "minutes": 32,
    "objectives": [
-    "Distinguish a risk, an issue and an opportunity using a single clear test.",
-    "Write well-formed risk statements using cause–event–effect structure.",
-    "Run a pre-mortem and use a risk breakdown structure and an assumptions log to widen identification."
+    "Choose between analogous, parametric, bottom-up and three-point estimating",
+    "Calculate PERT estimates and a standard deviation",
+    "Size work relatively with story points and planning poker",
+    "Use benchmarks and historical data to keep estimates honest"
    ],
    "blocks": [
     {
      "type": "text",
-     "text": "Every project is a bet on the future. Steering — stage 5 of the **ZPMP Value Loop** — is the discipline of watching that bet, adjusting it and telling the truth about it. It begins with risk: the uncertain events that could push your outcomes off course, for better or for worse."
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "R",
-       "title": "Risk (threat)",
-       "text": "An **uncertain** future event that would hurt at least one objective if it happened. It has a probability below 100%. You manage it *before* it happens."
-      },
-      {
-       "label": "O",
-       "title": "Opportunity",
-       "text": "An uncertain future event that would **help** an objective — finish earlier, cost less, deliver more value. Positive risk deserves the same attention as negative risk."
-      },
-      {
-       "label": "I",
-       "title": "Issue",
-       "text": "Something that **has already happened** or is certain and is affecting the project now. You resolve it, you do not ‘mitigate’ it."
-      },
-      {
-       "label": "A",
-       "title": "Assumption",
-       "text": "Something treated as true for planning without proof. Every assumption hides a risk: ‘what if this is false?’"
-      }
-     ],
-     "title": "Risk, issue or opportunity? The ZPMP time test"
-    },
-    {
-     "type": "callout",
-     "kind": "insight",
-     "text": "Ask: **‘Has it happened yet?’** If no and it would hurt — risk. If no and it would help — opportunity. If yes — issue. A risk that materialises moves from the risk register to the issue log, and the risk entry is closed with a note.",
-     "title": "One question sorts them all"
-    },
-    {
-     "type": "text",
-     "text": "Vague risks produce vague responses. ‘Supplier problems’ is a worry, not a risk. A useful risk statement names the cause you can see today, the uncertain event, and the effect on a specific objective."
-    },
-    {
-     "type": "formula",
-     "items": [
-      {
-       "name": "Cause–event–effect",
-       "expr": "Because of <cause>, <event> may occur, which would lead to <effect on objective>.",
-       "meaning": "Forces precision. The cause is a fact today; the event is uncertain; the effect names cost, time, scope, quality or benefit."
-      },
-      {
-       "name": "Example",
-       "expr": "Because our only certified network engineer is due for parental leave in March, cut-over testing may slip, which would delay go-live by 3–4 weeks.",
-       "meaning": "Now the team can see who owns it, what would trigger it and which responses make sense."
-      }
-     ],
-     "title": "A well-formed risk statement"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "PM",
-       "title": "Pre-mortem",
-       "text": "Imagine it is a year from now and the project has failed badly. Each person silently writes why. Then share and cluster. Hindsight imagined in advance unlocks honest concerns people would not otherwise voice."
-      },
-      {
-       "label": "RBS",
-       "title": "Risk breakdown structure",
-       "text": "A hierarchy of risk sources — e.g. Technical, External, Organisational, Project management — each split into sub-categories. Walk through it to spot blind areas."
-      },
-      {
-       "label": "AL",
-       "title": "Assumptions & constraints log",
-       "text": "Review every assumption and ask what happens if it is wrong. Track who validates it and by when."
-      },
-      {
-       "label": "SH",
-       "title": "Stakeholder & expert interviews",
-       "text": "Operations staff, suppliers and finance see risks the core team cannot. Ask: ‘What usually goes wrong with projects like this?’"
-      },
-      {
-       "label": "DR",
-       "title": "Document & data review",
-       "text": "Lessons-learned registers, audit findings, past schedules, contracts and incident logs from similar work."
-      },
-      {
-       "label": "SW",
-       "title": "SWOT & prompt lists",
-       "text": "Strengths, weaknesses, opportunities, threats — or checklists such as PESTLE — to cover the external environment."
-      }
-     ],
-     "title": "Ways to find risks (use more than one)"
-    },
-    {
-     "type": "steps",
-     "items": [
-      {
-       "title": "Set the scene (5 min)",
-       "text": "Explain the project goal and say: ‘It is twelve months from now. This project was a painful failure. Why?’"
-      },
-      {
-       "title": "Silent writing (8 min)",
-       "text": "Everyone writes reasons independently — sticky notes or a shared board. Silence protects junior voices from anchoring on senior opinions."
-      },
-      {
-       "title": "Round-robin share (12 min)",
-       "text": "One reason per person per round until exhausted. No debate yet."
-      },
-      {
-       "title": "Cluster and vote (10 min)",
-       "text": "Group similar reasons and dot-vote the most worrying clusters."
-      },
-      {
-       "title": "Convert (10 min)",
-       "text": "Turn the top clusters into cause–event–effect risk statements, each with a proposed owner."
-      }
-     ],
-     "title": "Running a 45-minute pre-mortem"
+     "text": "An estimate is a **forecast**, not a promise. It is a best judgement about duration, effort or cost, given what we know today. Because the future is uncertain, every honest estimate carries a range. Pressure to give a single precise number early is one of the most common sources of project failure."
     },
     {
      "type": "table",
+     "title": "Four core estimating techniques",
      "head": [
-      "Level 1",
-      "Level 2 examples",
-      "Typical questions"
+      "Technique",
+      "How it works",
+      "Strengths",
+      "Limits",
+      "Typical use"
      ],
      "rows": [
       [
-       "Technical",
-       "Requirements, technology maturity, integration, performance, data migration",
-       "Have we built this before? How many interfaces?"
+       "Analogous (top-down)",
+       "Base the estimate on a similar past project, adjusted for differences",
+       "Fast, cheap, needs little detail",
+       "Only as good as the similarity",
+       "Early business cases, ROM estimates"
       ],
       [
-       "External",
-       "Suppliers, regulation, market, weather, currency, politics",
-       "What could change outside our control?"
+       "Parametric",
+       "Multiply a unit rate by a quantity (e.g. cost per m², hours per screen)",
+       "Scalable and repeatable",
+       "Needs reliable historical rates",
+       "Construction, rollouts, repeatable work"
       ],
       [
-       "Organisational",
-       "Funding, priorities, shared resources, other projects",
-       "Could our people or budget be pulled away?"
+       "Bottom-up",
+       "Estimate each work package or activity and add them up",
+       "Most detailed and defensible",
+       "Slow; needs a full WBS",
+       "Baselines, contracts, detailed planning"
       ],
       [
-       "Project management",
-       "Estimating, planning, communication, control",
-       "How confident are we in our estimates?"
-      ],
-      [
-       "People & change",
-       "Adoption, skills, morale, key-person dependency",
-       "Will users actually change how they work?"
+       "Three-point",
+       "Use optimistic, most likely and pessimistic values",
+       "Shows uncertainty explicitly",
+       "Values can still be biased",
+       "Risky or unfamiliar activities"
       ]
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "example",
+     "text": "Floor tiling for a hospital wing covers **1,200 m²**. Historical data shows one crew lays **25 m² per day**. Effort = 1,200 ÷ 25 = **48 crew-days**. With three crews working in parallel, duration ≈ **16 working days**, before allowing for curing, access and inspections.",
+     "title": "Parametric in practice"
+    },
+    {
+     "type": "formula",
+     "title": "Three-point estimating formulas",
+     "items": [
+      {
+       "name": "Triangular mean",
+       "expr": "E = (O + M + P) ÷ 3",
+       "meaning": "Simple average of optimistic (O), most likely (M) and pessimistic (P). Gives equal weight to the extremes."
+      },
+      {
+       "name": "PERT (beta) mean",
+       "expr": "E = (O + 4M + P) ÷ 6",
+       "meaning": "Weights the most likely value four times. The classic Program Evaluation and Review Technique estimate."
+      },
+      {
+       "name": "Standard deviation (PERT)",
+       "expr": "σ ≈ (P − O) ÷ 6",
+       "meaning": "A rough measure of spread. A wider gap between O and P means more uncertainty."
+      },
+      {
+       "name": "Approximate confidence",
+       "expr": "E ± 1σ ≈ 68%;  E ± 2σ ≈ 95%",
+       "meaning": "Assumes a roughly normal distribution — a useful approximation, not a guarantee."
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "example",
+     "text": "Integrating a payment gateway: O = 4 days, M = 6 days, P = 14 days. Triangular = (4 + 6 + 14) ÷ 3 = **8 days**. PERT = (4 + 24 + 14) ÷ 6 = **7 days**. σ = (14 − 4) ÷ 6 ≈ **1.67 days**. So roughly 68% confidence of 5.3–8.7 days and 95% confidence of 3.7–10.3 days. Report: '**about 7 days, very likely between 4 and 11**'.",
+     "title": "Worked three-point example"
+    },
+    {
+     "type": "table",
+     "title": "Estimate accuracy narrows as you learn (commonly quoted ranges)",
+     "head": [
+      "Estimate class",
+      "When",
+      "Typical range"
      ],
-     "title": "A starter risk breakdown structure"
+     "rows": [
+      [
+       "Rough order of magnitude (ROM)",
+       "Idea and business case",
+       "about −25% to +75%"
+      ],
+      [
+       "Budget estimate",
+       "After high-level design",
+       "about −10% to +25%"
+      ],
+      [
+       "Definitive estimate",
+       "Detailed design / work packages known",
+       "about −5% to +10%"
+      ]
+     ]
     },
     {
      "type": "callout",
      "kind": "warning",
-     "text": "Risk lists go stale within weeks. Revisit risks at each iteration review, stage gate or major change, and give anyone on the team a simple way to raise a new risk at any time.",
-     "title": "Identification is not a one-off workshop"
+     "text": "**Anchoring** — the first number spoken (often the boss's) pulls estimates toward it. **Optimism bias** — people imagine the smooth path. **Padding** — hidden buffers that get consumed anyway (work expands to fill the time available, and people delay starting when they feel time is plentiful). Counter them with historical data, independent estimates and visible, shared reserves rather than hidden padding.",
+     "title": "Biases that distort estimates"
+    },
+    {
+     "type": "callout",
+     "kind": "pro",
+     "title": "Use benchmarks and reference classes",
+     "text": "Before trusting your own bottom-up numbers, look at how similar projects actually turned out. If ten past ERP rollouts in your organisation overran by an average of 40%, an estimate that assumes no overrun needs a strong reason. This **reference-class** view corrects optimism with evidence. Keep your own estimates and actuals so the next project has better data."
+    },
+    {
+     "type": "text",
+     "text": "Agile teams often estimate **relatively** rather than in hours: is this item bigger or smaller than that one we already know? People are better at comparing than at predicting absolute durations, and relative sizes stay stable even as the team gets faster."
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "text": "A **story point** is a unitless, team-specific measure of the overall size of a backlog item — combining effort, complexity and uncertainty. Many teams use a modified Fibonacci scale (1, 2, 3, 5, 8, 13, 20…) so that larger items get deliberately coarse numbers.",
+     "title": "Story points"
+    },
+    {
+     "type": "flow",
+     "title": "Planning poker in five steps",
+     "items": [
+      {
+       "label": "Explain",
+       "text": "Product owner describes the item and its acceptance criteria"
+      },
+      {
+       "label": "Clarify",
+       "text": "Team asks questions"
+      },
+      {
+       "label": "Vote privately",
+       "text": "Each estimator picks a card"
+      },
+      {
+       "label": "Reveal and discuss",
+       "text": "Highest and lowest explain their reasoning"
+      },
+      {
+       "label": "Re-vote",
+       "text": "Repeat until the team converges"
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "insight",
+     "text": "When one developer votes 3 and another votes 13, someone knows something the others do not — a hidden integration, a reusable component, a compliance step. Planning poker surfaces that knowledge before work starts.",
+     "title": "The value is in the conversation"
     },
     {
      "type": "scenario",
-     "situation": "During a risk workshop for a hospital pharmacy system, the head of IT talks for 20 minutes and the rest of the team only agrees with him. You suspect clinical staff have concerns they are not raising. What is the BEST move?",
+     "title": "'Just give me one number'",
+     "situation": "During a steering meeting, the sponsor of a new ERP rollout asks: \"How long will this take? I need one date for the board.\" Requirements workshops have not started yet. What is the BEST response?",
      "options": [
       {
-       "text": "Switch to a silent-writing pre-mortem round so everyone contributes independently before discussion.",
-       "feedback": "Correct. Silent, independent input reduces anchoring and status effects and is the quickest way to surface hidden concerns.",
+       "text": "Give an optimistic date to keep the sponsor happy, then adjust later.",
+       "feedback": "Weak. An early optimistic number becomes an anchor and a broken promise; trust erodes later.",
+       "best": false
+      },
+      {
+       "text": "Refuse to estimate until all requirements are documented.",
+       "feedback": "Weak. Sponsors legitimately need early guidance; refusal does not help planning.",
+       "best": false
+      },
+      {
+       "text": "Give a range based on comparable rollouts (e.g. 9–15 months), explain the main uncertainties and commit to a narrower forecast after the requirements phase.",
+       "feedback": "Best. An analogous ROM range is honest, useful for the board and paired with a plan to reduce uncertainty.",
        "best": true
       },
       {
-       "text": "Thank the head of IT and close the workshop since the list looks complete.",
-       "feedback": "A list built by one voice has blind spots. Ending now locks them in.",
-       "best": false
-      },
-      {
-       "text": "Ask the clinical staff to email you their risks privately after the meeting.",
-       "feedback": "Better than nothing, but response rates are low and the group loses the chance to build on each other’s ideas.",
-       "best": false
-      },
-      {
-       "text": "Escalate to the sponsor that the head of IT dominates meetings.",
-       "feedback": "Escalation is premature. You control the facilitation technique — use it first.",
+       "text": "Pick the midpoint of your gut feeling and present it as firm.",
+       "feedback": "Weak. A single number hides uncertainty and invites blame when reality differs.",
        "best": false
       }
-     ],
-     "title": "The polite silence"
-    },
-    {
-     "type": "reflection",
-     "prompt": "Think of a project you have worked on. Write one risk that actually materialised as an issue. How would a cause–event–effect statement written at the start have changed what the team did?"
+     ]
     },
     {
      "type": "terms",
      "items": [
       {
-       "term": "Risk",
-       "def": "An uncertain event or condition that, if it occurs, affects at least one project objective — negatively (threat) or positively (opportunity)."
+       "term": "Parametric estimating",
+       "def": "Estimating by multiplying a quantity by a unit rate derived from historical data, e.g. cost per square metre."
       },
       {
-       "term": "Pre-mortem",
-       "def": "A workshop in which the team imagines the project has failed and works backwards to identify the reasons, surfacing risks early."
+       "term": "PERT estimate",
+       "def": "A weighted three-point estimate calculated as (Optimistic + 4 × Most likely + Pessimistic) ÷ 6."
       },
       {
-       "term": "Risk breakdown structure (RBS)",
-       "def": "A hierarchical grouping of risk sources used as a prompt to identify risks systematically."
+       "term": "Story point",
+       "def": "A unitless, team-relative measure of the size of a backlog item, combining effort, complexity and uncertainty."
+      },
+      {
+       "term": "Analogous estimating",
+       "def": "Estimating from the actual results of a similar past project, adjusted for known differences."
+      },
+      {
+       "term": "Bottom-up estimating",
+       "def": "Estimating each work package or activity in detail and adding them up."
+      },
+      {
+       "term": "Planning poker",
+       "def": "A team technique in which estimators reveal relative sizes at the same time and discuss differences before re-voting."
+      },
+      {
+       "term": "Rough order of magnitude (ROM)",
+       "def": "An early, wide-range estimate used for initial decisions, before detail is known."
+      },
+      {
+       "term": "Reference-class forecasting",
+       "def": "Adjusting an estimate using the actual outcomes of a group of similar past projects."
       }
      ]
     },
@@ -236,59 +256,59 @@ TRACK.modules.push({
      "type": "quiz",
      "items": [
       {
-       "q": "A key supplier has just informed you their factory is closed for two weeks. How should this be recorded?",
+       "q": "Which technique is most appropriate for a quick estimate at the business-case stage, using a similar past project?",
        "options": [
-        "As an issue in the issue log",
-        "As a new risk with high probability",
-        "As an assumption to validate",
-        "As an opportunity to renegotiate"
+        "Bottom-up",
+        "Analogous",
+        "Parametric",
+        "Monte Carlo"
        ],
-       "answer": 0,
-       "explain": "It has already happened, so it is an issue. Risks are uncertain future events; this one is certain and current."
+       "answer": 1,
+       "explain": "Analogous estimating uses comparable past projects and needs little detail — ideal early on."
       },
       {
-       "q": "Which risk statement is best formed?",
+       "q": "O = 2, M = 5, P = 14. What is the PERT estimate?",
        "options": [
-        "Vendor risk: the vendor might be poor at support, which could cause problems for users",
-        "There is a risk of delays, cost overruns and quality problems across the whole project",
-        "The vendor has no local office and is new to us, so the support contract is at risk",
-        "With no local vendor office, fixes may take over 48 hours and breach the 24-hour SLA"
+        "5",
+        "6",
+        "7",
+        "21"
+       ],
+       "answer": 1,
+       "explain": "(2 + 4×5 + 14) ÷ 6 = 36 ÷ 6 = 6."
+      },
+      {
+       "q": "Which estimating technique uses a statistical relationship such as cost per square metre?",
+       "options": [
+        "Parametric",
+        "Analogous",
+        "Bottom-up",
+        "Expert judgement only"
+       ],
+       "answer": 0,
+       "explain": "Parametric estimating multiplies a quantity by a unit rate derived from historical data."
+      },
+      {
+       "q": "Why should estimates be communicated as ranges?",
+       "options": [
+        "Single-point estimates are not permitted by most methodologies",
+        "Ranges look more professional and credible than single figures in reports",
+        "Sponsors prefer vague answers that cannot be held against the team",
+        "They reflect real uncertainty and help decision-makers judge risk"
        ],
        "answer": 3,
-       "explain": "It names a present cause, an uncertain event and a specific effect on an objective. The others are vague, or leave out the cause, the event or a measurable effect."
+       "explain": "Ranges show the uncertainty that exists, so decisions about reserves and commitments are informed."
       },
       {
-       "q": "What is the main purpose of silent writing in a pre-mortem?",
+       "q": "What is the main benefit of discussion in planning poker?",
        "options": [
-        "To reduce anchoring and status effects so all contribute",
-        "To save meeting time by avoiding any group discussion",
-        "To avoid having to document risks formally afterwards",
-        "To let the PM select the risks without team influence"
+        "It produces an exact hour estimate for each task",
+        "It lets the manager review and approve the final estimates",
+        "It replaces the need for written acceptance criteria",
+        "It surfaces hidden knowledge and assumptions early"
        ],
-       "answer": 0,
-       "explain": "Independent input before discussion stops the loudest or most senior voice from shaping everyone’s answers."
-      },
-      {
-       "q": "An assumption log is useful for risk identification because…",
-       "options": [
-        "each assumption that might be false is a potential risk",
-        "assumptions never change once they have been logged",
-        "it can replace the risk register on smaller projects",
-        "sponsors must sign off every assumption"
-       ],
-       "answer": 0,
-       "explain": "Asking ‘what if this is wrong?’ about each assumption converts hidden uncertainty into explicit risks."
-      },
-      {
-       "q": "A new regulation might allow your team to reuse an approved design, saving six weeks. This is…",
-       "options": [
-        "an issue",
-        "a constraint",
-        "an opportunity",
-        "a residual risk"
-       ],
-       "answer": 2,
-       "explain": "It is uncertain and would benefit the schedule — a positive risk, or opportunity."
+       "answer": 3,
+       "explain": "Different votes reveal different understanding; discussing them improves shared understanding and the estimate."
       }
      ]
     }
@@ -296,236 +316,431 @@ TRACK.modules.push({
   },
   {
    "id": "m5-l2",
-   "title": "Analysing Risk: From Heat Maps to Decision Trees",
-   "subtitle": "Rank risks quickly, then put numbers on the ones that matter.",
-   "minutes": 30,
+   "title": "Building the Schedule: Critical Path, Release Plans & Baselines",
+   "subtitle": "Sequence work, find the critical path, forecast releases and baseline the schedule that fits your approach",
+   "minutes": 34,
    "objectives": [
-    "Use a probability–impact matrix with defined scales to prioritise risks.",
-    "Calculate expected monetary value (EMV) and use it to size contingency.",
-    "Solve a simple decision tree and read a Monte Carlo output (P50, P80, S-curve, tornado)."
+    "Identify dependency types, leads and lags",
+    "Perform forward and backward passes and calculate total and free float",
+    "Forecast releases from velocity ranges and plan iterations by capacity",
+    "Baseline a schedule and coordinate it with other projects and operations"
    ],
    "blocks": [
     {
      "type": "text",
-     "text": "Once you have a list of risks, you cannot treat them all equally. Analysis answers two questions: **which risks deserve attention first**, and **how much exposure does the project carry overall?** Qualitative analysis is fast and covers every risk. Quantitative analysis is slower and is reserved for the risks and decisions that drive outcomes."
-    },
-    {
-     "type": "compare",
-     "columns": [
-      {
-       "title": "Qualitative",
-       "items": [
-        "Ranks individual risks using scales (e.g. 1–5)",
-        "Fast, cheap, done on every project",
-        "Output: prioritised risk list, heat map",
-        "Weakness: subjective unless scales are defined"
-       ]
-      },
-      {
-       "title": "Quantitative",
-       "items": [
-        "Models combined effect of risks on cost/schedule",
-        "Needs data, tools and skill",
-        "Output: probability of hitting dates/budgets, EMV, sensitivity",
-        "Use on large, complex or high-stakes projects"
-       ]
-      }
-     ],
-     "title": "Qualitative vs quantitative analysis"
+     "text": "Once you know the activities, you must decide their **order**. A network diagram shows which activities depend on others. From it you can find the **critical path** — the longest chain of dependent activities, which sets the shortest possible project duration."
     },
     {
      "type": "table",
+     "title": "Four logical relationships",
      "head": [
-      "Score",
-      "Probability",
-      "Schedule impact",
-      "Cost impact"
+      "Type",
+      "Meaning",
+      "Example"
      ],
      "rows": [
       [
-       "1 Very low",
-       "< 10%",
-       "< 1 week",
-       "< 1% of budget"
+       "Finish-to-start (FS)",
+       "B cannot start until A finishes — the most common",
+       "Install software after the server is delivered"
       ],
       [
-       "2 Low",
-       "10–30%",
-       "1–2 weeks",
-       "1–3%"
+       "Start-to-start (SS)",
+       "B cannot start until A starts",
+       "Proofreading can start once writing has started"
       ],
       [
-       "3 Medium",
-       "31–50%",
-       "2–4 weeks",
-       "3–5%"
+       "Finish-to-finish (FF)",
+       "B cannot finish until A finishes",
+       "Testing cannot finish until development finishes"
       ],
       [
-       "4 High",
-       "51–70%",
-       "1–2 months",
-       "5–10%"
-      ],
-      [
-       "5 Very high",
-       "> 70%",
-       "> 2 months",
-       "> 10%"
+       "Start-to-finish (SF)",
+       "B cannot finish until A starts — rare",
+       "The old shift cannot end until the new shift starts"
       ]
+     ]
+    },
+    {
+     "type": "table",
+     "title": "Nature of dependencies",
+     "head": [
+      "Kind",
+      "Description",
+      "Example"
      ],
-     "title": "Define the scales before you score"
+     "rows": [
+      [
+       "Mandatory (hard logic)",
+       "Required by physics, law or contract",
+       "Foundation before walls"
+      ],
+      [
+       "Discretionary (soft logic)",
+       "Chosen by best practice or preference — can be changed",
+       "Finish design before starting build"
+      ],
+      [
+       "External",
+       "Depends on parties outside the project",
+       "Regulator approval, vendor delivery"
+      ],
+      [
+       "Internal",
+       "Within the project team's control",
+       "Testing after coding by the same team"
+      ]
+     ]
     },
     {
-     "type": "callout",
-     "kind": "pro",
-     "text": "Agree the scale definitions with the sponsor before scoring. Without them, one person’s ‘high’ is another’s ‘medium’ and the heat map becomes decoration. Also capture **urgency** (how soon a response is needed) and **proximity** (how soon it could occur).",
-     "title": "Calibrate, don’t guess"
+     "type": "table",
+     "title": "Worked example — clinic booking system go-live (durations in days)",
+     "head": [
+      "Activity",
+      "Description",
+      "Duration",
+      "Predecessors"
+     ],
+     "rows": [
+      [
+       "A",
+       "Confirm requirements",
+       "3",
+       "—"
+      ],
+      [
+       "B",
+       "Build booking module",
+       "4",
+       "A"
+      ],
+      [
+       "C",
+       "Procure tablets",
+       "2",
+       "A"
+      ],
+      [
+       "D",
+       "Integrate with patient records",
+       "5",
+       "B"
+      ],
+      [
+       "E",
+       "Configure tablets",
+       "3",
+       "C"
+      ],
+      [
+       "F",
+       "Pilot and go-live",
+       "2",
+       "D, E"
+      ]
+     ]
     },
     {
-     "type": "text",
-     "text": "Multiply probability by impact to get a risk score (1–25). Plot each risk on a 5×5 grid: the top-right zone (scores of roughly 15+) gets immediate, owned responses; the middle zone gets watched; the bottom-left zone may be accepted and monitored."
+     "type": "steps",
+     "title": "Forward and backward pass",
+     "items": [
+      {
+       "title": "Forward pass",
+       "text": "Start the first activity at ES = 0. For each activity, EF = ES + duration. A successor's ES is the **largest** EF of its predecessors."
+      },
+      {
+       "title": "Project duration",
+       "text": "The largest EF at the end of the network is the shortest possible project duration — here 14 days."
+      },
+      {
+       "title": "Backward pass",
+       "text": "Set the last activity's LF = 14. For each activity, LS = LF − duration. A predecessor's LF is the **smallest** LS of its successors."
+      },
+      {
+       "title": "Float",
+       "text": "Total float = LS − ES. Free float = earliest ES of successors − EF."
+      },
+      {
+       "title": "Critical path",
+       "text": "Activities with zero total float form the critical path: A → B → D → F = 3 + 4 + 5 + 2 = 14 days."
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "title": "Results of the passes",
+     "head": [
+      "Activity",
+      "Dur.",
+      "ES",
+      "EF",
+      "LS",
+      "LF",
+      "Total float",
+      "Free float"
+     ],
+     "rows": [
+      [
+       "A",
+       "3",
+       "0",
+       "3",
+       "0",
+       "3",
+       "0",
+       "0"
+      ],
+      [
+       "B",
+       "4",
+       "3",
+       "7",
+       "3",
+       "7",
+       "0",
+       "0"
+      ],
+      [
+       "C",
+       "2",
+       "3",
+       "5",
+       "7",
+       "9",
+       "4",
+       "0"
+      ],
+      [
+       "D",
+       "5",
+       "7",
+       "12",
+       "7",
+       "12",
+       "0",
+       "0"
+      ],
+      [
+       "E",
+       "3",
+       "5",
+       "8",
+       "9",
+       "12",
+       "4",
+       "4"
+      ],
+      [
+       "F",
+       "2",
+       "12",
+       "14",
+       "12",
+       "14",
+       "0",
+       "0"
+      ]
+     ]
     },
     {
      "type": "formula",
+     "title": "Scheduling formulas (start-at-zero convention)",
      "items": [
       {
-       "name": "EMV of one risk",
-       "expr": "EMV = Probability × Impact",
-       "meaning": "Threats carry negative impact, opportunities positive. A 30% chance of a −50,000 loss has EMV −15,000."
+       "name": "Early finish",
+       "expr": "EF = ES + Duration",
+       "meaning": "Earliest an activity can finish."
       },
       {
-       "name": "Project risk exposure",
-       "expr": "Σ EMV of all quantified risks",
-       "meaning": "Netting threats and opportunities gives a rational starting point for the contingency reserve."
+       "name": "Late start",
+       "expr": "LS = LF − Duration",
+       "meaning": "Latest an activity can start without delaying the project."
       },
       {
-       "name": "Decision node",
-       "expr": "Choose the branch with the best EMV",
-       "meaning": "In a decision tree, each option’s EMV = its direct cost + Σ (probability × outcome) of what follows."
+       "name": "Total float",
+       "expr": "TF = LS − ES = LF − EF",
+       "meaning": "How long an activity can slip without delaying the project end."
+      },
+      {
+       "name": "Free float",
+       "expr": "FF = (earliest ES of successors) − EF",
+       "meaning": "How long an activity can slip without delaying any successor's early start."
+      },
+      {
+       "name": "Critical path",
+       "expr": "Longest path through the network (TF = 0 when the end date equals the calculated finish)",
+       "meaning": "The chain that determines the project duration."
       }
-     ],
-     "title": "Expected monetary value"
-    },
-    {
-     "type": "table",
-     "head": [
-      "Risk",
-      "Probability",
-      "Impact (BDT)",
-      "EMV (BDT)"
-     ],
-     "rows": [
-      [
-       "R1 Customs delay on imported routers",
-       "30%",
-       "−500,000",
-       "−150,000"
-      ],
-      [
-       "R2 Data migration defects need rework",
-       "10%",
-       "−1,200,000",
-       "−120,000"
-      ],
-      [
-       "O1 Bulk-licence discount if order before June",
-       "20%",
-       "+300,000",
-       "+60,000"
-      ],
-      [
-       "Net exposure",
-       "",
-       "",
-       "−210,000"
-      ]
-     ],
-     "title": "Worked example: sizing contingency with EMV"
-    },
-    {
-     "type": "text",
-     "text": "A contingency reserve of about **BDT 210,000** covers the expected net exposure for these known risks. It is held by the project manager for identified risks (‘known unknowns’). A **management reserve**, held by the sponsor or organisation, covers unidentified risks (‘unknown unknowns’) and is outside the cost baseline."
-    },
-    {
-     "type": "case",
-     "title": "Chattogram port: should we rehearse the cut-over?",
-     "context": "A container terminal at Chattogram is replacing its gate and yard-planning software. The vendor proposes an optional full cut-over rehearsal on a weekend, costing **USD 40,000**. Without a rehearsal, the team estimates a **35%** chance that go-live fails and the old system must be restored, causing berth delays and penalties of about **USD 300,000**. With a rehearsal, the chance of failure drops to **10%** (the same USD 300,000 impact if it happens).",
-     "questions": [
-      "Draw the decision tree and calculate the EMV of each option.",
-      "Which option should the project choose, and by how much does it improve expected cost?",
-      "What non-monetary factors should the sponsor also weigh?"
-     ],
-     "answer": "Rehearse: −40,000 + (0.10 × −300,000) = **−70,000**. No rehearsal: 0 + (0.35 × −300,000) = **−105,000**. Rehearsing is better by **USD 35,000** in expected value, so choose the rehearsal. Beyond money: reputation with shipping lines, safety in the yard, staff confidence with the new system, and the fact that the rehearsal also trains people. EMV supports the decision; it does not replace judgement, especially for low-probability, catastrophic outcomes."
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "S",
-       "title": "S-curve",
-       "text": "Cumulative probability of finishing by each date (or within each cost). Read across from 80% to find the P80 date."
-      },
-      {
-       "label": "P50",
-       "title": "P50 / P80",
-       "text": "P50: half of simulated outcomes finish by this date. P80: four in five do. Commit externally to a higher-confidence value; manage internally to a stretch value."
-      },
-      {
-       "label": "TOR",
-       "title": "Tornado chart",
-       "text": "Ranks which inputs most influence the result. Spend risk effort on the longest bars."
-      },
-      {
-       "label": "CI",
-       "title": "Criticality index",
-       "text": "How often an activity appears on the critical path across simulations — a task at 70% deserves more attention than its single-point float suggests."
-      }
-     ],
-     "title": "Reading a Monte Carlo output"
+     ]
     },
     {
      "type": "callout",
-     "kind": "example",
-     "text": "‘Our deterministic plan says 30 November. The simulation gives only a 22% chance of that. P50 is 14 December and P80 is 9 January. We recommend committing to early January and protecting the top three tornado drivers.’ That is honest forecasting — a range with a confidence level, not a single hopeful date.",
-     "title": "Turning the S-curve into a sentence"
+     "kind": "warning",
+     "text": "A path with very little float is almost critical. If its activities are risky, it may become the critical path overnight. Also watch for **negative float**: it means an imposed deadline is earlier than the network can achieve — a signal to re-plan, compress or renegotiate.",
+     "title": "Watch the near-critical path"
+    },
+    {
+     "type": "formula",
+     "title": "Velocity and forecasting",
+     "items": [
+      {
+       "name": "Velocity",
+       "expr": "Sum of points of items that met the definition of done in an iteration",
+       "meaning": "A team's observed delivery rate. Partly finished items count zero."
+      },
+      {
+       "name": "Forecast iterations",
+       "expr": "Remaining backlog points ÷ velocity",
+       "meaning": "Use a low and high velocity to produce a range, not one number."
+      },
+      {
+       "name": "Capacity-adjusted velocity",
+       "expr": "Average velocity × (available person-days ÷ usual person-days)",
+       "meaning": "Adjusts for holidays, leave and training in the coming iteration."
+      }
+     ]
+    },
+    {
+     "type": "compare",
+     "title": "Release planning vs iteration planning",
+     "columns": [
+      {
+       "title": "Release planning",
+       "items": [
+        "Horizon: several iterations to a few months",
+        "Sets a release goal and target date or scope range",
+        "Uses velocity ranges and a prioritised backlog",
+        "Revisited every iteration as data arrives",
+        "Involves product owner, team and key stakeholders"
+       ]
+      },
+      {
+       "title": "Iteration planning",
+       "items": [
+        "Horizon: one iteration (1–4 weeks)",
+        "Sets an iteration goal",
+        "Team selects items it can complete to the definition of done",
+        "Breaks items into tasks where useful",
+        "Based on recent velocity and actual capacity"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "template",
+     "title": "Release forecast worksheet",
+     "purpose": "Turn backlog size and velocity history into an honest, range-based release forecast.",
+     "columns": [
+      "Release / goal",
+      "Remaining points",
+      "Velocity range (low–high)",
+      "Iterations needed (range)",
+      "Forecast date range",
+      "Key risks and assumptions"
+     ],
+     "example": [
+      [
+       "R2 – Merchant QR payments",
+       "240",
+       "28–32",
+       "8–9",
+       "16–18 weeks from 2 Feb",
+       "Payment-switch certification takes ≤ 3 weeks"
+      ]
+     ],
+     "rows": 5
+    },
+    {
+     "type": "steps",
+     "title": "Baseline and manage the schedule",
+     "items": [
+      {
+       "title": "Prepare to suit the approach",
+       "text": "A network schedule for predictive work, a release plan for agile work, and milestones that join them on hybrid projects."
+      },
+      {
+       "title": "Coordinate",
+       "text": "Check dates against other projects, shared environments, operations' busy periods and holidays such as Eid or year-end."
+      },
+      {
+       "title": "Baseline",
+       "text": "Get the schedule, or the milestone plan, approved as the reference for measuring progress."
+      },
+      {
+       "title": "Execute the schedule plan",
+       "text": "Update progress at an agreed rhythm and keep the critical path or release forecast current."
+      },
+      {
+       "title": "Analyse variation",
+       "text": "Compare actuals with the baseline or forecast, find causes and act before slips grow."
+      },
+      {
+       "title": "Change formally",
+       "text": "Re-baseline only through change control, never quietly."
+      }
+     ]
     },
     {
      "type": "scenario",
-     "situation": "Your Monte Carlo analysis shows the target launch date has a 25% probability. The sponsor says: ‘Just remove the pessimistic estimates and run it again.’ What should you do FIRST?",
+     "title": "Using float",
+     "situation": "In the clinic example, the procurement officer asks to delay activity C (procure tablets) by 3 days to combine it with another order and get a discount. What is the impact, and what should you do?",
      "options": [
       {
-       "text": "Rerun the model with the optimistic values to keep the sponsor happy.",
-       "feedback": "Manipulating inputs to get a desired output destroys the value of the analysis and is a professional-honesty problem.",
+       "text": "Refuse — any delay is unacceptable.",
+       "feedback": "Weak. C has 4 days of total float; a 3-day delay does not move the end date.",
        "best": false
       },
       {
-       "text": "Walk the sponsor through the tornado chart, show which risks drive the spread and discuss responses that would genuinely raise confidence.",
-       "feedback": "Correct. Focus the conversation on the real drivers and actions that change the probability — scope, resources, risk responses — rather than on the numbers themselves.",
+       "text": "Approve it without telling anyone; there is float.",
+       "feedback": "Partly right on impact, but C has zero free float, so E will start later and the path's remaining float falls to 1 day. The configuration lead must know.",
+       "best": false
+      },
+      {
+       "text": "Approve it after confirming the impact: end date unchanged, but E shifts by 3 days and the path A–C–E–F keeps only 1 day of float. Inform the configuration lead and update the schedule and risk log.",
+       "feedback": "Best. You use float deliberately, understand that it is shared along the path, and communicate the reduced buffer.",
        "best": true
       },
       {
-       "text": "Escalate to the steering committee that the sponsor is ignoring risk.",
-       "feedback": "Premature. Have the evidence-based conversation with the sponsor first.",
-       "best": false
-      },
-      {
-       "text": "Quietly add a buffer to the schedule without telling anyone.",
-       "feedback": "Hidden buffers erode trust and are usually discovered. Make reserves explicit.",
+       "text": "Approve it and add 3 days to the project end date to be safe.",
+       "feedback": "Weak. Extending the end date is unnecessary and wastes schedule.",
        "best": false
       }
-     ],
-     "title": "The confident sponsor"
+     ]
     },
     {
      "type": "terms",
      "items": [
       {
-       "term": "Expected monetary value (EMV)",
-       "def": "Probability multiplied by monetary impact; summed across risks or branches to compare options and size reserves."
+       "term": "Critical path",
+       "def": "The longest sequence of dependent activities through a schedule network; it determines the shortest possible project duration."
       },
       {
-       "term": "Contingency reserve",
-       "def": "Budget or time within the baseline set aside for identified risks; controlled by the project manager."
+       "term": "Total float",
+       "def": "The amount of time an activity can be delayed without delaying the project finish date."
+      },
+      {
+       "term": "Free float",
+       "def": "The amount of time an activity can be delayed without delaying the early start of any successor."
+      },
+      {
+       "term": "Velocity",
+       "def": "The amount of work, usually in story points, a team completes to the definition of done in one iteration."
+      },
+      {
+       "term": "Schedule baseline",
+       "def": "The approved version of the schedule used to measure progress, changed only through formal change control."
+      },
+      {
+       "term": "Lag",
+       "def": "A required waiting time between a predecessor and its successor."
+      },
+      {
+       "term": "Lead",
+       "def": "An overlap that lets a successor start before its predecessor finishes."
+      },
+      {
+       "term": "Release plan",
+       "def": "A forecast of which backlog items are likely to be delivered in upcoming releases, based on velocity ranges."
       }
      ]
     },
@@ -533,59 +748,59 @@ TRACK.modules.push({
      "type": "quiz",
      "items": [
       {
-       "q": "A risk has a 40% probability and an impact of −80,000. Its EMV is…",
+       "q": "An activity has ES = 5, EF = 9, LS = 8, LF = 12. Its total float is:",
        "options": [
-        "−32,000",
-        "−48,000",
-        "−80,000",
-        "+32,000"
-       ],
-       "answer": 0,
-       "explain": "0.40 × −80,000 = −32,000. Threats carry negative values."
-      },
-      {
-       "q": "Which is the strongest reason to define probability and impact scales before scoring?",
-       "options": [
-        "It makes the heat map clearer and more colourful",
-        "It is required by law in most regulated industries and sectors",
-        "It reduces subjective, inconsistent scoring between people",
-        "It removes the need for later quantitative risk analysis"
-       ],
-       "answer": 2,
-       "explain": "Shared definitions turn opinions into comparable scores."
-      },
-      {
-       "q": "A Monte Carlo S-curve shows the P80 finish date as 20 March. This means…",
-       "options": [
-        "the project is certain to finish on 20 March as planned",
-        "80% of simulated outcomes finished on or before 20 March",
-        "there is an 80% chance that the project finishes after 20 March",
-        "20 March is the end date of the critical path schedule"
+        "0 days",
+        "3 days",
+        "4 days",
+        "7 days"
        ],
        "answer": 1,
-       "explain": "P80 is the value that 80% of iterations meet or beat."
+       "explain": "TF = LS − ES = 8 − 5 = 3 (or LF − EF = 12 − 9 = 3)."
       },
       {
-       "q": "Option A costs 20,000 and leaves a 10% chance of a −100,000 loss. Option B costs nothing and leaves a 25% chance of the same loss. Which is better by EMV?",
+       "q": "In a forward pass, when an activity has two predecessors finishing on day 7 and day 10, its ES is:",
        "options": [
-        "B (−25,000 vs −30,000)",
-        "A (−30,000 vs −25,000)",
-        "They are equal in EMV terms",
-        "It cannot be decided from EMV"
+        "7",
+        "8.5",
+        "10",
+        "17"
+       ],
+       "answer": 2,
+       "explain": "A successor can only start when all predecessors finish, so ES takes the largest EF: 10."
+      },
+      {
+       "q": "Negative total float indicates that:",
+       "options": [
+        "The required finish date is earlier than the network allows",
+        "Resources are idle and can be moved to other work",
+        "The project is ahead of schedule on its critical path",
+        "The critical path has changed to a different set of activities"
        ],
        "answer": 0,
-       "explain": "A = −20,000 + (0.10 × −100,000) = −30,000. B = 0.25 × −100,000 = −25,000. B has the less negative EMV."
+       "explain": "Negative float means a constraint date cannot be met with the current logic and durations."
       },
       {
-       "q": "Who normally controls the management reserve?",
+       "q": "Remaining backlog is 180 points; velocity ranges from 25 to 30. How many iterations are forecast?",
        "options": [
-        "The project manager, within agreed limits",
-        "The team lead responsible for the work",
-        "The vendor, under the contract terms",
-        "Senior management or the sponsor"
+        "5–6",
+        "6–8",
+        "7–9",
+        "8–10"
        ],
-       "answer": 3,
-       "explain": "Management reserve sits outside the baseline and requires management approval to release."
+       "answer": 1,
+       "explain": "180 ÷ 30 = 6; 180 ÷ 25 = 7.2, rounded up to 8. So 6–8 iterations."
+      },
+      {
+       "q": "A hybrid project's schedule shows a go-live in the same week as the bank's year-end closing, when operations staff are unavailable. What should the project manager do before baselining?",
+       "options": [
+        "Baseline the schedule and deal with the clash nearer the time",
+        "Ask operations to postpone year-end closing",
+        "Coordinate with operations and adjust the plan or the go-live window before baselining",
+        "Remove operations staff from the go-live plan"
+       ],
+       "answer": 2,
+       "explain": "Schedules must be coordinated with other projects and operations before they are baselined; known clashes should not be built into the reference plan."
       }
      ]
     }
@@ -593,215 +808,242 @@ TRACK.modules.push({
   },
   {
    "id": "m5-l3",
-   "title": "Responding to Risk & Managing Issues",
-   "subtitle": "Pick the right response, give it an owner and a trigger, and resolve issues fast.",
-   "minutes": 25,
+   "title": "Resources: Plan, Acquire, Optimise & Compress",
+   "subtitle": "Turn requirements into people and equipment plans, secure them, and adjust schedules to real availability",
+   "minutes": 30,
    "objectives": [
-    "Select response strategies for threats and opportunities and justify the choice.",
-    "Assign risk owners, triggers, residual and secondary risks in a working risk register.",
-    "Run an issue log and escalate at the right level and time."
+    "Define resource needs from scope and plan how to acquire them",
+    "Negotiate for shared resources and protect team capacity",
+    "Distinguish resource levelling from resource smoothing",
+    "Compress a schedule with crashing or fast-tracking and explain the trade-offs"
    ],
    "blocks": [
     {
      "type": "text",
-     "text": "Analysis tells you which risks matter. Response planning decides **what you will actually do** — and who will do it. A response without an owner, a budget and a date is just a hope."
+     "text": "A plan is only as real as the people, equipment and materials behind it. **Resource planning** turns the scope into the skills, roles, equipment, materials and facilities needed, shows when each is needed, and decides how to get them. Agile teams usually work as stable, cross-functional teams, so the question becomes *what capacity do we have?* rather than *who do we assign to each task?*. Predictive projects often assemble people from functional departments and must negotiate for them."
     },
     {
-     "type": "compare",
-     "columns": [
-      {
-       "title": "For threats",
-       "items": [
-        "**Escalate** – outside the project’s authority; hand to the right level and confirm they accept it",
-        "**Avoid** – change the plan to remove the threat (e.g. drop a risky feature)",
-        "**Transfer** – shift the financial impact to a third party (insurance, fixed-price contract, warranty)",
-        "**Mitigate** – reduce probability and/or impact (prototype, extra testing, second supplier)",
-        "**Accept** – active (set aside contingency) or passive (deal with it if it happens)"
-       ]
-      },
-      {
-       "title": "For opportunities",
-       "items": [
-        "**Escalate** – beyond project authority; pass to programme/portfolio",
-        "**Exploit** – act to make it certain (assign your best people to finish early)",
-        "**Share** – partner with a party better placed to capture it (joint venture, gain-share)",
-        "**Enhance** – raise probability and/or impact (add resources to a promising path)",
-        "**Accept** – take the benefit if it comes, without active pursuit"
-       ]
-      }
-     ],
-     "title": "Response strategies"
-    },
-    {
-     "type": "callout",
-     "kind": "definition",
-     "text": "Buying insurance or signing a fixed-price contract shifts the financial consequence, but the event can still delay your project and hurt your reputation. Transfer almost always leaves residual risk you must still watch.",
-     "title": "Transfer moves the money, not the risk"
-    },
-    {
-     "type": "framework",
+     "type": "steps",
+     "title": "Define and plan resources from requirements",
      "items": [
       {
-       "label": "OWN",
-       "title": "Risk owner",
-       "text": "One named person who monitors the risk and makes sure the response happens. Not a department, not ‘the team’."
+       "title": "Start from scope",
+       "text": "Use the WBS or backlog to list the skills and physical resources each deliverable needs."
       },
       {
-       "label": "TRG",
-       "title": "Trigger",
-       "text": "An observable warning sign that the risk is about to occur or has occurred — e.g. ‘supplier misses the second milestone’."
+       "title": "Build a resource breakdown",
+       "text": "Group needs by type: people by skill, equipment, materials, facilities, licences."
       },
       {
-       "label": "ACT",
-       "title": "Response actions",
-       "text": "Specific tasks, with dates and cost, added to the schedule and budget."
+       "title": "Estimate quantity and timing",
+       "text": "How many, when and for how long; note lead times for materials and equipment."
       },
       {
-       "label": "RES",
-       "title": "Residual risk",
-       "text": "The exposure that remains after the response. If it is still above tolerance, plan more."
+       "title": "Choose how to acquire",
+       "text": "Internal staff, negotiation with functional managers, hiring, contractors or vendors."
       },
       {
-       "label": "SEC",
-       "title": "Secondary risk",
-       "text": "A new risk created by the response itself — e.g. a second supplier introduces integration risk."
+       "title": "Record availability",
+       "text": "Resource calendars: holidays, shifts, part-time allocations and shared commitments."
+      },
+      {
+       "title": "Plan development",
+       "text": "Training, onboarding and team-building needed to make people effective."
       }
-     ],
-     "title": "Every response needs these five parts"
-    },
-    {
-     "type": "callout",
-     "kind": "pro",
-     "text": "For high-impact risks, prepare a **fallback plan** (‘Plan B’) to use if the primary response fails, and decide in advance what trigger activates it. Decisions made calmly beforehand are better than decisions made in a crisis.",
-     "title": "Fallback plans"
-    },
-    {
-     "type": "template",
-     "title": "Risk register",
-     "purpose": "Track every identified risk from first sighting to closure. Review the top risks at every status meeting.",
-     "columns": [
-      "ID / statement (cause–event–effect)",
-      "P × I = score",
-      "Owner",
-      "Trigger",
-      "Strategy & actions",
-      "Residual / secondary",
-      "Status"
-     ],
-     "example": [
-      [
-       "R07 Because only one engineer holds the PLC licence, the cut-over may slip if he is unavailable, delaying go-live 3 weeks",
-       "3 × 4 = 12",
-       "Farhana (ops lead)",
-       "Engineer leave request or illness",
-       "Mitigate: certify a second engineer by 15 May (BDT 85k)",
-       "Residual 1 × 4 = 4; secondary: training pulls engineer off build for 1 week",
-       "Open – action on track"
-      ]
-     ],
-     "rows": 8
-    },
-    {
-     "type": "text",
-     "text": "When a risk becomes real, or a problem appears that nobody predicted, it moves to the **issue log**. Issues need speed, clarity of ownership and a clear path for escalation."
-    },
-    {
-     "type": "flow",
-     "items": [
-      {
-       "label": "Log",
-       "text": "Describe impact, date raised, who raised it"
-      },
-      {
-       "label": "Assess",
-       "text": "Severity, urgency, objectives affected"
-      },
-      {
-       "label": "Assign",
-       "text": "One owner and a target resolution date"
-      },
-      {
-       "label": "Resolve or escalate",
-       "text": "Within tolerance: act. Beyond tolerance: escalate with options"
-      },
-      {
-       "label": "Close & learn",
-       "text": "Record the fix and feed lessons learned"
-      }
-     ],
-     "title": "Issue lifecycle"
+     ]
     },
     {
      "type": "table",
+     "title": "Ways to acquire resources",
      "head": [
-      "Escalation element",
-      "What to include"
+      "Source",
+      "Best when",
+      "Watch out for"
      ],
      "rows": [
       [
-       "What happened",
-       "One-sentence description and when it was discovered"
+       "Dedicated internal team",
+       "Long-lived product or high-knowledge work",
+       "Idle capacity if work is uneven"
       ],
       [
-       "Impact",
-       "Effect on scope, schedule, cost, quality, benefits — with numbers"
+       "Shared from functional departments",
+       "Specialist skills needed part-time",
+       "Competing priorities; negotiate early"
       ],
       [
-       "Tolerance",
-       "Which agreed threshold it breaches (e.g. > 2 weeks or > 5% cost)"
+       "Contractors",
+       "Short peaks or rare skills",
+       "Knowledge leaving at contract end"
       ],
       [
-       "Options",
-       "2–3 realistic options with trade-offs"
+       "Vendor-supplied team",
+       "Packaged solution or outsourced delivery",
+       "Contract terms, control and handover"
       ],
       [
-       "Recommendation",
-       "Your preferred option and why"
-      ],
-      [
-       "Decision needed by",
-       "The date after which options close"
+       "Physical resources by lease or purchase",
+       "Equipment, sites, materials",
+       "Lead times, import duties, storage"
       ]
-     ],
-     "title": "Escalate with options, not just problems"
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "example",
+     "title": "Negotiating for a specialist",
+     "text": "A functional manager in a Chattogram power plant refuses to release the only certified protection-relay engineer for your upgrade. Instead of escalating at once, find the manager's interest: his own outage maintenance in the same month. Options include shifting your testing by two weeks, sharing the engineer half-days, or funding a contractor to cover his routine work. Escalate to the sponsor only if no option meets both needs."
+    },
+    {
+     "type": "keypoints",
+     "title": "Optimising resource availability",
+     "items": [
+      "Keep teams stable; constant reshuffling destroys productivity and knowledge",
+      "Limit multitasking: a person split across four projects completes each one more slowly",
+      "Cross-train so that more than one person can do critical work",
+      "Plan agile work by team capacity per iteration, not by individual task assignment",
+      "Review the resource plan at each phase or release and release resources you no longer need"
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Schedules also have to be **resource-feasible**. A network may say two activities run in parallel, but if both need the same certified electrician, they cannot. Resource optimisation adjusts the schedule to match real availability."
+    },
+    {
+     "type": "compare",
+     "title": "Resource levelling vs resource smoothing",
+     "columns": [
+      {
+       "title": "Resource levelling",
+       "items": [
+        "Resolves over-allocation or limited availability",
+        "Activities are delayed until resources are free",
+        "Can change the critical path",
+        "May extend the end date",
+        "Used when resource limits are hard"
+       ]
+      },
+      {
+       "title": "Resource smoothing",
+       "items": [
+        "Evens out peaks and valleys in demand",
+        "Moves activities only within their float",
+        "Does not change the critical path",
+        "End date unchanged",
+        "May not remove all over-allocation"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "example",
+     "text": "**Levelling:** one licensed medical-gas engineer is needed by two parallel activities. One must wait, so the finish moves out by 4 days. **Smoothing:** painting needs 12 painters in week 6 but only 4 in week 7. Because painting the corridor has 5 days of float, you shift part of it into week 7 and use 8 painters each week — the end date does not move.",
+     "title": "Levelling vs smoothing on site"
+    },
+    {
+     "type": "text",
+     "text": "Sooner or later someone will ask for the project to finish earlier. Compression is possible, but never free: you pay with **money**, **risk** or **scope**. Your job is to make those trade-offs clear before anyone commits."
+    },
+    {
+     "type": "compare",
+     "title": "Crashing vs fast-tracking",
+     "columns": [
+      {
+       "title": "Crashing",
+       "items": [
+        "Add resources to critical activities to shorten them",
+        "Overtime, extra crews, faster equipment, express delivery",
+        "Increases cost",
+        "Works best on effort-driven activities",
+        "Diminishing returns — more people do not always mean less time"
+       ]
+      },
+      {
+       "title": "Fast-tracking",
+       "items": [
+        "Overlap activities normally done in sequence",
+        "Change discretionary FS links to SS or add leads",
+        "Little direct cost",
+        "Increases risk of rework",
+        "Only possible where dependencies are discretionary"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "formula",
+     "title": "Crash cost slope",
+     "items": [
+      {
+       "name": "Cost slope",
+       "expr": "(Crash cost − Normal cost) ÷ (Normal duration − Crash duration)",
+       "meaning": "Extra cost per day saved. Crash the critical activity with the lowest slope first."
+      },
+      {
+       "name": "Example",
+       "expr": "Activity D: normal 5 d at Tk 100,000; crash 3 d at Tk 160,000",
+       "meaning": "(160,000 − 100,000) ÷ (5 − 3) = Tk 30,000 per day saved."
+      }
+     ]
     },
     {
      "type": "scenario",
-     "situation": "Your risk register lists ‘key subcontractor insolvency’ with a fallback plan to activate a pre-qualified alternative. Today a news report says the subcontractor has entered administration. What should the project manager do FIRST?",
+     "title": "Two weeks earlier, please",
+     "situation": "Your sponsor asks you to bring forward the launch of a garment buyer's order-tracking portal by two weeks to match a trade fair. The critical path runs through design, build and user acceptance testing. What should you do FIRST?",
      "options": [
       {
-       "text": "Call a team meeting to brainstorm what to do.",
-       "feedback": "The thinking has already been done. Brainstorming now wastes the advantage of the plan.",
+       "text": "Immediately approve overtime for the whole team.",
+       "feedback": "Weak. Crashing non-critical work wastes money, and blanket overtime raises burnout and defect risk.",
        "best": false
       },
       {
-       "text": "Ask the sponsor for permission to look for a new subcontractor.",
-       "feedback": "If the fallback is already approved within your authority, you do not need fresh permission — act, then inform.",
-       "best": false
-      },
-      {
-       "text": "Implement the agreed fallback plan and update the issue log and risk register.",
-       "feedback": "Correct. The trigger has occurred; execute the pre-planned response, record the new issue and close or update the risk.",
+       "text": "Analyse the critical path and present options — fast-track design and build where logic is discretionary, crash specific critical activities, or reduce the scope released for the fair — with cost, risk and quality impacts for each.",
+       "feedback": "Best. You base the response on the schedule model and give the sponsor clear trade-offs to decide on.",
        "best": true
       },
       {
-       "text": "Wait to confirm the news through official channels before doing anything.",
-       "feedback": "Verifying quickly is sensible, but waiting passively loses time. Start the fallback while confirming.",
+       "text": "Tell the sponsor it is impossible.",
+       "feedback": "Weak. Without analysis you cannot know, and it ignores options such as reduced scope for the fair.",
+       "best": false
+      },
+      {
+       "text": "Cut user acceptance testing to save two weeks.",
+       "feedback": "Weak. Removing quality activities to hit a date shifts risk to the customer and often costs more later.",
        "best": false
       }
-     ],
-     "title": "The triggered risk"
+     ]
     },
     {
      "type": "terms",
      "items": [
       {
-       "term": "Residual risk",
-       "def": "The risk that remains after responses have been implemented."
+       "term": "Crashing",
+       "def": "Shortening the schedule by adding resources to critical activities, usually at extra cost."
       },
       {
-       "term": "Secondary risk",
-       "def": "A new risk that arises as a direct result of implementing a risk response."
+       "term": "Fast-tracking",
+       "def": "Shortening the schedule by overlapping activities normally done in sequence, at a higher risk of rework."
+      },
+      {
+       "term": "Resource breakdown structure",
+       "def": "A hierarchy of the resources a project needs, grouped by category and type."
+      },
+      {
+       "term": "Resource calendar",
+       "def": "A record of when each resource is available, including shifts, holidays and part-time allocations."
+      },
+      {
+       "term": "Resource levelling",
+       "def": "Adjusting start and finish dates to fit limited resources; may extend the project end date."
+      },
+      {
+       "term": "Resource smoothing",
+       "def": "Adjusting activities within their float to even out resource demand without changing the end date."
+      },
+      {
+       "term": "Crash cost slope",
+       "def": "The extra cost per unit of time saved when an activity is shortened: (crash cost − normal cost) ÷ (normal duration − crash duration)."
       }
      ]
     },
@@ -809,59 +1051,59 @@ TRACK.modules.push({
      "type": "quiz",
      "items": [
       {
-       "q": "A team buys an insurance policy covering equipment damage during shipment. Which strategy is this?",
+       "q": "Which technique overlaps activities that were planned in sequence?",
        "options": [
-        "Transfer",
-        "Avoid",
-        "Mitigate",
-        "Exploit"
+        "Crashing",
+        "Resource levelling",
+        "Fast-tracking",
+        "Smoothing"
+       ],
+       "answer": 2,
+       "explain": "Fast-tracking performs activities in parallel or with overlap, increasing rework risk."
+      },
+      {
+       "q": "Crash cost Tk 90,000 for 4 days; normal cost Tk 60,000 for 7 days. The cost slope is:",
+       "options": [
+        "Tk 7,500/day",
+        "Tk 10,000/day",
+        "Tk 15,000/day",
+        "Tk 30,000/day"
+       ],
+       "answer": 1,
+       "explain": "(90,000 − 60,000) ÷ (7 − 4) = 30,000 ÷ 3 = Tk 10,000 per day."
+      },
+      {
+       "q": "Which technique may extend the project end date?",
+       "options": [
+        "Resource levelling",
+        "Fast-tracking",
+        "Resource smoothing",
+        "Using available float"
        ],
        "answer": 0,
-       "explain": "Insurance shifts the financial impact to a third party: transfer."
+       "explain": "Levelling delays activities to respect resource limits, which can change the critical path and push the end date."
       },
       {
-       "q": "To make sure a likely early-finish opportunity actually happens, the PM assigns the most experienced engineers to the task. This is…",
+       "q": "A functional manager will not release a specialist your project needs next month because his own team has a peak. What should the project manager do FIRST?",
        "options": [
-        "Enhance",
-        "Share",
-        "Accept",
-        "Exploit"
-       ],
-       "answer": 3,
-       "explain": "Exploit aims to make the opportunity certain. Enhance would only increase its likelihood or size."
-      },
-      {
-       "q": "A response to one risk creates a new integration risk. The new risk is called…",
-       "options": [
-        "residual risk",
-        "an emerging issue",
-        "a trigger",
-        "secondary risk"
-       ],
-       "answer": 3,
-       "explain": "A risk caused by a response is a secondary risk."
-      },
-      {
-       "q": "A threat is outside the project’s authority but within the programme’s. What should the PM do?",
-       "options": [
-        "Accept it passively and note it in the register",
-        "Ignore it, as it is outside the project’s authority",
-        "Escalate it to the programme manager and confirm ownership",
-        "Avoid it by recommending that the project is cancelled"
+        "Escalate to the sponsor immediately",
+        "Hire a contractor without discussing it",
+        "Understand the manager's constraints and explore options that meet both needs",
+        "Remove the specialist's work from the scope"
        ],
        "answer": 2,
-       "explain": "Escalation is correct when the response belongs at a higher level; the PM confirms acceptance and records it."
+       "explain": "Negotiation starts with understanding the other side's interests. Escalation comes after options have been explored."
       },
       {
-       "q": "Which element of an escalation is MOST often missing and most valuable to decision makers?",
+       "q": "A developer is assigned to four projects at 25% each and all four are late. What is the MOST likely cause?",
        "options": [
-        "The project logo and reporting template",
-        "A list of everyone who has been informed",
-        "Realistic options with a recommendation",
-        "The full risk register as an attachment"
+        "Context switching and waiting are slowing all four projects",
+        "The developer lacks the skills needed",
+        "The estimates for the four projects were padded",
+        "The projects use different development approaches"
        ],
-       "answer": 2,
-       "explain": "Leaders decide faster and better when given options, trade-offs and a clear recommendation."
+       "answer": 0,
+       "explain": "Splitting people across many projects adds switching time and delays; limiting multitasking usually speeds up all the work."
       }
      ]
     }
@@ -869,13 +1111,345 @@ TRACK.modules.push({
   },
   {
    "id": "m5-l4",
-   "title": "Earned Value Management",
-   "subtitle": "Measure progress in money, read the variances, and forecast the finish honestly.",
+   "title": "Budgets, Reserves & Financial Planning",
+   "subtitle": "Analyse financial needs, build a cost baseline, size reserves and plan how spend will be tracked and reported",
+   "minutes": 32,
+   "objectives": [
+    "Aggregate estimates into a cost baseline and project budget",
+    "Quantify contingency for risks and distinguish it from management reserve",
+    "Plan spend tracking and financial reporting, including for agile teams",
+    "Anticipate financial challenges such as inflation, exchange rates and funding limits"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Cost planning turns estimates into a **time-phased budget** that the organisation can fund and you can control. A sound budget does three things: it covers the planned work, it protects against identified risks, and it shows when money will be needed."
+    },
+    {
+     "type": "table",
+     "title": "Cost categories worth separating",
+     "head": [
+      "Category",
+      "Examples",
+      "Why it matters"
+     ],
+     "rows": [
+      [
+       "Direct vs indirect",
+       "Contractor labour, materials vs office rent, shared IT",
+       "Indirect costs are often allocated by formula; agree the rule early"
+      ],
+      [
+       "Fixed vs variable",
+       "Software licence fee vs cloud usage per transaction",
+       "Variable costs grow with scope and volume"
+      ],
+      [
+       "One-time vs recurring",
+       "Implementation vs annual support and hosting",
+       "Business cases fail when recurring costs are forgotten"
+      ]
+     ]
+    },
+    {
+     "type": "layers",
+     "title": "How a project budget is built (top first)",
+     "items": [
+      {
+       "label": "Project budget",
+       "parts": [
+        "Cost baseline + management reserve"
+       ]
+      },
+      {
+       "label": "Management reserve",
+       "parts": [
+        "For unknown-unknowns",
+        "Outside the baseline; needs management approval"
+       ]
+      },
+      {
+       "label": "Cost baseline",
+       "parts": [
+        "Approved, time-phased budget",
+        "Control accounts + contingency reserves"
+       ]
+      },
+      {
+       "label": "Contingency reserves",
+       "parts": [
+        "For identified risks (known-unknowns)",
+        "Inside the baseline"
+       ]
+      },
+      {
+       "label": "Work package and activity estimates",
+       "parts": [
+        "Bottom-up costs of the planned work"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "title": "Worked example — outpatient wing (Tk crore)",
+     "head": [
+      "Line",
+      "Amount",
+      "Running total"
+     ],
+     "rows": [
+      [
+       "Sum of work package estimates",
+       "4.20",
+       "4.20"
+      ],
+      [
+       "+ Contingency reserve (identified risks, e.g. soil conditions, import duty changes)",
+       "0.40",
+       "4.60 = cost baseline"
+      ],
+      [
+       "+ Management reserve (unforeseen events)",
+       "0.30",
+       "4.90 = project budget"
+      ]
+     ]
+    },
+    {
+     "type": "compare",
+     "title": "Contingency reserve vs management reserve",
+     "columns": [
+      {
+       "title": "Contingency reserve",
+       "items": [
+        "Covers identified risks and their responses",
+        "Included in the cost baseline",
+        "Usually controlled by the PM within agreed rules",
+        "Sized from risk analysis (e.g. expected value or simulation)",
+        "Unused amounts can be released as risks pass"
+       ]
+      },
+      {
+       "title": "Management reserve",
+       "items": [
+        "Covers unforeseen, unidentified risks",
+        "Not in the cost baseline but in the total budget",
+        "Released only with management or sponsor approval",
+        "Often set as a policy percentage",
+        "Using it changes the cost baseline via change control"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "insight",
+     "text": "Plotting the cumulative cost baseline over time usually produces an **S-curve**: slow spending at the start, a steep middle and a flattening end. Compare it with funding tranches from the finance team or donor; if planned spend exceeds available funding in any period, re-sequence the work — this is called **funding limit reconciliation**.",
+     "title": "The S-curve and funding"
+    },
+    {
+     "type": "callout",
+     "kind": "insight",
+     "title": "Funding agile work",
+     "text": "Many organisations fund **persistent teams** rather than fixed scopes. If a team of eight costs Tk 24 lakh per two-week sprint, a release forecast of 8–10 sprints means Tk 1.92–2.40 crore. The budget is fixed per period; the product owner steers what the money buys through the backlog. Financial control then focuses on **value per sprint** and on stopping when value falls."
+    },
+    {
+     "type": "steps",
+     "title": "Plan spend tracking and financial reporting",
+     "items": [
+      {
+       "title": "Set the cost structure",
+       "text": "Align WBS or team cost codes with the finance system so actual costs land in the right place."
+      },
+      {
+       "title": "Agree the reporting rhythm",
+       "text": "Monthly for most sponsors; at each gate for governance; as the donor or lender requires."
+      },
+      {
+       "title": "Choose the measures",
+       "text": "Actual versus baseline, forecast at completion, reserve use, cash flow against funding."
+      },
+      {
+       "title": "Track commitments",
+       "text": "Record purchase orders and contracts as committed costs, not only invoices paid."
+      },
+      {
+       "title": "Define thresholds",
+       "text": "Agree the variance that triggers escalation, for example ±5% of a control account."
+      }
+     ]
+    },
+    {
+     "type": "keypoints",
+     "title": "Anticipating financial challenges",
+     "items": [
+      "Inflation in materials and wages over a multi-year project",
+      "Exchange-rate movements on imported equipment or foreign-currency contracts",
+      "Funding released in tranches, by fiscal year or by donor milestone",
+      "Import duties, taxes and VAT that change mid-project",
+      "Cash-flow gaps when spend runs ahead of funding",
+      "Interest costs when the project is financed by loans"
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Single-number estimates hide risk. **Monte Carlo simulation** runs a schedule or cost model thousands of times, each time drawing random values from the ranges you provide (for example the O–M–P range of each activity). The result is a distribution of possible outcomes and the probability of meeting any date or budget."
+    },
+    {
+     "type": "callout",
+     "kind": "example",
+     "text": "The deterministic plan says the wing will be ready in **13 months**. Simulation shows only about a 20% chance of achieving that. **P50 = 14.5 months**, **P80 = 16 months**, **P90 = 17 months**. The sponsor chooses to commit publicly to 16 months (P80) and to treat 13 months as an internal stretch target. On agile work, a similar simulation can sample past weekly throughput to forecast when a set of backlog items will be finished.",
+     "title": "Reading a simulation"
+    },
+    {
+     "type": "scenario",
+     "title": "'Spare' money",
+     "situation": "Halfway through the outpatient wing project, a department head asks you to use Tk 25 lakh of the contingency reserve to add a staff café, saying the money is 'unused anyway'. What should you do?",
+     "options": [
+      {
+       "text": "Agree; the reserve has not been needed so far.",
+       "feedback": "Weak. Contingency exists for identified risks, not new scope. Spending it leaves those risks unfunded.",
+       "best": false
+      },
+      {
+       "text": "Explain that contingency is reserved for identified risks; treat the café as a change request with its own impact analysis and funding decision by the sponsor.",
+       "feedback": "Best. New scope goes through change control, and reserves are used only for their purpose.",
+       "best": true
+      },
+      {
+       "text": "Use the management reserve instead without telling the sponsor.",
+       "feedback": "Weak. Management reserve needs management approval and is not for discretionary scope.",
+       "best": false
+      },
+      {
+       "text": "Reject the idea outright without passing it on.",
+       "feedback": "Weak. It may be valuable; the right path is to route it to the decision-maker with an impact analysis.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "case",
+     "title": "Budgeting a private hospital wing in Chattogram",
+     "context": "A private hospital in Chattogram is adding a 60-bed wing. The bottom-up estimate of all work packages is Tk 38 crore. The risk register identifies piling problems on reclaimed land, possible import duty increases on medical equipment and monsoon delays. Expected values of these risks total Tk 3.2 crore. The board's policy sets management reserve at 5% of the cost baseline. Funding arrives in four quarterly tranches of Tk 11 crore each. A Monte Carlo cost simulation shows P50 = Tk 41 crore and P80 = Tk 43.5 crore.",
+     "questions": [
+      "Calculate the cost baseline and total project budget.",
+      "Who controls each reserve?",
+      "What does the funding schedule mean for planning?",
+      "At what confidence level would you recommend the board approve the budget, and why?"
+     ],
+     "answer": "**Cost baseline** = 38 + 3.2 = **Tk 41.2 crore**. **Management reserve** = 5% × 41.2 ≈ Tk 2.06 crore, so **project budget ≈ Tk 43.26 crore**. **Control:** the PM manages contingency within agreed rules for the identified risks; the board or sponsor approves any use of management reserve, which then updates the baseline through change control. **Funding:** total funding is Tk 44 crore, but only Tk 11 crore per quarter — the time-phased S-curve must be checked against each tranche; expensive equipment purchases may need to be re-sequenced or financed. **Confidence:** the baseline (Tk 41.2 crore) sits near P50, so there is roughly a coin-flip chance of staying within it. The total budget (≈ Tk 43.26 crore) is just under P80 (Tk 43.5 crore). Recommend the board approve funding close to P80 and treat the gap as a visible, governed risk — not hide it."
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Contingency reserve",
+       "def": "Budget or time within the baseline set aside for identified risks."
+      },
+      {
+       "term": "Management reserve",
+       "def": "Budget outside the cost baseline for unforeseen work; its use requires management approval."
+      },
+      {
+       "term": "Cost baseline",
+       "def": "The approved, time-phased budget, including contingency but excluding management reserve, used to measure cost performance."
+      },
+      {
+       "term": "Time-phased budget",
+       "def": "A budget spread over the periods in which costs are expected, used to plan funding and measure performance."
+      },
+      {
+       "term": "S-curve",
+       "def": "The typical shape of cumulative planned spend over time: slow start, steep middle, flat end."
+      },
+      {
+       "term": "Funding limit reconciliation",
+       "def": "Comparing planned spending with available funding by period and adjusting the schedule if needed."
+      },
+      {
+       "term": "Monte Carlo simulation",
+       "def": "A technique that runs a schedule or cost model thousands of times with random values from estimate ranges to produce probabilities."
+      },
+      {
+       "term": "Committed cost",
+       "def": "Money already promised through contracts or purchase orders, even if not yet invoiced or paid."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "Work packages total Tk 2.0 crore, contingency is Tk 0.2 crore and management reserve is Tk 0.1 crore. The cost baseline is:",
+       "options": [
+        "Tk 2.0 crore",
+        "Tk 2.2 crore",
+        "Tk 2.3 crore",
+        "Tk 2.1 crore"
+       ],
+       "answer": 1,
+       "explain": "Cost baseline = estimates + contingency = 2.2. Management reserve is added on top to reach the total budget of 2.3."
+      },
+      {
+       "q": "Management reserve is intended for:",
+       "options": [
+        "Unforeseen work within scope (unknown-unknowns)",
+        "Identified risks with planned responses (known-unknowns)",
+        "New features requested by users after sign-off",
+        "Team bonuses and recognition at project close"
+       ],
+       "answer": 0,
+       "explain": "Management reserve covers unidentified risks and requires management approval to use."
+      },
+      {
+       "q": "A Monte Carlo result says 'P80 = 16 months'. This means:",
+       "options": [
+        "The project will take exactly 16 months to complete",
+        "There is only a 16% chance of finishing on time",
+        "About 80% of simulated runs finished within 16 months",
+        "The project will be 80% complete at month 16"
+       ],
+       "answer": 2,
+       "explain": "P80 is the value at or below which 80% of simulated outcomes fall."
+      },
+      {
+       "q": "Comparing the time-phased cost baseline with available funding by period is called:",
+       "options": [
+        "Benefits realisation planning",
+        "Schedule crashing",
+        "Resource smoothing analysis",
+        "Funding limit reconciliation"
+       ],
+       "answer": 3,
+       "explain": "Funding limit reconciliation adjusts the timing of work so planned spending fits within funding limits."
+      },
+      {
+       "q": "An agile team costs Tk 12 lakh per sprint. The release forecast is 6–8 sprints. What budget range should be reported for the release?",
+       "options": [
+        "Tk 72–96 lakh",
+        "Tk 12–24 lakh",
+        "Tk 60–84 lakh",
+        "Tk 96–120 lakh"
+       ],
+       "answer": 0,
+       "explain": "Cost per sprint × forecast sprints: 12 × 6 = 72 and 12 × 8 = 96, so Tk 72–96 lakh."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m5-l5",
+   "title": "Earned Value, Forecasting & Financial Control",
+   "subtitle": "Measure progress in money, read the variances, forecast the finish and work with governance on variations",
    "minutes": 35,
    "objectives": [
-    "Calculate PV, EV, AC and the core variances and indices.",
-    "Choose the right EAC formula for the situation and compute ETC, VAC and TCPI.",
-    "Interpret EVM results in plain language for a sponsor."
+    "Calculate PV, EV, AC and the core variances and indices",
+    "Choose the right EAC formula and compute ETC, VAC and TCPI",
+    "Apply earned value ideas to agile releases",
+    "Monitor financial variation and escalate through governance"
    ],
    "blocks": [
     {
@@ -1036,6 +1610,38 @@ TRACK.modules.push({
      "title": "EVM traps"
     },
     {
+     "type": "formula",
+     "title": "Earned value for an agile release",
+     "items": [
+      {
+       "name": "Percent complete",
+       "expr": "Points done ÷ points planned for the release",
+       "meaning": "Uses the definition of done, so partly finished stories count zero."
+      },
+      {
+       "name": "Earned value",
+       "expr": "EV = % complete × release budget",
+       "meaning": "Value of the work actually done, in money."
+      },
+      {
+       "name": "Planned value",
+       "expr": "PV = sprints elapsed ÷ sprints planned × release budget",
+       "meaning": "Budget for the work that should be done by now."
+      },
+      {
+       "name": "Indices",
+       "expr": "CPI = EV ÷ AC; SPI = EV ÷ PV",
+       "meaning": "Read exactly as in predictive projects."
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "pro",
+     "title": "Variances belong to governance",
+     "text": "When a forecast moves outside an agreed tolerance, do not quietly absorb it. Report the variance, its cause and the options, and let the body with authority decide: release management reserve, reduce scope, extend the date or accept the overrun. Inside tolerance, act within your own authority and record what you did."
+    },
+    {
      "type": "template",
      "title": "EVM tracker",
      "purpose": "Update at each reporting period to see trends rather than single snapshots.",
@@ -1102,6 +1708,26 @@ TRACK.modules.push({
       {
        "term": "To-complete performance index (TCPI)",
        "def": "The cost efficiency that must be achieved on remaining work to meet a target (BAC or EAC)."
+      },
+      {
+       "term": "Planned value (PV)",
+       "def": "The budgeted cost of the work scheduled to be done by a given date."
+      },
+      {
+       "term": "Actual cost (AC)",
+       "def": "The cost actually incurred for the work performed by a given date."
+      },
+      {
+       "term": "Schedule performance index (SPI)",
+       "def": "EV ÷ PV; below 1.0 means less work has been done than planned."
+      },
+      {
+       "term": "Estimate at completion (EAC)",
+       "def": "The expected total cost of the project when all work is complete, based on performance so far."
+      },
+      {
+       "term": "Budget at completion (BAC)",
+       "def": "The total approved budget for the work, the sum of all planned value."
       }
      ]
     },
@@ -1124,10 +1750,10 @@ TRACK.modules.push({
        "options": [
         "−30,000",
         "+10,000",
-        "−20,000",
-        "−10,000"
+        "−10,000",
+        "−20,000"
        ],
-       "answer": 3,
+       "answer": 2,
        "explain": "SV = EV − PV = 90,000 − 100,000 = −10,000."
       },
       {
@@ -1145,42 +1771,1162 @@ TRACK.modules.push({
        "q": "A one-time cost spike came from a hardware price shock that will not recur. Which EAC formula fits best?",
        "options": [
         "BAC ÷ CPI",
-        "AC + (BAC − EV)",
+        "BAC × SPI",
         "AC + (BAC − EV) ÷ (CPI × SPI)",
-        "BAC × SPI"
+        "AC + (BAC − EV)"
        ],
-       "answer": 1,
+       "answer": 3,
        "explain": "When the variance is atypical, assume the remaining work will run at budget rate."
       },
       {
-       "q": "TCPI to BAC is 0.92. What does this mean?",
+       "q": "A release is budgeted at Tk 50 lakh for 200 points. After 4 of 8 planned sprints, 80 points are done and Tk 26 lakh has been spent. What is the CPI?",
        "options": [
-        "The project is 8% over budget and must recover the overrun",
-        "Remaining work can run at 92% efficiency and still meet budget",
-        "The project is 8% behind schedule on the remaining work",
-        "The project must improve its cost efficiency by 92% to finish on budget"
+        "About 0.77",
+        "About 1.30",
+        "About 0.80",
+        "About 1.25"
+       ],
+       "answer": 0,
+       "explain": "EV = 80 ÷ 200 × 50 = Tk 20 lakh; CPI = EV ÷ AC = 20 ÷ 26 ≈ 0.77, so the release is over budget for the work done."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+});
+TRACK.modules.push({
+ "id": "m6",
+ "order": 6,
+ "code": "Deliver",
+ "title": "Process III: Procurement, Quality, Status & Closure",
+ "subtitle": "Process · Tasks 5, 7, 9 and 10 (procurement, quality, project status, closure)",
+ "outcomes": [
+  "Plan procurement, select contracts, negotiate and manage suppliers",
+  "Plan and optimise quality, including regulatory and sustainability standards",
+  "Run agile delivery and read flow metrics",
+  "Evaluate status with honest metrics, dashboards and well-managed artifacts",
+  "Validate transition readiness and close phases and projects properly"
+ ],
+ "lessons": [
+  {
+   "id": "m6-l1",
+   "title": "Procurement, Contracts & Negotiation",
+   "subtitle": "Plan what to buy, choose the right contract, negotiate on interests and manage suppliers to the finish",
+   "minutes": 32,
+   "objectives": [
+    "Outline the procurement process from make-or-buy to contract closure",
+    "Select a contract type that fits the scope certainty and risk",
+    "Plan a negotiation strategy using interests, BATNA and walk-away points",
+    "Manage suppliers and evaluate their performance"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Few projects do everything in-house. Equipment, software, cloud services, contractors and consultants are bought from outside. **Procurement** is how you decide what to buy, choose the right supplier and contract, and manage the relationship until the work is accepted and closed."
+    },
+    {
+     "type": "flow",
+     "title": "Procurement in six steps",
+     "items": [
+      {
+       "label": "Make or buy",
+       "text": "Compare in-house vs external on cost, skill, risk, control"
+      },
+      {
+       "label": "Plan and specify",
+       "text": "Statement of work, evaluation criteria, contract type"
+      },
+      {
+       "label": "Solicit",
+       "text": "Request for information, quotation or proposal"
+      },
+      {
+       "label": "Select and award",
+       "text": "Evaluate fairly against published criteria; negotiate"
+      },
+      {
+       "label": "Manage",
+       "text": "Performance, payments, changes, disputes"
+      },
+      {
+       "label": "Close",
+       "text": "Verify deliverables, final payment, lessons, records"
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "text": "The **SOW** describes what the supplier must deliver: scope, deliverables, standards, acceptance criteria, timeline and reporting. A vague SOW is the single biggest cause of supplier disputes.",
+     "title": "Statement of work (SOW)"
+    },
+    {
+     "type": "table",
+     "title": "Contract types and who carries the cost risk",
+     "head": [
+      "Type",
+      "How payment works",
+      "Cost risk mainly on",
+      "Best when"
+     ],
+     "rows": [
+      [
+       "Firm fixed price (FFP)",
+       "Agreed price for defined scope",
+       "Seller",
+       "Scope is clear and stable"
+      ],
+      [
+       "Fixed price incentive fee (FPIF)",
+       "Fixed price with bonus or penalty for performance against targets, up to a ceiling",
+       "Shared, mostly seller",
+       "Clear scope; buyer wants to reward performance"
+      ],
+      [
+       "Fixed price with economic price adjustment",
+       "Fixed price adjusted for agreed indices (e.g. steel, currency)",
+       "Shared",
+       "Multi-year contracts with volatile input costs"
+      ],
+      [
+       "Time and materials (T&M)",
+       "Rates per hour/day plus materials",
+       "Buyer",
+       "Scope unclear, short engagements, staff augmentation"
+      ],
+      [
+       "Cost plus fixed fee (CPFF)",
+       "Actual costs plus a fixed fee",
+       "Buyer",
+       "High uncertainty, research-like work"
+      ],
+      [
+       "Cost plus incentive fee (CPIF)",
+       "Actual costs plus a fee that varies with performance; overruns and underruns shared",
+       "Shared, mostly buyer",
+       "Uncertain scope with measurable targets"
+      ],
+      [
+       "Cost plus award fee (CPAF)",
+       "Actual costs plus an award decided by the buyer's evaluation",
+       "Buyer",
+       "Performance is hard to measure objectively"
+      ]
+     ]
+    },
+    {
+     "type": "keypoints",
+     "items": [
+      "**Capped time and materials** — pay for time used, up to an agreed ceiling.",
+      "**Fixed price per iteration or increment** — buyer can stop after any increment if enough value is achieved.",
+      "**Target cost with shared pain and gain** — overruns and savings are split, aligning both sides.",
+      "**Scope-swap clauses** — buyer can exchange not-yet-started backlog items for new items of equal size without renegotiation.",
+      "**Early termination by agreement** — buyer may end early with a modest fee when the remaining value is low.",
+      "**Framework agreements with call-offs** — pre-agreed terms, work ordered in small packages as needs become clear."
+     ],
+     "title": "Agile-friendly contracting options"
+    },
+    {
+     "type": "text",
+     "text": "Negotiation is structured conflict resolution. Project managers negotiate with vendors, functional managers, sponsors and team members constantly — for people, money, dates and scope."
+    },
+    {
+     "type": "compare",
+     "columns": [
+      {
+       "title": "Position (what they say)",
+       "items": [
+        "‘I need two of your testers for the whole of March.’",
+        "‘The price is final.’",
+        "‘We cannot go live before Eid.’"
+       ]
+      },
+      {
+       "title": "Interest (why they say it)",
+       "items": [
+        "Their own release has a regulatory deadline mid-March",
+        "The vendor needs predictable cash flow this quarter",
+        "Branch staff will be on leave; nobody to support users"
+       ]
+      }
+     ],
+     "title": "Positions vs interests"
+    },
+    {
+     "type": "framework",
+     "items": [
+      {
+       "label": "INT",
+       "title": "Focus on interests",
+       "text": "Ask ‘why does that matter to you?’ until you reach the underlying need."
+      },
+      {
+       "label": "OPT",
+       "title": "Invent options",
+       "text": "Expand the pie: phased delivery, different payment terms, shared resources, scope swaps."
+      },
+      {
+       "label": "CRI",
+       "title": "Use objective criteria",
+       "text": "Market rates, benchmarks, contract terms, past data — so neither side has to back down to the other’s will."
+      },
+      {
+       "label": "BAT",
+       "title": "Know your BATNA",
+       "text": "Your Best Alternative To a Negotiated Agreement — what you will do if no deal is reached. A strong BATNA gives you the confidence to walk away from a bad deal."
+      },
+      {
+       "label": "ZOPA",
+       "title": "Find the ZOPA",
+       "text": "The zone of possible agreement lies between each side’s walk-away point. No overlap, no deal — look for new options."
+      }
+     ],
+     "title": "Principled negotiation toolkit"
+    },
+    {
+     "type": "callout",
+     "kind": "pro",
+     "title": "Plan the negotiation before you meet",
+     "text": "Write down your **interests**, your **BATNA**, your **walk-away point** and the concessions you can trade, then estimate the same for the other side. The overlap between the two walk-away points is the **zone of possible agreement**. Agree internally who may make which concessions, so the supplier cannot play your team members against each other."
+    },
+    {
+     "type": "steps",
+     "title": "Managing suppliers and contracts",
+     "items": [
+      {
+       "title": "Kick off together",
+       "text": "Walk through the statement of work, acceptance criteria, reporting and the change process with the supplier's team."
+      },
+      {
+       "title": "Design the solution jointly",
+       "text": "Where the supplier brings expertise, shape the delivery solution together while keeping ownership of requirements."
+      },
+      {
+       "title": "Monitor performance",
+       "text": "Track delivery, quality and service levels against agreed measures; review them regularly."
+      },
+      {
+       "title": "Control changes",
+       "text": "Route every scope change through the contract's change clause, in writing."
+      },
+      {
+       "title": "Pay against evidence",
+       "text": "Link payments to accepted milestones or increments, not to effort reported."
+      },
+      {
+       "title": "Verify objectives",
+       "text": "Before closure, confirm the agreement's objectives were met and record lessons."
+      }
+     ]
+    },
+    {
+     "type": "template",
+     "title": "Vendor performance scorecard",
+     "purpose": "Review each key supplier monthly or per release using agreed, objective measures.",
+     "columns": [
+      "Criterion",
+      "Measure",
+      "Target",
+      "Actual",
+      "Rating (1–5)",
+      "Action"
+     ],
+     "example": [
+      [
+       "On-time delivery",
+       "Milestones met on agreed date",
+       "90%",
+       "75%",
+       "2",
+       "Joint recovery plan; review weekly until two milestones are met on time"
+      ]
+     ],
+     "rows": 6
+    },
+    {
+     "type": "scenario",
+     "title": "The vendor's change request",
+     "situation": "Your firm-fixed-price contract with a software vendor covers a hospital billing system. Users now want a new insurance-claim interface not in the statement of work. The vendor says it will cost extra. The finance manager insists the vendor should absorb it because 'the price is fixed'. What should you do?",
+     "options": [
+      {
+       "text": "Agree with the finance manager and tell the vendor to deliver it at no cost.",
+       "feedback": "Weak. A fixed price covers the agreed scope only; demanding free extra work damages the relationship and is likely unenforceable.",
+       "best": false
+      },
+      {
+       "text": "Check the SOW to confirm the interface is new scope, then process it through the contract's change procedure — impact, price and schedule — for an authorised decision.",
+       "feedback": "Best. The contract and SOW define the baseline; genuine new scope is handled through the agreed change mechanism.",
+       "best": true
+      },
+      {
+       "text": "Ask the vendor's developers informally to add it without telling their manager.",
+       "feedback": "Unethical and risky — it bypasses the contract and the vendor's management.",
+       "best": false
+      },
+      {
+       "text": "Cancel the contract and find a new vendor.",
+       "feedback": "Weak. Termination is costly and unjustified for a normal change request.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Firm fixed price contract",
+       "def": "A contract in which the seller delivers defined scope for an agreed price and carries most of the cost risk."
+      },
+      {
+       "term": "Time and materials contract",
+       "def": "A contract that pays agreed rates for time and materials used, with most cost risk on the buyer."
+      },
+      {
+       "term": "BATNA",
+       "def": "Best Alternative To a Negotiated Agreement: the course of action a party will take if negotiations fail."
+      },
+      {
+       "term": "Cost-reimbursable contract",
+       "def": "A contract that pays the seller's allowable costs plus a fee, leaving most cost risk with the buyer."
+      },
+      {
+       "term": "Statement of work (SOW)",
+       "def": "A description of what a supplier must deliver: scope, deliverables, standards, acceptance criteria and timeline."
+      },
+      {
+       "term": "Make-or-buy analysis",
+       "def": "Comparing doing work in-house with buying it, on cost, capability, risk and control."
+      },
+      {
+       "term": "Service level agreement (SLA)",
+       "def": "An agreement defining the measurable level of service a supplier must provide."
+      },
+      {
+       "term": "Zone of possible agreement (ZOPA)",
+       "def": "The range between the two parties' walk-away points in which a deal is possible."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "Under which contract type does the buyer carry the most cost risk?",
+       "options": [
+        "Firm fixed price",
+        "Fixed price incentive fee",
+        "Fixed price with economic price adjustment",
+        "Cost plus fixed fee"
+       ],
+       "answer": 3,
+       "explain": "In cost-reimbursable contracts the buyer pays actual costs, so overruns fall mainly on the buyer."
+      },
+      {
+       "q": "Which document defines what a supplier must deliver?",
+       "options": [
+        "Risk management plan",
+        "Sprint backlog",
+        "Statement of work",
+        "Benefits register"
+       ],
+       "answer": 2,
+       "explain": "The statement of work describes scope, deliverables, standards and acceptance criteria for the supplier."
+      },
+      {
+       "q": "Which clause lets an agile buyer exchange unstarted backlog items for new ones of equal size?",
+       "options": [
+        "Scope-swap clause",
+        "Force majeure",
+        "Liquidated damages",
+        "Retention clause"
+       ],
+       "answer": 0,
+       "explain": "A scope-swap clause keeps price and timeline while allowing priorities to change."
+      },
+      {
+       "q": "A vendor’s BATNA becomes weaker. What is the likely effect?",
+       "options": [
+        "The vendor gains more negotiating power",
+        "The vendor loses negotiating power",
+        "BATNA has no effect",
+        "The contract becomes void"
        ],
        "answer": 1,
-       "explain": "A TCPI below 1.0 means the remaining work can be done slightly less efficiently than planned and still finish on BAC."
+       "explain": "A weaker alternative makes walking away more costly, reducing leverage."
+      },
+      {
+       "q": "‘We need the server room by Friday’ is best described as…",
+       "options": [
+        "an interest",
+        "a BATNA",
+        "an objective criterion",
+        "a position"
+       ],
+       "answer": 3,
+       "explain": "It is a stated demand. The interest is the reason behind it."
+      },
+      {
+       "q": "A cloud supplier has missed three of four milestones, but its account manager reports that the team is 'working hard'. What should the project manager do FIRST?",
+       "options": [
+        "Terminate the contract for poor performance",
+        "Review performance against the agreed measures with the supplier and agree a recovery plan",
+        "Accept the explanation, since effort is high",
+        "Withhold all payments until the end of the project"
+       ],
+       "answer": 1,
+       "explain": "Supplier management relies on objective measures. Reviewing them together and agreeing a recovery plan comes before contractual remedies."
       }
      ]
     }
    ]
   },
   {
-   "id": "m5-l5",
-   "title": "Agile Metrics, Dashboards & Honest Forecasting",
-   "subtitle": "Show progress so people can act on it — without watermelons or vanity charts.",
+   "id": "m6-l2",
+   "title": "Quality, Compliance & the Cost of Quality",
+   "subtitle": "Plan quality in, meet regulatory standards, manage the cost of quality and sustainability, and keep reviewing",
    "minutes": 30,
    "objectives": [
-    "Read burndown, burnup, velocity and flow metrics and avoid common misuse.",
-    "Design a status dashboard with defined RAG criteria and decision-oriented content.",
-    "Track OKRs and communicate forecasts as ranges with confidence."
+    "Gather quality requirements, including regulatory and sustainability standards",
+    "Distinguish quality planning, assurance and control",
+    "Classify costs of quality and argue for prevention",
+    "Use quality tools and ongoing reviews to improve deliverables"
    ],
    "blocks": [
     {
      "type": "text",
-     "text": "Agile teams rarely calculate EVM, but they still need to see whether they are on track. Their metrics are lighter, more frequent and more visual — and just as easy to misuse. (Scrum and Kanban mechanics were covered in **Deliver**; here we focus on steering with the data they produce.)"
+     "text": "Quality means the result **meets its requirements and is fit for use**. It is not the same as luxury. A low-cost budget phone can be high quality; an expensive one that crashes is not. Modern quality management prevents problems early instead of inspecting them out at the end."
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "text": "**Grade** is a category for products with the same use but different features (basic vs premium hotel room). **Quality** is how well the result meets its requirements. Low grade may be acceptable; low quality never is.",
+     "title": "Quality vs grade"
+    },
+    {
+     "type": "compare",
+     "title": "Three parts of quality management",
+     "columns": [
+      {
+       "title": "Plan quality",
+       "items": [
+        "Identify standards and requirements",
+        "Set measurable quality metrics",
+        "Define acceptance criteria and definition of done",
+        "Choose reviews, tests and tools"
+       ]
+      },
+      {
+       "title": "Manage quality (assurance)",
+       "items": [
+        "Is the process sound?",
+        "Audits, process reviews, retrospectives",
+        "Design for quality, checklists, training",
+        "Improve the way work is done"
+       ]
+      },
+      {
+       "title": "Control quality",
+       "items": [
+        "Is the product right?",
+        "Inspection, testing, measurement",
+        "Compare results with criteria",
+        "Verify deliverables before acceptance"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "warning",
+     "title": "Regulatory standards are quality requirements",
+     "text": "Many deliverables must meet external rules: building and fire codes, medical-device and drug standards, food safety, data-protection law, accessibility rules for public websites. Gather these with the other quality requirements at the start, plan how **evidence** of compliance will be produced, such as test reports, certificates and inspection records, and include them in acceptance criteria."
+    },
+    {
+     "type": "formula",
+     "title": "Cost of quality (CoQ)",
+     "items": [
+      {
+       "name": "Cost of quality",
+       "expr": "CoQ = Cost of conformance + Cost of non-conformance",
+       "meaning": "Total cost spent to achieve quality plus the cost of failing to achieve it."
+      },
+      {
+       "name": "Cost of conformance",
+       "expr": "Prevention + Appraisal",
+       "meaning": "Money spent to avoid failures (training, design reviews) and to find them (testing, inspection)."
+      },
+      {
+       "name": "Cost of non-conformance",
+       "expr": "Internal failure + External failure",
+       "meaning": "Failures found before delivery (rework, scrap) and after delivery (warranty, recalls, lost customers)."
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "title": "Cost of quality — examples",
+     "head": [
+      "Category",
+      "Software project",
+      "Construction / factory"
+     ],
+     "rows": [
+      [
+       "Prevention",
+       "Coding standards, pair programming, training",
+       "Method statements, worker training, supplier qualification"
+      ],
+      [
+       "Appraisal",
+       "Code reviews, automated tests, security scans",
+       "Material testing, inspections, quality audits"
+      ],
+      [
+       "Internal failure",
+       "Bugs fixed before release, rework",
+       "Rework of faulty concrete, rejected garments, scrap"
+      ],
+      [
+       "External failure",
+       "Production outages, data breaches, refunds",
+       "Buyer claims, product recalls, lost orders, reputation damage"
+      ]
+     ]
+    },
+    {
+     "type": "keypoints",
+     "title": "Quality and sustainability together",
+     "items": [
+      "Rework and scrap are both a failure cost and an environmental cost: every defect wastes material and energy",
+      "Specify durability, repairability and energy efficiency as measurable quality requirements",
+      "Include supplier standards on materials, labour and waste in quality audits",
+      "Measure whole-life cost and impact, not only the cost to build"
+     ]
+    },
+    {
+     "type": "table",
+     "title": "Core quality tools",
+     "head": [
+      "Tool",
+      "What it shows",
+      "Use when"
+     ],
+     "rows": [
+      [
+       "Cause-and-effect (fishbone) diagram",
+       "Possible causes grouped by category",
+       "Exploring the root causes of a problem"
+      ],
+      [
+       "Pareto chart",
+       "Causes ranked by frequency or impact",
+       "Choosing which few causes to fix first"
+      ],
+      [
+       "Control chart",
+       "Process results over time against control limits",
+       "Checking whether a process is stable"
+      ],
+      [
+       "Check sheet",
+       "Tally of occurrences by type",
+       "Collecting defect data on the floor"
+      ],
+      [
+       "Histogram",
+       "Distribution of a measurement",
+       "Seeing the spread and shape of results"
+      ],
+      [
+       "Scatter diagram",
+       "Relationship between two variables",
+       "Testing whether one factor drives another"
+      ],
+      [
+       "Flowchart",
+       "Steps and decision points in a process",
+       "Finding where errors or delays enter"
+      ]
+     ]
+    },
+    {
+     "type": "keypoints",
+     "items": [
+      "A visible **definition of done** applied to every increment",
+      "Acceptance criteria agreed before work starts",
+      "Test automation and continuous integration on every change",
+      "Code review or pairing as standard",
+      "Retrospectives that tackle root causes, not just symptoms",
+      "Small batches, so problems surface early"
+     ],
+     "title": "Agile quality practices"
+    },
+    {
+     "type": "checklist",
+     "title": "Release quality checklist",
+     "items": [
+      "All acceptance criteria demonstrated to the product owner or customer",
+      "Definition of done met for every item in the release",
+      "Automated regression tests passing",
+      "Security and data-protection checks completed",
+      "Performance tested under expected peak load",
+      "Accessibility checked for key user journeys",
+      "Known defects reviewed and accepted or fixed",
+      "User guides, release notes and training materials updated",
+      "Rollback plan prepared and tested",
+      "Support and operations teams briefed and ready"
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "pro",
+     "title": "Review quality continuously",
+     "text": "Quality is not a gate at the end. Hold short quality reviews at an agreed rhythm, such as each sprint or each month, looking at defect trends, audit findings and customer complaints. Pick one improvement each time, try it, check the result and keep it if it works. Module 8 builds this into a full continuous-improvement habit."
+    },
+    {
+     "type": "scenario",
+     "title": "Skip the tests?",
+     "situation": "With two days left in a sprint, developers suggest skipping the regression test suite so they can finish all planned items. The definition of done requires regression tests to pass. What should you encourage?",
+     "options": [
+      {
+       "text": "Skip the tests this once and catch up next sprint.",
+       "feedback": "Weak. It creates hidden technical debt and makes the increment's quality unknown.",
+       "best": false
+      },
+      {
+       "text": "Keep the definition of done; finish fewer items fully, and discuss with the product owner which items to move back to the backlog.",
+       "feedback": "Best. Quality standards are not negotiable within the sprint — scope is. Fewer done items beat more half-done ones.",
+       "best": true
+      },
+      {
+       "text": "Mark the items done but add a note that tests are pending.",
+       "feedback": "Weak. It misrepresents progress; 'done except testing' is not done.",
+       "best": false
+      },
+      {
+       "text": "Extend the sprint by two days.",
+       "feedback": "Weak. Sprint length is fixed; extending it erodes cadence and predictability.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Cost of quality",
+       "def": "The total cost of conformance (prevention and appraisal) and non-conformance (internal and external failure)."
+      },
+      {
+       "term": "Grade",
+       "def": "A category for products with the same use but different features; low grade can be acceptable, low quality cannot."
+      },
+      {
+       "term": "Quality assurance",
+       "def": "Activities that check whether the processes used to create deliverables are effective."
+      },
+      {
+       "term": "Quality control",
+       "def": "Inspecting and testing deliverables to confirm they meet requirements."
+      },
+      {
+       "term": "Prevention cost",
+       "def": "Money spent to stop defects happening, such as training, standards and design reviews."
+      },
+      {
+       "term": "Failure cost",
+       "def": "The cost of defects found before delivery (internal) or after delivery (external)."
+      },
+      {
+       "term": "Pareto chart",
+       "def": "A bar chart that ranks causes by frequency or impact to show the few causes behind most problems."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "Which is an example of an appraisal cost?",
+       "options": [
+        "Staff training in quality methods",
+        "Warranty claims from customers",
+        "Customer refunds after complaints",
+        "Product testing and inspection"
+       ],
+       "answer": 3,
+       "explain": "Appraisal costs are spent finding defects: testing, inspections and audits."
+      },
+      {
+       "q": "A buyer rejects a shipment because of defects found at their warehouse. This is:",
+       "options": [
+        "Prevention and planning cost",
+        "External failure cost",
+        "Appraisal cost",
+        "Internal failure cost"
+       ],
+       "answer": 1,
+       "explain": "Defects found after delivery to the customer are external failure costs — usually the most expensive."
+      },
+      {
+       "q": "Which tool helps choose the few causes responsible for most problems?",
+       "options": [
+        "Pareto chart",
+        "Scatter diagram",
+        "Flowchart",
+        "Histogram"
+       ],
+       "answer": 0,
+       "explain": "A Pareto chart ranks causes so the team focuses on the vital few."
+      },
+      {
+       "q": "Quality assurance mainly focuses on:",
+       "options": [
+        "Inspecting finished deliverables for defects",
+        "Whether the processes used are effective",
+        "Setting the quality budget for the project",
+        "Approving or rejecting change requests"
+       ],
+       "answer": 1,
+       "explain": "Assurance looks at the process; control checks the product."
+      },
+      {
+       "q": "A public health app must meet national accessibility rules. When should these rules be addressed?",
+       "options": [
+        "After launch, when users report problems",
+        "Only if the regulator audits the app",
+        "As quality requirements from the start, with planned evidence and acceptance criteria",
+        "During final testing, by a specialist consultant"
+       ],
+       "answer": 2,
+       "explain": "Regulatory standards are quality requirements. Gathering them early and planning evidence avoids costly late rework."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m6-l3",
+   "title": "Delivery Cadence & Flow: Scrum, Kanban and Flow Metrics",
+   "subtitle": "Run agile delivery well and read the flow data it produces to assess progress",
+   "minutes": 32,
+   "objectives": [
+    "Describe the Scrum accountabilities, events and artifacts",
+    "Apply Kanban practices and set WIP limits",
+    "Calculate and interpret lead time, cycle time, throughput and Little's Law",
+    "Read a cumulative flow diagram to assess progress"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Scrum is a lightweight framework for teams solving complex problems. It rests on **empiricism** — knowledge comes from experience, so you make work **transparent**, **inspect** it often and **adapt** quickly — and on lean thinking: reduce waste and focus on essentials. A Scrum Team is small, typically ten people or fewer, cross-functional and self-managing."
+    },
+    {
+     "type": "framework",
+     "title": "Three accountabilities",
+     "items": [
+      {
+       "label": "PO",
+       "title": "Product Owner",
+       "text": "Maximises the value of the product. Owns and orders the product backlog, sets the product goal and is one person, not a committee — though they may represent many stakeholders."
+      },
+      {
+       "label": "SM",
+       "title": "Scrum Master",
+       "text": "Accountable for the team's effectiveness. Coaches the team and organisation in Scrum, removes impediments and helps everyone understand empirical working."
+      },
+      {
+       "label": "DEV",
+       "title": "Developers",
+       "text": "Everyone who creates the increment — engineers, designers, testers, analysts. They plan the sprint, hold each other accountable and meet the definition of done."
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "title": "Five events (maximum timeboxes for a one-month sprint; shorter sprints usually need less)",
+     "head": [
+      "Event",
+      "Purpose",
+      "Timebox"
+     ],
+     "rows": [
+      [
+       "The Sprint",
+       "Container for all other events; a fixed period in which an increment is created",
+       "One month or less"
+      ],
+      [
+       "Sprint Planning",
+       "Decide why the sprint is valuable (sprint goal), what can be done and how",
+       "Up to 8 hours"
+      ],
+      [
+       "Daily Scrum",
+       "Developers inspect progress toward the sprint goal and adapt the plan for the next day",
+       "15 minutes"
+      ],
+      [
+       "Sprint Review",
+       "Inspect the outcome with stakeholders and adapt the product backlog",
+       "Up to 4 hours"
+      ],
+      [
+       "Sprint Retrospective",
+       "Inspect how the team worked and plan improvements in quality and effectiveness",
+       "Up to 3 hours"
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "title": "Artifacts and their commitments",
+     "head": [
+      "Artifact",
+      "What it is",
+      "Commitment that gives it focus"
+     ],
+     "rows": [
+      [
+       "Product Backlog",
+       "Ordered, emerging list of what is needed to improve the product",
+       "Product Goal — the long-term objective for the product"
+      ],
+      [
+       "Sprint Backlog",
+       "Sprint goal + selected items + the plan to deliver them",
+       "Sprint Goal — the single objective for the sprint"
+      ],
+      [
+       "Increment",
+       "A usable step toward the product goal that meets the definition of done",
+       "Definition of Done — the quality standard for the increment"
+      ]
+     ]
+    },
+    {
+     "type": "flow",
+     "title": "One sprint at a glance",
+     "items": [
+      {
+       "label": "Sprint Planning",
+       "text": "Goal and plan"
+      },
+      {
+       "label": "Daily Scrums",
+       "text": "Daily inspection and adaptation"
+      },
+      {
+       "label": "Building the increment",
+       "text": "Refinement continues alongside"
+      },
+      {
+       "label": "Sprint Review",
+       "text": "Stakeholders inspect results"
+      },
+      {
+       "label": "Retrospective",
+       "text": "Team improves how it works"
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "pro",
+     "text": "Scrum does not define a project manager. In practice, PMs on Scrum projects often coordinate across several teams, manage budgets, contracts, risks and external stakeholders, and protect the team's ability to work. Do not assign tasks to developers or run their Daily Scrum.",
+     "title": "Where does the project manager fit?"
+    },
+    {
+     "type": "scenario",
+     "title": "An urgent request mid-sprint",
+     "situation": "On day 4 of a two-week sprint, the head of sales asks a developer directly to add a promotional banner for a campaign starting next week. The developer asks you what to do. What is BEST?",
+     "options": [
+      {
+       "text": "Tell the developer to add it quickly; it is small.",
+       "feedback": "Weak. Bypassing the product owner undermines ordering and can quietly endanger the sprint goal.",
+       "best": false
+      },
+      {
+       "text": "Direct the request to the product owner, who decides whether it is more valuable than current work and, with the developers, whether it fits without endangering the sprint goal.",
+       "feedback": "Best. The product owner owns priorities; the developers own the sprint plan. Together they can adjust scope while protecting the goal.",
+       "best": true
+      },
+      {
+       "text": "Cancel the sprint and start a new one including the banner.",
+       "feedback": "Weak. Only the product owner can cancel a sprint, and only when its goal becomes obsolete — a small banner does not justify it.",
+       "best": false
+      },
+      {
+       "text": "Tell the head of sales to wait until the next sprint without discussing it.",
+       "feedback": "Not ideal. It may be the right outcome, but the decision belongs to the product owner, who may find it is genuinely urgent.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "framework",
+     "title": "Six core Kanban practices",
+     "items": [
+      {
+       "label": "K1",
+       "title": "Visualise the work",
+       "text": "Show every work item and workflow stage on a board so everyone sees the same picture."
+      },
+      {
+       "label": "K2",
+       "title": "Limit work in progress",
+       "text": "Cap how many items can be in each stage at once."
+      },
+      {
+       "label": "K3",
+       "title": "Manage flow",
+       "text": "Watch how work moves, spot blockages and act to keep items moving."
+      },
+      {
+       "label": "K4",
+       "title": "Make policies explicit",
+       "text": "Write down the rules: what 'ready for test' means, how urgent items are handled."
+      },
+      {
+       "label": "K5",
+       "title": "Implement feedback loops",
+       "text": "Regular replenishment, daily stand-ups at the board, delivery and service reviews."
+      },
+      {
+       "label": "K6",
+       "title": "Improve collaboratively",
+       "text": "Use data and small experiments to evolve the process together."
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "text": "A **work-in-progress limit** caps the number of items allowed in a stage. When a column is full, people **stop starting and start finishing** — they help move existing items forward instead of pulling new ones. Fewer items in progress means less task-switching, faster feedback and shorter waits.",
+     "title": "WIP limit"
+    },
+    {
+     "type": "table",
+     "title": "Flow metrics",
+     "head": [
+      "Metric",
+      "Definition",
+      "Use it to…"
+     ],
+     "rows": [
+      [
+       "WIP",
+       "Number of items started but not finished",
+       "Keep load manageable; predict cycle time"
+      ],
+      [
+       "Throughput",
+       "Number of items finished per unit of time",
+       "Forecast how much can be delivered"
+      ],
+      [
+       "Cycle time",
+       "Elapsed time from when work starts on an item to when it is finished",
+       "Measure team responsiveness and predictability"
+      ],
+      [
+       "Lead time",
+       "Elapsed time from when the request is made (or committed to) until it is delivered",
+       "Measure what the customer experiences"
+      ],
+      [
+       "Work item age",
+       "Time elapsed since an in-progress item was started",
+       "Spot items getting stuck before they become late"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "title": "Flow formulas",
+     "items": [
+      {
+       "name": "Little's Law",
+       "expr": "Average cycle time = Average WIP ÷ Average throughput",
+       "meaning": "Holds for a reasonably stable system. Example: 12 items in progress, 6 finished per week → about 2 weeks average cycle time."
+      },
+      {
+       "name": "Reduce WIP to speed up",
+       "expr": "Halve WIP at the same throughput → halve cycle time",
+       "meaning": "The fastest lever most teams have is starting less work."
+      },
+      {
+       "name": "Flow efficiency",
+       "expr": "Active work time ÷ Total cycle time × 100%",
+       "meaning": "Often surprisingly low in knowledge work — items spend much of their time waiting, not being worked on."
+      }
+     ]
+    },
+    {
+     "type": "keypoints",
+     "items": [
+      "**Vertical** distance across the in-progress bands on a date = WIP at that moment.",
+      "**Horizontal** distance from where an item enters progress to where it reaches Done ≈ approximate average cycle time.",
+      "A band that **widens** = work is piling up in that stage — a bottleneck downstream of it or slow work in it.",
+      "A **flat** Done line = nothing is being delivered — investigate immediately.",
+      "Bands rising **smoothly and in parallel** = stable, predictable flow.",
+      "A sudden drop in the top (backlog) line = scope removed; a jump = scope added."
+     ],
+     "title": "How to read a CFD"
+    },
+    {
+     "type": "scenario",
+     "title": "A full test column",
+     "situation": "Your board shows Test at its WIP limit of 3, with two items waiting in 'Develop – done'. Two developers say they have nothing to do because they cannot pull new work. What should the team do?",
+     "options": [
+      {
+       "text": "Raise the Test WIP limit to 6 so developers can keep moving work forward.",
+       "feedback": "Weak. Raising the limit hides the bottleneck and increases waiting and cycle time.",
+       "best": false
+      },
+      {
+       "text": "Have the idle developers help with testing — pairing with testers, automating checks or fixing issues found — to finish items in Test.",
+       "feedback": "Best. 'Stop starting, start finishing': swarming on the bottleneck improves flow and builds shared skills.",
+       "best": true
+      },
+      {
+       "text": "Let the developers start new items anyway and park them.",
+       "feedback": "Weak. Starting more work increases WIP and slows everything down.",
+       "best": false
+      },
+      {
+       "text": "Send the developers home early.",
+       "feedback": "Weak. It wastes capacity that could relieve the bottleneck.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Product Owner",
+       "def": "The accountable person in Scrum who maximises product value and owns the ordering of the product backlog."
+      },
+      {
+       "term": "Scrum Master",
+       "def": "The accountable person in Scrum for team effectiveness, coaching the team and organisation and removing impediments."
+      },
+      {
+       "term": "Increment",
+       "def": "A usable step toward the product goal that meets the definition of done."
+      },
+      {
+       "term": "WIP limit",
+       "def": "A cap on the number of work items allowed in a workflow stage at one time."
+      },
+      {
+       "term": "Cycle time",
+       "def": "The elapsed time from when work starts on an item until it is finished."
+      },
+      {
+       "term": "Lead time",
+       "def": "The elapsed time from when an item is requested or committed to until it is delivered to the customer."
+      },
+      {
+       "term": "Throughput",
+       "def": "The number of work items finished per unit of time."
+      },
+      {
+       "term": "Cumulative flow diagram",
+       "def": "A stacked area chart showing the number of items in each workflow stage over time."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "Who is accountable for ordering the product backlog?",
+       "options": [
+        "Product Owner",
+        "Scrum Master",
+        "Developers",
+        "Project sponsor"
+       ],
+       "answer": 0,
+       "explain": "The product owner orders the backlog to maximise value."
+      },
+      {
+       "q": "The commitment for the Increment is the:",
+       "options": [
+        "Sprint Goal",
+        "Product Goal",
+        "Definition of Done",
+        "Acceptance criteria"
+       ],
+       "answer": 2,
+       "explain": "Each artifact has a commitment; for the increment it is the definition of done."
+      },
+      {
+       "q": "What is the maximum timebox for a Daily Scrum?",
+       "options": [
+        "5 minutes",
+        "15 minutes",
+        "30 minutes",
+        "1 hour"
+       ],
+       "answer": 1,
+       "explain": "The Daily Scrum is timeboxed to 15 minutes, regardless of sprint length."
+      },
+      {
+       "q": "Average WIP is 20 items and average throughput is 10 items per week. By Little's Law, average cycle time is about:",
+       "options": [
+        "0.5 weeks",
+        "2 weeks",
+        "10 weeks",
+        "200 weeks"
+       ],
+       "answer": 1,
+       "explain": "20 ÷ 10 = 2 weeks."
+      },
+      {
+       "q": "What is the main purpose of a WIP limit?",
+       "options": [
+        "To keep everyone busy",
+        "To measure velocity",
+        "To prevent stakeholders from adding work",
+        "To reduce multitasking and improve flow"
+       ],
+       "answer": 3,
+       "explain": "Limiting WIP reduces task switching and queues, which shortens cycle time."
+      },
+      {
+       "q": "Which metric shows how long an unfinished item has been in progress?",
+       "options": [
+        "Throughput",
+        "Work item age",
+        "Sprint velocity",
+        "Lead time"
+       ],
+       "answer": 1,
+       "explain": "Work item age tracks items still in progress, so you can act before they become late."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m6-l4",
+   "title": "Evaluating Project Status: Metrics, Dashboards & Artifacts",
+   "subtitle": "Measure progress honestly, report it so people can act, and keep project artifacts current and accessible",
+   "minutes": 30,
+   "objectives": [
+    "Read burndown, burnup and velocity charts and avoid common misuse",
+    "Design a status dashboard with agreed RAG criteria",
+    "Forecast with ranges and confidence levels",
+    "Tailor, maintain and reconcile project artifacts and metrics"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Agile teams rarely calculate EVM, but they still need to see whether they are on track. Their metrics are lighter, more frequent and more visual — and just as easy to misuse. (Scrum and Kanban mechanics were covered in lesson 6.3; here we focus on judging status with the data they produce, alongside the earned value measures from module 5.)"
     },
     {
      "type": "compare",
@@ -1231,12 +2977,6 @@ TRACK.modules.push({
       }
      ],
      "title": "Velocity: useful, fragile"
-    },
-    {
-     "type": "callout",
-     "kind": "insight",
-     "text": "…it stops being a good measure. This idea, usually attributed to economist Charles Goodhart, explains why velocity targets, ‘lines of code’ goals and ‘tickets closed’ leaderboards backfire. Measure to learn, not to judge.",
-     "title": "When a measure becomes a target…"
     },
     {
      "type": "text",
@@ -1310,27 +3050,6 @@ TRACK.modules.push({
      "title": "What a good one-page dashboard shows"
     },
     {
-     "type": "formula",
-     "items": [
-      {
-       "name": "Objective",
-       "expr": "Qualitative, inspiring direction",
-       "meaning": "e.g. ‘Make clinic booking effortless for patients in Rajshahi’."
-      },
-      {
-       "name": "Key result",
-       "expr": "Measurable outcome with a baseline and target",
-       "meaning": "e.g. ‘Online bookings rise from 12% to 45% by December’."
-      },
-      {
-       "name": "Progress score",
-       "expr": "(current − baseline) ÷ (target − baseline)",
-       "meaning": "From 12% to 45%, a current value of 34% scores (34 − 12) ÷ 33 ≈ 0.67. For ambitious ‘stretch’ OKRs many organisations treat about 0.6–0.7 as a healthy result."
-      }
-     ],
-     "title": "OKRs on a project"
-    },
-    {
      "type": "steps",
      "items": [
       {
@@ -1384,18 +3103,56 @@ TRACK.modules.push({
      "title": "The demand for one date"
     },
     {
-     "type": "checklist",
-     "title": "Dashboard health check",
+     "type": "callout",
+     "kind": "insight",
+     "title": "Reconcile before you report",
+     "text": "Metrics drawn from different sources often disagree: timesheets say one thing, the finance ledger another, the board a third. Reconcile them before reporting, explain any difference that remains, and fix the cause. A sponsor who finds two versions of the truth stops trusting both."
+    },
+    {
+     "type": "table",
+     "title": "Tailoring project artifacts",
+     "head": [
+      "Need",
+      "Predictive artifact",
+      "Agile artifact",
+      "Hybrid choice"
+     ],
+     "rows": [
+      [
+       "Show progress",
+       "Schedule and earned value report",
+       "Burnup and release forecast",
+       "Milestone roadmap plus burnups"
+      ],
+      [
+       "Track scope",
+       "Scope baseline and change log",
+       "Product backlog",
+       "Baseline for fixed parts, backlog for evolving parts"
+      ],
+      [
+       "Record decisions",
+       "Decision register and minutes",
+       "Decision log in the team channel",
+       "One shared decision log"
+      ],
+      [
+       "Track risks and issues",
+       "Risk register and issue log",
+       "Risks as backlog items; impediment board",
+       "One register reviewed at both cadences"
+      ]
+     ]
+    },
+    {
+     "type": "keypoints",
+     "title": "Managing artifacts well",
      "items": [
-      "RAG criteria are written down and agreed with the sponsor",
-      "The first thing a reader sees is overall status and decisions needed",
-      "Forecasts are shown as ranges with confidence levels",
-      "Trends are shown, not just this week’s snapshot",
-      "Top risks and issues have named owners",
-      "At least one outcome or benefit measure appears, not only activity",
-      "Data refreshes automatically from the work-management tool where possible",
-      "No metric is used to compare or rank individual team members",
-      "Someone has tested the dashboard with a real reader in under one minute"
+      "Keep one source of truth for each artifact, with version history",
+      "Name an owner and a review date for each key artifact",
+      "Make artifacts accessible: findable, readable on mobile, usable with screen readers and in the languages people work in",
+      "Control access to confidential material without hiding what people need",
+      "Retire artifacts that nobody uses, and ask regularly whether the set still helps the project"
      ]
     },
     {
@@ -1408,6 +3165,26 @@ TRACK.modules.push({
       {
        "term": "Watermelon reporting",
        "def": "Status that appears green externally while the underlying reality is amber or red."
+      },
+      {
+       "term": "Burndown chart",
+       "def": "A chart of work remaining against time, used to see whether committed work will finish."
+      },
+      {
+       "term": "RAG status",
+       "def": "A red, amber or green rating of status, which is useful only when its criteria are defined objectively in advance."
+      },
+      {
+       "term": "Probabilistic forecast",
+       "def": "A forecast stated as a date or amount with a confidence level, such as '85% likely by 2 June'."
+      },
+      {
+       "term": "Project artifact",
+       "def": "Any document, board, log, chart or model the project creates or maintains to plan, track or record its work."
+      },
+      {
+       "term": "Reconciliation",
+       "def": "Comparing figures from different sources, explaining differences and correcting the cause."
       }
      ]
     },
@@ -1437,1222 +3214,37 @@ TRACK.modules.push({
        "explain": "Velocity is a team’s internal planning aid, not a cross-team productivity measure."
       },
       {
-       "q": "A key result moves from a baseline of 20 to a current 50 against a target of 80. What is its progress score?",
-       "options": [
-        "0.38",
-        "0.50",
-        "0.63",
-        "0.75"
-       ],
-       "answer": 1,
-       "explain": "(50 − 20) ÷ (80 − 20) = 30 ÷ 60 = 0.50."
-      },
-      {
        "q": "What is the MOST effective way to prevent watermelon reporting?",
        "options": [
-        "Use objective RAG criteria and reward early bad news",
+        "Let each PM define green in a way that suits their project",
         "Ban the colour red so teams focus on solutions, not blame",
         "Report less often so problems have time to be resolved",
-        "Let each PM define green in a way that suits their project"
+        "Use objective RAG criteria and reward early bad news"
        ],
-       "answer": 0,
+       "answer": 3,
        "explain": "Objective thresholds plus psychological safety around bad news keep status honest."
       },
       {
        "q": "A forecast states ‘85% likely by 2 June’. This is an example of…",
        "options": [
-        "a probabilistic forecast",
-        "a delivery guarantee",
         "a schedule baseline",
+        "a delivery guarantee",
+        "a probabilistic forecast",
         "a velocity target for the team"
        ],
-       "answer": 0,
+       "answer": 2,
        "explain": "It expresses a date with a confidence level based on data."
-      }
-     ]
-    }
-   ]
-  }
- ]
-});
-TRACK.modules.push({
- "id": "m6",
- "order": 6,
- "code": "Lead",
- "title": "Lead — People, Teams & Communication",
- "subtitle": "Grow teams that trust each other, resolve conflict well and communicate with purpose.",
- "outcomes": [
-  "Apply servant and situational leadership and support teams through development stages.",
-  "Motivate people using intrinsic drivers and lead with emotional intelligence.",
-  "Resolve conflict with the right mode and negotiate on interests using BATNA.",
-  "Clarify decision rights with RACI/DACI and plan communication that is read and acted upon.",
-  "Lead remote, hybrid and cross-cultural teams and coach using GROW and SBI."
- ],
- "lessons": [
-  {
-   "id": "m6-l1",
-   "title": "Leadership Styles & Team Development",
-   "subtitle": "Serve the team, adapt your style, and build the safety that high performance needs.",
-   "minutes": 30,
-   "objectives": [
-    "Explain servant leadership and apply situational leadership to individual team members.",
-    "Recognise Tuckman’s stages and choose leader behaviours for each.",
-    "Describe the traits of high-performing teams and practical ways to build psychological safety."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Plans do not deliver projects; people do. **Lead** — stage 6 of the ZPMP Value Loop — is where a project manager earns the trust that makes every other stage work. In modern practice, the PM is less a boss and more a **multiplier**: someone who makes a group of capable people more effective together than apart."
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "S1",
-       "title": "Remove impediments",
-       "text": "Clear the blockers the team cannot clear themselves — access, approvals, missing information, outside interference."
       },
       {
-       "label": "S2",
-       "title": "Shield focus",
-       "text": "Protect the team from constant interruptions and unprioritised requests; channel demand through the backlog or change process."
-      },
-      {
-       "label": "S3",
-       "title": "Grow people",
-       "text": "Invest in skills, give stretch opportunities and share credit publicly."
-      },
-      {
-       "label": "S4",
-       "title": "Listen first",
-       "text": "Ask before telling. The people closest to the work usually see the problem most clearly."
-      },
-      {
-       "label": "S5",
-       "title": "Hold the purpose",
-       "text": "Keep reminding everyone why the work matters and who benefits from it."
-      }
-     ],
-     "title": "Servant leadership in practice"
-    },
-    {
-     "type": "callout",
-     "kind": "insight",
-     "text": "A servant leader still sets direction, holds standards and makes hard calls. The difference is the motive — the leader’s authority is used for the team’s success and the project’s value, not for personal status.",
-     "title": "Servant does not mean passive"
-    },
-    {
-     "type": "text",
-     "text": "No single style fits every person or moment. **Situational leadership** (associated with Hersey and Blanchard) matches the leader’s mix of direction and support to each person’s competence and commitment on a specific task."
-    },
-    {
-     "type": "table",
-     "head": [
-      "Person’s state on this task",
-      "Leader style",
-      "What it looks like"
-     ],
-     "rows": [
-      [
-       "New and enthusiastic, low skill",
-       "Directing",
-       "Clear instructions, close follow-up, frequent check-ins"
-      ],
-      [
-       "Some skill, confidence dipping",
-       "Coaching",
-       "Still directive, plus explanation, encouragement and two-way talk"
-      ],
-      [
-       "Capable but hesitant or unsure",
-       "Supporting",
-       "Less direction; ask questions, build confidence, share decisions"
-      ],
-      [
-       "Skilled and committed",
-       "Delegating",
-       "Agree outcomes, then step back; be available when asked"
-      ]
-     ],
-     "title": "Situational leadership: match style to readiness"
-    },
-    {
-     "type": "callout",
-     "kind": "example",
-     "text": "Tanvir is a senior back-end developer (delegate API design to him) but has never presented to a steering committee (direct and coach him on that). Style is chosen per **task**, not per person.",
-     "title": "Same person, different styles"
-    },
-    {
-     "type": "flow",
-     "items": [
-      {
-       "label": "Forming",
-       "text": "Polite, unsure; leader provides clarity on goals and roles"
-      },
-      {
-       "label": "Storming",
-       "text": "Friction over ideas and approaches; leader coaches and facilitates conflict"
-      },
-      {
-       "label": "Norming",
-       "text": "Agreements form; leader supports and reinforces working norms"
-      },
-      {
-       "label": "Performing",
-       "text": "Self-managing and productive; leader delegates and removes blockers"
-      },
-      {
-       "label": "Adjourning",
-       "text": "Work ends; leader recognises contributions and supports transitions"
-      }
-     ],
-     "title": "Tuckman’s team development stages"
-    },
-    {
-     "type": "callout",
-     "kind": "pro",
-     "text": "A new member, a reorganisation or a crisis can send a performing team back to storming. Expect it, name it and help the team re-norm — often with a fresh working agreement.",
-     "title": "Stages are not a one-way street"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "PS",
-       "title": "Psychological safety",
-       "text": "People can ask questions, admit mistakes and challenge ideas without fear of humiliation or punishment."
-      },
-      {
-       "label": "CG",
-       "title": "Clear, shared goal",
-       "text": "Everyone can state what success looks like and why it matters."
-      },
-      {
-       "label": "DT",
-       "title": "Dependability",
-       "text": "People do what they say, on time and to standard."
-      },
-      {
-       "label": "RS",
-       "title": "Clear roles & structure",
-       "text": "Who decides what, and how work flows, is understood."
-      },
-      {
-       "label": "CF",
-       "title": "Constructive conflict",
-       "text": "Debate ideas openly, then commit — disagreement is about the work, never the person."
-      },
-      {
-       "label": "SO",
-       "title": "Self-organisation",
-       "text": "The team decides how to do its work within agreed boundaries."
-      }
-     ],
-     "title": "Traits of high-performing teams"
-    },
-    {
-     "type": "steps",
-     "items": [
-      {
-       "title": "Frame work as learning",
-       "text": "Say early: ‘This is new; we will get things wrong and that is how we find the right answer.’"
-      },
-      {
-       "title": "Model fallibility",
-       "text": "Admit your own mistakes and say ‘I might be missing something — what do you see?’"
-      },
-      {
-       "title": "Ask genuine questions",
-       "text": "Invite the quietest voices first; use silent brainstorming."
-      },
-      {
-       "title": "Respond productively",
-       "text": "Thank people who bring bad news; focus on the fix, not the blame."
-      },
-      {
-       "title": "Run blameless reviews",
-       "text": "After incidents, ask what in the system allowed this, not who is at fault."
-      }
-     ],
-     "title": "Five habits that build psychological safety"
-    },
-    {
-     "type": "scenario",
-     "situation": "In stand-ups, a newly joined data engineer never raises blockers. Yesterday you learned she has been stuck for three days waiting for database access. What should the project manager do FIRST?",
-     "options": [
-      {
-       "text": "Remind the whole team at the next stand-up that blockers must be raised immediately.",
-       "feedback": "A public reminder may make her feel singled out and does not address why she stayed silent.",
-       "best": false
-      },
-      {
-       "text": "Report to her line manager that she is not following the process.",
-       "feedback": "Punitive escalation destroys safety and teaches everyone to hide problems.",
-       "best": false
-      },
-      {
-       "text": "Assign her a buddy to monitor her work.",
-       "feedback": "Support can help later, but it skips understanding the cause and fixing the access.",
-       "best": false
-      },
-      {
-       "text": "Fix the access, then speak with her privately to understand what made raising it hard and agree an easy way to flag blockers.",
-       "feedback": "Correct. Remove the impediment, then build safety one-to-one. The goal is to learn what got in the way, not to blame.",
-       "best": true
-      }
-     ],
-     "title": "The quiet expert"
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "Servant leadership",
-       "def": "A leadership approach that focuses on serving the team — removing obstacles, growing people and enabling them to deliver value."
-      },
-      {
-       "term": "Psychological safety",
-       "def": "A shared belief within a team that it is safe to take interpersonal risks such as speaking up, asking questions or admitting mistakes."
-      },
-      {
-       "term": "Tuckman model",
-       "def": "A model of team development through forming, storming, norming, performing and adjourning."
-      }
-     ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "A team member is highly skilled and motivated on a task. Which situational style fits best?",
+       "q": "Field engineers say they cannot open the project's risk register on their phones and rarely see it. What does this show?",
        "options": [
-        "Directing",
-        "Coaching",
-        "Supporting",
-        "Delegating"
-       ],
-       "answer": 3,
-       "explain": "High competence and high commitment call for delegating: agree outcomes and step back."
-      },
-      {
-       "q": "Team members are openly arguing about the technical approach two weeks after kick-off. Which Tuckman stage is this most likely?",
-       "options": [
-        "Forming",
-        "Storming",
-        "Norming",
-        "Adjourning"
+        "The register should be removed because it is not used",
+        "A failure of artifact accessibility that should be fixed",
+        "The engineers do not need to see risks",
+        "The register should be emailed monthly as a large attachment"
        ],
        "answer": 1,
-       "explain": "Friction over ideas and ways of working is typical of storming."
-      },
-      {
-       "q": "Which behaviour MOST directly builds psychological safety?",
-       "options": [
-        "Publicly naming who caused each defect to deter repeats",
-        "Thanking someone who reports a problem early",
-        "Keeping every meeting short and focused",
-        "Using a strict RACI for every decision"
-       ],
-       "answer": 1,
-       "explain": "Rewarding candour signals it is safe to speak up."
-      },
-      {
-       "q": "Which statement about servant leadership is accurate?",
-       "options": [
-        "The leader avoids making decisions for the team",
-        "The leader uses authority to enable the team’s success",
-        "It only works in Scrum teams with a dedicated coach",
-        "It means doing the team’s work for them when needed"
-       ],
-       "answer": 1,
-       "explain": "Servant leaders still lead; they direct their influence toward enabling the team."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "m6-l2",
-   "title": "Motivation & Emotional Intelligence",
-   "subtitle": "Understand what really drives people — including you — and lead with self-awareness.",
-   "minutes": 25,
-   "objectives": [
-    "Distinguish intrinsic and extrinsic motivation and apply autonomy, mastery and purpose.",
-    "Use hygiene-factor thinking to diagnose dissatisfaction.",
-    "Apply the components of emotional intelligence to everyday project moments."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Project managers often lead people who do not report to them and whose pay they do not set. That makes understanding motivation essential: you must create conditions in which people **want** to do great work."
-    },
-    {
-     "type": "compare",
-     "columns": [
-      {
-       "title": "Extrinsic",
-       "items": [
-        "Comes from outside: pay, bonuses, titles, deadlines, praise",
-        "Works well for routine, well-defined tasks",
-        "Can crowd out interest in creative work if overused",
-        "Its effect fades once the reward is expected"
-       ]
-      },
-      {
-       "title": "Intrinsic",
-       "items": [
-        "Comes from the work itself: interest, growth, meaning",
-        "Drives quality and creativity in complex work",
-        "Sustains effort when no one is watching",
-        "Grows when people have choice and see impact"
-       ]
-      }
-     ],
-     "title": "Two sources of motivation"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "AU",
-       "title": "Autonomy",
-       "text": "Let people choose **how** they do their work — methods, tools, sequence — within agreed outcomes and constraints."
-      },
-      {
-       "label": "MA",
-       "title": "Mastery",
-       "text": "Provide challenges slightly beyond current skill, plus time to learn, feedback and visible progress."
-      },
-      {
-       "label": "PU",
-       "title": "Purpose",
-       "text": "Connect tasks to the people who benefit: show the farmer using the app, the patient who books in two minutes."
-      }
-     ],
-     "title": "Autonomy, mastery, purpose"
-    },
-    {
-     "type": "callout",
-     "kind": "definition",
-     "text": "A two-factor view (associated with Frederick Herzberg) separates **hygiene factors** — pay, working conditions, policies, job security — whose absence causes dissatisfaction, from **motivators** — achievement, recognition, responsibility, growth — that create real engagement. Fixing hygiene stops complaints; it rarely creates enthusiasm on its own.",
-     "title": "Hygiene factors vs motivators"
-    },
-    {
-     "type": "table",
-     "head": [
-      "What you observe",
-      "Likely root cause",
-      "Useful response"
-     ],
-     "rows": [
-      [
-       "Complaints about laptops, overtime pay, seating",
-       "Hygiene problem",
-       "Fix or escalate the condition; do not answer with a pep talk"
-      ],
-      [
-       "Work is done but with no initiative",
-       "Low autonomy or purpose",
-       "Delegate decisions; connect work to users"
-      ],
-      [
-       "Bored senior engineer",
-       "No mastery challenge",
-       "Offer a stretch problem or mentoring role"
-      ],
-      [
-       "Drop in energy after a reorganisation",
-       "Uncertainty and loss of purpose",
-       "Explain the why, clarify roles, listen"
-      ]
-     ],
-     "title": "Diagnose before you motivate"
-    },
-    {
-     "type": "text",
-     "text": "**Emotional intelligence (EI)** is the ability to recognise and manage your own emotions and to read and influence the emotions of others. Popularised by Daniel Goleman, it is often grouped into five components."
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "SA",
-       "title": "Self-awareness",
-       "text": "Know your moods, triggers, strengths and limits — e.g. noticing you get curt when a vendor misses dates."
-      },
-      {
-       "label": "SR",
-       "title": "Self-regulation",
-       "text": "Pause before reacting; choose the response. ‘Let me come back to you in an hour’ is a powerful sentence."
-      },
-      {
-       "label": "MO",
-       "title": "Motivation",
-       "text": "Drive that comes from inner standards and the goal, staying constructive under pressure."
-      },
-      {
-       "label": "EM",
-       "title": "Empathy",
-       "text": "Understand others’ perspectives and feelings — including the sponsor’s fears and the user’s frustrations."
-      },
-      {
-       "label": "SS",
-       "title": "Social skills",
-       "text": "Build networks, influence, manage conflict and inspire — EI turned outward into action."
-      }
-     ],
-     "title": "Five components of emotional intelligence"
-    },
-    {
-     "type": "steps",
-     "items": [
-      {
-       "title": "Notice",
-       "text": "Name the feeling privately: ‘I am angry because I feel blamed.’"
-      },
-      {
-       "title": "Breathe and delay",
-       "text": "Slow breathing; delay replies to heated messages."
-      },
-      {
-       "title": "Get curious",
-       "text": "Ask: ‘What pressure might the other person be under?’"
-      },
-      {
-       "title": "Respond to the problem",
-       "text": "Return to facts and next steps."
-      }
-     ],
-     "title": "A 90-second reset when emotions spike"
-    },
-    {
-     "type": "scenario",
-     "situation": "At 11 p.m. a client director emails the whole steering group saying your team is ‘incompetent’ because a demo crashed. You feel furious. What is the BEST action?",
-     "options": [
-      {
-       "text": "Wait until morning, gather facts, then call the director to listen, acknowledge the impact and share a recovery plan.",
-       "feedback": "Correct. Self-regulation first, then empathy and a fact-based plan — ideally in a conversation, not an email war.",
-       "best": true
-      },
-      {
-       "text": "Reply-all immediately, pointing out the client’s own environment caused the crash.",
-       "feedback": "Even if true, a public, emotional reply escalates conflict and damages the relationship.",
-       "best": false
-      },
-      {
-       "text": "Ignore the email; it will blow over.",
-       "feedback": "Avoidance leaves the steering group with only one version of events.",
-       "best": false
-      },
-      {
-       "text": "Forward it to your team so they know how the client feels.",
-       "feedback": "This spreads stress without a plan and can harm morale.",
-       "best": false
-      }
-     ],
-     "title": "The angry email"
-    },
-    {
-     "type": "case",
-     "title": "University LMS migration: motivation slump",
-     "context": "A private university in Sylhet is moving 600 courses to a new learning management system. Six instructional designers were seconded part-time from faculties. After two months, quality is falling: courses are copied over without redesign, and designers skip review meetings. In one-to-ones they say: ‘This is admin work — nobody will notice if it is good’, and two mention they still have full teaching loads.",
-     "questions": [
-      "Which issues here are hygiene problems and which are motivator problems?",
-      "Propose three actions using autonomy, mastery and purpose.",
-      "What should the PM escalate, and to whom?"
-     ],
-     "answer": "Hygiene: the unchanged teaching load (workload and fairness) — a structural issue the PM should escalate to the deans and the sponsor, asking for workload relief or a revised timeline. Motivators: lack of purpose (‘nobody will notice’) and no mastery. Actions: (1) **Purpose** — share student feedback and data from pilot courses; invite students to demo days. (2) **Autonomy** — let designers choose which redesign patterns to use within a quality rubric they help write. (3) **Mastery** — run short workshops on active-learning design and showcase excellent courses with credit to their designers. Recognition by the Pro-VC at a faculty meeting costs nothing and signals that the work matters."
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "Intrinsic motivation",
-       "def": "Motivation that comes from the satisfaction of the work itself — interest, growth and meaning."
-      },
-      {
-       "term": "Emotional intelligence",
-       "def": "The ability to recognise, understand and manage one’s own emotions and to recognise and influence others’ emotions."
-      }
-     ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "Team members complain that their overtime has not been paid for two months. In two-factor terms, this is…",
-       "options": [
-        "a motivator (achievement) issue",
-        "a lack-of-purpose issue",
-        "a mastery and growth issue",
-        "a hygiene factor issue"
-       ],
-       "answer": 3,
-       "explain": "Pay is a hygiene factor; its absence causes dissatisfaction."
-      },
-      {
-       "q": "Which action BEST increases autonomy?",
-       "options": [
-        "Giving a detailed checklist and method for every task",
-        "Letting the team choose its own testing approach within standards",
-        "Adding a team bonus for finishing work faster than planned",
-        "Holding daily status calls to review each person’s tasks"
-       ],
-       "answer": 1,
-       "explain": "Autonomy is about choice in how work is done within agreed outcomes."
-      },
-      {
-       "q": "A PM notices she gets defensive whenever QA reports defects. Recognising this pattern is an example of…",
-       "options": [
-        "empathy",
-        "social skill",
-        "self-awareness",
-        "situational leadership"
-       ],
-       "answer": 2,
-       "explain": "Recognising one’s own emotional triggers is self-awareness."
-      },
-      {
-       "q": "For creative, complex knowledge work, which approach is MOST likely to sustain high-quality effort?",
-       "options": [
-        "Large bonuses tied to output volume",
-        "Strict monitoring of hours and output",
-        "Public ranking of individual performance",
-        "Building autonomy, mastery and purpose"
-       ],
-       "answer": 3,
-       "explain": "Intrinsic drivers sustain quality in complex work; heavy extrinsic incentives can backfire."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "m6-l3",
-   "title": "Conflict Resolution & Negotiation",
-   "subtitle": "Use conflict as fuel, not fire — and negotiate on interests, not positions.",
-   "minutes": 30,
-   "objectives": [
-    "Choose among the five Thomas–Kilmann conflict modes based on the situation.",
-    "Separate interests from positions and use BATNA to negotiate with confidence.",
-    "Facilitate a conflict conversation step by step."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Conflict is normal on projects: competing priorities, scarce resources, technical opinions, schedules and personalities. Unmanaged, it drains energy. Managed well, it surfaces better ideas. The skill lies in choosing the right **mode** and handling it early, privately and on the facts."
-    },
-    {
-     "type": "table",
-     "head": [
-      "Mode",
-      "Assertive / cooperative",
-      "When it fits",
-      "Risk if overused"
-     ],
-     "rows": [
-      [
-       "Collaborating (problem-solving)",
-       "High / high",
-       "Important issue, time available, need commitment from both sides",
-       "Slow; not worth it for trivial issues"
-      ],
-      [
-       "Competing (forcing)",
-       "High / low",
-       "Emergencies, safety, legal or ethical non-negotiables",
-       "Resentment, lost ideas, low buy-in"
-      ],
-      [
-       "Compromising (reconciling)",
-       "Medium / medium",
-       "Equal power, time pressure, temporary fix acceptable",
-       "Both sides partly unhappy; may mask the real problem"
-      ],
-      [
-       "Accommodating (smoothing)",
-       "Low / high",
-       "Issue matters more to the other side; preserving relationship; you are wrong",
-       "Your concerns pile up unheard"
-      ],
-      [
-       "Avoiding (withdrawing)",
-       "Low / low",
-       "Trivial issue, emotions need cooling, someone else is better placed",
-       "Problems grow while ignored"
-      ]
-     ],
-     "title": "Thomas–Kilmann modes: when to use each"
-    },
-    {
-     "type": "callout",
-     "kind": "insight",
-     "text": "Situational exam questions usually favour **collaborating / problem-solving** because it addresses root causes. But a safety violation calls for forcing, and a two-minute disagreement over font colours calls for accommodating or avoiding. Match the mode to the stakes and time.",
-     "title": "Collaborate is the default, not the only answer"
-    },
-    {
-     "type": "steps",
-     "items": [
-      {
-       "title": "Meet early and privately",
-       "text": "Address it before it hardens; public settings make people defend positions."
-      },
-      {
-       "title": "Set ground rules",
-       "text": "One person speaks at a time; focus on the problem; assume good intent."
-      },
-      {
-       "title": "Hear each side fully",
-       "text": "Ask each person to describe the situation and what matters to them. Summarise back."
-      },
-      {
-       "title": "Find shared goals and facts",
-       "text": "‘We both want the release to be stable by 15 June.’ Separate facts from interpretations."
-      },
-      {
-       "title": "Generate options together",
-       "text": "Brainstorm before judging. Look for options that serve both sets of interests."
-      },
-      {
-       "title": "Agree and follow up",
-       "text": "Write down the agreement, owners and a check-in date."
-      }
-     ],
-     "title": "Facilitating a conflict conversation"
-    },
-    {
-     "type": "text",
-     "text": "Negotiation is structured conflict resolution. Project managers negotiate with vendors, functional managers, sponsors and team members constantly — for people, money, dates and scope."
-    },
-    {
-     "type": "compare",
-     "columns": [
-      {
-       "title": "Position (what they say)",
-       "items": [
-        "‘I need two of your testers for the whole of March.’",
-        "‘The price is final.’",
-        "‘We cannot go live before Eid.’"
-       ]
-      },
-      {
-       "title": "Interest (why they say it)",
-       "items": [
-        "Their own release has a regulatory deadline mid-March",
-        "The vendor needs predictable cash flow this quarter",
-        "Branch staff will be on leave; nobody to support users"
-       ]
-      }
-     ],
-     "title": "Positions vs interests"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "INT",
-       "title": "Focus on interests",
-       "text": "Ask ‘why does that matter to you?’ until you reach the underlying need."
-      },
-      {
-       "label": "OPT",
-       "title": "Invent options",
-       "text": "Expand the pie: phased delivery, different payment terms, shared resources, scope swaps."
-      },
-      {
-       "label": "CRI",
-       "title": "Use objective criteria",
-       "text": "Market rates, benchmarks, contract terms, past data — so neither side has to back down to the other’s will."
-      },
-      {
-       "label": "BAT",
-       "title": "Know your BATNA",
-       "text": "Your Best Alternative To a Negotiated Agreement — what you will do if no deal is reached. A strong BATNA gives you the confidence to walk away from a bad deal."
-      },
-      {
-       "label": "ZOPA",
-       "title": "Find the ZOPA",
-       "text": "The zone of possible agreement lies between each side’s walk-away point. No overlap, no deal — look for new options."
-      }
-     ],
-     "title": "Principled negotiation toolkit"
-    },
-    {
-     "type": "callout",
-     "kind": "example",
-     "text": "A Dhaka fintech is negotiating cloud-hosting renewal. The incumbent asks for a 30% increase. The PM’s team has already priced a migration to another provider at a one-time cost plus 10% higher run costs for six months. That is their BATNA. Knowing it, they can calmly propose a 5% increase with a two-year commitment — and mean it when they say they have an alternative.",
-     "title": "BATNA in action"
-    },
-    {
-     "type": "case",
-     "title": "5G rollout: civil works vs radio planning",
-     "context": "A mobile operator is rolling out 5G sites across Dhaka and Narayanganj. The radio planning lead wants to change antenna positions at 40 sites after new drive-test data. The civil works contractor manager refuses: towers are already reinforced to the old design, and every change costs money and two weeks. The two have stopped speaking and copy you on increasingly hostile emails. The regulator’s coverage milestone is in 10 weeks.",
-     "questions": [
-      "What are the likely interests behind each position?",
-      "Which conflict mode would you aim for and why?",
-      "Outline the steps you would take this week."
-     ],
-     "answer": "Interests — radio planning: meet coverage and quality targets, avoid poor customer experience; civil works: protect margin, avoid unpaid rework, keep crews productive. Shared: hit the regulator milestone. Aim to **collaborate**: the stakes are high and both groups’ commitment is needed. Steps: (1) meet each lead privately to hear concerns; (2) joint session with data — which of the 40 sites truly need changes for coverage, and which are nice-to-have? (3) generate options: change only sites critical to the milestone now and batch others later; use objective criteria (contracted change rates) for payment; re-sequence crews to absorb some work; (4) put the agreed approach through change control; (5) agree a weekly sync between both leads. If no agreement is possible before a hard deadline, escalate with options to the sponsor."
-    },
-    {
-     "type": "scenario",
-     "situation": "Two functional managers each claim the same senior tester for the same two weeks. Both are senior to you and are getting heated in a meeting. What should you do FIRST?",
-     "options": [
-      {
-       "text": "Pause the debate, meet both privately to understand the interests and constraints, then bring options to a joint conversation.",
-       "feedback": "Correct. Understand interests first; often a split schedule, a substitute or a re-sequence solves it. Escalate with options only if they cannot agree.",
-       "best": true
-      },
-      {
-       "text": "Decide yourself, based on whichever project you think matters more.",
-       "feedback": "Forcing without authority or data rarely sticks, and you are not the right decider on cross-project priorities.",
-       "best": false
-      },
-      {
-       "text": "Escalate straight to the portfolio board.",
-       "feedback": "Escalation may be needed later, but the parties have not yet tried to solve it.",
-       "best": false
-      },
-      {
-       "text": "Suggest they each take the tester for one week to split it evenly.",
-       "feedback": "Compromise might be the result, but proposing it before understanding needs may produce two half-failed projects.",
-       "best": false
-      }
-     ],
-     "title": "Two seniors, one tester"
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "Thomas–Kilmann modes",
-       "def": "Five conflict-handling approaches — competing, collaborating, compromising, avoiding and accommodating — mapped on assertiveness and cooperativeness."
-      },
-      {
-       "term": "BATNA",
-       "def": "Best Alternative To a Negotiated Agreement: the course of action a party will take if negotiations fail."
-      }
-     ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "A team member is about to deploy code that bypasses a mandatory security control. Which conflict mode is appropriate?",
-       "options": [
-        "Accommodating / smoothing",
-        "Avoiding",
-        "Competing / forcing",
-        "Compromising"
-       ],
-       "answer": 2,
-       "explain": "Safety, security and legal non-negotiables justify a firm, directive stance."
-      },
-      {
-       "q": "Which mode produces a win-win outcome and long-term commitment, but takes the most time?",
-       "options": [
-        "Collaborating",
-        "Compromising",
-        "Accommodating",
-        "Avoiding"
-       ],
-       "answer": 0,
-       "explain": "Collaboration searches for solutions satisfying both parties’ interests fully."
-      },
-      {
-       "q": "A vendor’s BATNA becomes weaker. What is the likely effect?",
-       "options": [
-        "The vendor gains more negotiating power",
-        "The vendor loses negotiating power",
-        "BATNA has no effect",
-        "The contract becomes void"
-       ],
-       "answer": 1,
-       "explain": "A weaker alternative makes walking away more costly, reducing leverage."
-      },
-      {
-       "q": "‘We need the server room by Friday’ is best described as…",
-       "options": [
-        "an interest",
-        "a BATNA",
-        "a position",
-        "an objective criterion"
-       ],
-       "answer": 2,
-       "explain": "It is a stated demand. The interest is the reason behind it."
-      },
-      {
-       "q": "Two team members disagree mildly about a variable-naming convention. The release is tomorrow. Best mode?",
-       "options": [
-        "Collaborate through a two-hour design workshop",
-        "Escalate the decision to the project sponsor",
-        "Force a company-wide naming standard immediately",
-        "Accommodate or defer, given the low stakes"
-       ],
-       "answer": 3,
-       "explain": "Low-stakes issues under time pressure do not justify heavy collaboration; revisit later if needed."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "m6-l4",
-   "title": "Decisions, Roles & Communication Planning",
-   "subtitle": "Make decisions visible, roles unambiguous and communication deliberate.",
-   "minutes": 30,
-   "objectives": [
-    "Choose a decision method (consensus, consent, fist-of-five, delegated) to suit the stakes.",
-    "Build RACI and DACI charts that avoid common errors.",
-    "Plan communication using channel counts, push/pull/interactive methods and status reports that work."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Many project delays are really **decision delays**: nobody knows who decides, so nobody does. Pair clear decision rights with deliberate communication and you remove a huge source of waste."
-    },
-    {
-     "type": "compare",
-     "columns": [
-      {
-       "title": "Group methods",
-       "items": [
-        "**Consensus** – everyone can live with and support it; slow but strong buy-in",
-        "**Consent** – proceed unless someone has a reasoned objection; faster than consensus",
-        "**Majority vote** – quick, but the minority may disengage",
-        "**Fist-of-five** – quick read of support levels"
-       ]
-      },
-      {
-       "title": "Individual methods",
-       "items": [
-        "**Decide with input** – one decider consults, then decides; good default for most work",
-        "**Delegated** – the person closest to the work decides within boundaries",
-        "**Command** – for emergencies when speed matters most"
-       ]
-      }
-     ],
-     "title": "Choosing a decision method"
-    },
-    {
-     "type": "table",
-     "head": [
-      "Fingers",
-      "Meaning",
-      "Action"
-     ],
-     "rows": [
-      [
-       "0 (fist)",
-       "I object — I cannot support this",
-       "Stop; hear the concern"
-      ],
-      [
-       "1",
-       "Serious concerns",
-       "Discuss before proceeding"
-      ],
-      [
-       "2",
-       "Some concerns I would like to discuss",
-       "Discuss; adjust if needed"
-      ],
-      [
-       "3",
-       "I can live with it",
-       "Proceed"
-      ],
-      [
-       "4",
-       "I support it",
-       "Proceed"
-      ],
-      [
-       "5",
-       "I strongly support it and will champion it",
-       "Proceed"
-      ]
-     ],
-     "title": "Fist-of-five"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "R",
-       "title": "Responsible",
-       "text": "Does the work. Can be several people."
-      },
-      {
-       "label": "A",
-       "title": "Accountable",
-       "text": "Owns the outcome and approves. **Exactly one per activity.**"
-      },
-      {
-       "label": "C",
-       "title": "Consulted",
-       "text": "Gives input before the work or decision — two-way."
-      },
-      {
-       "label": "I",
-       "title": "Informed",
-       "text": "Kept up to date after the fact — one-way."
-      }
-     ],
-     "title": "RACI: one chart, four roles"
-    },
-    {
-     "type": "template",
-     "title": "RACI matrix",
-     "purpose": "Clarify who does what for key deliverables and decisions; check every row has exactly one A.",
-     "columns": [
-      "Activity / decision",
-      "Sponsor",
-      "Project manager",
-      "Product owner",
-      "Tech lead",
-      "Ops manager"
-     ],
-     "example": [
-      [
-       "Approve go-live",
-       "A",
-       "R",
-       "C",
-       "C",
-       "C"
-      ],
-      [
-       "Prioritise backlog",
-       "I",
-       "C",
-       "A/R",
-       "C",
-       "I"
-      ]
-     ],
-     "rows": 8
-    },
-    {
-     "type": "callout",
-     "kind": "warning",
-     "text": "Too many A’s on one row (nobody really owns it); no A at all; a person with R everywhere (bottleneck); a column of only I’s (why are they on the chart?); and too many C’s, which slows every decision.",
-     "title": "RACI smells"
-    },
-    {
-     "type": "callout",
-     "kind": "definition",
-     "text": "For key decisions, many teams use **DACI**: a **Driver** who runs the decision process, one **Approver** who makes the call, **Contributors** who provide expertise and **Informed** people who hear the outcome. It makes clear that the person organising the decision is not necessarily the one making it.",
-     "title": "DACI for decisions"
-    },
-    {
-     "type": "formula",
-     "items": [
-      {
-       "name": "Number of channels",
-       "expr": "n × (n − 1) ÷ 2",
-       "meaning": "n is the number of people. 10 people → 45 channels; 15 people → 105."
-      },
-      {
-       "name": "Channels added",
-       "expr": "new total − old total",
-       "meaning": "Growing a team from 10 to 15 adds 105 − 45 = 60 channels — complexity grows much faster than headcount."
-      }
-     ],
-     "title": "Communication channels"
-    },
-    {
-     "type": "compare",
-     "columns": [
-      {
-       "title": "Push",
-       "items": [
-        "Sent to specific people",
-        "Email, status report, notification",
-        "Good for: updates, formal notices",
-        "Risk: sent ≠ read"
-       ]
-      },
-      {
-       "title": "Pull",
-       "items": [
-        "People access when they need it",
-        "Wiki, dashboard, shared repository",
-        "Good for: large audiences, reference info",
-        "Risk: nobody looks"
-       ]
-      },
-      {
-       "title": "Interactive",
-       "items": [
-        "Real-time, two-way exchange",
-        "Meetings, calls, workshops, chat",
-        "Good for: decisions, conflict, complex or sensitive topics",
-        "Risk: time-consuming"
-       ]
-      }
-     ],
-     "title": "Push, pull and interactive"
-    },
-    {
-     "type": "template",
-     "title": "Communication plan",
-     "purpose": "Decide deliberately who needs what, when, how and from whom.",
-     "columns": [
-      "Audience",
-      "Information needed",
-      "Method (push/pull/interactive)",
-      "Frequency",
-      "Owner",
-      "Feedback loop"
-     ],
-     "example": [
-      [
-       "Steering committee",
-       "Status, forecast, decisions needed, top risks",
-       "Interactive meeting + pushed one-pager",
-       "Monthly",
-       "PM",
-       "Decisions log reviewed next meeting"
-      ],
-      [
-       "Branch staff (users)",
-       "What changes, when, training dates",
-       "Push (SMS/email) + pull (FAQ page)",
-       "Fortnightly, weekly near go-live",
-       "Change lead",
-       "Pulse survey"
-      ]
-     ],
-     "rows": 8
-    },
-    {
-     "type": "steps",
-     "items": [
-      {
-       "title": "Bottom line up front",
-       "text": "Status colour, trend and one-sentence summary."
-      },
-      {
-       "title": "Decisions or help needed",
-       "text": "What, from whom, by when."
-      },
-      {
-       "title": "Progress against outcomes",
-       "text": "Milestones and value delivered, not a list of meetings held."
-      },
-      {
-       "title": "Forecast",
-       "text": "Dates and cost as ranges, with change since last report."
-      },
-      {
-       "title": "Top risks and issues",
-       "text": "Three to five, with owners and actions."
-      },
-      {
-       "title": "Keep it to one page",
-       "text": "Link to detail for those who want it."
-      }
-     ],
-     "title": "A status report people actually read"
-    },
-    {
-     "type": "scenario",
-     "situation": "Your weekly 6-page status email has a 20% open rate, and the sponsor was surprised by a delay you reported three weeks ago. What is the BEST next step?",
-     "options": [
-      {
-       "text": "Send the report twice a week so it gets noticed.",
-       "feedback": "More of an ineffective format will not fix the problem.",
-       "best": false
-      },
-      {
-       "text": "Mark the email as high-priority.",
-       "feedback": "Overuse of priority flags trains people to ignore them.",
-       "best": false
-      },
-      {
-       "text": "Note in the lessons learned that the sponsor did not read the report.",
-       "feedback": "Blaming the reader does not fix communication; the sender owns effectiveness.",
-       "best": false
-      },
-      {
-       "text": "Ask the sponsor how they prefer to receive information, then switch to a one-page, decision-first summary plus a short monthly conversation for key items.",
-       "feedback": "Correct. Tailor the method to the audience and use interactive communication for important news.",
-       "best": true
-      }
-     ],
-     "title": "The ignored report"
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "RACI",
-       "def": "A responsibility assignment matrix showing who is Responsible, Accountable, Consulted and Informed for each activity or decision."
-      },
-      {
-       "term": "Fist-of-five",
-       "def": "A quick group technique in which people show zero to five fingers to signal their level of support for a proposal."
-      }
-     ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "A team grows from 6 to 9 people. How many communication channels are added?",
-       "options": [
-        "3",
-        "15",
-        "36",
-        "21"
-       ],
-       "answer": 3,
-       "explain": "6 people: 6×5÷2 = 15. 9 people: 9×8÷2 = 36. Added: 36 − 15 = 21."
-      },
-      {
-       "q": "Which RACI problem is MOST serious?",
-       "options": [
-        "Two people marked Responsible on one task",
-        "Several people marked Informed on a decision",
-        "The sponsor marked Consulted on a deliverable",
-        "Three people marked Accountable for one decision"
-       ],
-       "answer": 3,
-       "explain": "Each activity needs exactly one Accountable person; multiple A’s blur ownership."
-      },
-      {
-       "q": "A sensitive change to staff roles needs to be explained to affected employees. Which method fits best?",
-       "options": [
-        "Interactive — meet them and allow questions",
-        "Pull — post a detailed explanation on the team wiki",
-        "Push — send a mass email to all employees",
-        "None — say nothing until the go-live date"
-       ],
-       "answer": 0,
-       "explain": "Sensitive and complex messages need two-way, real-time communication."
-      },
-      {
-       "q": "In a fist-of-five vote, one member shows two fingers. What should happen?",
-       "options": [
-        "Pause to hear and discuss their concerns",
-        "Proceed immediately, as most members agree",
-        "Ignore it, because the majority view wins",
-        "Remove the member from the decision"
-       ],
-       "answer": 0,
-       "explain": "Two or fewer signals concerns worth discussing before proceeding."
-      },
-      {
-       "q": "In DACI, who makes the final decision?",
-       "options": [
-        "Driver",
-        "Contributor",
-        "Approver",
-        "Informed"
-       ],
-       "answer": 2,
-       "explain": "The Approver makes the call; the Driver runs the process."
+       "explain": "Artifacts must be accessible to the people who need them. Making the register usable on mobile, or providing a suitable view, fixes the problem."
       }
      ]
     }
@@ -2660,1443 +3252,32 @@ TRACK.modules.push({
   },
   {
    "id": "m6-l5",
-   "title": "Remote, Hybrid & Cross-Cultural Teams; Coaching & Feedback",
-   "subtitle": "Lead people you rarely see, across cultures and time zones, and help them grow.",
-   "minutes": 30,
+   "title": "Closing a Phase or Project & Transition",
+   "subtitle": "Agree closure criteria, validate readiness for transition and finish with accepted deliverables and settled contracts",
+   "minutes": 28,
    "objectives": [
-    "Design working agreements for remote and hybrid teams, including async-first practices.",
-    "Adapt communication across cultural dimensions without stereotyping.",
-    "Use GROW coaching and SBI feedback in one-to-ones."
+    "Determine criteria for closing a phase or project",
+    "Validate readiness for transition to operations or the next phase",
+    "Complete closure activities, including contracts, finances, resources and lessons",
+    "Close a terminated project with the same discipline"
    ],
    "blocks": [
     {
      "type": "text",
-     "text": "In 2026 most project teams are at least partly distributed — a developer in Khulna, a product owner in Dhaka, a vendor in Kuala Lumpur and a client in Frankfurt. Distance strips away the hallway conversations that used to carry context, so leaders must design what used to happen naturally."
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "WA",
-       "title": "Working agreement",
-       "text": "A short, team-written page: core hours, response-time expectations, which channel for what, camera norms, how decisions are recorded."
-      },
-      {
-       "label": "ASY",
-       "title": "Async-first",
-       "text": "Default to written updates, recorded demos and shared documents so people in different time zones can contribute; use meetings for what truly needs real time."
-      },
-      {
-       "label": "OVR",
-       "title": "Overlap windows",
-       "text": "Protect two to three hours of shared time for collaboration; rotate inconvenient meeting times fairly."
-      },
-      {
-       "label": "EQ",
-       "title": "Hybrid equity",
-       "text": "If one person is remote, everyone joins from their own screen so remote people are not second-class participants."
-      },
-      {
-       "label": "CON",
-       "title": "Connection",
-       "text": "Deliberate informal time — virtual coffee, show-and-tell, occasional in-person meet-ups at key moments such as kick-off."
-      }
-     ],
-     "title": "Remote and hybrid essentials"
-    },
-    {
-     "type": "checklist",
-     "title": "Remote team working agreement checklist",
-     "items": [
-      "Core collaboration hours defined in every member’s time zone",
-      "Which tool for urgent, normal and FYI messages is agreed",
-      "Expected response times for each channel are written down",
-      "Decisions are recorded in one agreed place",
-      "Meeting norms: agenda in advance, notes and actions shared within 24 hours",
-      "Public holidays and religious observances across locations are on the shared calendar",
-      "Inconvenient meeting times rotate fairly",
-      "A ‘how to reach me’ and focus-time preference is published by each member",
-      "Security rules for devices, networks and shared files are clear",
-      "The agreement is reviewed at least every quarter or when membership changes"
-     ]
-    },
-    {
-     "type": "text",
-     "text": "Culture shapes how people give feedback, disagree, make decisions and view hierarchy and time. Research frameworks such as Geert Hofstede’s dimensions and Erin Meyer’s culture map describe national **tendencies** — useful as hypotheses, never as labels for individuals."
-    },
-    {
-     "type": "table",
-     "head": [
-      "Dimension",
-      "One end",
-      "Other end",
-      "What the PM can do"
-     ],
-     "rows": [
-      [
-       "Power distance",
-       "Hierarchy expected; juniors defer",
-       "Flat; anyone challenges anyone",
-       "Invite input explicitly and privately; use anonymous tools"
-      ],
-      [
-       "Communication context",
-       "High-context: meaning in what is unsaid",
-       "Low-context: meaning in explicit words",
-       "Confirm understanding in writing; ask open questions"
-      ],
-      [
-       "Feedback style",
-       "Indirect, softened",
-       "Direct, blunt",
-       "Agree team feedback norms; explain intent"
-      ],
-      [
-       "Time orientation",
-       "Flexible, relationships first",
-       "Linear, schedule first",
-       "Make deadline importance and reasons explicit"
-      ],
-      [
-       "Uncertainty avoidance",
-       "Prefers rules and detailed plans",
-       "Comfortable with ambiguity",
-       "Balance clarity of process with room to experiment"
-      ]
-     ],
-     "title": "Cultural dimensions that show up on projects"
-    },
-    {
-     "type": "callout",
-     "kind": "warning",
-     "text": "A Bangladeshi engineer educated in Germany and working for a Singapore firm will not fit a national average. Use dimensions to notice and ask — ‘How do you prefer to receive feedback?’ — never to assume.",
-     "title": "Generalise carefully"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "G",
-       "title": "Goal",
-       "text": "What do you want to achieve? ‘By the end of this conversation, what would be useful?’"
-      },
-      {
-       "label": "R",
-       "title": "Reality",
-       "text": "What is happening now? What have you tried? What is getting in the way?"
-      },
-      {
-       "label": "O",
-       "title": "Options",
-       "text": "What could you do? What else? What would someone you admire do?"
-      },
-      {
-       "label": "W",
-       "title": "Will / way forward",
-       "text": "What will you do, by when? How will you know it worked? What support do you need?"
-      }
-     ],
-     "title": "GROW coaching model"
-    },
-    {
-     "type": "formula",
-     "items": [
-      {
-       "name": "Situation",
-       "expr": "When and where",
-       "meaning": "‘In yesterday’s client demo…’"
-      },
-      {
-       "name": "Behaviour",
-       "expr": "Observable action — not a judgement",
-       "meaning": "‘…you answered the integration question with specific test data…’"
-      },
-      {
-       "name": "Impact",
-       "expr": "Effect on you, the team or the outcome",
-       "meaning": "‘…and the client agreed to sign off the milestone on the spot.’ Works for praise and for correction."
-      }
-     ],
-     "title": "SBI feedback"
-    },
-    {
-     "type": "callout",
-     "kind": "pro",
-     "text": "A good coaching ratio is mostly questions. The answer someone finds themselves sticks better than the one you hand them — and it builds their capability for the next problem.",
-     "title": "Coach by asking, not telling"
-    },
-    {
-     "type": "scenario",
-     "situation": "A talented analyst from a high-power-distance background never challenges the client’s architect, even when the analyst’s data shows the architect is wrong. What is the BEST approach?",
-     "options": [
-      {
-       "text": "Tell the analyst in the next team meeting that they must speak up more.",
-       "feedback": "Public correction may cause loss of face and further silence.",
-       "best": false
-      },
-      {
-       "text": "Present the analyst’s findings yourself without crediting them.",
-       "feedback": "This solves the immediate issue but removes credit and growth.",
-       "best": false
-      },
-      {
-       "text": "Speak privately, use SBI to recognise the strong analysis, explore what makes challenging difficult (GROW), and agree a supported way — e.g. you introduce the data and invite them to present it.",
-       "feedback": "Correct. Private, respectful coaching builds confidence and gives a safe path to contribute.",
-       "best": true
-      },
-      {
-       "text": "Accept that this is their culture and do nothing.",
-       "feedback": "Respecting culture does not mean leaving valuable insight unheard; adapt the method instead.",
-       "best": false
-      }
-     ],
-     "title": "Feedback across cultures"
-    },
-    {
-     "type": "reflection",
-     "prompt": "Think of your current or most recent team. Which cultural or remote-working difference has caused the most friction? Write one clause you would add to your team’s working agreement to address it."
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "Working agreement",
-       "def": "A team-created set of norms describing how members will collaborate, communicate and make decisions."
-      },
-      {
-       "term": "GROW model",
-       "def": "A coaching structure: Goal, Reality, Options, Will (way forward)."
-      },
-      {
-       "term": "SBI feedback",
-       "def": "A feedback structure describing the Situation, the observable Behaviour and its Impact."
-      }
-     ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "A hybrid team holds meetings in a room with four people while two join remotely and struggle to follow. What is the BEST fix?",
-       "options": [
-        "Have everyone join from their own device for equal participation",
-        "Ask remote members to come into the office for meetings",
-        "Record the meetings so remote members can catch up afterwards",
-        "Hold separate meetings for the in-room and remote members"
-       ],
-       "answer": 0,
-       "explain": "Equal participation through individual devices removes the in-room advantage."
-      },
-      {
-       "q": "In SBI, which is a behaviour rather than a judgement?",
-       "options": [
-        "You were unprofessional in front of the client",
-        "You do not care about the project or the client",
-        "You have a negative attitude with clients",
-        "You arrived 20 minutes after the client call started"
-       ],
-       "answer": 3,
-       "explain": "Behaviour is observable and specific; the others are interpretations."
-      },
-      {
-       "q": "Which GROW question belongs to the ‘Reality’ stage?",
-       "options": [
-        "What do you want to achieve?",
-        "What will you do by Friday?",
-        "What other options are there?",
-        "What have you already tried?"
-       ],
-       "answer": 3,
-       "explain": "Reality explores the current situation and what has been tried."
-      },
-      {
-       "q": "Why is ‘async-first’ useful for teams spread over several time zones?",
-       "options": [
-        "It removes the need for any live meetings across time zones",
-        "It is cheaper than paying for video-conferencing tools",
-        "It lets people contribute without being online at the same time",
-        "It hides time-zone differences from managers, clients and partners"
-       ],
-       "answer": 2,
-       "explain": "Async communication respects time zones while keeping meetings for collaboration that truly needs real time."
-      }
-     ]
-    }
-   ]
-  }
- ]
-});
-TRACK.modules.push({
- "id": "m7",
- "order": 7,
- "code": "Scale",
- "title": "Scale — AI-Powered Project Management, Change & Governance",
- "subtitle": "Multiply your impact with AI and automation, lead adoption and connect projects to strategy responsibly.",
- "outcomes": [
-  "Use generative AI copilots for project tasks with strong prompts, verification and data-privacy discipline.",
-  "Apply automation, leading indicators and basic predictive analytics, and manage the distinctive risks of AI projects.",
-  "Lead organisational change using ADKAR and Kotter and respond constructively to resistance.",
-  "Explain PMO types, portfolio and programme governance, prioritisation and stage gates.",
-  "Integrate ESG and sustainability considerations into project decisions."
- ],
- "lessons": [
-  {
-   "id": "m7-l1",
-   "title": "Generative AI Copilots in Project Management",
-   "subtitle": "Use an AI assistant to draft, summarise and explore — while you stay accountable.",
-   "minutes": 35,
-   "objectives": [
-    "Identify project tasks where a generative AI copilot adds value and where it does not.",
-    "Write effective prompts using the ZPMP CRAFT pattern.",
-    "Verify AI output and protect confidential and personal data."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "**Scale** — stage 7 of the ZPMP Value Loop — is about multiplying your impact beyond a single project: through technology, through people adopting change, and through governance. Generative AI copilots are now part of everyday project work. Used well, they remove hours of drafting and summarising. Used carelessly, they create confident-sounding errors and data leaks. The project manager remains **accountable for every word and number that leaves the project**, whoever — or whatever — drafted it."
-    },
-    {
-     "type": "table",
-     "head": [
-      "PM task",
-      "Good use",
-      "Watch out for"
-     ],
-     "rows": [
-      [
-       "Charter and plan drafts",
-       "First draft of objectives, scope statements, assumptions from your notes",
-       "Invented constraints or targets; generic text that fits no real project"
-      ],
-      [
-       "Risk brainstorming",
-       "Generate candidate risks by RBS category to widen thinking",
-       "Plausible but irrelevant risks; missing local context"
-      ],
-      [
-       "Status summaries",
-       "Turn raw updates and tracker exports into a one-page draft",
-       "Softening bad news; mis-stated numbers"
-      ],
-      [
-       "Meeting notes",
-       "Summarise transcripts into decisions, actions and owners",
-       "Wrong attribution; confidential remarks captured; consent to record"
-      ],
-      [
-       "Schedule what-ifs",
-       "Explain trade-offs and suggest scenarios to test",
-       "Arithmetic and date errors — run the real numbers in your scheduling tool"
-      ],
-      [
-       "Stakeholder messages",
-       "Adapt one message for different audiences and reading levels",
-       "Tone that does not fit the relationship; over-promising"
-      ]
-     ],
-     "title": "Where an AI assistant helps (and where to be careful)"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "C",
-       "title": "Context",
-       "text": "Give the facts the assistant cannot know: project goal, audience, stage, constraints, relevant data (sanitised)."
-      },
-      {
-       "label": "R",
-       "title": "Role",
-       "text": "Say which perspective to take: ‘Act as a sceptical risk reviewer’ or ‘as a procurement specialist’."
-      },
-      {
-       "label": "A",
-       "title": "Ask",
-       "text": "State one clear task with a verb: draft, critique, summarise, compare, list."
-      },
-      {
-       "label": "F",
-       "title": "Format",
-       "text": "Specify structure and length: ‘a table with columns…’, ‘under 150 words’, ‘bullet points for a sponsor’."
-      },
-      {
-       "label": "T",
-       "title": "Tests",
-       "text": "Add checks: ‘list your assumptions’, ‘flag anything you are unsure of’, ‘do not invent figures — say if data is missing’."
-      }
-     ],
-     "title": "The ZPMP CRAFT prompt"
-    },
-    {
-     "type": "callout",
-     "kind": "example",
-     "text": "**Context:** We are replacing the billing system for a water utility serving 400,000 customers in Khulna; go-live is in 5 months; data migration from a 15-year-old database. **Role:** Act as an experienced risk manager. **Ask:** Suggest 15 candidate risks grouped by technical, external, organisational and people/change. **Format:** A table with cause–event–effect statement and the category. **Tests:** Mark which risks are generic versus specific to our context, and list questions we should ask to validate them.",
-     "title": "A CRAFT prompt for risk brainstorming"
-    },
-    {
-     "type": "steps",
-     "items": [
-      {
-       "title": "Iterate, don’t one-shot",
-       "text": "Treat the first answer as a draft; refine with follow-ups: ‘make it shorter’, ‘more specific to utilities’."
-      },
-      {
-       "title": "Ask it to critique",
-       "text": "Paste your own draft and ask: ‘What is unclear, missing or risky in this charter?’"
-      },
-      {
-       "title": "Give examples",
-       "text": "Show one example of the style or format you want; quality jumps."
-      },
-      {
-       "title": "Split big tasks",
-       "text": "Outline first, then each section — easier to check and steer."
-      },
-      {
-       "title": "Ask for alternatives",
-       "text": "‘Give three different ways to structure this steering committee update.’"
-      }
-     ],
-     "title": "Prompting patterns that work"
-    },
-    {
-     "type": "callout",
-     "kind": "warning",
-     "text": "Generative models predict plausible text. They can invent references, regulations, statistics and even quotes from your own meeting. **Never** publish AI-generated facts, figures or legal statements without checking them against a reliable source.",
-     "title": "Hallucination is a feature of the technology, not a rare bug"
-    },
-    {
-     "type": "checklist",
-     "title": "Verify before you use",
-     "items": [
-      "Every number has been recalculated or traced to the source data",
-      "Names, dates, roles and decisions match the actual records",
-      "Any law, standard or policy cited has been checked in the original document",
-      "Tone is right for the audience and does not soften bad news",
-      "Nothing confidential or personal has been included that should not be",
-      "Output reflects our project, not a generic template",
-      "A human with the right knowledge has reviewed it before it is shared",
-      "AI use is disclosed where policy or the audience expects it"
-     ]
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "APP",
-       "title": "Approved tools only",
-       "text": "Use the AI tools your organisation has approved under an enterprise agreement. Consumer accounts may retain or use your inputs in ways your contracts forbid."
-      },
-      {
-       "label": "CLS",
-       "title": "Classify before you paste",
-       "text": "Public and internal data may be fine; confidential, client, personal or regulated data usually is not — unless the tool is explicitly approved for that class."
-      },
-      {
-       "label": "MIN",
-       "title": "Minimise and anonymise",
-       "text": "Remove names, phone numbers, account numbers and contract values; use placeholders such as ‘Vendor A’."
-      },
-      {
-       "label": "SEC",
-       "title": "No secrets ever",
-       "text": "Never paste passwords, access keys or security configurations."
-      },
-      {
-       "label": "REC",
-       "title": "Consent for recording",
-       "text": "Tell participants before an AI note-taker records or transcribes a meeting, and follow local law and company policy."
-      }
-     ],
-     "title": "Data-privacy rules for AI use"
-    },
-    {
-     "type": "template",
-     "title": "AI-use log",
-     "purpose": "Keep a lightweight record of significant AI use on the project for transparency, quality and audit.",
-     "columns": [
-      "Date",
-      "Task",
-      "Tool (approved?)",
-      "Data shared (classification)",
-      "Verification done",
-      "Reviewer",
-      "Where the output was used"
-     ],
-     "example": [
-      [
-       "12 Mar",
-       "Draft risk list for billing migration",
-       "Enterprise AI assistant (yes)",
-       "Internal; anonymised",
-       "Checked against RBS and team workshop; 6 of 15 kept",
-       "Risk lead",
-       "Risk register v0.3"
-      ]
-     ],
-     "rows": 8
-    },
-    {
-     "type": "scenario",
-     "situation": "A team member pastes the full vendor contract, including pricing and named client contacts, into a free public chatbot to get a summary of penalty clauses. What should the project manager do FIRST?",
-     "options": [
-      {
-       "text": "Thank them — the summary will save time.",
-       "feedback": "The time saved does not outweigh a possible contractual and data-protection breach.",
-       "best": false
-      },
-      {
-       "text": "Stop further use, report the incident through the organisation’s data or security process, and then guide the team on approved tools and anonymisation.",
-       "feedback": "Correct. Contain and report first — security teams may need to act quickly — then fix the behaviour through clear guidance, not blame.",
-       "best": true
-      },
-      {
-       "text": "Delete the chat history and say nothing.",
-       "feedback": "Deleting locally may not remove the data from the provider, and concealment breaches policy and honesty.",
-       "best": false
-      },
-      {
-       "text": "Ban all AI tools for the team permanently.",
-       "feedback": "An overreaction that loses real benefits; the issue is unapproved tools and data handling.",
-       "best": false
-      }
-     ],
-     "title": "The helpful paste"
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "Generative AI copilot",
-       "def": "An AI assistant that generates text, summaries, code or other content from natural-language prompts to support a person’s work."
-      },
-      {
-       "term": "Hallucination",
-       "def": "Output from a generative model that is fluent and plausible but factually wrong or invented."
-      },
-      {
-       "term": "Data minimisation",
-       "def": "Sharing only the data strictly needed for a task, with personal or confidential details removed or masked."
-      }
-     ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "In the CRAFT pattern, ‘Flag anything you are unsure of and do not invent figures’ belongs to…",
-       "options": [
-        "Context",
-        "Role",
-        "Tests",
-        "Format"
-       ],
-       "answer": 2,
-       "explain": "Tests are checks and constraints that improve reliability."
-      },
-      {
-       "q": "An AI assistant produces a schedule what-if showing the project finishing three weeks earlier if two tasks overlap. What should the PM do NEXT?",
-       "options": [
-        "Send the new, earlier date to the sponsor straight away",
-        "Ask the AI assistant to confirm that its result is correct",
-        "Ignore it, since AI schedule outputs are never reliable enough to use",
-        "Model it in the schedule and check resources and dependencies"
-       ],
-       "answer": 3,
-       "explain": "AI suggestions are hypotheses; verify them in the authoritative schedule."
-      },
-      {
-       "q": "Which data is generally SAFEST to share with an approved AI assistant?",
-       "options": [
-        "Anonymised meeting notes with internal-only information",
-        "A customer list with names and phone numbers",
-        "Administrator passwords for the test environment",
-        "A signed contract with pricing, in a public chatbot"
-       ],
-       "answer": 0,
-       "explain": "Anonymised internal data in an approved tool is the low-risk option."
-      },
-      {
-       "q": "Who is accountable for a status report drafted by an AI assistant and sent by the PM?",
-       "options": [
-        "The AI tool provider",
-        "The IT department",
-        "The project manager",
-        "Nobody, as it was automated"
-       ],
-       "answer": 2,
-       "explain": "Accountability stays with the human who uses and sends the output."
-      },
-      {
-       "q": "Before an AI note-taker records a client workshop, the PM should…",
-       "options": [
-        "record silently to avoid disrupting the discussion",
-        "only record the client’s comments, not the team’s",
-        "inform participants and follow consent rules and policy",
-        "turn off transcription but keep recording audio"
-       ],
-       "answer": 2,
-       "explain": "Recording and transcription require transparency and, often, consent."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "m7-l2",
-   "title": "Automation, Data-Driven PM & AI Project Risk",
-   "subtitle": "Automate the routine, decide with data, and manage the special risks of AI work.",
-   "minutes": 30,
-   "objectives": [
-    "Design automation rules and integrations that keep one source of truth.",
-    "Use leading and lagging indicators and explain basic predictive analytics for projects.",
-    "Identify the distinctive risks and ethical duties of AI projects and AI use in PM."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Modern work-management platforms can do much of the administrative heavy lifting: moving cards, chasing updates, refreshing dashboards. The aim is to free people for judgement and conversation — not to build a fragile web of automations nobody understands."
-    },
-    {
-     "type": "flow",
-     "items": [
-      {
-       "label": "Trigger",
-       "text": "Something happens: status changes, a date arrives, a form is submitted"
-      },
-      {
-       "label": "Condition",
-       "text": "Only if… e.g. priority is High and the item is in the current release"
-      },
-      {
-       "label": "Action",
-       "text": "Do something: assign, notify, create a task, update a field"
-      },
-      {
-       "label": "Log",
-       "text": "Record that it ran so people can trace what happened"
-      }
-     ],
-     "title": "Anatomy of an automation rule"
-    },
-    {
-     "type": "table",
-     "head": [
-      "Automation",
-      "Example",
-      "Benefit"
-     ],
-     "rows": [
-      [
-       "Intake routing",
-       "New request form → creates backlog item, tags the product owner",
-       "No requests lost in email"
-      ],
-      [
-       "Overdue nudges",
-       "Task 2 days past due → reminder to assignee; 5 days → flag on dashboard",
-       "Fewer manual chases"
-      ],
-      [
-       "Status roll-up",
-       "Milestone dates and RAG pulled automatically into the portfolio dashboard",
-       "One source of truth, fresher data"
-      ],
-      [
-       "Definition-of-done gates",
-       "Item cannot move to Done until test and review fields are complete",
-       "Built-in quality"
-      ],
-      [
-       "Integration sync",
-       "Code repository or service desk events update linked work items",
-       "Less double entry"
-      ],
-      [
-       "Recurring work",
-       "Monthly risk review task created with the register attached",
-       "Habits that do not depend on memory"
-      ]
-     ],
-     "title": "High-value automations for PM tools"
-    },
-    {
-     "type": "callout",
-     "kind": "warning",
-     "text": "Dozens of overlapping rules created by different people lead to notification overload and mysterious changes. Keep an inventory of automations with an owner and purpose, and review it each quarter. If people start ignoring notifications, the automation is costing attention instead of saving it.",
-     "title": "Automation sprawl"
-    },
-    {
-     "type": "compare",
-     "columns": [
-      {
-       "title": "Leading (predict)",
-       "items": [
-        "Requirements churn rate",
-        "Unresolved blockers older than 3 days",
-        "Test coverage of new code",
-        "Training completion before go-live",
-        "Sponsor meeting attendance"
-       ]
-      },
-      {
-       "title": "Lagging (confirm)",
-       "items": [
-        "Final cost vs budget",
-        "Delivery date vs baseline",
-        "Defects found in production",
-        "Adoption rate after 90 days",
-        "Customer satisfaction score"
-       ]
-      }
-     ],
-     "title": "Leading vs lagging indicators"
-    },
-    {
-     "type": "text",
-     "text": "**Predictive analytics** uses historical data to estimate what is likely to happen. Organisations with records of past projects can train simple models — often no more than regression or classification — to flag projects likely to overrun based on features such as scope churn, number of external dependencies, team turnover and early SPI. **Reference-class forecasting** (associated with Bent Flyvbjerg) applies a similar idea without complex models: compare your estimate with the actual outcomes of a class of similar past projects and adjust for typical overruns."
-    },
-    {
-     "type": "callout",
-     "kind": "insight",
-     "text": "Predictions are only as good as the data behind them. If time-sheets are filled in on Friday from memory and status fields are rarely updated, a model will learn the noise. Invest in data hygiene before investing in dashboards and models.",
-     "title": "Garbage in, confident garbage out"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "DAT",
-       "title": "Data",
-       "text": "Not enough, poor quality, unrepresentative or legally restricted data — often discovered late."
-      },
-      {
-       "label": "PRF",
-       "title": "Performance uncertainty",
-       "text": "You cannot promise accuracy upfront; plan experiments, success thresholds and stop/go decisions."
-      },
-      {
-       "label": "BIA",
-       "title": "Bias & fairness",
-       "text": "Models can reproduce historic discrimination, e.g. in credit scoring or hiring."
-      },
-      {
-       "label": "DRF",
-       "title": "Drift",
-       "text": "Real-world data changes over time and accuracy decays; monitoring and retraining must be budgeted."
-      },
-      {
-       "label": "EXP",
-       "title": "Explainability",
-       "text": "Regulators and users may need to know why a decision was made."
-      },
-      {
-       "label": "SEC",
-       "title": "Security & misuse",
-       "text": "Prompt injection, data leakage and misuse of generated content in gen-AI products."
-      },
-      {
-       "label": "REG",
-       "title": "Regulation",
-       "text": "Risk-based laws such as the EU AI Act and sector rules impose duties depending on use; check obligations in every market served."
-      }
-     ],
-     "title": "Distinctive risks of AI projects"
-    },
-    {
-     "type": "callout",
-     "kind": "definition",
-     "text": "Organisations increasingly align AI work with frameworks such as the **NIST AI Risk Management Framework** and the management-system standard **ISO/IEC 42001**. A PM does not need to be an expert, but should ask early: ‘Which AI policy and risk process applies to this project?’",
-     "title": "Useful references for AI governance"
+     "text": "**Closure** is the part of the project life cycle most often rushed. People are pulled onto new work, the budget code is shut and documents scatter. Yet closure is where you secure acceptance, protect the benefits and capture knowledge for the next project. A project that never formally closes keeps consuming attention and money."
     },
     {
      "type": "keypoints",
+     "title": "Criteria for closing a phase or project",
      "items": [
-      "Be transparent with stakeholders about significant AI-generated content",
-      "Do not use AI tools to covertly monitor or score individual team members",
-      "Keep humans in the loop for decisions that affect people’s jobs, pay or rights",
-      "Check outputs for bias, especially in people-related content such as role descriptions",
-      "Respect intellectual property and confidentiality in what you input and publish",
-      "Remain accountable — ‘the AI said so’ is never a defence"
-     ],
-     "title": "Ethical duties when the PM uses AI"
-    },
-    {
-     "type": "scenario",
-     "situation": "An executive suggests using an AI add-on to score each developer’s productivity from keystrokes and messages, and to share rankings in the monthly review. What is the BEST response from the PM?",
-     "options": [
-      {
-       "text": "Implement it — data-driven management is modern practice.",
-       "feedback": "Covert or crude individual scoring damages trust, invites gaming and may breach privacy and employment rules.",
-       "best": false
-      },
-      {
-       "text": "Raise the ethical, legal and trust concerns, suggest team-level flow metrics and outcome measures instead, and involve HR and legal before any monitoring decision.",
-       "feedback": "Correct. Redirect toward measures that improve the system, and ensure proper governance for anything touching individuals.",
-       "best": true
-      },
-      {
-       "text": "Agree but keep the rankings secret.",
-       "feedback": "Secret scoring is worse for trust if discovered, and the problems remain.",
-       "best": false
-      },
-      {
-       "text": "Refuse and say nothing more.",
-       "feedback": "A refusal without alternatives does not address the executive’s underlying interest in performance visibility.",
-       "best": false
-      }
-     ],
-     "title": "The productivity score"
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "Leading indicator",
-       "def": "A measure that changes before an outcome and helps predict it, allowing early action."
-      },
-      {
-       "term": "Model drift",
-       "def": "The decline in an AI model’s performance over time as real-world data diverges from its training data."
-      },
-      {
-       "term": "Reference-class forecasting",
-       "def": "Estimating by comparing a project with the actual outcomes of a group of similar past projects."
-      }
+      "Deliverables accepted against agreed criteria by the authorised person",
+      "Transition criteria met, such as support readiness and hypercare exit thresholds",
+      "Contracts closed or transferred, and final invoices settled",
+      "Financial accounts reconciled and the cost code closed",
+      "People released with feedback and recognition",
+      "Lessons captured and records archived",
+      "Benefits tracking handed to a named owner"
      ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "Which is a leading indicator for a software release?",
-       "options": [
-        "Defects found in production after release",
-        "Final project cost compared with the approved budget",
-        "Customer satisfaction scores after launch",
-        "Number of blockers open longer than three days"
-       ],
-       "answer": 3,
-       "explain": "Ageing blockers signal future delay before it happens."
-      },
-      {
-       "q": "Your team ignores most tool notifications. What is the BEST action?",
-       "options": [
-        "Add more automated reminders and escalations so nothing is missed",
-        "Turn off all automation and go back to manual updates",
-        "Review the automation inventory and prune low-value rules",
-        "Escalate the team’s behaviour to their line managers"
-       ],
-       "answer": 2,
-       "explain": "Notification overload means automations cost attention; prune them."
-      },
-      {
-       "q": "An AI model for loan approvals performed well at launch but accuracy falls after a year. This is most likely…",
-       "options": [
-        "scope creep",
-        "a hallucination",
-        "a lagging indicator",
-        "model drift"
-       ],
-       "answer": 3,
-       "explain": "Changing real-world data degrades model performance over time."
-      },
-      {
-       "q": "Why should an AI project plan include stop/go decision points after experiments?",
-       "options": [
-        "Because achievable performance is uncertain until tested",
-        "Because most AI projects fail and need early exits",
-        "To satisfy the PMO’s standard gate review requirements",
-        "To avoid documenting detailed requirements"
-       ],
-       "answer": 0,
-       "explain": "Experiments reveal whether the needed accuracy is achievable; checkpoints prevent sunk-cost escalation."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "m7-l3",
-   "title": "Leading Organisational Change",
-   "subtitle": "Deliverables are not benefits until people change how they work.",
-   "minutes": 30,
-   "objectives": [
-    "Apply ADKAR to diagnose where individuals are stuck in a change.",
-    "Use Kotter’s eight steps to plan an organisational change effort.",
-    "Respond to resistance with empathy and targeted actions."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "A new system can go live perfectly and still fail if nobody uses it properly. **Organisational change management (OCM)** is the people side of delivering value: helping individuals and groups move from the current way of working to the new one. Project management delivers the solution; change management makes sure it is **adopted**."
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "A",
-       "title": "Awareness",
-       "text": "of why the change is needed. ‘Why are we doing this, and why now?’"
-      },
-      {
-       "label": "D",
-       "title": "Desire",
-       "text": "to support and take part. ‘What is in it for me — and what happens if we do not?’"
-      },
-      {
-       "label": "K",
-       "title": "Knowledge",
-       "text": "of how to change. Training, guides, examples of the new process."
-      },
-      {
-       "label": "Ab",
-       "title": "Ability",
-       "text": "to actually perform the new way. Practice, coaching, time, the right tools."
-      },
-      {
-       "label": "R",
-       "title": "Reinforcement",
-       "text": "to make it stick. Recognition, measurement, removing the old way."
-      }
-     ],
-     "title": "ADKAR: the individual journey"
-    },
-    {
-     "type": "callout",
-     "kind": "pro",
-     "text": "ADKAR is sequential. If a branch manager lacks **desire**, more training (knowledge) will not help. Survey or interview, find the earliest element that is weak, and fix that first.",
-     "title": "Find the first barrier"
-    },
-    {
-     "type": "text",
-     "text": "ADKAR focuses on individuals. **John Kotter’s** eight-step model focuses on leading change across an organisation. In our own words, the steps are:"
-    },
-    {
-     "type": "steps",
-     "items": [
-      {
-       "title": "Create urgency",
-       "text": "Help people see, with evidence, why the status quo is risky."
-      },
-      {
-       "title": "Build a guiding coalition",
-       "text": "Assemble influential, credible leaders from across the organisation."
-      },
-      {
-       "title": "Form a vision and strategy",
-       "text": "A simple picture of the future and how to get there."
-      },
-      {
-       "title": "Communicate and involve",
-       "text": "Share the vision constantly through many channels; recruit volunteers."
-      },
-      {
-       "title": "Remove barriers",
-       "text": "Change structures, systems and processes that block the new way."
-      },
-      {
-       "title": "Generate short-term wins",
-       "text": "Plan visible, early successes and celebrate them."
-      },
-      {
-       "title": "Sustain acceleration",
-       "text": "Use credibility from wins to tackle bigger changes; do not declare victory early."
-      },
-      {
-       "title": "Anchor in culture",
-       "text": "Connect new behaviours to success; build them into hiring, promotion and routines."
-      }
-     ],
-     "title": "Kotter’s eight steps, summarised"
-    },
-    {
-     "type": "table",
-     "head": [
-      "Root of resistance",
-      "What you might hear",
-      "Helpful response"
-     ],
-     "rows": [
-      [
-       "Not understanding why",
-       "‘The old system works fine.’",
-       "Share data and stories on the problem; let them see it themselves"
-      ],
-      [
-       "Loss of status, control or skill",
-       "‘I have been the expert for 12 years.’",
-       "Involve them as super-users or trainers; honour their expertise"
-      ],
-      [
-       "Fear of job loss",
-       "‘Is this automation going to replace us?’",
-       "Be honest about impacts; explain redeployment and reskilling plans"
-      ],
-      [
-       "Change fatigue",
-       "‘Another initiative?’",
-       "Sequence changes; stop something old; show quick wins"
-      ],
-      [
-       "Past broken promises",
-       "‘Last time they said it would be easier.’",
-       "Under-promise; pilot first; let peers report results"
-      ]
-     ],
-     "title": "Why people resist — and what helps"
-    },
-    {
-     "type": "callout",
-     "kind": "insight",
-     "text": "People who push back often know something the project does not — a broken workflow, a regulatory edge case, a peak season. Listen before you persuade.",
-     "title": "Resistance is information"
-    },
-    {
-     "type": "case",
-     "title": "Digital account opening at a commercial bank",
-     "context": "A Bangladeshi commercial bank is introducing tablet-based digital account opening at 120 branches, replacing paper forms. The pilot at 10 branches is technically successful, but after six weeks only 30% of new accounts are opened digitally. Interviews show: many officers did not know why the change was happening beyond ‘head office says so’; senior officers worry that faster processing will be used to cut staff; several were trained once, two weeks before the tablets arrived; and branch targets still reward the number of accounts, not the channel used.",
-     "questions": [
-      "Diagnose the situation with ADKAR. Where is the first barrier?",
-      "What would you change before rolling out to the other 110 branches?",
-      "Which Kotter steps were skipped?"
-     ],
-     "answer": "ADKAR: **Awareness** is weak (no compelling why), **Desire** is undermined by job-loss fear and by targets that do not reward the change, **Knowledge** decayed because training came too early, **Ability** lacked practice time, **Reinforcement** is absent. The first barrier is awareness/desire, so more training alone will fail. Before rollout: leaders explain the customer and compliance reasons (faster opening, fewer errors, better KYC data); HR and leadership give an honest message on staffing and reskilling; train just-in-time with practice sessions and branch super-users; add digital-channel share to branch scorecards; publish pilot-branch wins. Kotter steps skipped: urgency, guiding coalition beyond head office, communicating the vision, removing barriers (targets) and short-term wins."
-    },
-    {
-     "type": "template",
-     "title": "Change impact assessment",
-     "purpose": "Identify who is affected, how much and what support they need before go-live.",
-     "columns": [
-      "Stakeholder group",
-      "What changes for them",
-      "Impact (H/M/L)",
-      "ADKAR gap",
-      "Support actions",
-      "Change champion"
-     ],
-     "example": [
-      [
-       "Branch customer-service officers",
-       "Tablet process replaces paper forms; new KYC checks",
-       "H",
-       "Desire (job-security fears)",
-       "Leadership briefing on reskilling; super-user buddies; scorecard update",
-       "Senior officer, Agrabad branch"
-      ]
-     ],
-     "rows": 6
-    },
-    {
-     "type": "scenario",
-     "situation": "A respected senior supervisor openly criticises the new warehouse scanning process in front of her team, and adoption on her shift is lowest. What should the project manager do FIRST?",
-     "options": [
-      {
-       "text": "Meet her privately to understand her concerns, then involve her in fixing them — possibly as a change champion.",
-       "feedback": "Correct. Her influence is an asset; if her concerns are addressed, she can bring the team along.",
-       "best": true
-      },
-      {
-       "text": "Report her to her manager for undermining the project.",
-       "feedback": "Punishment may silence her but will not change her team’s behaviour and may harden resistance.",
-       "best": false
-      },
-      {
-       "text": "Exclude her shift from the rollout for now.",
-       "feedback": "This avoids the problem and leaves a gap in the benefits.",
-       "best": false
-      },
-      {
-       "text": "Run another training session for her shift.",
-       "feedback": "Training addresses knowledge; her resistance is likely about desire or a real process problem.",
-       "best": false
-      }
-     ],
-     "title": "The vocal sceptic"
-    },
-    {
-     "type": "reflection",
-     "prompt": "Recall a change you were asked to adopt at work. Using ADKAR, which element was weakest for you, and what would have helped most?"
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "Organisational change management (OCM)",
-       "def": "Structured methods for helping people move from current to future ways of working so that project outputs are adopted and benefits realised."
-      },
-      {
-       "term": "ADKAR",
-       "def": "A model of individual change: Awareness, Desire, Knowledge, Ability, Reinforcement."
-      }
-     ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "Users have been trained and understand the new process, but still prefer the old spreadsheet because their bonus depends on speed. Which ADKAR element needs attention?",
-       "options": [
-        "Awareness of the need for change",
-        "Desire / Reinforcement",
-        "Knowledge of the new process",
-        "Ability to use the new tools"
-       ],
-       "answer": 1,
-       "explain": "They know how but lack motivation, and the reward system reinforces the old way."
-      },
-      {
-       "q": "Which Kotter step is MOST concerned with celebrating visible early successes?",
-       "options": [
-        "Generate short-term wins",
-        "Create a sense of urgency",
-        "Anchor changes in the culture",
-        "Build a guiding coalition"
-       ],
-       "answer": 0,
-       "explain": "Short-term wins build credibility and momentum."
-      },
-      {
-       "q": "The BEST way to treat resistance is to…",
-       "options": [
-        "overcome it with stronger mandates from leadership",
-        "ignore it until go-live, when it usually fades",
-        "explore it as information and address root causes",
-        "remove persistent resisters from the project team"
-       ],
-       "answer": 2,
-       "explain": "Resistance often reveals real issues; understanding it leads to better solutions and adoption."
-      },
-      {
-       "q": "Training delivered three months before people get the new system is a problem mainly for which ADKAR element?",
-       "options": [
-        "Awareness and Desire",
-        "Desire and Reinforcement",
-        "Knowledge and Ability",
-        "Awareness and Reinforcement"
-       ],
-       "answer": 2,
-       "explain": "Knowledge fades without use; just-in-time training plus practice builds ability."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "m7-l4",
-   "title": "Governance: PMOs, Portfolios, Programmes & Sustainability",
-   "subtitle": "Connect projects to strategy, choose the right work and deliver it responsibly.",
-   "minutes": 30,
-   "objectives": [
-    "Compare supportive, controlling and directive PMOs and explain how a PMO adds value.",
-    "Distinguish project, programme and portfolio management and use weighted scoring and stage gates.",
-    "Integrate environmental, social and governance (ESG) considerations into project decisions."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "A single well-run project is good. An organisation that consistently picks the **right** projects and runs them well is far better. Governance is the framework of authority, decision rights and oversight that makes that consistency possible — without drowning teams in bureaucracy."
-    },
-    {
-     "type": "table",
-     "head": [
-      "Type",
-      "Degree of control",
-      "What it does",
-      "Best fit"
-     ],
-     "rows": [
-      [
-       "Supportive",
-       "Low",
-       "Templates, training, best practice, lessons-learned library; a consultative role",
-       "Organisations new to formal PM or with diverse, autonomous units"
-      ],
-      [
-       "Controlling",
-       "Moderate",
-       "Requires compliance with methods, reporting and reviews; audits and assures",
-       "Organisations needing consistency and visibility, e.g. regulated sectors"
-      ],
-      [
-       "Directive",
-       "High",
-       "Directly manages projects; PMs report to the PMO",
-       "Strategic or high-risk portfolios needing central control"
-      ]
-     ],
-     "title": "PMO types"
-    },
-    {
-     "type": "callout",
-     "kind": "insight",
-     "text": "A PMO earns its place when it improves decisions and delivery: better prioritisation, fewer failed projects, faster benefit realisation, shared resource planning. Many modern PMOs reposition as a **value management office** that supports agile teams with lightweight guardrails, coaching and portfolio flow.",
-     "title": "PMO value is measured by outcomes, not templates"
-    },
-    {
-     "type": "compare",
-     "columns": [
-      {
-       "title": "Project",
-       "items": [
-        "Temporary effort to create a specific output",
-        "Success: deliver agreed scope, time, cost, quality and value",
-        "Managed by a project manager"
-       ]
-      },
-      {
-       "title": "Programme",
-       "items": [
-        "Group of related projects and activities managed together",
-        "Success: realise benefits that individual projects could not alone",
-        "Managed by a programme manager; focuses on interdependencies and benefits"
-       ]
-      },
-      {
-       "title": "Portfolio",
-       "items": [
-        "All projects, programmes and operations chosen to meet strategy",
-        "Success: best overall value for the organisation’s goals and capacity",
-        "Managed by portfolio leadership; selects, prioritises and balances"
-       ]
-      }
-     ],
-     "title": "Project, programme, portfolio"
-    },
-    {
-     "type": "formula",
-     "items": [
-      {
-       "name": "Weighted score",
-       "expr": "Σ (criterion weight × score)",
-       "meaning": "Weights reflect strategy and must sum to 100%. Scores often use 1–5 scales."
-      },
-      {
-       "name": "Example",
-       "expr": "Strategic fit 40% × 5 + ROI 30% × 3 + Risk (inverse) 20% × 4 + ESG 10% × 2 = 3.9",
-       "meaning": "Compare candidate projects on the same criteria; use results to inform, not replace, the discussion."
-      }
-     ],
-     "title": "Weighted scoring for prioritisation"
-    },
-    {
-     "type": "callout",
-     "kind": "example",
-     "text": "In agile portfolios many organisations rank work by **cost of delay divided by duration** (often called WSJF in scaled frameworks), so small, urgent, valuable items move first. Whichever method you use, make the criteria explicit and visible.",
-     "title": "Cost of delay as a lens"
-    },
-    {
-     "type": "flow",
-     "items": [
-      {
-       "label": "Idea / mandate",
-       "text": "Is the problem worth exploring?"
-      },
-      {
-       "label": "Gate 1: business case",
-       "text": "Is it viable and aligned? Fund discovery"
-      },
-      {
-       "label": "Gate 2: plan approved",
-       "text": "Baseline, risks, funding for delivery"
-      },
-      {
-       "label": "Gate 3: ready to launch",
-       "text": "Quality, readiness, change plan"
-      },
-      {
-       "label": "Gate 4: closure & benefits",
-       "text": "Accept, hand over, track benefits"
-      }
-     ],
-     "title": "Stage-gate governance"
-    },
-    {
-     "type": "callout",
-     "kind": "definition",
-     "text": "Boards set **tolerances** — e.g. ±10% cost, ±3 weeks — within which the PM manages without escalation. Only forecasts beyond tolerance come back to the board. This is management by exception: senior time goes where it is needed.",
-     "title": "Tolerances keep governance light"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "E",
-       "title": "Environmental",
-       "text": "Energy and carbon over the life cycle, materials, waste, water and pollution, climate resilience (e.g. flood-proofing sites)."
-      },
-      {
-       "label": "S",
-       "title": "Social",
-       "text": "Labour standards in the supply chain, health and safety, community impact, accessibility and inclusion of users."
-      },
-      {
-       "label": "G",
-       "title": "Governance",
-       "text": "Anti-corruption, transparency in procurement, data protection, ethical AI, honest reporting."
-      }
-     ],
-     "title": "ESG in project decisions"
-    },
-    {
-     "type": "keypoints",
-     "items": [
-      "Add a sustainability objective or key result to the charter where relevant",
-      "Include carbon and lifecycle cost — not just purchase price — in option appraisal",
-      "Use supplier criteria for labour standards and environmental performance",
-      "Choose energy-efficient hosting and right-size infrastructure",
-      "Plan for reuse, recycling or safe disposal of equipment and materials",
-      "Report ESG measures alongside cost and schedule at stage gates"
-     ],
-     "title": "Practical ways to build sustainability into a project"
-    },
-    {
-     "type": "case",
-     "title": "Solar irrigation pumps in northern Bangladesh",
-     "context": "An NGO-funded programme will install 300 solar irrigation pumps across Rangpur and Dinajpur over three years, run as three projects: procurement and installation, a farmer payment-and-service scheme, and a maintenance training project. The board has limited funds and two other proposals: rooftop solar for clinics, and a mobile weather-advisory service.",
-     "questions": [
-      "Why is this better run as a programme than three separate projects?",
-      "Suggest four weighted criteria the portfolio board could use to compare the three proposals.",
-      "Name two environmental and two social risks the programme should manage."
-     ],
-     "answer": "Programme: the benefit — higher, sustainable farmer incomes and lower diesel use — only appears when pumps, payment scheme and maintenance skills work together; a programme manages those dependencies and benefits. Criteria (example): impact on income/livelihoods 35%, emissions reduction 25%, cost per beneficiary 25%, delivery risk 15%. Environmental: groundwater over-extraction when water becomes cheap; end-of-life disposal of panels and batteries. Social: unequal access (larger landowners capturing benefits), and safety/theft issues at remote sites — plus fair labour practices among installers."
-    },
-    {
-     "type": "scenario",
-     "situation": "At Gate 3, the readiness review shows user training is only 40% complete and a critical security test is outstanding. The sponsor wants to pass the gate anyway to meet a public announcement. What should the project manager do?",
-     "options": [
-      {
-       "text": "Pass the gate; announcements matter more than training.",
-       "feedback": "Launching without security testing and trained users creates significant risk to the organisation and customers.",
-       "best": false
-      },
-      {
-       "text": "Cancel the gate meeting until everything is ready.",
-       "feedback": "Avoiding governance removes decision makers’ chance to choose a sensible option such as a pilot.",
-       "best": false
-      },
-      {
-       "text": "Mark training as complete to keep the gate green.",
-       "feedback": "Falsifying status is a serious ethical breach.",
-       "best": false
-      },
-      {
-       "text": "Present the readiness facts and risks to the gate board with options — e.g. delay, limited pilot launch, or conditional pass with dated actions — and let the authorised body decide.",
-       "feedback": "Correct. Governance works when decision makers get the facts, risks and options. The PM informs and recommends; the gate body decides.",
-       "best": true
-      }
-     ],
-     "title": "Gate review pressure"
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "PMO",
-       "def": "Project (or portfolio/programme) management office: a function that standardises governance, supports or directs projects and improves delivery capability."
-      },
-      {
-       "term": "Stage gate",
-       "def": "A decision point between phases where governance reviews progress and decides whether to continue, change or stop."
-      },
-      {
-       "term": "ESG",
-       "def": "Environmental, social and governance considerations used to assess the wider impact and responsibility of projects and organisations."
-      }
-     ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "A PMO provides templates and coaching but does not require their use. Which type is it?",
-       "options": [
-        "Directive",
-        "Controlling",
-        "Portfolio",
-        "Supportive"
-       ],
-       "answer": 3,
-       "explain": "Supportive PMOs provide resources with low control."
-      },
-      {
-       "q": "Which is the main focus of programme management?",
-       "options": [
-        "Selecting and ranking projects against strategy",
-        "Managing the scope, time and cost of one deliverable",
-        "Auditing projects for compliance with standards",
-        "Coordinating related projects for combined benefits"
-       ],
-       "answer": 3,
-       "explain": "Programmes manage interdependencies to deliver benefits not available separately."
-      },
-      {
-       "q": "A project forecast is 4% over budget; the board’s tolerance is ±10%. What should the PM do?",
-       "options": [
-        "Escalate to the board immediately for a decision",
-        "Pause non-urgent work until the board has reviewed it",
-        "Manage within the project and report normally",
-        "Request a new cost baseline from the board"
-       ],
-       "answer": 2,
-       "explain": "Within tolerance, the PM manages; management by exception keeps the board for larger deviations."
-      },
-      {
-       "q": "Criteria weights are 50%, 30% and 20%. Project X scores 4, 2 and 5. Its weighted score is…",
-       "options": [
-        "3.6",
-        "3.8",
-        "4.0",
-        "3.2"
-       ],
-       "answer": 0,
-       "explain": "0.5×4 + 0.3×2 + 0.2×5 = 2.0 + 0.6 + 1.0 = 3.6."
-      },
-      {
-       "q": "Comparing options by lifecycle energy cost rather than purchase price alone is an example of…",
-       "options": [
-        "social sustainability and community benefit",
-        "environmental and financial sustainability",
-        "gold plating of the specification",
-        "scope creep driven by stakeholders"
-       ],
-       "answer": 1,
-       "explain": "Lifecycle costing captures operating energy and environmental impact."
-      }
-     ]
-    }
-   ]
-  }
- ]
-});
-TRACK.modules.push({
- "id": "m8",
- "order": 8,
- "code": "Close",
- "title": "Close — Closing, Benefits, Ethics & Certification Readiness",
- "subtitle": "Finish well, secure the value, act with integrity and prepare for the ZPMP exam and capstone.",
- "outcomes": [
-  "Close phases, projects and contracts with formal acceptance, handover and archiving.",
-  "Run retrospectives and lessons-learned processes that change behaviour, and plan benefits realisation.",
-  "Apply responsibility, respect, fairness and honesty to real dilemmas.",
-  "Build a PM career portfolio and use a reliable strategy for situational-judgement questions.",
-  "Integrate all eight ZPMP Value Loop stages on one project and plan the capstone."
- ],
- "lessons": [
-  {
-   "id": "m8-l1",
-   "title": "Closing a Phase or Project",
-   "subtitle": "Finish properly: accepted deliverables, clean handover, settled contracts and a usable archive.",
-   "minutes": 25,
-   "objectives": [
-    "List the activities required to close a phase, project or contract.",
-    "Plan a handover to operations that protects benefits after go-live.",
-    "Close a project that is terminated early with the same discipline."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "**Close** is the last stage of the ZPMP Value Loop, and it is the one most often rushed. People are pulled onto new work, the budget code is shut and documents scatter. Yet closure is where you secure acceptance, protect the benefits and capture knowledge for the next project. A project that never formally closes keeps consuming attention and money."
     },
     {
      "type": "flow",
@@ -4167,6 +3348,38 @@ TRACK.modules.push({
       ]
      ],
      "title": "Handover to operations"
+    },
+    {
+     "type": "steps",
+     "title": "Validate readiness for transition",
+     "items": [
+      {
+       "title": "Agree readiness criteria early",
+       "text": "Define with operations what 'ready to receive' means, months before go-live."
+      },
+      {
+       "title": "Rehearse",
+       "text": "Run a dress rehearsal or pilot of support processes, including incident handling."
+      },
+      {
+       "title": "Check people",
+       "text": "Support staff trained, runbooks current, escalation paths agreed."
+      },
+      {
+       "title": "Check data and systems",
+       "text": "Migration verified, monitoring in place, backups tested."
+      },
+      {
+       "title": "Decide formally",
+       "text": "Hold a go or no-go review against the criteria and record the decision."
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "insight",
+     "title": "Closure in agile and product settings",
+     "text": "Agile teams close each **release** with acceptance at the sprint review and a retrospective, and the product often continues with a stable team. Even so, a project or funding period still ends: contracts close, the budget is reconciled, temporary staff move on and the final lessons are shared beyond the team."
     },
     {
      "type": "steps",
@@ -4269,6 +3482,22 @@ TRACK.modules.push({
       {
        "term": "Contract closure",
        "def": "Completing all contract obligations, settling claims and payments and formally ending the contractual relationship."
+      },
+      {
+       "term": "Closure criteria",
+       "def": "Agreed conditions that must be met before a phase or project is formally closed."
+      },
+      {
+       "term": "Operational readiness",
+       "def": "The state in which the receiving organisation has the people, processes, tools and data to run the result."
+      },
+      {
+       "term": "Transition",
+       "def": "Moving responsibility for a deliverable from the project to operations, support or the next phase."
+      },
+      {
+       "term": "Go or no-go review",
+       "def": "A formal decision point that checks readiness criteria before a release or handover proceeds."
       }
      ]
     },
@@ -4311,13 +3540,2235 @@ TRACK.modules.push({
       {
        "q": "A procurement audit at closure mainly aims to…",
        "options": [
-        "penalise the vendor for any missed obligations",
-        "reopen negotiation on the final contract price",
         "identify procurement lessons for future use",
+        "reopen negotiation on the final contract price",
+        "penalise the vendor for any missed obligations",
         "approve the final payment to the supplier"
        ],
-       "answer": 2,
+       "answer": 0,
        "explain": "It reviews the procurement process to improve future procurement."
+      },
+      {
+       "q": "Two weeks before go-live, the service desk has not been trained and no runbook exists. The sponsor wants to keep the date. What should the project manager do?",
+       "options": [
+        "Go live and train the service desk afterwards",
+        "Present the failed readiness criteria at a go or no-go review with options and their risks",
+        "Delay go-live indefinitely until everything is perfect",
+        "Ask the development team to act as the service desk permanently"
+       ],
+       "answer": 1,
+       "explain": "Readiness for transition should be validated against agreed criteria, and the decision made formally with clear options, not assumed."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+});
+TRACK.modules.push({
+ "id": "m7",
+ "order": 7,
+ "code": "Govern",
+ "title": "Business Environment I: Governance, Compliance, Change & Risk",
+ "subtitle": "Business Environment · Tasks 1, 2, 3 and 5 (governance, compliance, change control, risk)",
+ "outcomes": [
+  "Establish project governance with success metrics, escalation paths and ethical standards",
+  "Plan and manage compliance and prove it with evidence",
+  "Control change in predictive, agile and hybrid settings",
+  "Identify, analyse, respond to and communicate risk, including security and sustainability risks"
+ ],
+ "lessons": [
+  {
+   "id": "m7-l1",
+   "title": "Project Governance, Process Assets & Ethics",
+   "subtitle": "Set the structure, rules, success metrics and escalation paths a project runs within, and act with integrity",
+   "minutes": 32,
+   "objectives": [
+    "Describe the governance structure, rules and reporting a project needs",
+    "Use organisational process assets to establish governance quickly",
+    "Define success metrics, escalation paths and tolerance thresholds",
+    "Apply professional values and a structured check to ethical dilemmas"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "A single well-run project is good. An organisation that consistently picks the **right** projects and runs them well is far better. Governance is the framework of authority, decision rights and oversight that makes that consistency possible — without drowning teams in bureaucracy."
+    },
+    {
+     "type": "layers",
+     "title": "A typical project governance structure (top first)",
+     "items": [
+      {
+       "label": "Portfolio or investment board",
+       "parts": [
+        "Selects and funds projects",
+        "Sets risk appetite and strategic priorities"
+       ]
+      },
+      {
+       "label": "Steering committee",
+       "parts": [
+        "Directs the project at gates",
+        "Decides on issues beyond tolerance"
+       ]
+      },
+      {
+       "label": "Sponsor",
+       "parts": [
+        "Owns the business case",
+        "Champions the project and removes organisational blocks"
+       ]
+      },
+      {
+       "label": "Project manager",
+       "parts": [
+        "Manages within agreed tolerances",
+        "Reports, escalates and integrates"
+       ]
+      },
+      {
+       "label": "Team and product owner",
+       "parts": [
+        "Deliver the work",
+        "Decide within their delegated authority"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "title": "Organisational process assets (OPAs)",
+     "text": "**OPAs** are the plans, policies, procedures, templates, standards and knowledge bases an organisation already has, such as a stage-gate procedure, a risk-scoring template, a code of conduct or a lessons-learned library. Use them to establish governance quickly and consistently, tailoring rather than reinventing. Conditions outside the project team's control, such as laws, market conditions or company culture, are often called **enterprise environmental factors**."
+    },
+    {
+     "type": "table",
+     "head": [
+      "Type",
+      "Degree of control",
+      "What it does",
+      "Best fit"
+     ],
+     "rows": [
+      [
+       "Supportive",
+       "Low",
+       "Templates, training, best practice, lessons-learned library; a consultative role",
+       "Organisations new to formal PM or with diverse, autonomous units"
+      ],
+      [
+       "Controlling",
+       "Moderate",
+       "Requires compliance with methods, reporting and reviews; audits and assures",
+       "Organisations needing consistency and visibility, e.g. regulated sectors"
+      ],
+      [
+       "Directive",
+       "High",
+       "Directly manages projects; PMs report to the PMO",
+       "Strategic or high-risk portfolios needing central control"
+      ]
+     ],
+     "title": "PMO types"
+    },
+    {
+     "type": "flow",
+     "items": [
+      {
+       "label": "Idea / mandate",
+       "text": "Is the problem worth exploring?"
+      },
+      {
+       "label": "Gate 1: business case",
+       "text": "Is it viable and aligned? Fund discovery"
+      },
+      {
+       "label": "Gate 2: plan approved",
+       "text": "Baseline, risks, funding for delivery"
+      },
+      {
+       "label": "Gate 3: ready to launch",
+       "text": "Quality, readiness, change plan"
+      },
+      {
+       "label": "Gate 4: closure & benefits",
+       "text": "Accept, hand over, track benefits"
+      }
+     ],
+     "title": "Stage-gate governance"
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "text": "Boards set **tolerances** — e.g. ±10% cost, ±3 weeks — within which the PM manages without escalation. Only forecasts beyond tolerance come back to the board. This is management by exception: senior time goes where it is needed.",
+     "title": "Tolerances keep governance light"
+    },
+    {
+     "type": "table",
+     "title": "Escalation paths and thresholds",
+     "head": [
+      "Variance or event",
+      "Project manager acts when…",
+      "Sponsor decides when…",
+      "Steering committee or board decides when…"
+     ],
+     "rows": [
+      [
+       "Cost forecast",
+       "Within ±5% of budget",
+       "Between 5% and 10%",
+       "Beyond 10% or reserve release needed"
+      ],
+      [
+       "Milestone date",
+       "Slip under 2 weeks",
+       "Slip of 2–6 weeks",
+       "Slip over 6 weeks or regulatory date at risk"
+      ],
+      [
+       "Scope",
+       "Backlog reordering within the product goal",
+       "Change to a major deliverable",
+       "Change to objectives or the business case"
+      ],
+      [
+       "Risk",
+       "Score below 12 with response in place",
+       "Score 12 or above",
+       "Beyond the organisation's risk appetite"
+      ]
+     ]
+    },
+    {
+     "type": "keypoints",
+     "title": "Defining success metrics",
+     "items": [
+      "Separate **project** success (delivered as agreed) from **product** success (value created over time)",
+      "Agree a few metrics per objective, each with a baseline, target and data source",
+      "Combine leading measures, such as adoption in the first month, with lagging ones, such as cost savings after a year",
+      "Include stakeholder satisfaction and sustainability measures where they matter",
+      "Record the metrics in the charter or governance plan so they cannot drift quietly"
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Project managers hold information, money and influence. Sponsors, clients and teams rely on what they report and how they decide. The professional community broadly agrees on four core values — **responsibility, respect, fairness and honesty** — and these are reflected, for example, in the code of ethics published by PMI. Here is what they mean in day-to-day project life, in ZPMP’s own words."
+    },
+    {
+     "type": "framework",
+     "items": [
+      {
+       "label": "RSP",
+       "title": "Responsibility",
+       "text": "Own your decisions and their consequences. Take only work you are competent to do. Keep commitments. Report errors — including your own — promptly and fix them."
+      },
+      {
+       "label": "RES",
+       "title": "Respect",
+       "text": "Treat people with dignity. Listen to other views. Honour other cultures and norms. Never abuse power or speak about others behind their backs to harm them."
+      },
+      {
+       "label": "FAI",
+       "title": "Fairness",
+       "text": "Decide impartially. Disclose and manage conflicts of interest. Give equal access to information and opportunity in procurement and staffing."
+      },
+      {
+       "label": "HON",
+       "title": "Honesty",
+       "text": "Seek and tell the truth. Report status accurately, even when it is unwelcome. Do not mislead by omission, selective data or silence."
+      }
+     ],
+     "title": "Four values in action"
+    },
+    {
+     "type": "steps",
+     "items": [
+      {
+       "title": "Recognise",
+       "text": "Is there an ethical issue? Who could be harmed or treated unfairly?"
+      },
+      {
+       "title": "Get the facts",
+       "text": "What do you actually know? What laws, policies, contracts and codes apply?"
+      },
+      {
+       "title": "Consider options",
+       "text": "List possible actions, including ‘raise it’, ‘decline’ and ‘seek advice’."
+      },
+      {
+       "title": "Test them",
+       "text": "Would I be comfortable if this appeared in the news, or if my mentor saw it? Is it legal? Fair to all? Honest?"
+      },
+      {
+       "title": "Act and reflect",
+       "text": "Act, document your reasoning, and raise concerns through proper channels if needed."
+      }
+     ],
+     "title": "A five-step ethical decision check"
+    },
+    {
+     "type": "scenario",
+     "situation": "Two days before a board meeting, your sponsor asks you to change the project’s status from red to amber ‘to avoid panic’, promising to fix things next month. What should you do?",
+     "options": [
+      {
+       "text": "Change it to amber — the sponsor is accountable for the project.",
+       "feedback": "Knowingly misreporting status breaches honesty regardless of who asks.",
+       "best": false
+      },
+      {
+       "text": "Report the sponsor to the ethics hotline immediately.",
+       "feedback": "Escalation may become necessary, but first discuss it directly and offer a constructive alternative.",
+       "best": false
+      },
+      {
+       "text": "Keep the status red, and offer to help the sponsor present a credible recovery plan and decisions needed alongside it.",
+       "feedback": "Correct. Honest status plus a constructive path forward serves the sponsor and the organisation.",
+       "best": true
+      },
+      {
+       "text": "Skip the board meeting to avoid presenting.",
+       "feedback": "Avoidance does not solve the dilemma and leaves the board uninformed.",
+       "best": false
+      }
+     ],
+     "title": "The green report"
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "PMO",
+       "def": "Project (or portfolio/programme) management office: a function that standardises governance, supports or directs projects and improves delivery capability."
+      },
+      {
+       "term": "Stage gate",
+       "def": "A decision point between phases where governance reviews progress and decides whether to continue, change or stop."
+      },
+      {
+       "term": "Conflict of interest",
+       "def": "A situation in which personal interests could improperly influence, or appear to influence, professional judgement."
+      },
+      {
+       "term": "Project governance",
+       "def": "The framework of authority, decision rights, rules and oversight within which a project is directed and controlled."
+      },
+      {
+       "term": "Organisational process assets (OPAs)",
+       "def": "An organisation's existing plans, policies, procedures, templates and knowledge that projects can use and tailor."
+      },
+      {
+       "term": "Tolerance",
+       "def": "The permitted deviation from a plan, such as ±5% cost, within which the project manager can act without escalating."
+      },
+      {
+       "term": "Escalation path",
+       "def": "The agreed route by which an issue or variance moves to a higher level of authority for decision."
+      },
+      {
+       "term": "Management by exception",
+       "def": "A governance style in which senior people are involved only when agreed tolerances are forecast to be exceeded."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "A PMO provides templates and coaching but does not require their use. Which type is it?",
+       "options": [
+        "Directive",
+        "Controlling",
+        "Portfolio",
+        "Supportive"
+       ],
+       "answer": 3,
+       "explain": "Supportive PMOs provide resources with low control."
+      },
+      {
+       "q": "A project forecast is 4% over budget; the board’s tolerance is ±10%. What should the PM do?",
+       "options": [
+        "Escalate to the board immediately for a decision",
+        "Pause non-urgent work until the board has reviewed it",
+        "Manage within the project and report normally",
+        "Request a new cost baseline from the board"
+       ],
+       "answer": 2,
+       "explain": "Within tolerance, the PM manages; management by exception keeps the board for larger deviations."
+      },
+      {
+       "q": "You discover your company’s bid evaluation includes a firm owned by your cousin. What should you do FIRST?",
+       "options": [
+        "Evaluate the bid fairly and say nothing about it",
+        "Disclose the relationship and step aside from it",
+        "Mark the firm down to avoid any suspicion of favour",
+        "Ask your cousin to withdraw the bid quietly before scoring"
+       ],
+       "answer": 1,
+       "explain": "Disclosure and recusal manage the conflict transparently."
+      },
+      {
+       "q": "A sponsor asks you to omit a major risk from a report to investors. Which value is primarily at stake?",
+       "options": [
+        "Honesty",
+        "Respect",
+        "Fairness",
+        "Responsibility only for the sponsor"
+       ],
+       "answer": 0,
+       "explain": "Omitting material information misleads — an honesty issue."
+      },
+      {
+       "q": "A new project manager must set up governance for a project in an organisation with an established PMO. What should she do FIRST?",
+       "options": [
+        "Design a new governance framework from scratch",
+        "Review the organisation's process assets, such as gate procedures and templates, and tailor them",
+        "Ask the team to propose their own governance rules",
+        "Wait for the steering committee to define governance"
+       ],
+       "answer": 1,
+       "explain": "OPAs let governance be established quickly and consistently; the PM tailors them to the project rather than reinventing them."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m7-l2",
+   "title": "Planning & Managing Compliance",
+   "subtitle": "Confirm what the project must comply with, protect it from threats and prove compliance with evidence",
+   "minutes": 30,
+   "objectives": [
+    "Confirm and classify a project's compliance requirements",
+    "Identify threats to compliance and the consequences of non-compliance",
+    "Choose methods that build compliance into delivery",
+    "Measure the extent to which the project is compliant"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Every project operates inside rules it did not write: laws, regulations, licences, safety codes, data-protection duties, donor conditions, sustainability commitments and internal policies. **Compliance management** confirms which rules apply, builds them into the work and produces evidence that they were met. Non-compliance can stop a project overnight, so it belongs in planning from the first week, not in a panic before go-live."
+    },
+    {
+     "type": "table",
+     "title": "Compliance categories",
+     "head": [
+      "Category",
+      "Examples",
+      "Typical evidence"
+     ],
+     "rows": [
+      [
+       "Legal and regulatory",
+       "Central bank circulars, telecom licences, labour law",
+       "Approvals, licences, regulator correspondence"
+      ],
+      [
+       "Security and data privacy",
+       "Data-protection law, security standards, customer consent",
+       "Risk assessments, penetration test reports, consent records"
+      ],
+      [
+       "Health and safety",
+       "Site safety, fire codes, electrical safety",
+       "Inspection certificates, permits to work, incident logs"
+      ],
+      [
+       "Environmental and sustainability",
+       "Environmental clearances, emissions and waste reporting",
+       "Impact assessments, monitoring data, waste manifests"
+      ],
+      [
+       "Financial and procurement",
+       "Public procurement rules, anti-bribery law, donor conditions",
+       "Tender records, conflict declarations, audit reports"
+      ],
+      [
+       "Standards and accessibility",
+       "Building codes, medical-device standards, accessibility rules",
+       "Test reports, conformity certificates"
+      ],
+      [
+       "Internal policy",
+       "Architecture standards, records retention, brand rules",
+       "Design review sign-offs, policy checklists"
+      ]
+     ]
+    },
+    {
+     "type": "steps",
+     "title": "Confirm compliance requirements",
+     "items": [
+      {
+       "title": "Find the sources",
+       "text": "Laws and regulators, contracts, donor or lender agreements, industry standards and internal policies."
+      },
+      {
+       "title": "Consult the specialists",
+       "text": "Legal, compliance, security, safety and sustainability teams, early."
+      },
+      {
+       "title": "Classify",
+       "text": "Group obligations by category and rate how severe a breach would be."
+      },
+      {
+       "title": "Assign owners",
+       "text": "One named owner for each obligation or group of obligations."
+      },
+      {
+       "title": "Map to the work",
+       "text": "Link each obligation to deliverables, backlog items, acceptance criteria and tests."
+      },
+      {
+       "title": "Plan the evidence",
+       "text": "Decide what proof will show compliance, who produces it and where it is kept."
+      }
+     ]
+    },
+    {
+     "type": "template",
+     "title": "Compliance register",
+     "purpose": "Track each compliance obligation from identification to verified evidence.",
+     "columns": [
+      "Obligation",
+      "Source",
+      "Category",
+      "Applies to",
+      "Owner",
+      "Evidence",
+      "Status"
+     ],
+     "example": [
+      [
+       "Customer consent before storing ID photos",
+       "Data-protection law; central bank e-KYC guideline",
+       "Data privacy",
+       "Agent onboarding app",
+       "Compliance officer",
+       "Consent screen test report; consent log sample",
+       "Evidence under review"
+      ]
+     ],
+     "rows": 7
+    },
+    {
+     "type": "table",
+     "title": "Threats to compliance",
+     "head": [
+      "Threat",
+      "Example",
+      "Method that helps"
+     ],
+     "rows": [
+      [
+       "Schedule pressure",
+       "Inspections skipped to meet a date",
+       "Compliance steps built into gates and the definition of done"
+      ],
+      [
+       "Supplier non-compliance",
+       "Subcontractor without valid safety permits",
+       "Contract clauses, supplier audits, permit checks"
+      ],
+      [
+       "Unclear ownership",
+       "Everyone assumes legal has checked it",
+       "Named owners in the compliance register"
+      ],
+      [
+       "Rules change mid-project",
+       "New data-localisation rule",
+       "Regulatory horizon scanning; change control"
+      ],
+      [
+       "Unapproved tools",
+       "Customer data pasted into an unapproved AI tool",
+       "Approved-tools list, training, data classification"
+      ],
+      [
+       "Poor records",
+       "Evidence scattered in personal inboxes",
+       "One evidence repository with version control"
+      ]
+     ]
+    },
+    {
+     "type": "framework",
+     "title": "Methods that support compliance",
+     "items": [
+      {
+       "label": "CBD",
+       "title": "Compliance by design",
+       "text": "Write obligations into requirements, stories and acceptance criteria from the start."
+      },
+      {
+       "label": "GAT",
+       "title": "Gates and checklists",
+       "text": "Make compliance evidence a condition for passing gates or releasing."
+      },
+      {
+       "label": "AUT",
+       "title": "Automated controls",
+       "text": "Security scans, access checks and data-masking that run on every change."
+      },
+      {
+       "label": "TRN",
+       "title": "Training",
+       "text": "Short, role-specific training for team members and suppliers."
+      },
+      {
+       "label": "AUD",
+       "title": "Reviews and audits",
+       "text": "Internal reviews before external audits find the gaps."
+      },
+      {
+       "label": "SUP",
+       "title": "Supplier controls",
+       "text": "Contract clauses, certificates and audit rights."
+      }
+     ]
+    },
+    {
+     "type": "compare",
+     "title": "Consequences of non-compliance",
+     "columns": [
+      {
+       "title": "Legal and financial",
+       "items": [
+        "Fines and penalties",
+        "Contract damages or termination",
+        "Loss of licence or funding"
+       ]
+      },
+      {
+       "title": "Operational",
+       "items": [
+        "Stop-work orders",
+        "Delayed or blocked go-live",
+        "Expensive rework and retesting"
+       ]
+      },
+      {
+       "title": "People and reputation",
+       "items": [
+        "Harm to customers, workers or communities",
+        "Loss of trust with regulators and the public",
+        "Personal liability for managers"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "example",
+     "title": "Compliance in sprints",
+     "text": "A mobile financial services firm in Dhaka was building a new savings feature under central bank rules. Every story touching customer data carried a privacy acceptance criterion, automated checks ran on each build, and the compliance officer joined the sprint review once a month. When the regulator reviewed the feature, the evidence already existed and the approval came without late rework."
+    },
+    {
+     "type": "formula",
+     "title": "Measuring compliance",
+     "items": [
+      {
+       "name": "Compliance coverage",
+       "expr": "Obligations with verified evidence ÷ applicable obligations × 100",
+       "meaning": "How much of the project's compliance duty is proven, not just assumed."
+      },
+      {
+       "name": "Open findings",
+       "expr": "Count of audit or review findings not yet closed, by severity",
+       "meaning": "Where the project is exposed now."
+      },
+      {
+       "name": "Time to close findings",
+       "expr": "Average days from finding to verified fix",
+       "meaning": "How quickly the project responds to gaps."
+      }
+     ]
+    },
+    {
+     "type": "scenario",
+     "title": "Postpone the consent screen?",
+     "situation": "Two sprints before launch, the product owner proposes moving the customer consent screen to a later release so that a marketing feature can ship on time. The consent screen is required by data-protection law before any customer data is stored. What should the project manager do?",
+     "options": [
+      {
+       "text": "Agree, because the product owner owns backlog priority.",
+       "feedback": "Weak. Backlog ordering is the product owner's decision, but legal obligations are not optional and launching without consent would breach the law.",
+       "best": false
+      },
+      {
+       "text": "Explain that the consent screen is a compliance obligation that must ship with any data collection, involve the compliance officer, and help the product owner find what else can move.",
+       "feedback": "Best. It treats the obligation as non-negotiable, makes the consequences visible and still supports the product owner in re-planning.",
+       "best": true
+      },
+      {
+       "text": "Launch without the screen and add a disclaimer to the app store listing.",
+       "feedback": "Weak. A disclaimer does not meet the legal duty.",
+       "best": false
+      },
+      {
+       "text": "Escalate to the board and pause the release.",
+       "feedback": "Premature. The issue can be resolved within the team's authority by re-prioritising other work.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "checklist",
+     "title": "Compliance readiness checklist",
+     "items": [
+      "All compliance sources identified and specialists consulted",
+      "Obligations classified and recorded in the compliance register",
+      "Each obligation has a named owner",
+      "Obligations mapped to deliverables, stories or acceptance criteria",
+      "Evidence planned, collected and stored in one place",
+      "Suppliers bound by matching contract clauses",
+      "Compliance coverage and open findings reported to governance"
+     ]
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Compliance",
+       "def": "Meeting the laws, regulations, standards, contracts and policies that apply to a project and its result."
+      },
+      {
+       "term": "Compliance obligation",
+       "def": "A specific requirement the project must meet, such as obtaining consent or a safety permit."
+      },
+      {
+       "term": "Compliance register",
+       "def": "A record of obligations, their sources, owners, evidence and status."
+      },
+      {
+       "term": "Compliance by design",
+       "def": "Building obligations into requirements, design and acceptance criteria from the start rather than checking at the end."
+      },
+      {
+       "term": "Non-compliance",
+       "def": "Failure to meet an applicable obligation, which can lead to penalties, stoppages or harm."
+      },
+      {
+       "term": "Audit trail",
+       "def": "A record that shows who did what, when and why, used as evidence in reviews and audits."
+      },
+      {
+       "term": "Regulatory horizon scanning",
+       "def": "Regularly checking for new or changing rules that may affect the project."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "A hospital annex must pass a fire-safety inspection before occupancy. Into which compliance category does this fall?",
+       "options": [
+        "Health and safety",
+        "Internal policy",
+        "Financial and procurement",
+        "Data privacy"
+       ],
+       "answer": 0,
+       "explain": "Fire codes and occupancy inspections are health and safety obligations."
+      },
+      {
+       "q": "What is the BEST way to make sure compliance obligations are not forgotten in an agile project?",
+       "options": [
+        "Run a compliance review just before go-live",
+        "Ask the compliance team to approve every story",
+        "Leave compliance to the vendor",
+        "Write obligations into stories, acceptance criteria and the definition of done"
+       ],
+       "answer": 3,
+       "explain": "Compliance by design builds obligations into the work itself, so evidence is produced as the product is built."
+      },
+      {
+       "q": "A subcontractor arrives on site without valid safety permits, and the schedule is tight. What should the project manager do?",
+       "options": [
+        "Let them start and collect permits later",
+        "Stop the unpermitted work and resolve the permits under the contract terms",
+        "Report the subcontractor to the regulator immediately",
+        "Ask the site team to supervise them closely instead"
+       ],
+       "answer": 1,
+       "explain": "Working without permits is non-compliance with possible harm and stop-work consequences. The work must not proceed until the obligation is met."
+      },
+      {
+       "q": "Out of 40 applicable obligations, 30 have verified evidence. What is the compliance coverage?",
+       "options": [
+        "30%",
+        "40%",
+        "75%",
+        "133%"
+       ],
+       "answer": 2,
+       "explain": "Coverage = 30 ÷ 40 × 100 = 75%. The remaining 25% is exposure that needs evidence or action."
+      },
+      {
+       "q": "Which is a threat to compliance that an approved-tools list and data classification help prevent?",
+       "options": [
+        "A delayed hardware shipment",
+        "Team members pasting customer data into unapproved AI tools",
+        "A change in the sponsor",
+        "A slow sprint review"
+       ],
+       "answer": 1,
+       "explain": "Unapproved tools can breach data-protection duties. Clear rules on approved tools and data classes reduce this threat."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m7-l3",
+   "title": "Managing & Controlling Change",
+   "subtitle": "Run change control that fits the approach, communicate decisions and keep the plan and documents current",
+   "minutes": 28,
+   "objectives": [
+    "Recognise scope creep and gold plating",
+    "Execute integrated change control on predictive work",
+    "Absorb change through the backlog on agile work, with clear limits on hybrid projects",
+    "Communicate change status, implement approved changes and update documentation"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Change is normal; uncontrolled change is not. Good change control lets the project say yes to the right changes quickly, say no or not now to the rest, and keep everyone working from the same, current picture. Predictive work uses formal change requests against baselines. Agile work absorbs most change through the product backlog. Hybrid projects need both, with clear rules about which path a change takes."
+    },
+    {
+     "type": "compare",
+     "title": "Scope creep vs gold plating vs healthy change",
+     "columns": [
+      {
+       "title": "Scope creep",
+       "items": [
+        "Uncontrolled growth in scope",
+        "Requests absorbed without impact analysis",
+        "Usually from stakeholders",
+        "Leads to delays, overruns, burnout"
+       ]
+      },
+      {
+       "title": "Gold plating",
+       "items": [
+        "Team adds extras nobody asked for",
+        "Well-meant but unapproved",
+        "Adds cost and risk",
+        "Hides real progress"
+       ]
+      },
+      {
+       "title": "Healthy change",
+       "items": [
+        "Visible, analysed and decided",
+        "Linked to value or necessity",
+        "Trade-offs made explicitly",
+        "Baselines or backlog updated transparently"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "flow",
+     "title": "Integrated change control (predictive)",
+     "items": [
+      {
+       "label": "Request",
+       "text": "Change request logged"
+      },
+      {
+       "label": "Analyse",
+       "text": "Impact on scope, time, cost, quality, risk, benefits"
+      },
+      {
+       "label": "Decide",
+       "text": "PM, sponsor or change control board approves, rejects or defers"
+      },
+      {
+       "label": "Update",
+       "text": "Baselines, plans and documents revised"
+      },
+      {
+       "label": "Communicate",
+       "text": "Stakeholders and team informed; change implemented"
+      }
+     ]
+    },
+    {
+     "type": "compare",
+     "title": "Two ways to absorb change",
+     "columns": [
+      {
+       "title": "Integrated change control",
+       "items": [
+        "Used when scope, schedule and cost are baselined",
+        "Formal request and impact analysis",
+        "Decision by authorised body (e.g. CCB)",
+        "Protects contracts and commitments",
+        "Can feel slow; tailor thresholds to keep it fast"
+       ]
+      },
+      {
+       "title": "Backlog refinement",
+       "items": [
+        "Used for evolving product scope",
+        "New items added to the backlog by the product owner",
+        "Ordered against everything else; something else may move down",
+        "Change is expected and cheap if made before work starts",
+        "Iteration goal protected during the iteration"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "insight",
+     "text": "Many hybrid projects let the product owner reorder the backlog freely **within** an agreed budget and milestone, but send anything that moves a milestone, increases total budget or affects a contract to formal change control. Write the thresholds down in the plan.",
+     "title": "Hybrid change thresholds"
+    },
+    {
+     "type": "template",
+     "title": "Change log",
+     "purpose": "Record every change request from submission to implementation, so that its status is visible to all.",
+     "columns": [
+      "ID and description",
+      "Requested by",
+      "Impact (scope, time, cost, risk, value)",
+      "Decision, by whom and date",
+      "Status communicated to",
+      "Documents updated"
+     ],
+     "example": [
+      [
+       "CR-014 Add claims-integration interface",
+       "Insurance partner via sponsor",
+       "+3 weeks, +Tk 18 lakh, new data-sharing risk, enables 12% more insured patients",
+       "Approved by CCB, 4 Mar",
+       "Requester, team, finance, vendor",
+       "Scope baseline, schedule, contract amendment, risk register"
+      ]
+     ],
+     "rows": 7
+    },
+    {
+     "type": "steps",
+     "title": "After the decision: communicate, implement, update",
+     "items": [
+      {
+       "title": "Tell the requester and stakeholders",
+       "text": "Share the decision and the reason, including rejections and deferrals."
+      },
+      {
+       "title": "Update baselines or the backlog",
+       "text": "Revise scope, schedule and cost baselines, or reorder the backlog."
+      },
+      {
+       "title": "Update documents",
+       "text": "Plans, registers, contracts, requirements, test cases and training material."
+      },
+      {
+       "title": "Implement and verify",
+       "text": "Carry out the change and confirm it was done as approved."
+      },
+      {
+       "title": "Close the request",
+       "text": "Record the outcome in the change log."
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "title": "Configuration management",
+     "text": "**Configuration management** keeps track of the versions of deliverables and their documentation, so that everyone builds, tests and approves the same thing. Version control for code, controlled drawing registers for construction and a single source for requirements are all forms of it."
+    },
+    {
+     "type": "callout",
+     "kind": "pro",
+     "title": "Make change status visible",
+     "text": "Stakeholders worry most about changes they cannot see. Publish the change log or a simple board showing each request as submitted, under analysis, decided or implemented. Fewer people will chase you, and fewer side-door requests will reach the team."
+    },
+    {
+     "type": "scenario",
+     "title": "Which path for this change?",
+     "situation": "On a hybrid hospital project, the product owner may reorder the patient-flow software backlog freely within its agreed budget and milestone. The hospital's insurance partner now asks for a claims-integration feature that the team estimates would push the software milestone back by three weeks and add 6% to the software budget. What should the project manager do?",
+     "options": [
+      {
+       "text": "Let the product owner add it to the backlog; backlog changes are the product owner's call.",
+       "feedback": "Weak. The product owner's authority covers ordering within the agreed budget and milestone; this change breaches both thresholds.",
+       "best": false
+      },
+      {
+       "text": "Raise it through integrated change control with an impact analysis, so the sponsor or change board can decide on the milestone and budget change.",
+       "feedback": "Best. Changes that move milestones or budgets beyond agreed thresholds belong in formal change control, even on the agile part of a hybrid project.",
+       "best": true
+      },
+      {
+       "text": "Reject it because the scope baseline is fixed.",
+       "feedback": "Weak. The feature may be valuable; the right response is an informed decision, not an automatic refusal.",
+       "best": false
+      },
+      {
+       "text": "Ask the team to absorb it with overtime so the milestone does not move.",
+       "feedback": "Weak. It hides the true cost and risks burnout and quality problems.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "scenario",
+     "title": "The side-door request",
+     "situation": "On a predictive warehouse project with an approved scope baseline, a department head asks a developer directly to add a new stock report. The developer estimates two days and is happy to do it. What should the project manager do?",
+     "options": [
+      {
+       "text": "Allow it, because two days is a small change.",
+       "feedback": "Weak. Small unapproved changes add up to scope creep and bypass impact analysis.",
+       "best": false
+      },
+      {
+       "text": "Thank the department head, log the request, analyse its impact and take it through the agreed change control process.",
+       "feedback": "Best. Every change to a baselined scope goes through change control, however small, and the requester sees the status.",
+       "best": true
+      },
+      {
+       "text": "Refuse, because the scope is already approved.",
+       "feedback": "Weak. Change control allows valuable changes; a flat refusal ignores possible value.",
+       "best": false
+      },
+      {
+       "text": "Add the report and update the baseline afterwards.",
+       "feedback": "Weak. Updating the baseline after the event defeats the purpose of control.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Scope creep",
+       "def": "Uncontrolled expansion of scope without adjusting time, cost or resources and without proper approval."
+      },
+      {
+       "term": "Gold plating",
+       "def": "Adding features or quality that were not requested, usually by the team, without approval."
+      },
+      {
+       "term": "Change request",
+       "def": "A formal proposal to modify a baseline, deliverable, plan or contract."
+      },
+      {
+       "term": "Change control board (CCB)",
+       "def": "A group with authority to review, approve, defer or reject change requests."
+      },
+      {
+       "term": "Integrated change control",
+       "def": "Reviewing every change for its combined effect on scope, schedule, cost, quality, risk and benefits before deciding."
+      },
+      {
+       "term": "Configuration management",
+       "def": "Controlling versions of deliverables and their documentation so that everyone works from the same approved version."
+      },
+      {
+       "term": "Change log",
+       "def": "A record of change requests, their impacts, decisions and status."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "A developer adds an extra dashboard nobody requested. This is:",
+       "options": [
+        "Gold plating",
+        "Change control",
+        "Scope creep",
+        "Progressive elaboration"
+       ],
+       "answer": 0,
+       "explain": "Gold plating is the team adding unrequested extras; scope creep usually comes from unmanaged stakeholder requests."
+      },
+      {
+       "q": "On an agile team, a stakeholder asks for a new feature mid-project. What normally happens?",
+       "options": [
+        "It is added to the current sprint immediately by the team",
+        "The product owner adds it to the backlog and orders it by value",
+        "It must be rejected because the scope is already agreed",
+        "The PM rewrites the charter and asks the sponsor to re-approve it"
+       ],
+       "answer": 1,
+       "explain": "Backlog refinement absorbs change: the product owner orders new items by value while the current iteration's goal is protected."
+      },
+      {
+       "q": "A change request for a new interface has been approved by the change control board. What should happen NEXT?",
+       "options": [
+        "Start building the interface immediately without updating documents",
+        "Wait for the sponsor to inform the team",
+        "Communicate the decision, update baselines and documents, then implement and verify the change",
+        "Ask the requester to submit the request again in writing"
+       ],
+       "answer": 2,
+       "explain": "Approved changes are communicated, reflected in baselines and documentation, implemented and verified."
+      },
+      {
+       "q": "Stakeholders keep asking the team directly about the status of their change requests. Which practice BEST helps?",
+       "options": [
+        "Publishing the change log with the status of each request",
+        "Asking stakeholders to stop requesting changes",
+        "Holding a weekly meeting for each requester",
+        "Approving all requests to reduce follow-ups"
+       ],
+       "answer": 0,
+       "explain": "Visible change status reduces chasing and side-door requests while keeping the process transparent."
+      },
+      {
+       "q": "On a hybrid project, the product owner may reorder the app backlog within its budget and milestone. A requested change would move the milestone by four weeks. Which path should it take?",
+       "options": [
+        "The product owner decides, as with any backlog change",
+        "The team decides during sprint planning",
+        "No path, because milestones cannot change",
+        "Formal change control, because it affects an agreed milestone"
+       ],
+       "answer": 3,
+       "explain": "Changes within the agreed boundaries are handled in the backlog; anything that moves a milestone, budget or contract goes to formal change control."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m7-l4",
+   "title": "Identifying & Analysing Risk",
+   "subtitle": "Name uncertainty precisely, then rank it quickly and quantify the risks that matter",
+   "minutes": 32,
+   "objectives": [
+    "Distinguish risks, issues and opportunities using a single clear test",
+    "Write cause–event–effect risk statements and widen identification with a pre-mortem and RBS",
+    "Prioritise risks with defined probability and impact scales",
+    "Calculate expected monetary value and read Monte Carlo outputs"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Every project is a bet on the future. **Risk management**, part of the Govern stage of the ZPMP Professional Loop, is the discipline of watching that bet, adjusting it and telling the truth about it. It starts with identification and analysis: the uncertain events, threats and opportunities, that could push outcomes off course, ranked so attention goes where it matters."
+    },
+    {
+     "type": "framework",
+     "items": [
+      {
+       "label": "R",
+       "title": "Risk (threat)",
+       "text": "An **uncertain** future event that would hurt at least one objective if it happened. It has a probability below 100%. You manage it *before* it happens."
+      },
+      {
+       "label": "O",
+       "title": "Opportunity",
+       "text": "An uncertain future event that would **help** an objective — finish earlier, cost less, deliver more value. Positive risk deserves the same attention as negative risk."
+      },
+      {
+       "label": "I",
+       "title": "Issue",
+       "text": "Something that **has already happened** or is certain and is affecting the project now. You resolve it, you do not ‘mitigate’ it."
+      },
+      {
+       "label": "A",
+       "title": "Assumption",
+       "text": "Something treated as true for planning without proof. Every assumption hides a risk: ‘what if this is false?’"
+      }
+     ],
+     "title": "Risk, issue or opportunity? The ZPMP time test"
+    },
+    {
+     "type": "callout",
+     "kind": "insight",
+     "text": "Ask: **‘Has it happened yet?’** If no and it would hurt — risk. If no and it would help — opportunity. If yes — issue. A risk that materialises moves from the risk register to the issue log, and the risk entry is closed with a note.",
+     "title": "One question sorts them all"
+    },
+    {
+     "type": "formula",
+     "items": [
+      {
+       "name": "Cause–event–effect",
+       "expr": "Because of <cause>, <event> may occur, which would lead to <effect on objective>.",
+       "meaning": "Forces precision. The cause is a fact today; the event is uncertain; the effect names cost, time, scope, quality or benefit."
+      },
+      {
+       "name": "Example",
+       "expr": "Because our only certified network engineer is due for parental leave in March, cut-over testing may slip, which would delay go-live by 3–4 weeks.",
+       "meaning": "Now the team can see who owns it, what would trigger it and which responses make sense."
+      }
+     ],
+     "title": "A well-formed risk statement"
+    },
+    {
+     "type": "framework",
+     "items": [
+      {
+       "label": "PM",
+       "title": "Pre-mortem",
+       "text": "Imagine it is a year from now and the project has failed badly. Each person silently writes why. Then share and cluster. Hindsight imagined in advance unlocks honest concerns people would not otherwise voice."
+      },
+      {
+       "label": "RBS",
+       "title": "Risk breakdown structure",
+       "text": "A hierarchy of risk sources — e.g. Technical, External, Organisational, Project management — each split into sub-categories. Walk through it to spot blind areas."
+      },
+      {
+       "label": "AL",
+       "title": "Assumptions & constraints log",
+       "text": "Review every assumption and ask what happens if it is wrong. Track who validates it and by when."
+      },
+      {
+       "label": "SH",
+       "title": "Stakeholder & expert interviews",
+       "text": "Operations staff, suppliers and finance see risks the core team cannot. Ask: ‘What usually goes wrong with projects like this?’"
+      },
+      {
+       "label": "DR",
+       "title": "Document & data review",
+       "text": "Lessons-learned registers, audit findings, past schedules, contracts and incident logs from similar work."
+      },
+      {
+       "label": "SW",
+       "title": "SWOT & prompt lists",
+       "text": "Strengths, weaknesses, opportunities, threats — or checklists such as PESTLE — to cover the external environment."
+      }
+     ],
+     "title": "Ways to find risks (use more than one)"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Level 1",
+      "Level 2 examples",
+      "Typical questions"
+     ],
+     "rows": [
+      [
+       "Technical",
+       "Requirements, technology maturity, integration, performance, data migration",
+       "Have we built this before? How many interfaces?"
+      ],
+      [
+       "External",
+       "Suppliers, regulation, market, weather, currency, politics",
+       "What could change outside our control?"
+      ],
+      [
+       "Organisational",
+       "Funding, priorities, shared resources, other projects",
+       "Could our people or budget be pulled away?"
+      ],
+      [
+       "Project management",
+       "Estimating, planning, communication, control",
+       "How confident are we in our estimates?"
+      ],
+      [
+       "People & change",
+       "Adoption, skills, morale, key-person dependency",
+       "Will users actually change how they work?"
+      ]
+     ],
+     "title": "A starter risk breakdown structure"
+    },
+    {
+     "type": "text",
+     "text": "Once you have a list of risks, you cannot treat them all equally. Analysis answers two questions: **which risks deserve attention first**, and **how much exposure does the project carry overall?** Qualitative analysis is fast and covers every risk. Quantitative analysis is slower and is reserved for the risks and decisions that drive outcomes."
+    },
+    {
+     "type": "compare",
+     "columns": [
+      {
+       "title": "Qualitative",
+       "items": [
+        "Ranks individual risks using scales (e.g. 1–5)",
+        "Fast, cheap, done on every project",
+        "Output: prioritised risk list, heat map",
+        "Weakness: subjective unless scales are defined"
+       ]
+      },
+      {
+       "title": "Quantitative",
+       "items": [
+        "Models combined effect of risks on cost/schedule",
+        "Needs data, tools and skill",
+        "Output: probability of hitting dates/budgets, EMV, sensitivity",
+        "Use on large, complex or high-stakes projects"
+       ]
+      }
+     ],
+     "title": "Qualitative vs quantitative analysis"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Score",
+      "Probability",
+      "Schedule impact",
+      "Cost impact"
+     ],
+     "rows": [
+      [
+       "1 Very low",
+       "< 10%",
+       "< 1 week",
+       "< 1% of budget"
+      ],
+      [
+       "2 Low",
+       "10–30%",
+       "1–2 weeks",
+       "1–3%"
+      ],
+      [
+       "3 Medium",
+       "31–50%",
+       "2–4 weeks",
+       "3–5%"
+      ],
+      [
+       "4 High",
+       "51–70%",
+       "1–2 months",
+       "5–10%"
+      ],
+      [
+       "5 Very high",
+       "> 70%",
+       "> 2 months",
+       "> 10%"
+      ]
+     ],
+     "title": "Define the scales before you score"
+    },
+    {
+     "type": "text",
+     "text": "Multiply probability by impact to get a risk score (1–25). Plot each risk on a 5×5 grid: the top-right zone (scores of roughly 15+) gets immediate, owned responses; the middle zone gets watched; the bottom-left zone may be accepted and monitored."
+    },
+    {
+     "type": "formula",
+     "items": [
+      {
+       "name": "EMV of one risk",
+       "expr": "EMV = Probability × Impact",
+       "meaning": "Threats carry negative impact, opportunities positive. A 30% chance of a −50,000 loss has EMV −15,000."
+      },
+      {
+       "name": "Project risk exposure",
+       "expr": "Σ EMV of all quantified risks",
+       "meaning": "Netting threats and opportunities gives a rational starting point for the contingency reserve."
+      },
+      {
+       "name": "Decision node",
+       "expr": "Choose the branch with the best EMV",
+       "meaning": "In a decision tree, each option’s EMV = its direct cost + Σ (probability × outcome) of what follows."
+      }
+     ],
+     "title": "Expected monetary value"
+    },
+    {
+     "type": "case",
+     "title": "Chattogram port: should we rehearse the cut-over?",
+     "context": "A container terminal at Chattogram is replacing its gate and yard-planning software. The vendor proposes an optional full cut-over rehearsal on a weekend, costing **USD 40,000**. Without a rehearsal, the team estimates a **35%** chance that go-live fails and the old system must be restored, causing berth delays and penalties of about **USD 300,000**. With a rehearsal, the chance of failure drops to **10%** (the same USD 300,000 impact if it happens).",
+     "questions": [
+      "Draw the decision tree and calculate the EMV of each option.",
+      "Which option should the project choose, and by how much does it improve expected cost?",
+      "What non-monetary factors should the sponsor also weigh?"
+     ],
+     "answer": "Rehearse: −40,000 + (0.10 × −300,000) = **−70,000**. No rehearsal: 0 + (0.35 × −300,000) = **−105,000**. Rehearsing is better by **USD 35,000** in expected value, so choose the rehearsal. Beyond money: reputation with shipping lines, safety in the yard, staff confidence with the new system, and the fact that the rehearsal also trains people. EMV supports the decision; it does not replace judgement, especially for low-probability, catastrophic outcomes."
+    },
+    {
+     "type": "framework",
+     "items": [
+      {
+       "label": "S",
+       "title": "S-curve",
+       "text": "Cumulative probability of finishing by each date (or within each cost). Read across from 80% to find the P80 date."
+      },
+      {
+       "label": "P50",
+       "title": "P50 / P80",
+       "text": "P50: half of simulated outcomes finish by this date. P80: four in five do. Commit externally to a higher-confidence value; manage internally to a stretch value."
+      },
+      {
+       "label": "TOR",
+       "title": "Tornado chart",
+       "text": "Ranks which inputs most influence the result. Spend risk effort on the longest bars."
+      },
+      {
+       "label": "CI",
+       "title": "Criticality index",
+       "text": "How often an activity appears on the critical path across simulations — a task at 70% deserves more attention than its single-point float suggests."
+      }
+     ],
+     "title": "Reading a Monte Carlo output"
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Risk",
+       "def": "An uncertain event or condition that, if it occurs, affects at least one project objective — negatively (threat) or positively (opportunity)."
+      },
+      {
+       "term": "Pre-mortem",
+       "def": "A workshop in which the team imagines the project has failed and works backwards to identify the reasons, surfacing risks early."
+      },
+      {
+       "term": "Risk breakdown structure (RBS)",
+       "def": "A hierarchical grouping of risk sources used as a prompt to identify risks systematically."
+      },
+      {
+       "term": "Expected monetary value (EMV)",
+       "def": "Probability multiplied by monetary impact; summed across risks or branches to compare options and size reserves."
+      },
+      {
+       "term": "Opportunity",
+       "def": "An uncertain event that would benefit at least one project objective if it happened."
+      },
+      {
+       "term": "Risk score",
+       "def": "Probability score multiplied by impact score, used to rank risks on a heat map."
+      },
+      {
+       "term": "Probability–impact matrix",
+       "def": "A grid that combines probability and impact scores to rank risks."
+      },
+      {
+       "term": "P80",
+       "def": "The value, such as a date or cost, that 80% of simulated outcomes meet or beat."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "A key supplier has just informed you their factory is closed for two weeks. How should this be recorded?",
+       "options": [
+        "As an issue in the issue log",
+        "As a new risk with high probability",
+        "As an assumption to validate",
+        "As an opportunity to renegotiate"
+       ],
+       "answer": 0,
+       "explain": "It has already happened, so it is an issue. Risks are uncertain future events; this one is certain and current."
+      },
+      {
+       "q": "Which risk statement is best formed?",
+       "options": [
+        "Vendor risk: the vendor might be poor at support, which could cause problems for users",
+        "There is a risk of delays, cost overruns and quality problems across the whole project",
+        "The vendor has no local office and is new to us, so the support contract is at risk",
+        "With no local vendor office, fixes may take over 48 hours and breach the 24-hour SLA"
+       ],
+       "answer": 3,
+       "explain": "It names a present cause, an uncertain event and a specific effect on an objective. The others are vague, or leave out the cause, the event or a measurable effect."
+      },
+      {
+       "q": "A risk has a 40% probability and an impact of −80,000. Its EMV is…",
+       "options": [
+        "−32,000",
+        "−48,000",
+        "−80,000",
+        "+32,000"
+       ],
+       "answer": 0,
+       "explain": "0.40 × −80,000 = −32,000. Threats carry negative values."
+      },
+      {
+       "q": "Which is the strongest reason to define probability and impact scales before scoring?",
+       "options": [
+        "It makes the heat map clearer and more colourful",
+        "It is required by law in most regulated industries and sectors",
+        "It reduces subjective, inconsistent scoring between people",
+        "It removes the need for later quantitative risk analysis"
+       ],
+       "answer": 2,
+       "explain": "Shared definitions turn opinions into comparable scores."
+      },
+      {
+       "q": "A Monte Carlo S-curve shows the P80 finish date as 20 March. This means…",
+       "options": [
+        "the project is certain to finish on 20 March as planned",
+        "80% of simulated outcomes finished on or before 20 March",
+        "there is an 80% chance that the project finishes after 20 March",
+        "20 March is the end date of the critical path schedule"
+       ],
+       "answer": 1,
+       "explain": "P80 is the value that 80% of iterations meet or beat."
+      },
+      {
+       "q": "A new regulation might allow your team to reuse an approved design, saving six weeks. This is…",
+       "options": [
+        "an issue",
+        "a constraint",
+        "a residual risk",
+        "an opportunity"
+       ],
+       "answer": 3,
+       "explain": "It is uncertain and would benefit the schedule — a positive risk, or opportunity."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m7-l5",
+   "title": "Responding to Risk & Communicating It",
+   "subtitle": "Plan risk management, choose and own responses, cover security, AI and sustainability risks and report risk clearly",
+   "minutes": 30,
+   "objectives": [
+    "Develop a risk management plan with appetite and thresholds",
+    "Select response strategies for threats and opportunities and assign owners and triggers",
+    "Include security, AI and sustainability risks in the register",
+    "Communicate the status and impact of risks to different audiences"
+   ],
+   "blocks": [
+    {
+     "type": "steps",
+     "title": "Develop a risk management plan",
+     "items": [
+      {
+       "title": "Method",
+       "text": "How risks will be identified, analysed and reviewed, and how often."
+      },
+      {
+       "title": "Roles",
+       "text": "Who owns the process, who owns individual risks, who approves responses."
+      },
+      {
+       "title": "Scales",
+       "text": "Agreed definitions of probability and impact for this project."
+      },
+      {
+       "title": "Appetite and thresholds",
+       "text": "How much risk the organisation will accept and the scores that trigger escalation."
+      },
+      {
+       "title": "Budget and reserves",
+       "text": "How contingency is sized and released."
+      },
+      {
+       "title": "Reporting",
+       "text": "What risk information goes to whom, and when."
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "title": "Risk appetite and risk threshold",
+     "text": "**Risk appetite** is how much uncertainty an organisation is willing to accept in pursuit of its goals; a hospital has little appetite for patient-safety risk but may accept more on a new booking app. A **risk threshold** turns appetite into a number, for example 'any risk scoring 15 or more, or any data-breach risk, goes to the steering committee'."
+    },
+    {
+     "type": "text",
+     "text": "Analysis tells you which risks matter. Response planning decides **what you will actually do** — and who will do it. A response without an owner, a budget and a date is just a hope."
+    },
+    {
+     "type": "compare",
+     "columns": [
+      {
+       "title": "For threats",
+       "items": [
+        "**Escalate** – outside the project’s authority; hand to the right level and confirm they accept it",
+        "**Avoid** – change the plan to remove the threat (e.g. drop a risky feature)",
+        "**Transfer** – shift the financial impact to a third party (insurance, fixed-price contract, warranty)",
+        "**Mitigate** – reduce probability and/or impact (prototype, extra testing, second supplier)",
+        "**Accept** – active (set aside contingency) or passive (deal with it if it happens)"
+       ]
+      },
+      {
+       "title": "For opportunities",
+       "items": [
+        "**Escalate** – beyond project authority; pass to programme/portfolio",
+        "**Exploit** – act to make it certain (assign your best people to finish early)",
+        "**Share** – partner with a party better placed to capture it (joint venture, gain-share)",
+        "**Enhance** – raise probability and/or impact (add resources to a promising path)",
+        "**Accept** – take the benefit if it comes, without active pursuit"
+       ]
+      }
+     ],
+     "title": "Response strategies"
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "text": "Buying insurance or signing a fixed-price contract shifts the financial consequence, but the event can still delay your project and hurt your reputation. Transfer almost always leaves residual risk you must still watch.",
+     "title": "Transfer moves the money, not the risk"
+    },
+    {
+     "type": "framework",
+     "items": [
+      {
+       "label": "OWN",
+       "title": "Risk owner",
+       "text": "One named person who monitors the risk and makes sure the response happens. Not a department, not ‘the team’."
+      },
+      {
+       "label": "TRG",
+       "title": "Trigger",
+       "text": "An observable warning sign that the risk is about to occur or has occurred — e.g. ‘supplier misses the second milestone’."
+      },
+      {
+       "label": "ACT",
+       "title": "Response actions",
+       "text": "Specific tasks, with dates and cost, added to the schedule and budget."
+      },
+      {
+       "label": "RES",
+       "title": "Residual risk",
+       "text": "The exposure that remains after the response. If it is still above tolerance, plan more."
+      },
+      {
+       "label": "SEC",
+       "title": "Secondary risk",
+       "text": "A new risk created by the response itself — e.g. a second supplier introduces integration risk."
+      }
+     ],
+     "title": "Every response needs these five parts"
+    },
+    {
+     "type": "callout",
+     "kind": "pro",
+     "text": "For high-impact risks, prepare a **fallback plan** (‘Plan B’) to use if the primary response fails, and decide in advance what trigger activates it. Decisions made calmly beforehand are better than decisions made in a crisis.",
+     "title": "Fallback plans"
+    },
+    {
+     "type": "template",
+     "title": "Risk register",
+     "purpose": "Track every identified risk from first sighting to closure. Review the top risks at every status meeting.",
+     "columns": [
+      "ID / statement (cause–event–effect)",
+      "P × I = score",
+      "Owner",
+      "Trigger",
+      "Strategy & actions",
+      "Residual / secondary",
+      "Status"
+     ],
+     "example": [
+      [
+       "R07 Because only one engineer holds the PLC licence, the cut-over may slip if he is unavailable, delaying go-live 3 weeks",
+       "3 × 4 = 12",
+       "Farhana (ops lead)",
+       "Engineer leave request or illness",
+       "Mitigate: certify a second engineer by 15 May (BDT 85k)",
+       "Residual 1 × 4 = 4; secondary: training pulls engineer off build for 1 week",
+       "Open – action on track"
+      ]
+     ],
+     "rows": 8
+    },
+    {
+     "type": "callout",
+     "kind": "warning",
+     "title": "Security and sustainability risks belong in the register",
+     "text": "Poor IT security is a project risk, not only an IT department matter: weak access control on a test environment holding real customer data, or ransomware on the project's file share. Sustainability risks belong there too: flooding at a site during the monsoon, a supplier found using child labour, or an environmental clearance withdrawn. Give them owners, triggers and responses like any other risk."
+    },
+    {
+     "type": "framework",
+     "items": [
+      {
+       "label": "DAT",
+       "title": "Data",
+       "text": "Not enough, poor quality, unrepresentative or legally restricted data — often discovered late."
+      },
+      {
+       "label": "PRF",
+       "title": "Performance uncertainty",
+       "text": "You cannot promise accuracy upfront; plan experiments, success thresholds and stop/go decisions."
+      },
+      {
+       "label": "BIA",
+       "title": "Bias & fairness",
+       "text": "Models can reproduce historic discrimination, e.g. in credit scoring or hiring."
+      },
+      {
+       "label": "DRF",
+       "title": "Drift",
+       "text": "Real-world data changes over time and accuracy decays; monitoring and retraining must be budgeted."
+      },
+      {
+       "label": "EXP",
+       "title": "Explainability",
+       "text": "Regulators and users may need to know why a decision was made."
+      },
+      {
+       "label": "SEC",
+       "title": "Security & misuse",
+       "text": "Prompt injection, data leakage and misuse of generated content in gen-AI products."
+      },
+      {
+       "label": "REG",
+       "title": "Regulation",
+       "text": "Risk-based laws such as the EU AI Act and sector rules impose duties depending on use; check obligations in every market served."
+      }
+     ],
+     "title": "Distinctive risks of AI projects"
+    },
+    {
+     "type": "table",
+     "title": "Communicating risk status",
+     "head": [
+      "Audience",
+      "What they need",
+      "Format"
+     ],
+     "rows": [
+      [
+       "Steering committee",
+       "Top risks, trend, exposure against reserves, decisions needed",
+       "One page with a heat map and a short narrative"
+      ],
+      [
+       "Sponsor",
+       "Risks near threshold, responses that need support",
+       "Regular one-to-one briefing"
+      ],
+      [
+       "Team",
+       "Risks affecting this sprint or phase, triggers to watch",
+       "Risk board or review at planning"
+      ],
+      [
+       "Suppliers and partners",
+       "Shared risks and joint responses",
+       "Joint risk reviews"
+      ]
+     ]
+    },
+    {
+     "type": "scenario",
+     "situation": "Your risk register lists ‘key subcontractor insolvency’ with a fallback plan to activate a pre-qualified alternative. Today a news report says the subcontractor has entered administration. What should the project manager do FIRST?",
+     "options": [
+      {
+       "text": "Call a team meeting to brainstorm what to do.",
+       "feedback": "The thinking has already been done. Brainstorming now wastes the advantage of the plan.",
+       "best": false
+      },
+      {
+       "text": "Ask the sponsor for permission to look for a new subcontractor.",
+       "feedback": "If the fallback is already approved within your authority, you do not need fresh permission — act, then inform.",
+       "best": false
+      },
+      {
+       "text": "Implement the agreed fallback plan and update the issue log and risk register.",
+       "feedback": "Correct. The trigger has occurred; execute the pre-planned response, record the new issue and close or update the risk.",
+       "best": true
+      },
+      {
+       "text": "Wait to confirm the news through official channels before doing anything.",
+       "feedback": "Verifying quickly is sensible, but waiting passively loses time. Start the fallback while confirming.",
+       "best": false
+      }
+     ],
+     "title": "The triggered risk"
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Residual risk",
+       "def": "The risk that remains after responses have been implemented."
+      },
+      {
+       "term": "Secondary risk",
+       "def": "A new risk that arises as a direct result of implementing a risk response."
+      },
+      {
+       "term": "Risk management plan",
+       "def": "The part of the project plan that defines how risks will be identified, analysed, responded to, monitored and reported."
+      },
+      {
+       "term": "Risk appetite",
+       "def": "The amount of uncertainty an organisation is willing to accept in pursuit of its objectives."
+      },
+      {
+       "term": "Risk threshold",
+       "def": "A measurable level of risk exposure above which a risk must be escalated or treated."
+      },
+      {
+       "term": "Risk owner",
+       "def": "The one named person who monitors a risk and makes sure its response is carried out."
+      },
+      {
+       "term": "Trigger",
+       "def": "An observable warning sign that a risk is about to occur or has begun to occur."
+      },
+      {
+       "term": "Fallback plan",
+       "def": "A prepared plan B to use if the primary risk response fails."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "A team buys an insurance policy covering equipment damage during shipment. Which strategy is this?",
+       "options": [
+        "Transfer",
+        "Avoid",
+        "Mitigate",
+        "Exploit"
+       ],
+       "answer": 0,
+       "explain": "Insurance shifts the financial impact to a third party: transfer."
+      },
+      {
+       "q": "To make sure a likely early-finish opportunity actually happens, the PM assigns the most experienced engineers to the task. This is…",
+       "options": [
+        "Enhance",
+        "Exploit",
+        "Accept",
+        "Share"
+       ],
+       "answer": 1,
+       "explain": "Exploit aims to make the opportunity certain. Enhance would only increase its likelihood or size."
+      },
+      {
+       "q": "A response to one risk creates a new integration risk. The new risk is called…",
+       "options": [
+        "residual risk",
+        "an emerging issue",
+        "a trigger",
+        "secondary risk"
+       ],
+       "answer": 3,
+       "explain": "A risk caused by a response is a secondary risk."
+      },
+      {
+       "q": "A threat is outside the project’s authority but within the programme’s. What should the PM do?",
+       "options": [
+        "Accept it passively and note it in the register",
+        "Ignore it, as it is outside the project’s authority",
+        "Escalate it to the programme manager and confirm ownership",
+        "Avoid it by recommending that the project is cancelled"
+       ],
+       "answer": 2,
+       "explain": "Escalation is correct when the response belongs at a higher level; the PM confirms acceptance and records it."
+      },
+      {
+       "q": "A test environment holds copies of real customer records with weak access controls. How should the project treat this?",
+       "options": [
+        "As an IT department matter outside the project's scope",
+        "As acceptable, since it is only a test environment",
+        "As a project risk with an owner and a response, such as masking the data",
+        "As an issue to raise only if a breach occurs"
+       ],
+       "answer": 2,
+       "explain": "Security weaknesses in project environments are project risks; they need an owner and a response before they become issues."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+});
+TRACK.modules.push({
+ "id": "m8",
+ "order": 8,
+ "code": "Adapt",
+ "title": "Business Environment II: Impediments, Improvement, Change & the Outside World",
+ "subtitle": "Business Environment · Tasks 4, 6, 7 and 8 (impediments and issues, continuous improvement, organisational change, external environment), plus capstone and exam readiness",
+ "outcomes": [
+  "Remove impediments and resolve issues with the right interventions",
+  "Use lessons learned and continuous improvement to update process assets",
+  "Assess culture and support organisational change",
+  "Evaluate external changes, including regulation, markets, AI and sustainability",
+  "Integrate the whole loop in a capstone and prepare for situational questions"
+ ],
+ "lessons": [
+  {
+   "id": "m8-l1",
+   "title": "Removing Impediments & Managing Issues",
+   "subtitle": "Spot what blocks the team, choose the right intervention and resolve issues with the people who can fix them",
+   "minutes": 28,
+   "objectives": [
+    "Distinguish impediments, issues and risks",
+    "Evaluate, prioritise and make impediments visible",
+    "Choose an intervention strategy and escalate with options",
+    "Run an issue log and collaborate with stakeholders on resolution"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Teams lose more time to waiting than to hard work: waiting for access, decisions, environments, approvals or another team. An **impediment** is anything that slows or blocks the team. An **issue** is a current problem that is already affecting a project objective. Removing impediments and resolving issues quickly is one of the most visible ways a project manager adds value, in agile and predictive work alike."
+    },
+    {
+     "type": "compare",
+     "title": "Impediment, issue or risk?",
+     "columns": [
+      {
+       "title": "Impediment",
+       "items": [
+        "Something blocking or slowing the team now",
+        "Often small and frequent",
+        "Raised at stand-ups and on the board",
+        "Example: no access to the test server"
+       ]
+      },
+      {
+       "title": "Issue",
+       "items": [
+        "A current problem affecting scope, time, cost, quality or benefits",
+        "Recorded in the issue log with an owner",
+        "Example: customs is holding the imported lifts"
+       ]
+      },
+      {
+       "title": "Risk",
+       "items": [
+        "An uncertain future event",
+        "Recorded in the risk register",
+        "Becomes an issue when it happens",
+        "Example: customs might hold the lifts"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "flow",
+     "title": "When a risk becomes an issue",
+     "items": [
+      {
+       "label": "Risk in register",
+       "text": "Owner watches the trigger"
+      },
+      {
+       "label": "Trigger observed",
+       "text": "Warning sign appears"
+      },
+      {
+       "label": "Event occurs",
+       "text": "It is now an issue"
+      },
+      {
+       "label": "Move to issue log",
+       "text": "Activate the planned response"
+      },
+      {
+       "label": "Close the risk entry",
+       "text": "Note what happened"
+      }
+     ]
+    },
+    {
+     "type": "steps",
+     "title": "Evaluate and prioritise impediments",
+     "items": [
+      {
+       "title": "Impact",
+       "text": "Which sprint goal, milestone or critical path does it threaten?"
+      },
+      {
+       "title": "Reach",
+       "text": "How many people or items are blocked?"
+      },
+      {
+       "title": "Age",
+       "text": "How long has it been open? Old blockers signal a system problem."
+      },
+      {
+       "title": "Resolver",
+       "text": "Who can actually remove it: the team, the PM, another team, a manager?"
+      },
+      {
+       "title": "Priority",
+       "text": "Highlight the highest-impact blockers at the top of the board and in reports."
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "title": "Impediment escalation ladder",
+     "head": [
+      "Level",
+      "Who acts",
+      "Typical timeframe",
+      "Example"
+     ],
+     "rows": [
+      [
+       "1 — Team",
+       "Developers themselves",
+       "Same day",
+       "Pair to resolve a tricky merge conflict"
+      ],
+      [
+       "2 — Team coach or PM",
+       "Scrum Master, team lead or PM",
+       "1–2 days",
+       "Get test devices or environment access"
+      ],
+      [
+       "3 — Product owner or functional manager",
+       "PO, line manager, vendor manager",
+       "Within the iteration",
+       "Clarify conflicting requirements, free a shared specialist"
+      ],
+      [
+       "4 — Sponsor or steering group",
+       "Sponsor, steering committee",
+       "When a milestone or goal is threatened",
+       "Resolve funding, cross-department priority clashes"
+      ]
+     ]
+    },
+    {
+     "type": "framework",
+     "title": "Intervention strategies",
+     "items": [
+      {
+       "label": "FIX",
+       "title": "Remove it",
+       "text": "Resolve directly, for example by arranging access or making a decision within your authority."
+      },
+      {
+       "label": "WRK",
+       "title": "Work around",
+       "text": "Find a temporary path while the root cause is fixed."
+      },
+      {
+       "label": "NEG",
+       "title": "Negotiate",
+       "text": "Agree priorities or timing with the other team or manager involved."
+      },
+      {
+       "label": "ESC",
+       "title": "Escalate",
+       "text": "Take it to the person with authority, with facts and options."
+      },
+      {
+       "label": "PRV",
+       "title": "Prevent",
+       "text": "Change the process so the same blocker does not return."
+      },
+      {
+       "label": "RPL",
+       "title": "Re-plan",
+       "text": "Accept the delay and adjust the plan openly if it cannot be removed."
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "kind": "pro",
+     "title": "Make blockers visible and keep reassessing",
+     "text": "Mark blocked items on the board, show how many days each has been blocked and review them every day. Ask at each stand-up whether yesterday's interventions worked. A blocker that is still open after its target date needs a different strategy, not the same reminder again."
+    },
+    {
+     "type": "flow",
+     "items": [
+      {
+       "label": "Log",
+       "text": "Describe impact, date raised, who raised it"
+      },
+      {
+       "label": "Assess",
+       "text": "Severity, urgency, objectives affected"
+      },
+      {
+       "label": "Assign",
+       "text": "One owner and a target resolution date"
+      },
+      {
+       "label": "Resolve or escalate",
+       "text": "Within tolerance: act. Beyond tolerance: escalate with options"
+      },
+      {
+       "label": "Close & learn",
+       "text": "Record the fix and feed lessons learned"
+      }
+     ],
+     "title": "Issue lifecycle"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Escalation element",
+      "What to include"
+     ],
+     "rows": [
+      [
+       "What happened",
+       "One-sentence description and when it was discovered"
+      ],
+      [
+       "Impact",
+       "Effect on scope, schedule, cost, quality, benefits — with numbers"
+      ],
+      [
+       "Tolerance",
+       "Which agreed threshold it breaches (e.g. > 2 weeks or > 5% cost)"
+      ],
+      [
+       "Options",
+       "2–3 realistic options with trade-offs"
+      ],
+      [
+       "Recommendation",
+       "Your preferred option and why"
+      ],
+      [
+       "Decision needed by",
+       "The date after which options close"
+      ]
+     ],
+     "title": "Escalate with options, not just problems"
+    },
+    {
+     "type": "callout",
+     "kind": "example",
+     "title": "Lifts held at the port",
+     "text": "On a predictive hospital-construction project in Chattogram, imported lifts were held at customs over a documentation error, threatening the critical path. The PM logged the issue, gave it one owner, and within a day brought the sponsor three options: pay for expedited clearance through an agent, re-sequence interior works to use the float elsewhere, or accept a two-week slip. The sponsor chose the first two together, and the milestone held."
+    },
+    {
+     "type": "template",
+     "title": "Impediment and issue log",
+     "purpose": "Track every blocker and issue to resolution, with one owner each.",
+     "columns": [
+      "ID and description",
+      "Type (impediment or issue)",
+      "Impact",
+      "Owner",
+      "Intervention",
+      "Raised and target dates",
+      "Status"
+     ],
+     "example": [
+      [
+       "I-07 Test environment not available",
+       "Impediment",
+       "Blocks 4 stories; sprint goal at risk",
+       "PM",
+       "Escalated to infrastructure lead with options",
+       "Raised 3 May; target 6 May",
+       "Open, day 3"
+      ]
+     ],
+     "rows": 7
+    },
+    {
+     "type": "scenario",
+     "title": "Three days without a test environment",
+     "situation": "An agile team has been waiting three days for a test environment from the infrastructure team. The Scrum Master has asked twice by message. Four stories are blocked and the sprint goal is at risk. What should the project manager do?",
+     "options": [
+      {
+       "text": "Wait, since the infrastructure team knows about the request.",
+       "feedback": "Weak. The impediment is ageing and already threatens the goal; waiting changes nothing.",
+       "best": false
+      },
+      {
+       "text": "Meet the infrastructure lead with the impact data, agree a date or a temporary environment, and help the team pull other ready work meanwhile.",
+       "feedback": "Best. It escalates with facts and options to the person who can act, and limits the damage while the blocker is removed.",
+       "best": true
+      },
+      {
+       "text": "Ask the developers to build their own environment on personal cloud accounts.",
+       "feedback": "Weak. It may breach security and data rules and creates a hidden, unsupported environment.",
+       "best": false
+      },
+      {
+       "text": "Report the infrastructure team to the sponsor in the next steering meeting.",
+       "feedback": "Weak. It is slow and adversarial; direct collaboration should come first.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Impediment",
+       "def": "Anything that slows or blocks the team's progress."
+      },
+      {
+       "term": "Issue",
+       "def": "A current problem or condition that is affecting a project objective and needs resolution."
+      },
+      {
+       "term": "Issue log",
+       "def": "A record of issues with their impact, owner, actions, target dates and status."
+      },
+      {
+       "term": "Blocker age",
+       "def": "How long an impediment has remained unresolved; a rising age signals a need for a different intervention."
+      },
+      {
+       "term": "Workaround",
+       "def": "A temporary solution that lets work continue while the root cause is fixed."
+      },
+      {
+       "term": "Escalation",
+       "def": "Passing an issue to a higher authority, with facts and options, when it is beyond the current level's power to resolve."
+      },
+      {
+       "term": "Impediment board",
+       "def": "A visible list or board of current blockers, their owners and ages, reviewed regularly."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "A blocker threatens a release milestone and the team and PM cannot resolve it. What is the appropriate next step?",
+       "options": [
+        "Wait and raise it with the team at the next retrospective",
+        "Keep it from the board until a fix is found",
+        "Escalate promptly to the right decision-maker with options",
+        "Remove the blocked item from the definition of done"
+       ],
+       "answer": 2,
+       "explain": "Impediments that threaten goals should move up the escalation ladder quickly with clear options."
+      },
+      {
+       "q": "Which element of an escalation is MOST often missing and most valuable to decision makers?",
+       "options": [
+        "The project logo and reporting template",
+        "A list of everyone who has been informed",
+        "The full risk register as an attachment",
+        "Realistic options with a recommendation"
+       ],
+       "answer": 3,
+       "explain": "Leaders decide faster and better when given options, trade-offs and a clear recommendation."
+      },
+      {
+       "q": "A risk in the register, 'supplier may deliver servers late', has just happened: the supplier confirms a three-week delay. What should the project manager do?",
+       "options": [
+        "Leave it in the risk register and raise its probability to 100%",
+        "Record it in the issue log, activate the planned response and close the risk entry",
+        "Wait to see whether the delay affects the critical path",
+        "Ask the supplier to submit a new risk statement"
+       ],
+       "answer": 1,
+       "explain": "When a risk occurs it becomes an issue. Move it to the issue log, apply the planned response and note the outcome against the risk."
+      },
+      {
+       "q": "Which impediment should the team tackle FIRST?",
+       "options": [
+        "One that has been open for one day and blocks a low-priority item",
+        "A request for new monitors for the team room",
+        "A minor tooling annoyance raised by one developer",
+        "One that blocks three stories needed for the sprint goal"
+       ],
+       "answer": 3,
+       "explain": "Prioritise impediments by impact on goals and how much work they block."
+      },
+      {
+       "q": "A blocker has passed its target date after two reminders to the other team. What does this suggest?",
+       "options": [
+        "A different intervention, such as escalation with options, is needed",
+        "The team should stop raising it",
+        "More reminders should be sent",
+        "The blocker should be removed from the board"
+       ],
+       "answer": 0,
+       "explain": "Continual reassessment means changing the intervention when the current one is not working."
       }
      ]
     }
@@ -4325,13 +5776,14 @@ TRACK.modules.push({
   },
   {
    "id": "m8-l2",
-   "title": "Retrospectives, Lessons Learned & Benefits Realisation",
-   "subtitle": "Turn experience into changed behaviour, and make sure the promised value actually arrives.",
-   "minutes": 30,
+   "title": "Continuous Improvement & Lessons Learned",
+   "subtitle": "Turn experience into changed behaviour and keep the organisation's process assets current",
+   "minutes": 28,
    "objectives": [
-    "Facilitate retrospectives that produce owned improvement actions.",
-    "Maintain a lessons-learned register that leads to applied change.",
-    "Build and hand over a benefits realisation plan with owners, baselines and measures."
+    "Facilitate retrospectives that produce owned improvement actions",
+    "Use lessons learned from past and current projects",
+    "Apply a simple improvement cycle and measure whether changes work",
+    "Update organisational process assets so improvements last"
    ],
    "blocks": [
     {
@@ -4471,93 +5923,93 @@ TRACK.modules.push({
      "title": "From observed to applied"
     },
     {
-     "type": "text",
-     "text": "Projects deliver **outputs** (a system, a building, a process). Users adopting those outputs create **outcomes** (faster processing, fewer errors). Outcomes produce **benefits** that the organisation values (lower cost, more revenue, better service, lower emissions). Most benefits arrive **after** the project closes — which is why benefit ownership sits with the business, not with the PM."
-    },
-    {
      "type": "flow",
+     "title": "A simple improvement cycle",
      "items": [
       {
-       "label": "Output",
-       "text": "Online booking system live"
+       "label": "Plan",
+       "text": "Pick one problem; find its root cause; design a small change"
       },
       {
-       "label": "Capability",
-       "text": "Patients can book and reschedule by phone or web"
+       "label": "Do",
+       "text": "Try it on a small scale"
       },
       {
-       "label": "Outcome",
-       "text": "Shorter queues, fewer no-shows"
+       "label": "Check",
+       "text": "Measure the effect against a baseline"
       },
       {
-       "label": "Benefit",
-       "text": "More patients seen per doctor-day; higher satisfaction"
-      },
-      {
-       "label": "Strategic objective",
-       "text": "Accessible, efficient district healthcare"
+       "label": "Act",
+       "text": "Keep, adapt or drop it; standardise what works"
       }
-     ],
-     "title": "From output to benefit"
-    },
-    {
-     "type": "template",
-     "title": "Benefits realisation plan",
-     "purpose": "Define how each benefit will be measured, by whom and when, and hand it to the business owner at closure.",
-     "columns": [
-      "Benefit",
-      "Measure (KPI)",
-      "Baseline",
-      "Target & date",
-      "Benefit owner",
-      "How & when measured",
-      "Dependencies / dis-benefits"
-     ],
-     "example": [
-      [
-       "Fewer missed appointments",
-       "No-show rate",
-       "22% (Jan–Mar)",
-       "12% by December",
-       "Hospital administrator",
-       "Monthly report from booking system",
-       "SMS reminders working; dis-benefit: front-desk retraining time"
-      ]
-     ],
-     "rows": 6
+     ]
     },
     {
      "type": "callout",
-     "kind": "warning",
-     "text": "Some outcomes are negative for someone — extra steps for a department, a role that disappears. Record these **dis-benefits** honestly. Also watch for benefit leakage: time saved that is simply absorbed rather than redeployed to valuable work.",
-     "title": "Dis-benefits and benefit leakage"
+     "kind": "insight",
+     "title": "Small steps, often",
+     "text": "Continuous improvement works best as many small changes rather than rare big programmes, an idea often called **kaizen**. A team that improves one thing every sprint for a year makes twenty-five improvements. Measure each one, so you keep what works and drop what does not."
+    },
+    {
+     "type": "keypoints",
+     "title": "Updating organisational process assets",
+     "items": [
+      "Templates: add the section that was missing on this project",
+      "Checklists: add the check that would have caught the problem",
+      "Estimating data: record actual durations, costs and velocity for future reference",
+      "Risk lists: add new risk categories and triggers that appeared",
+      "Contract clauses: strengthen terms that caused disputes",
+      "Gate criteria: add the readiness test that was skipped"
+     ]
+    },
+    {
+     "type": "steps",
+     "title": "Keep the improvement process itself improving",
+     "items": [
+      {
+       "title": "Review the retrospective format",
+       "text": "Change it when it stops producing useful actions."
+      },
+      {
+       "title": "Track action completion",
+       "text": "Report how many improvement actions were completed and what changed."
+      },
+      {
+       "title": "Share across teams",
+       "text": "Use communities of practice and the PMO to spread what works."
+      },
+      {
+       "title": "Retire stale actions",
+       "text": "Close actions that no longer matter, so the list stays credible."
+      }
+     ]
     },
     {
      "type": "scenario",
-     "situation": "Six months after go-live, the business owner says the expected 20% reduction in processing time has not appeared. You have moved to another project. What is the BEST action?",
+     "title": "The same problem, sprint after sprint",
+     "situation": "For four sprints the team's retrospective has raised 'late requirements changes from the business'. Each time the action is 'remind stakeholders', and nothing changes. What should the project manager do?",
      "options": [
       {
-       "text": "Explain that benefits are not your responsibility after closure.",
-       "feedback": "Technically ownership moved, but a dismissive reply wastes your knowledge and harms trust.",
+       "text": "Stop recording the item, since nothing can be done.",
+       "feedback": "Weak. Dropping a recurring problem tells the team retrospectives are pointless.",
        "best": false
       },
       {
-       "text": "Reopen the project and add new features.",
-       "feedback": "Jumping to more scope before diagnosing the cause may waste money.",
-       "best": false
-      },
-      {
-       "text": "Help the business owner analyse the measures and adoption data to find the cause, and suggest corrective actions or a follow-up change.",
-       "feedback": "Correct. Benefit realisation is owned by the business, but the former PM can help diagnose — often the cause is adoption or process, not the system.",
+       "text": "Help the team find the root cause, agree one measurable experiment with an owner, such as a weekly refinement session with the business, and check its effect next sprint.",
+       "feedback": "Best. A recurring problem needs root-cause analysis and a measurable change, not repeated reminders.",
        "best": true
       },
       {
-       "text": "Lower the target to match current results.",
-       "feedback": "Changing targets without analysis hides the problem.",
+       "text": "Escalate to the sponsor and ask her to forbid late changes.",
+       "feedback": "Premature. The team has not yet tried a real change to its own process.",
+       "best": false
+      },
+      {
+       "text": "Extend the sprint length to absorb the changes.",
+       "feedback": "Weak. It treats a symptom and slows feedback for everyone.",
        "best": false
       }
-     ],
-     "title": "The missing benefit"
+     ]
     },
     {
      "type": "terms",
@@ -4567,12 +6019,28 @@ TRACK.modules.push({
        "def": "A regular team meeting to inspect how the team worked and agree concrete improvements for the next cycle."
       },
       {
-       "term": "Benefits realisation",
-       "def": "Measuring and managing the outcomes of a project after delivery to ensure intended benefits are achieved."
+       "term": "Continuous improvement",
+       "def": "An ongoing effort to improve products, services or processes through many small, measured changes."
       },
       {
-       "term": "Dis-benefit",
-       "def": "A measurable negative consequence of a change, perceived as adverse by one or more stakeholders."
+       "term": "Plan-do-check-act (PDCA)",
+       "def": "A four-step improvement cycle: plan a change, try it, check the result, then standardise or adjust."
+      },
+      {
+       "term": "Kaizen",
+       "def": "A philosophy of continuous, incremental improvement involving everyone."
+      },
+      {
+       "term": "Lessons-learned register",
+       "def": "A record of what happened, its impact and the action taken so the lesson changes future practice."
+      },
+      {
+       "term": "Root cause analysis",
+       "def": "Techniques, such as asking 'why?' repeatedly, used to find the underlying cause of a problem."
+      },
+      {
+       "term": "OPA update",
+       "def": "Changing an organisational template, checklist, data set or policy so that a lesson is applied on future projects."
       }
      ]
     },
@@ -4591,48 +6059,48 @@ TRACK.modules.push({
        "explain": "A lesson is learned when it changes behaviour or practice."
       },
       {
-       "q": "Who should normally own a benefit after the project closes?",
-       "options": [
-        "The project manager",
-        "A named business owner",
-        "The PMO benefits team",
-        "The supplier’s account manager"
-       ],
-       "answer": 1,
-       "explain": "Benefits arrive in operations and need an owner there."
-      },
-      {
        "q": "A retrospective produces 14 improvement ideas. What is the BEST next step?",
        "options": [
         "Assign all 14 ideas to the PM to implement",
         "Email them all to the sponsor for a decision",
-        "Wait until the next retrospective to discuss",
-        "Pick one to three actions with owners and dates"
+        "Pick one to three actions with owners and dates",
+        "Wait until the next retrospective to discuss"
        ],
-       "answer": 3,
+       "answer": 2,
        "explain": "Focused, owned actions are more likely to happen."
       },
       {
-       "q": "Why must a benefit have a baseline?",
+       "q": "During closure, the team finds that late involvement of the security team caused a three-week delay. What BEST ensures the lesson is applied?",
        "options": [
-        "To make the benefits report more complete",
-        "Without a starting value, change cannot be measured",
-        "Because auditors require one for every benefit",
-        "Because the baseline sets the project budget"
+        "Record it in the final report",
+        "Email it to all project managers",
+        "Mention it at the closing party",
+        "Update the planning template and gate checklist to require security review in the first phase"
        ],
-       "answer": 1,
-       "explain": "Improvement is measured relative to a baseline."
+       "answer": 3,
+       "explain": "A lesson is learned when practice changes. Updating the organisation's templates and gate criteria builds it into future projects."
       },
       {
-       "q": "‘Patients can book appointments online’ is best described as…",
+       "q": "A team tries a new code-review rule for two sprints. What should happen NEXT in a plan-do-check-act cycle?",
        "options": [
-        "a benefit",
-        "a strategic objective",
-        "a capability/output",
-        "a dis-benefit"
+        "Measure defect rates against the earlier baseline and decide whether to keep, adapt or drop it",
+        "Make the rule permanent across the organisation",
+        "Try a different rule immediately",
+        "Ask the sponsor whether she likes the rule"
        ],
-       "answer": 2,
-       "explain": "It is what the project made possible; benefits come from the outcomes of using it."
+       "answer": 0,
+       "explain": "After 'Do' comes 'Check': measure the effect before standardising or abandoning the change."
+      },
+      {
+       "q": "At kick-off of a new hospital booking project, the PMO's register holds lessons from three similar projects. What should the PM do?",
+       "options": [
+        "Read them only if problems arise",
+        "Review them with the team and build relevant actions into the plan and risk register",
+        "Archive them, since every project is different",
+        "Send them to the sponsor for approval"
+       ],
+       "answer": 1,
+       "explain": "Lessons are valuable when pulled into new projects at the start, not only pushed out at the end of old ones."
       }
      ]
     }
@@ -4640,176 +6108,273 @@ TRACK.modules.push({
   },
   {
    "id": "m8-l3",
-   "title": "Professional Responsibility & Ethics",
-   "subtitle": "Make the right call when nobody is watching — and when someone is pressuring you.",
+   "title": "Supporting Organisational Change",
+   "subtitle": "Assess the culture, help people adopt the change and respond when the organisation changes around the project",
    "minutes": 30,
    "objectives": [
-    "Explain responsibility, respect, fairness and honesty as practical values.",
-    "Work through ethical dilemmas using a structured decision approach.",
-    "Recognise conflicts of interest, gifts, misreporting and corruption risks."
+    "Assess organisational culture and its effect on the project",
+    "Apply ADKAR to diagnose where individuals are stuck",
+    "Use Kotter's eight steps to plan an organisational change effort",
+    "Evaluate the impact of organisational changes on the project and act"
    ],
    "blocks": [
     {
      "type": "text",
-     "text": "Project managers hold information, money and influence. Sponsors, clients and teams rely on what they report and how they decide. The professional community broadly agrees on four core values — **responsibility, respect, fairness and honesty** — and these are reflected, for example, in the code of ethics published by PMI. Here is what they mean in day-to-day project life, in ZPMP’s own words."
+     "text": "A new system can go live perfectly and still fail if nobody uses it properly. **Organisational change management (OCM)** is the people side of delivering value: helping individuals and groups move from the current way of working to the new one. Project management delivers the solution; change management makes sure it is **adopted**."
+    },
+    {
+     "type": "table",
+     "title": "Assessing organisational culture",
+     "head": [
+      "Dimension",
+      "What to look for",
+      "Implication for the project"
+     ],
+     "rows": [
+      [
+       "Decision-making",
+       "Consensus, top-down or delegated?",
+       "How long approvals take; who must be in the room"
+      ],
+      [
+       "Attitude to failure",
+       "Are mistakes punished or discussed?",
+       "Whether people will report problems early"
+      ],
+      [
+       "Hierarchy",
+       "Can juniors challenge seniors?",
+       "How to gather honest input"
+      ],
+      [
+       "Pace and stability",
+       "Frequent reorganisations or long-stable structures?",
+       "Change fatigue and readiness"
+      ],
+      [
+       "History of change",
+       "Did past changes succeed or fail?",
+       "The level of scepticism to expect"
+      ]
+     ]
     },
     {
      "type": "framework",
      "items": [
       {
-       "label": "RSP",
-       "title": "Responsibility",
-       "text": "Own your decisions and their consequences. Take only work you are competent to do. Keep commitments. Report errors — including your own — promptly and fix them."
+       "label": "A",
+       "title": "Awareness",
+       "text": "of why the change is needed. ‘Why are we doing this, and why now?’"
       },
       {
-       "label": "RES",
-       "title": "Respect",
-       "text": "Treat people with dignity. Listen to other views. Honour other cultures and norms. Never abuse power or speak about others behind their backs to harm them."
+       "label": "D",
+       "title": "Desire",
+       "text": "to support and take part. ‘What is in it for me — and what happens if we do not?’"
       },
       {
-       "label": "FAI",
-       "title": "Fairness",
-       "text": "Decide impartially. Disclose and manage conflicts of interest. Give equal access to information and opportunity in procurement and staffing."
+       "label": "K",
+       "title": "Knowledge",
+       "text": "of how to change. Training, guides, examples of the new process."
       },
       {
-       "label": "HON",
-       "title": "Honesty",
-       "text": "Seek and tell the truth. Report status accurately, even when it is unwelcome. Do not mislead by omission, selective data or silence."
+       "label": "Ab",
+       "title": "Ability",
+       "text": "to actually perform the new way. Practice, coaching, time, the right tools."
+      },
+      {
+       "label": "R",
+       "title": "Reinforcement",
+       "text": "to make it stick. Recognition, measurement, removing the old way."
       }
      ],
-     "title": "Four values in action"
+     "title": "ADKAR: the individual journey"
     },
     {
      "type": "callout",
-     "kind": "insight",
-     "text": "Ethics codes usually combine **aspirational** standards (what we strive for — e.g. seeking diverse perspectives) and **mandatory** ones (what we must do — e.g. disclosing conflicts of interest, not taking bribes). Breaching a mandatory standard can carry professional and legal consequences.",
-     "title": "Aspirational and mandatory"
+     "kind": "pro",
+     "text": "ADKAR is sequential. If a branch manager lacks **desire**, more training (knowledge) will not help. Survey or interview, find the earliest element that is weak, and fix that first.",
+     "title": "Find the first barrier"
+    },
+    {
+     "type": "text",
+     "text": "ADKAR focuses on individuals. **John Kotter’s** eight-step model focuses on leading change across an organisation. In our own words, the steps are:"
     },
     {
      "type": "steps",
      "items": [
       {
-       "title": "Recognise",
-       "text": "Is there an ethical issue? Who could be harmed or treated unfairly?"
+       "title": "Create urgency",
+       "text": "Help people see, with evidence, why the status quo is risky."
       },
       {
-       "title": "Get the facts",
-       "text": "What do you actually know? What laws, policies, contracts and codes apply?"
+       "title": "Build a guiding coalition",
+       "text": "Assemble influential, credible leaders from across the organisation."
       },
       {
-       "title": "Consider options",
-       "text": "List possible actions, including ‘raise it’, ‘decline’ and ‘seek advice’."
+       "title": "Form a vision and strategy",
+       "text": "A simple picture of the future and how to get there."
       },
       {
-       "title": "Test them",
-       "text": "Would I be comfortable if this appeared in the news, or if my mentor saw it? Is it legal? Fair to all? Honest?"
+       "title": "Communicate and involve",
+       "text": "Share the vision constantly through many channels; recruit volunteers."
       },
       {
-       "title": "Act and reflect",
-       "text": "Act, document your reasoning, and raise concerns through proper channels if needed."
+       "title": "Remove barriers",
+       "text": "Change structures, systems and processes that block the new way."
+      },
+      {
+       "title": "Generate short-term wins",
+       "text": "Plan visible, early successes and celebrate them."
+      },
+      {
+       "title": "Sustain acceleration",
+       "text": "Use credibility from wins to tackle bigger changes; do not declare victory early."
+      },
+      {
+       "title": "Anchor in culture",
+       "text": "Connect new behaviours to success; build them into hiring, promotion and routines."
       }
      ],
-     "title": "A five-step ethical decision check"
+     "title": "Kotter’s eight steps, summarised"
     },
     {
      "type": "table",
      "head": [
-      "Situation",
-      "Risk",
-      "Professional response"
+      "Root of resistance",
+      "What you might hear",
+      "Helpful response"
      ],
      "rows": [
       [
-       "A bidder’s relative works on your evaluation panel",
-       "Conflict of interest",
-       "Disclose immediately; the relative steps out of evaluation"
+       "Not understanding why",
+       "‘The old system works fine.’",
+       "Share data and stories on the problem; let them see it themselves"
       ],
       [
-       "A vendor sends an expensive gift during tender evaluation",
-       "Undue influence",
-       "Decline politely; follow gift policy; report if required"
+       "Loss of status, control or skill",
+       "‘I have been the expert for 12 years.’",
+       "Involve them as super-users or trainers; honour their expertise"
       ],
       [
-       "Sponsor asks you to show the project as green before the board meeting",
-       "Misrepresentation",
-       "Explain the real status; offer to present the recovery plan alongside"
+       "Fear of job loss",
+       "‘Is this automation going to replace us?’",
+       "Be honest about impacts; explain redeployment and reskilling plans"
       ],
       [
-       "An official asks for a ‘speed money’ payment to clear equipment",
-       "Bribery / corruption",
-       "Refuse; escalate to legal/compliance; record the request"
+       "Change fatigue",
+       "‘Another initiative?’",
+       "Sequence changes; stop something old; show quick wins"
       ],
       [
-       "A new team member brings a former employer’s confidential designs",
-       "IP and confidentiality breach",
-       "Do not use them; inform legal; remind of obligations"
-      ],
-      [
-       "You realise your own estimate had a major error",
-       "Hidden mistake",
-       "Disclose quickly with corrected figures and impact"
+       "Past broken promises",
+       "‘Last time they said it would be easier.’",
+       "Under-promise; pilot first; let peers report results"
       ]
      ],
-     "title": "Common dilemmas and the professional response"
+     "title": "Why people resist — and what helps"
+    },
+    {
+     "type": "case",
+     "title": "Digital account opening at a commercial bank",
+     "context": "A Bangladeshi commercial bank is introducing tablet-based digital account opening at 120 branches, replacing paper forms. The pilot at 10 branches is technically successful, but after six weeks only 30% of new accounts are opened digitally. Interviews show: many officers did not know why the change was happening beyond ‘head office says so’; senior officers worry that faster processing will be used to cut staff; several were trained once, two weeks before the tablets arrived; and branch targets still reward the number of accounts, not the channel used.",
+     "questions": [
+      "Diagnose the situation with ADKAR. Where is the first barrier?",
+      "What would you change before rolling out to the other 110 branches?",
+      "Which Kotter steps were skipped?"
+     ],
+     "answer": "ADKAR: **Awareness** is weak (no compelling why), **Desire** is undermined by job-loss fear and by targets that do not reward the change, **Knowledge** decayed because training came too early, **Ability** lacked practice time, **Reinforcement** is absent. The first barrier is awareness/desire, so more training alone will fail. Before rollout: leaders explain the customer and compliance reasons (faster opening, fewer errors, better KYC data); HR and leadership give an honest message on staffing and reskilling; train just-in-time with practice sessions and branch super-users; add digital-channel share to branch scorecards; publish pilot-branch wins. Kotter steps skipped: urgency, guiding coalition beyond head office, communicating the vision, removing barriers (targets) and short-term wins."
+    },
+    {
+     "type": "template",
+     "title": "Change impact assessment",
+     "purpose": "Identify who is affected, how much and what support they need before go-live.",
+     "columns": [
+      "Stakeholder group",
+      "What changes for them",
+      "Impact (H/M/L)",
+      "ADKAR gap",
+      "Support actions",
+      "Change champion"
+     ],
+     "example": [
+      [
+       "Branch customer-service officers",
+       "Tablet process replaces paper forms; new KYC checks",
+       "H",
+       "Desire (job-security fears)",
+       "Leadership briefing on reskilling; super-user buddies; scorecard update",
+       "Senior officer, Agrabad branch"
+      ]
+     ],
+     "rows": 6
     },
     {
      "type": "callout",
      "kind": "warning",
-     "text": "Gift-giving and hospitality norms differ across cultures, and respecting them matters. But where a custom conflicts with law, your organisation’s policy or the integrity of a decision — for example, gifts during a live tender — the law and policy prevail. When unsure, disclose and ask.",
-     "title": "Local custom is not a licence"
+     "title": "When the organisation changes around the project",
+     "text": "Restructures, mergers, a new chief executive or a new strategy can change a project's sponsor, stakeholders, priorities and business case overnight. When it happens, re-check the sponsor's commitment, re-map stakeholders, re-test the business case and agree with governance whether the project should continue, change or stop. Do not assume the old mandate still holds."
     },
     {
      "type": "scenario",
-     "situation": "Two days before a board meeting, your sponsor asks you to change the project’s status from red to amber ‘to avoid panic’, promising to fix things next month. What should you do?",
+     "situation": "A respected senior supervisor openly criticises the new warehouse scanning process in front of her team, and adoption on her shift is lowest. What should the project manager do FIRST?",
      "options": [
       {
-       "text": "Change it to amber — the sponsor is accountable for the project.",
-       "feedback": "Knowingly misreporting status breaches honesty regardless of who asks.",
-       "best": false
-      },
-      {
-       "text": "Report the sponsor to the ethics hotline immediately.",
-       "feedback": "Escalation may become necessary, but first discuss it directly and offer a constructive alternative.",
-       "best": false
-      },
-      {
-       "text": "Keep the status red, and offer to help the sponsor present a credible recovery plan and decisions needed alongside it.",
-       "feedback": "Correct. Honest status plus a constructive path forward serves the sponsor and the organisation.",
+       "text": "Meet her privately to understand her concerns, then involve her in fixing them — possibly as a change champion.",
+       "feedback": "Correct. Her influence is an asset; if her concerns are addressed, she can bring the team along.",
        "best": true
       },
       {
-       "text": "Skip the board meeting to avoid presenting.",
-       "feedback": "Avoidance does not solve the dilemma and leaves the board uninformed.",
+       "text": "Report her to her manager for undermining the project.",
+       "feedback": "Punishment may silence her but will not change her team’s behaviour and may harden resistance.",
+       "best": false
+      },
+      {
+       "text": "Exclude her shift from the rollout for now.",
+       "feedback": "This avoids the problem and leaves a gap in the benefits.",
+       "best": false
+      },
+      {
+       "text": "Run another training session for her shift.",
+       "feedback": "Training addresses knowledge; her resistance is likely about desire or a real process problem.",
        "best": false
       }
      ],
-     "title": "The green report"
-    },
-    {
-     "type": "case",
-     "title": "Ethics at a city flyover project",
-     "context": "You manage the traffic-management and utilities package of a city flyover. A subcontractor offers to pay for your team’s end-of-year dinner at a five-star hotel. The same week, a site engineer tells you quietly that concrete test results for two piers were ‘adjusted’ to meet the deadline. Your sponsor is under heavy political pressure to open before the monsoon.",
-     "questions": [
-      "Identify each ethical issue and the value(s) involved.",
-      "What should you do about the test results, and in what order?",
-      "How should you respond to the dinner offer?"
-     ],
-     "answer": "Issues: (1) Dinner — potential undue influence and conflict of interest (fairness); (2) Adjusted test results — falsified safety data (honesty, responsibility), with serious public-safety risk. Order: treat safety first — protect the engineer, secure the original records, inform the sponsor and the quality/safety authority as required by contract and law, and stop or restrict work on the affected piers pending independent retesting. Document everything. Political pressure does not change the duty; a delayed opening is far better than a structural failure. Dinner: decline politely, referring to company policy; if the team celebrates, the organisation pays."
+     "title": "The vocal sceptic"
     },
     {
      "type": "reflection",
-     "prompt": "Describe a time you felt pressure to bend the truth or a rule at work. Which of the four values was under strain, and what would you do differently now?"
+     "prompt": "Recall a change you were asked to adopt at work. Using ADKAR, which element was weakest for you, and what would have helped most?"
     },
     {
      "type": "terms",
      "items": [
       {
-       "term": "Conflict of interest",
-       "def": "A situation in which personal interests could improperly influence, or appear to influence, professional judgement."
+       "term": "Organisational change management (OCM)",
+       "def": "Structured methods for helping people move from current to future ways of working so that project outputs are adopted and benefits realised."
       },
       {
-       "term": "Honesty (professional)",
-       "def": "Understanding and communicating the truth accurately, including unwelcome news, and not misleading by omission."
+       "term": "ADKAR",
+       "def": "A model of individual change: Awareness, Desire, Knowledge, Ability, Reinforcement."
+      },
+      {
+       "term": "Kotter's eight steps",
+       "def": "A model for leading organisational change from creating urgency to anchoring the change in the culture."
+      },
+      {
+       "term": "Change champion",
+       "def": "A respected person in the affected group who promotes and supports the change locally."
+      },
+      {
+       "term": "Organisational culture",
+       "def": "The shared values, beliefs and habits that shape how people in an organisation behave."
+      },
+      {
+       "term": "Change saturation",
+       "def": "The point at which people are asked to absorb more change than they can handle, so adoption drops."
+      },
+      {
+       "term": "Change impact assessment",
+       "def": "An analysis of who is affected by a change, how much, and what support they need."
       }
      ]
     },
@@ -4817,48 +6382,59 @@ TRACK.modules.push({
      "type": "quiz",
      "items": [
       {
-       "q": "You discover your company’s bid evaluation includes a firm owned by your cousin. What should you do FIRST?",
+       "q": "Users have been trained and understand the new process, but still prefer the old spreadsheet because their bonus depends on speed. Which ADKAR element needs attention?",
        "options": [
-        "Evaluate the bid fairly and say nothing about it",
-        "Disclose the relationship and step aside from it",
-        "Mark the firm down to avoid any suspicion of favour",
-        "Ask your cousin to withdraw the bid quietly before scoring"
+        "Awareness of the need for change",
+        "Desire / Reinforcement",
+        "Knowledge of the new process",
+        "Ability to use the new tools"
        ],
        "answer": 1,
-       "explain": "Disclosure and recusal manage the conflict transparently."
+       "explain": "They know how but lack motivation, and the reward system reinforces the old way."
       },
       {
-       "q": "A sponsor asks you to omit a major risk from a report to investors. Which value is primarily at stake?",
+       "q": "Which Kotter step is MOST concerned with celebrating visible early successes?",
        "options": [
-        "Honesty",
-        "Respect",
-        "Fairness",
-        "Responsibility only for the sponsor"
-       ],
-       "answer": 0,
-       "explain": "Omitting material information misleads — an honesty issue."
-      },
-      {
-       "q": "A team member makes derogatory jokes about a colleague’s religion. Which action BEST reflects the value of respect?",
-       "options": [
-        "Ignore it to avoid creating conflict in the team",
-        "Address it promptly and involve HR as policy requires",
-        "Laugh along so you are seen to fit in with the team",
-        "Wait for a formal complaint before taking any action"
-       ],
-       "answer": 1,
-       "explain": "Respect requires acting against behaviour that demeans others."
-      },
-      {
-       "q": "In which case does local custom NOT justify accepting a gift?",
-       "options": [
-        "A small festival sweet box shared with the whole team after delivery",
-        "A thank-you card from a user",
-        "Tea offered at a site meeting",
-        "A costly gift from a bidder during an active tender"
+        "Build a guiding coalition",
+        "Create a sense of urgency",
+        "Anchor changes in the culture",
+        "Generate short-term wins"
        ],
        "answer": 3,
-       "explain": "Valuable gifts during procurement create undue influence regardless of custom."
+       "explain": "Short-term wins build credibility and momentum."
+      },
+      {
+       "q": "The BEST way to treat resistance is to…",
+       "options": [
+        "overcome it with stronger mandates from leadership",
+        "ignore it until go-live, when it usually fades",
+        "explore it as information and address root causes",
+        "remove persistent resisters from the project team"
+       ],
+       "answer": 2,
+       "explain": "Resistance often reveals real issues; understanding it leads to better solutions and adoption."
+      },
+      {
+       "q": "Training delivered three months before people get the new system is a problem mainly for which ADKAR element?",
+       "options": [
+        "Knowledge and Ability",
+        "Desire and Reinforcement",
+        "Awareness and Desire",
+        "Awareness and Reinforcement"
+       ],
+       "answer": 0,
+       "explain": "Knowledge fades without use; just-in-time training plus practice builds ability."
+      },
+      {
+       "q": "Halfway through a project, the organisation merges with a competitor and the sponsor leaves. What should the project manager do FIRST?",
+       "options": [
+        "Continue as planned, since the charter is still signed",
+        "Stop all work until the merger is complete",
+        "Confirm a new sponsor and re-check stakeholders and the business case with governance",
+        "Ask the team to speed up before priorities change"
+       ],
+       "answer": 2,
+       "explain": "Organisational change can remove the project's mandate. Confirm sponsorship and re-test the business case before carrying on."
       }
      ]
     }
@@ -4866,84 +6442,537 @@ TRACK.modules.push({
   },
   {
    "id": "m8-l4",
-   "title": "Career Portfolio & Exam Strategy",
-   "subtitle": "Show what you can do, keep growing, and think like a professional under exam conditions.",
-   "minutes": 30,
+   "title": "The External Environment: Regulation, Markets, AI & Sustainability",
+   "subtitle": "Survey changes outside the project, assess their impact on scope and backlog, and keep watching",
+   "minutes": 32,
    "objectives": [
-    "Build a project-management career portfolio with evidence of outcomes.",
-    "Apply a reliable method to situational-judgement questions.",
-    "Recognise agile and predictive context cues and typical best-practice answers."
+    "Survey changes in regulation, technology, markets and geopolitics",
+    "Assess and prioritise their impact on scope, backlog and business case",
+    "Use AI tools responsibly and respond to AI as a source of change",
+    "Build sustainability into project decisions"
    ],
    "blocks": [
     {
      "type": "text",
-     "text": "A certificate opens a door; a **portfolio** walks you through it. Employers want proof that you can deliver outcomes, lead people and handle uncertainty. Build that proof deliberately, project by project."
+     "text": "Projects do not run in a sealed room. A new regulation, a competitor's launch, an exchange-rate shock, a trade dispute or a new generation of AI tools can change what a project should deliver, sometimes in weeks. Project managers **survey** the external environment, **assess** what changes mean for scope and the backlog, and **keep reviewing** throughout the project, not just at the start."
+    },
+    {
+     "type": "table",
+     "title": "Scanning the external environment",
+     "head": [
+      "Area",
+      "Example change",
+      "Possible project impact"
+     ],
+     "rows": [
+      [
+       "Political and geopolitical",
+       "Trade restrictions on a component's country of origin",
+       "Re-sourcing; schedule and cost changes"
+      ],
+      [
+       "Economic and market",
+       "Currency devaluation; a competitor launches first",
+       "Budget pressure; reprioritised features"
+      ],
+      [
+       "Social",
+       "Customers expect mobile-first, local-language service",
+       "New backlog items; changed design"
+      ],
+      [
+       "Technological, including AI",
+       "New AI capability makes a planned feature obsolete",
+       "Scope removed or redesigned"
+      ],
+      [
+       "Legal and regulatory",
+       "New data-protection or AI rules",
+       "Compliance work added; go-live conditions"
+      ],
+      [
+       "Environmental",
+       "Stricter emissions reporting; climate-driven flooding",
+       "New data requirements; site and design changes"
+      ]
+     ]
+    },
+    {
+     "type": "steps",
+     "title": "From external change to the backlog",
+     "items": [
+      {
+       "title": "Survey",
+       "text": "Watch regulators, industry news, suppliers, customers and competitors; make it someone's job."
+      },
+      {
+       "title": "Assess relevance",
+       "text": "Does it affect our scope, users, suppliers, costs or business case?"
+      },
+      {
+       "title": "Estimate impact",
+       "text": "How much, how soon, and is it mandatory?"
+      },
+      {
+       "title": "Prioritise",
+       "text": "Rank against existing backlog items or planned scope by value and urgency."
+      },
+      {
+       "title": "Act",
+       "text": "Add backlog items, raise change requests or record risks, and inform governance."
+      },
+      {
+       "title": "Keep reviewing",
+       "text": "Make external change a standing item at quarterly planning and gate reviews."
+      }
+     ]
+    },
+    {
+     "type": "template",
+     "title": "External change radar",
+     "purpose": "Track external changes and what the project is doing about each one.",
+     "columns": [
+      "Change",
+      "Source and date",
+      "Area",
+      "Impact on scope or backlog",
+      "Urgency",
+      "Action and owner"
+     ],
+     "example": [
+      [
+       "Data-localisation rule for customer data",
+       "Regulator notice, 10 Jan",
+       "Legal and regulatory",
+       "Hosting must move in-country; 3 new backlog epics",
+       "High: 9-month deadline",
+       "Change request raised; compliance officer and tech lead"
+      ]
+     ],
+     "rows": 6
+    },
+    {
+     "type": "callout",
+     "kind": "insight",
+     "title": "AI as a change in the environment",
+     "text": "Artificial intelligence changes projects in two ways. It is a **tool**: drafting, summarising, analysing and forecasting. And it is an **external force**: customers expect smarter services, competitors ship AI features, new laws regulate AI use, and some planned features become obsolete. Review both: how your team uses AI, and how AI changes what your project should deliver."
+    },
+    {
+     "type": "table",
+     "head": [
+      "PM task",
+      "Good use",
+      "Watch out for"
+     ],
+     "rows": [
+      [
+       "Charter and plan drafts",
+       "First draft of objectives, scope statements, assumptions from your notes",
+       "Invented constraints or targets; generic text that fits no real project"
+      ],
+      [
+       "Risk brainstorming",
+       "Generate candidate risks by RBS category to widen thinking",
+       "Plausible but irrelevant risks; missing local context"
+      ],
+      [
+       "Status summaries",
+       "Turn raw updates and tracker exports into a one-page draft",
+       "Softening bad news; mis-stated numbers"
+      ],
+      [
+       "Meeting notes",
+       "Summarise transcripts into decisions, actions and owners",
+       "Wrong attribution; confidential remarks captured; consent to record"
+      ],
+      [
+       "Schedule what-ifs",
+       "Explain trade-offs and suggest scenarios to test",
+       "Arithmetic and date errors — run the real numbers in your scheduling tool"
+      ],
+      [
+       "Stakeholder messages",
+       "Adapt one message for different audiences and reading levels",
+       "Tone that does not fit the relationship; over-promising"
+      ]
+     ],
+     "title": "Where an AI assistant helps (and where to be careful)"
     },
     {
      "type": "framework",
      "items": [
       {
-       "label": "CS",
-       "title": "Case summaries",
-       "text": "Three to five short project stories: context, your role, actions, results with numbers."
+       "label": "APP",
+       "title": "Approved tools only",
+       "text": "Use the AI tools your organisation has approved under an enterprise agreement. Consumer accounts may retain or use your inputs in ways your contracts forbid."
       },
       {
-       "label": "ART",
-       "title": "Sanitised artefacts",
-       "text": "A charter, risk register, dashboard or RACI — with confidential details removed and permission obtained."
+       "label": "CLS",
+       "title": "Classify before you paste",
+       "text": "Public and internal data may be fine; confidential, client, personal or regulated data usually is not — unless the tool is explicitly approved for that class."
       },
       {
-       "label": "MET",
-       "title": "Metrics",
-       "text": "Budget size, team size, delivery performance, benefits achieved, adoption rates."
+       "label": "MIN",
+       "title": "Minimise and anonymise",
+       "text": "Remove names, phone numbers, account numbers and contract values; use placeholders such as ‘Vendor A’."
       },
       {
-       "label": "REF",
-       "title": "References & feedback",
-       "text": "Short quotes from sponsors or team members, with their consent."
+       "label": "SEC",
+       "title": "No secrets ever",
+       "text": "Never paste passwords, access keys or security configurations."
       },
       {
-       "label": "LRN",
-       "title": "Continuous learning",
-       "text": "Courses, certifications, communities, talks and what you applied from them."
-      },
-      {
-       "label": "RFL",
-       "title": "Reflection",
-       "text": "What you would do differently — evidence of a learning mindset."
+       "label": "REC",
+       "title": "Consent for recording",
+       "text": "Tell participants before an AI note-taker records or transcribes a meeting, and follow local law and company policy."
       }
      ],
-     "title": "What goes in a PM portfolio"
-    },
-    {
-     "type": "template",
-     "title": "Portfolio case entry (CAR)",
-     "purpose": "Write each project as Context, Action, Result so achievements are easy to scan.",
-     "columns": [
-      "Project & dates",
-      "Context (problem, size)",
-      "My role",
-      "Actions I took",
-      "Results (measured)",
-      "Evidence / artefact"
-     ],
-     "example": [
-      [
-       "Clinic booking app, 2025",
-       "4 clinics, 20k patients/yr, 22% no-shows",
-       "PM, team of 7",
-       "Ran discovery with patients, hybrid delivery, SMS reminders, change champions",
-       "No-shows down to 13% in 6 months; on budget",
-       "Sanitised dashboard + sponsor quote"
-      ]
-     ],
-     "rows": 5
+     "title": "Data-privacy rules for AI use"
     },
     {
      "type": "callout",
-     "kind": "pro",
-     "text": "Not ‘Responsible for weekly status reports’ but ‘Introduced a one-page decision-first report; sponsor decisions came 2 weeks faster on average.’ Numbers, verbs and outcomes.",
-     "title": "Translate tasks into outcomes"
+     "kind": "definition",
+     "text": "Organisations increasingly align AI work with frameworks such as the **NIST AI Risk Management Framework** and the management-system standard **ISO/IEC 42001**. A PM does not need to be an expert, but should ask early: ‘Which AI policy and risk process applies to this project?’",
+     "title": "Useful references for AI governance"
+    },
+    {
+     "type": "framework",
+     "items": [
+      {
+       "label": "E",
+       "title": "Environmental",
+       "text": "Energy and carbon over the life cycle, materials, waste, water and pollution, climate resilience (e.g. flood-proofing sites)."
+      },
+      {
+       "label": "S",
+       "title": "Social",
+       "text": "Labour standards in the supply chain, health and safety, community impact, accessibility and inclusion of users."
+      },
+      {
+       "label": "G",
+       "title": "Governance",
+       "text": "Anti-corruption, transparency in procurement, data protection, ethical AI, honest reporting."
+      }
+     ],
+     "title": "ESG in project decisions"
+    },
+    {
+     "type": "keypoints",
+     "items": [
+      "Add a sustainability objective or key result to the charter where relevant",
+      "Include carbon and lifecycle cost — not just purchase price — in option appraisal",
+      "Use supplier criteria for labour standards and environmental performance",
+      "Choose energy-efficient hosting and right-size infrastructure",
+      "Plan for reuse, recycling or safe disposal of equipment and materials",
+      "Report ESG measures alongside cost and schedule at stage gates"
+     ],
+     "title": "Practical ways to build sustainability into a project"
+    },
+    {
+     "type": "case",
+     "title": "Solar irrigation pumps in northern Bangladesh",
+     "context": "An NGO-funded programme will install 300 solar irrigation pumps across Rangpur and Dinajpur over three years, run as three projects: procurement and installation, a farmer payment-and-service scheme, and a maintenance training project. The board has limited funds and two other proposals: rooftop solar for clinics, and a mobile weather-advisory service.",
+     "questions": [
+      "Why is this better run as a programme than three separate projects?",
+      "Suggest four weighted criteria the portfolio board could use to compare the three proposals.",
+      "Name two environmental and two social risks the programme should manage."
+     ],
+     "answer": "Programme: the benefit — higher, sustainable farmer incomes and lower diesel use — only appears when pumps, payment scheme and maintenance skills work together; a programme manages those dependencies and benefits. Criteria (example): impact on income/livelihoods 35%, emissions reduction 25%, cost per beneficiary 25%, delivery risk 15%. Environmental: groundwater over-extraction when water becomes cheap; end-of-life disposal of panels and batteries. Social: unequal access (larger landowners capturing benefits), and safety/theft issues at remote sites — plus fair labour practices among installers."
+    },
+    {
+     "type": "scenario",
+     "title": "A new rule mid-project",
+     "situation": "Six months into a cloud-hosted customer app, the regulator announces that customer data must be stored in-country within nine months. The product owner is focused on new features for a festival campaign. What should the project manager do FIRST?",
+     "options": [
+      {
+       "text": "Ignore it until the rule is finalised in law.",
+       "feedback": "Weak. Waiting wastes time that a nine-month deadline cannot spare.",
+       "best": false
+      },
+      {
+       "text": "Assess the impact on scope, backlog, costs and the business case with the product owner and compliance officer, then present prioritised options to governance.",
+       "feedback": "Best. It turns an external change into an assessed, prioritised response and involves the right people.",
+       "best": true
+      },
+      {
+       "text": "Move all hosting immediately, pausing feature work.",
+       "feedback": "Premature. Action before impact assessment may be costly and unnecessary in that form.",
+       "best": false
+      },
+      {
+       "text": "Add a risk to the register and continue as planned.",
+       "feedback": "Partly right, but this is a confirmed mandatory change, not only a risk; scope and plans need to change.",
+       "best": false
+      }
+     ]
+    },
+    {
+     "type": "terms",
+     "items": [
+      {
+       "term": "Generative AI copilot",
+       "def": "An AI assistant that generates text, summaries, code or other content from natural-language prompts to support a person’s work."
+      },
+      {
+       "term": "Hallucination",
+       "def": "Output from a generative model that is fluent and plausible but factually wrong or invented."
+      },
+      {
+       "term": "Data minimisation",
+       "def": "Sharing only the data strictly needed for a task, with personal or confidential details removed or masked."
+      },
+      {
+       "term": "ESG",
+       "def": "Environmental, social and governance considerations used to assess the wider impact and responsibility of projects and organisations."
+      },
+      {
+       "term": "Model drift",
+       "def": "The decline in an AI model’s performance over time as real-world data diverges from its training data."
+      },
+      {
+       "term": "Environmental scanning",
+       "def": "Regularly surveying political, economic, social, technological, legal and environmental changes that may affect a project."
+      },
+      {
+       "term": "PESTLE analysis",
+       "def": "A checklist for scanning the external environment: political, economic, social, technological, legal and environmental factors."
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "items": [
+      {
+       "q": "Which data is generally SAFEST to share with an approved AI assistant?",
+       "options": [
+        "Anonymised meeting notes with internal-only information",
+        "A customer list with names and phone numbers",
+        "Administrator passwords for the test environment",
+        "A signed contract with pricing, in a public chatbot"
+       ],
+       "answer": 0,
+       "explain": "Anonymised internal data in an approved tool is the low-risk option."
+      },
+      {
+       "q": "Comparing options by lifecycle energy cost rather than purchase price alone is an example of…",
+       "options": [
+        "social sustainability and community benefit",
+        "gold plating of the specification",
+        "environmental and financial sustainability",
+        "scope creep driven by stakeholders"
+       ],
+       "answer": 2,
+       "explain": "Lifecycle costing captures operating energy and environmental impact."
+      },
+      {
+       "q": "An AI model for loan approvals performed well at launch but accuracy falls after a year. This is most likely…",
+       "options": [
+        "scope creep",
+        "a hallucination",
+        "a lagging indicator",
+        "model drift"
+       ],
+       "answer": 3,
+       "explain": "Changing real-world data degrades model performance over time."
+      },
+      {
+       "q": "A competitor launches an AI feature that makes one of your planned features far less valuable. What should the product owner and PM do?",
+       "options": [
+        "Continue, because the feature is in the approved roadmap",
+        "Cancel the whole project",
+        "Copy the competitor's feature exactly",
+        "Reassess the backlog's value in light of the change and reprioritise with stakeholders"
+       ],
+       "answer": 3,
+       "explain": "External changes should be assessed for their impact on scope and the backlog, then reprioritised by value."
+      },
+      {
+       "q": "Which practice BEST makes sure external changes keep being noticed during a long project?",
+       "options": [
+        "A standing review of external changes at quarterly planning and gate reviews",
+        "A one-off environmental scan at initiation",
+        "Waiting for the sponsor to report changes",
+        "Reading industry news when the project is in trouble"
+       ],
+       "answer": 0,
+       "explain": "The external environment must be reviewed continually; a standing agenda item makes it routine."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m8-l5",
+   "title": "The Whole Loop: Capstone & Exam Readiness",
+   "subtitle": "Watch all eight stages work together on one project, plan your capstone and prepare for situational questions",
+   "minutes": 40,
+   "objectives": [
+    "Trace a project through all eight stages of the ZPMP Professional Loop",
+    "Plan your ZPMP capstone and its deliverables",
+    "Apply a reliable method to situational-judgement questions",
+    "Recognise predictive, agile and hybrid context cues"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Real projects do not separate neatly into modules. A risk spotted in Govern changes the plan; a stakeholder concern in Engage reshapes scope; a lesson in Adapt improves the next Frame. Here is one mini-project followed through the whole **ZPMP Professional Loop**."
+    },
+    {
+     "type": "callout",
+     "kind": "example",
+     "text": "**Cumilla District Hospital — SMS and web appointment booking.** Patients queue from dawn for outpatient tickets; 22% of booked follow-ups are missed. A 6-month project with a budget of BDT 4.5 million and a team of 7 (PM, product owner from hospital administration, 3 developers, 1 tester, 1 change and training lead) will deliver online and SMS booking with reminders for four outpatient departments.",
+     "title": "The mini-project"
+    },
+    {
+     "type": "table",
+     "title": "Walking the loop",
+     "head": [
+      "Stage",
+      "Key question",
+      "What the team did",
+      "Key artefact"
+     ],
+     "rows": [
+      [
+       "Frame",
+       "Is this worth doing, and do we share the vision?",
+       "Business case for fewer queues and no-shows; hybrid approach; vision co-written with doctors and front desk",
+       "Business case, charter, vision"
+      ],
+      [
+       "Lead",
+       "Is the team set up to succeed?",
+       "Team charter and RACI; conflict over slot rules resolved collaboratively",
+       "Team charter, RACI"
+      ],
+      [
+       "Engage",
+       "Who cares, and what do they expect?",
+       "Stakeholder map; alignment session agreed SMS-first for older patients; knowledge transfer plan for the hospital IT officer",
+       "Stakeholder register, alignment map, communication plan"
+      ],
+      [
+       "Plan",
+       "What exactly, and in what order of value?",
+       "Integrated plan joining the SMS-gateway contract with a prioritised backlog",
+       "Integrated plan, backlog"
+      ],
+      [
+       "Resource",
+       "How long, who and how much?",
+       "Velocity-based release forecast; P80 at 6.5 months; budget with contingency",
+       "Release plan, budget"
+      ],
+      [
+       "Deliver",
+       "Are we building it well and on track?",
+       "Sprints with usability tests; vendor scorecard; burnup and dashboard",
+       "Increments, dashboard"
+      ],
+      [
+       "Govern",
+       "Are we compliant and in control?",
+       "Patient-data consent built into stories; change control for the national ID integration; risk register",
+       "Compliance register, change log, risk register"
+      ],
+      [
+       "Adapt",
+       "What blocks us, what is changing, and what did we learn?",
+       "Impediment board; front-desk adoption plan; new national ID rule assessed; retrospectives and benefits plan",
+       "Impediment log, change impact assessment, lessons register"
+      ]
+     ]
+    },
+    {
+     "type": "scenario",
+     "situation": "In month 4, the health directorate announces that all hospital systems must integrate with a new national patient ID within 6 months. The product owner wants to add it now. The P80 forecast already sits at the deadline. What should the PM do FIRST?",
+     "options": [
+      {
+       "text": "Add the integration to the current sprint to show responsiveness.",
+       "feedback": "Disrupts sprint focus and skips impact analysis.",
+       "best": false
+      },
+      {
+       "text": "Tell the directorate the project cannot comply.",
+       "feedback": "Dismisses a mandatory requirement without analysis.",
+       "best": false
+      },
+      {
+       "text": "Analyse the requirement and its impact with the product owner and team, then present options (e.g. phase 2 release before the mandate date) through change control.",
+       "feedback": "Correct. Understand the mandate, assess impact on scope, schedule, cost and risk, and bring options to the right decision makers.",
+       "best": true
+      },
+      {
+       "text": "Escalate to the sponsor to request more budget.",
+       "feedback": "Premature — the size and options are not yet known.",
+       "best": false
+      }
+     ],
+     "title": "A mid-project curveball"
+    },
+    {
+     "type": "text",
+     "text": "Your **ZPMP capstone** asks you to apply the whole loop to a real or realistic project of your choice, ideally from your workplace with confidential details removed. You will produce a compact pack of artefacts and a short reflective report showing how you handled people, process and the business environment."
+    },
+    {
+     "type": "steps",
+     "title": "Capstone deliverables by stage",
+     "items": [
+      {
+       "title": "Frame",
+       "text": "One-page business case, charter and shared vision with measurable success criteria."
+      },
+      {
+       "title": "Lead",
+       "text": "Team charter with ground rules and a RACI for key decisions."
+      },
+      {
+       "title": "Engage",
+       "text": "Stakeholder register, expectation alignment map, knowledge transfer plan and communication plan."
+      },
+      {
+       "title": "Plan",
+       "text": "Integrated plan summary and a prioritised backlog or WBS with acceptance criteria."
+      },
+      {
+       "title": "Resource",
+       "text": "Schedule or release forecast, resource plan and budget with reserves."
+      },
+      {
+       "title": "Deliver",
+       "text": "Quality approach, supplier approach and a simulated status dashboard."
+      },
+      {
+       "title": "Govern",
+       "text": "Governance and escalation thresholds, compliance register, change log and top-10 risk register."
+      },
+      {
+       "title": "Adapt",
+       "text": "Impediment log, change-adoption plan, external change radar and lessons with OPA updates."
+      }
+     ]
+    },
+    {
+     "type": "template",
+     "title": "Capstone planner",
+     "purpose": "Plan your capstone: one row per stage of the Professional Loop.",
+     "columns": [
+      "Stage",
+      "Artefacts I will produce",
+      "Data or input I need",
+      "Who can review it",
+      "Target date"
+     ],
+     "example": [
+      [
+       "Govern",
+       "Compliance register and top-10 risk register",
+       "Regulatory list from compliance team; risk workshop notes",
+       "Line manager and compliance officer",
+       "Week 7"
+      ]
+     ],
+     "rows": 8
     },
     {
      "type": "text",
@@ -4958,7 +6987,7 @@ TRACK.modules.push({
       },
       {
        "title": "Recognise the context",
-       "text": "Agile, predictive or hybrid? Who is involved? What stage of the Value Loop?"
+       "text": "Agile, predictive or hybrid? Who is involved? Which domain and which stage of the Professional Loop?"
       },
       {
        "title": "Reduce",
@@ -5039,39 +7068,6 @@ TRACK.modules.push({
      "title": "Answer patterns to be suspicious of"
     },
     {
-     "type": "callout",
-     "kind": "example",
-     "text": "‘A key stakeholder complains that a feature does not meet their needs during a sprint review. What should the PM do FIRST?’ Context: agile. Eliminate ‘tell them the scope is fixed’ (rigid) and ‘escalate to the sponsor’ (premature). Between ‘add the change to the current sprint’ and ‘work with the product owner to capture it in the backlog for prioritisation’, the second respects the product owner’s role and sprint focus — the best answer.",
-     "title": "Applying 5-R"
-    },
-    {
-     "type": "scenario",
-     "situation": "During execution of a predictive construction project, the client asks the site engineer to add an extra loading bay. The engineer agrees and starts the work. What should the project manager do FIRST?",
-     "options": [
-      {
-       "text": "Let the work continue since the client requested it.",
-       "feedback": "Client requests still need integrated change control on a predictive project.",
-       "best": false
-      },
-      {
-       "text": "Discipline the site engineer.",
-       "feedback": "Blame does not address the scope change; coaching can follow later.",
-       "best": false
-      },
-      {
-       "text": "Update the scope baseline to include the bay.",
-       "feedback": "Baselines change only after approval.",
-       "best": false
-      },
-      {
-       "text": "Stop the work on the extra bay and evaluate the impact of the request through the change control process.",
-       "feedback": "Correct. An unapproved scope change has started; pause it and route it through impact analysis and formal approval.",
-       "best": true
-      }
-     ],
-     "title": "Exam-style practice"
-    },
-    {
      "type": "keypoints",
      "items": [
       "Pace yourself: note the time per question and flag hard ones to return to",
@@ -5090,8 +7086,24 @@ TRACK.modules.push({
        "def": "An exam item presenting a realistic scenario and asking for the best action among plausible alternatives."
       },
       {
-       "term": "CAR format",
-       "def": "Context, Action, Result — a concise structure for describing professional achievements."
+       "term": "Capstone",
+       "def": "A culminating project in which learners apply the whole ZPMP Professional Loop to a real or realistic project and present the resulting artefacts and reflections."
+      },
+      {
+       "term": "Qualifier",
+       "def": "A word in a question such as FIRST, NEXT, BEST or EXCEPT that defines what kind of answer is wanted."
+      },
+      {
+       "term": "Distractor",
+       "def": "A plausible but weaker option in a multiple-choice question."
+      },
+      {
+       "term": "Context cue",
+       "def": "A detail in a scenario, such as 'sprint' or 'baseline', that signals the approach and shapes the best answer."
+      },
+      {
+       "term": "Integration",
+       "def": "Combining decisions across scope, schedule, cost, people, risk and value so they work together."
       }
      ]
     },
@@ -5112,312 +7124,24 @@ TRACK.modules.push({
       {
        "q": "Which option pattern is usually weakest in situational questions?",
        "options": [
-        "Ignore the issue and wait for the next status meeting",
-        "Meet the stakeholder privately to understand their concern",
         "Review the relevant plan and baseline before acting",
+        "Meet the stakeholder privately to understand their concern",
+        "Ignore the issue and wait for the next status meeting",
         "Collaborate with the product owner on the backlog"
        ],
-       "answer": 0,
+       "answer": 2,
        "explain": "Passive waiting lets problems grow."
       },
       {
        "q": "Which cue suggests a predictive context?",
        "options": [
         "Sprint review with stakeholders",
-        "Change control board approval",
+        "Product backlog refinement",
         "Self-organising, cross-functional team",
-        "Product backlog refinement"
+        "Change control board approval"
        ],
-       "answer": 1,
+       "answer": 3,
        "explain": "Formal change control boards are characteristic of predictive governance."
-      },
-      {
-       "q": "Which portfolio entry is strongest?",
-       "options": [
-        "Led 9 people to deliver a booking app on budget; no-shows fell from 22% to 13%",
-        "Managed a large and complex digital project for a well-known healthcare client",
-        "Responsible for weekly meetings, status reports and stakeholder communications",
-        "Very hard-working, results-driven project manager with excellent people skills"
-       ],
-       "answer": 0,
-       "explain": "Specific context, action and measured result."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "m8-l5",
-   "title": "The Whole Loop: Integrative Walk-Through & Capstone",
-   "subtitle": "Watch all eight ZPMP stages work together on one project — then run your own.",
-   "minutes": 40,
-   "objectives": [
-    "Trace a mini-project through all eight stages of the ZPMP Value Loop.",
-    "Explain how decisions in one stage affect the others.",
-    "Plan your ZPMP capstone and its deliverables."
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "You have studied each stage on its own. Real projects do not separate so neatly: a risk spotted in Steer changes the plan; a stakeholder concern in Lead reshapes scope; a lesson in Close improves the next Frame. Let us follow one mini-project through the whole **ZPMP Value Loop**."
-    },
-    {
-     "type": "callout",
-     "kind": "example",
-     "text": "**Cumilla District Hospital — SMS and web appointment booking.** Patients queue from dawn for outpatient tickets; 22% of booked follow-ups are missed. A 6-month project with a budget of BDT 4.5 million and a team of 7 (PM, product owner from hospital administration, 3 developers, 1 tester, 1 change and training lead) will deliver online and SMS booking with reminders for four outpatient departments.",
-     "title": "The mini-project"
-    },
-    {
-     "type": "framework",
-     "items": [
-      {
-       "label": "1",
-       "title": "Frame",
-       "text": "Why are we doing this and what value will it create?"
-      },
-      {
-       "label": "2",
-       "title": "Shape",
-       "text": "Who is involved and what exactly will we deliver?"
-      },
-      {
-       "label": "3",
-       "title": "Plan",
-       "text": "How, when and for how much — with honest uncertainty."
-      },
-      {
-       "label": "4",
-       "title": "Deliver",
-       "text": "Build, assure quality and manage suppliers."
-      },
-      {
-       "label": "5",
-       "title": "Steer",
-       "text": "Measure, control, manage risk and forecast."
-      },
-      {
-       "label": "6",
-       "title": "Lead",
-       "text": "Grow the team, resolve conflict, communicate."
-      },
-      {
-       "label": "7",
-       "title": "Scale",
-       "text": "Drive adoption, use AI responsibly, govern well."
-      },
-      {
-       "label": "8",
-       "title": "Close",
-       "text": "Accept, hand over, realise benefits and learn."
-      }
-     ],
-     "title": "The ZPMP Value Loop at a glance"
-    },
-    {
-     "type": "table",
-     "head": [
-      "Stage",
-      "Key question",
-      "What the team did",
-      "Key artefact"
-     ],
-     "rows": [
-      [
-       "Frame",
-       "Is this worth doing?",
-       "Business case: fewer queues and no-shows, more patients per doctor-day; hybrid life cycle chosen",
-       "Business case, charter"
-      ],
-      [
-       "Shape",
-       "Who cares and what exactly?",
-       "Mapped patients, doctors, front desk, IT, health directorate; prioritised backlog with booking, reminders, rescheduling",
-       "Stakeholder register, backlog, change control"
-      ],
-      [
-       "Plan",
-       "How long and how much?",
-       "Fixed hardware and SMS-gateway contract; agile build in 2-week sprints; Monte Carlo gave P80 at 6.5 months",
-       "Roadmap, budget, risk-adjusted schedule"
-      ],
-      [
-       "Deliver",
-       "Are we building it right?",
-       "Scrum for software, Kanban for training logistics; usability tests with patients",
-       "Increments, test results, vendor contract"
-      ],
-      [
-       "Steer",
-       "Are we on track?",
-       "Risk: low smartphone use among older patients → SMS-first design; burnup and EVM on fixed-price parts",
-       "Risk register, dashboard"
-      ],
-      [
-       "Lead",
-       "Is the team healthy and aligned?",
-       "Conflict between doctors and front desk on slot rules resolved collaboratively; weekly sponsor huddle",
-       "Communication plan, RACI"
-      ],
-      [
-       "Scale",
-       "Will people adopt it?",
-       "ADKAR survey showed desire gap at front desk; champions appointed; AI assistant used to draft Bangla and English FAQs, verified by staff",
-       "Change impact assessment, AI-use log"
-      ],
-      [
-       "Close",
-       "Did we deliver value and learn?",
-       "Formal acceptance, 4-week hypercare, benefits plan to hospital administrator, retrospective",
-       "Closure checklist, benefits plan, lessons register"
-      ]
-     ],
-     "title": "Walking the loop"
-    },
-    {
-     "type": "callout",
-     "kind": "insight",
-     "text": "In month 2 a Steer finding (older patients rarely use the web) went back to Shape (SMS-first backlog), which changed Plan (SMS gateway cost) and Lead (new message to doctors). In Close, the lesson ‘test with real patients in week 2’ went into the PMO’s template for the next hospital — feeding the next Frame.",
-     "title": "The loop really loops"
-    },
-    {
-     "type": "scenario",
-     "situation": "In month 4, the health directorate announces that all hospital systems must integrate with a new national patient ID within 6 months. The product owner wants to add it now. The P80 forecast already sits at the deadline. What should the PM do FIRST?",
-     "options": [
-      {
-       "text": "Add the integration to the current sprint to show responsiveness.",
-       "feedback": "Disrupts sprint focus and skips impact analysis.",
-       "best": false
-      },
-      {
-       "text": "Tell the directorate the project cannot comply.",
-       "feedback": "Dismisses a mandatory requirement without analysis.",
-       "best": false
-      },
-      {
-       "text": "Analyse the requirement and its impact with the product owner and team, then present options (e.g. phase 2 release before the mandate date) through change control.",
-       "feedback": "Correct. Understand the mandate, assess impact on scope, schedule, cost and risk, and bring options to the right decision makers.",
-       "best": true
-      },
-      {
-       "text": "Escalate to the sponsor to request more budget.",
-       "feedback": "Premature — the size and options are not yet known.",
-       "best": false
-      }
-     ],
-     "title": "A mid-project curveball"
-    },
-    {
-     "type": "case",
-     "title": "Integrative challenge: university LMS migration",
-     "context": "A university is migrating 600 courses to a new learning management system before the next academic year (9 months). Faculty are sceptical, the vendor contract is fixed-price for configuration, and student-data privacy rules apply. The registrar wants AI-generated course summaries for students.",
-     "questions": [
-      "For each ZPMP stage, name one decision or artefact you would prioritise.",
-      "Which two risks would you analyse quantitatively, and why?",
-      "How would you handle the AI-summary request responsibly?"
-     ],
-     "answer": "Example answer — Frame: business case and charter with adoption-based success measures. Shape: faculty and student stakeholder map; backlog of course waves. Plan: wave plan with P80 date before semester start; contingency for migration rework. Deliver: hybrid — fixed-price vendor milestones plus agile course-redesign waves; quality rubric. Steer: EVM on vendor milestones, burnup on course waves, RAG criteria. Lead: designer motivation (autonomy, purpose), RACI for course sign-off. Scale: ADKAR for faculty; AI policy check; PMO stage gate before semester. Close: acceptance per wave, hypercare in week 1 of term, benefits plan (student satisfaction, support tickets). Quantitative: data-migration rework and faculty availability, since they drive schedule spread. AI summaries: run as a controlled pilot using approved tools, no personal student data in prompts, faculty review before publishing, clear labelling, and feedback collection."
-    },
-    {
-     "type": "text",
-     "text": "Your **ZPMP capstone** asks you to apply the whole loop to a real or realistic project of your choice — ideally from your workplace, with confidential details removed. You will produce a compact portfolio of artefacts and a short reflective report."
-    },
-    {
-     "type": "steps",
-     "items": [
-      {
-       "title": "Frame",
-       "text": "One-page business case and charter with measurable success criteria."
-      },
-      {
-       "title": "Shape",
-       "text": "Stakeholder register and prioritised backlog or WBS, with a change-control approach."
-      },
-      {
-       "title": "Plan",
-       "text": "Schedule or roadmap, budget, and a risk-adjusted forecast (range with confidence)."
-      },
-      {
-       "title": "Deliver",
-       "text": "Delivery approach (predictive, agile or hybrid) with justification and quality plan."
-      },
-      {
-       "title": "Steer",
-       "text": "Risk register (top 10), dashboard design with RAG criteria, and an EVM or burnup snapshot."
-      },
-      {
-       "title": "Lead",
-       "text": "RACI and communication plan; one conflict or negotiation you would expect and how you would handle it."
-      },
-      {
-       "title": "Scale",
-       "text": "Change impact assessment, AI-use guidelines for the project, and governance/ESG considerations."
-      },
-      {
-       "title": "Close",
-       "text": "Closure checklist, benefits realisation plan and a 600-word reflection on what you learned."
-      }
-     ],
-     "title": "Capstone deliverables"
-    },
-    {
-     "type": "template",
-     "title": "Capstone planner",
-     "purpose": "Plan your capstone: one row per Value Loop stage.",
-     "columns": [
-      "Stage",
-      "Artefact(s) I will produce",
-      "Data / input I need",
-      "Who can review it",
-      "Target date"
-     ],
-     "example": [
-      [
-       "Steer",
-       "Top-10 risk register, one-page dashboard",
-       "Past schedule data, team risk workshop",
-       "Colleague in PMO",
-       "Week 3"
-      ]
-     ],
-     "rows": 8
-    },
-    {
-     "type": "terms",
-     "items": [
-      {
-       "term": "ZPMP Value Loop",
-       "def": "ZyeemZia’s eight-stage project framework — Frame, Shape, Plan, Deliver, Steer, Lead, Scale, Close — applied iteratively from idea to realised value."
-      },
-      {
-       "term": "Capstone",
-       "def": "A culminating project in which learners apply the full ZPMP Value Loop to a real or realistic project and present the resulting artefacts."
-      }
-     ]
-    },
-    {
-     "type": "quiz",
-     "items": [
-      {
-       "q": "In the walk-through, a Steer finding about older patients led to an SMS-first design. Which stage did this feed back into first?",
-       "options": [
-        "Close",
-        "Scale",
-        "Shape",
-        "Frame"
-       ],
-       "answer": 2,
-       "explain": "The finding changed the backlog — a Shape activity."
-      },
-      {
-       "q": "Which ZPMP stage focuses on adoption, AI use and governance?",
-       "options": [
-        "Plan",
-        "Deliver",
-        "Scale",
-        "Lead"
-       ],
-       "answer": 2,
-       "explain": "Scale covers change management, AI-powered PM and governance."
       },
       {
        "q": "A mandatory new requirement arrives mid-project. What is the FIRST step?",
@@ -5431,15 +7155,15 @@ TRACK.modules.push({
        "explain": "Impact analysis and options precede decisions."
       },
       {
-       "q": "Why does the Close stage feed the next Frame?",
+       "q": "In the walk-through, the hospital's new national ID rule was assessed for its effect on the backlog. Which ZPMP stage does this MOST represent?",
        "options": [
-        "Because projects never truly end in organisations",
-        "Because the PMO requires the stages to be linked",
-        "Lessons and benefits data improve the next business case",
-        "It does not; each project starts from a clean slate"
+        "Adapt",
+        "Lead",
+        "Resource",
+        "Frame"
        ],
-       "answer": 2,
-       "explain": "Learning and benefit evidence make future framing more realistic."
+       "answer": 0,
+       "explain": "Evaluating changes in the external environment and their impact on scope is part of Adapt (Business Environment Task 8)."
       }
      ]
     }
@@ -5450,15 +7174,63 @@ TRACK.modules.push({
 TRACK.exam.push([
  {
   "module": "m5",
-  "q": "During a status meeting, a developer mentions that the third-party payment API the team depends on will be retired by its provider ‘sometime next year’. Your release is planned for nine months from now. What should the project manager do FIRST?",
+  "q": "An activity has an optimistic estimate of 6 days, most likely 9 days and pessimistic 18 days. The sponsor asks for the expected duration. Using PERT, what should you report?",
   "options": [
-   "Record it as a risk, analyse its probability and impact, and assign an owner",
-   "Log it as an issue and escalate it to the sponsor for an immediate decision",
-   "Start replacing the API now so that the release date is fully protected",
-   "Note it but take no action, since the retirement date is not yet confirmed"
+   "9 days, as the most likely value is the best single estimate",
+   "11 days, the simple average of the three estimates",
+   "18 days, to protect the sponsor against any overrun",
+   "About 10 days, with a standard deviation of about 2 days"
+  ],
+  "answer": 3,
+  "explain": "PERT = (6 + 4×9 + 18) ÷ 6 = 60 ÷ 6 = 10 days; σ = (18 − 6) ÷ 6 = 2 days. The most likely value ignores the risk of overrun, 11 days is the simple triangular mean, and reporting the pessimistic value overstates the estimate."
+ },
+ {
+  "module": "m5",
+  "q": "A non-critical activity has 5 days of total float and 0 days of free float. A supplier says it will be 3 days late. What is the MOST accurate impact?",
+  "options": [
+   "The project end date will move by 3 days, as will the successor's start",
+   "There is no impact on any other activity, because float absorbs the delay",
+   "The end date is unaffected, but the successor's early start moves by 3 days",
+   "The activity immediately joins the critical path and drives the end date"
+  ],
+  "answer": 2,
+  "explain": "A 3-day delay within 5 days of total float does not delay the project, but zero free float means its successor starts later, consuming shared float. The activity becomes critical only if the delay uses all its float."
+ },
+ {
+  "module": "m5",
+  "q": "A Scrum team's velocity over the last four sprints was 30, 34, 28 and 32. The remaining release backlog is 186 points. A stakeholder asks when the release will be ready. What is the BEST answer?",
+  "options": [
+   "Commit to exactly 6 sprints, using the average velocity of the last four sprints",
+   "Forecast a range of about 6–7 sprints from observed velocity, updated each sprint",
+   "Ask the team to raise velocity to 40 points so the release finishes sooner",
+   "Decline to forecast, because agile teams do not commit to delivery dates"
+  ],
+  "answer": 1,
+  "explain": "186 ÷ 34 ≈ 5.5 and 186 ÷ 28 ≈ 6.6, so about 6–7 sprints. A range reflects uncertainty and is refined as data arrives. A single number hides uncertainty; velocity targets inflate estimates; agile teams do forecast."
+ },
+ {
+  "module": "m5",
+  "q": "A stakeholder suggests funding a new feature from the project's contingency reserve because 'the risks it covered have not happened yet'. What should the project manager do?",
+  "options": [
+   "Explain that contingency covers identified risks; process it as a change request",
+   "Move the money into management reserve until a decision is needed",
+   "Approve the use, since the money is unused and the feature adds value",
+   "Fund the feature from management reserve instead, without informing the sponsor first"
   ],
   "answer": 0,
-  "explain": "The event is uncertain and in the future, so it is a risk to be recorded, analysed and owned. Logging it as an issue misclassifies it; replacing the API immediately skips analysis; ignoring it leaves a potentially serious threat unmanaged."
+  "explain": "Contingency protects against identified risks; new scope requires change control and an authorised funding decision. Spending contingency leaves risks unfunded, and using management reserve requires management approval."
+ },
+ {
+  "module": "m5",
+  "q": "Two activities scheduled in parallel both need the only certified electrician, causing an overload. The activities are on the critical path. Which technique applies, and what is a likely consequence?",
+  "options": [
+   "Resource smoothing, which never changes the project end date",
+   "Resource levelling, which may extend the project end date",
+   "Crashing, which removes the dependency on the electrician",
+   "Fast-tracking, which reduces demand on the shared resource"
+  ],
+  "answer": 1,
+  "explain": "When a resource limit is hard and the activities are critical, levelling delays one of them and can push out the end date. Smoothing only moves work within float, fast-tracking increases overlap, and crashing adds resources rather than resolving a single-specialist limit."
  },
  {
   "module": "m5",
@@ -5497,31 +7269,67 @@ TRACK.exam.push([
   "explain": "TCPI = (BAC − EV) ÷ (BAC − AC) = 300,000 ÷ 250,000 = 1.20 — every unit of money must produce 20% more work than planned. 0.80 is the current CPI, and 0.83 and 1.00 do not reflect the remaining work and funds."
  },
  {
-  "module": "m5",
-  "q": "A risk owner reports that the warning sign defined for a high-priority risk has just appeared, and an approved contingency plan exists within the PM’s authority. What should the project manager do NEXT?",
+  "module": "m6",
+  "q": "During a sprint, a senior manager asks a developer to start an urgent new feature. What should the developer do?",
   "options": [
-   "Schedule a risk workshop to reassess all risks before taking action",
-   "Ask the sponsor for permission before executing the contingency plan",
-   "Implement the contingency plan and update the risk register and issue log",
-   "Wait to see whether the risk actually materialises before using reserves"
+   "Start the feature immediately, because the request comes from a senior manager",
+   "Add it to the sprint backlog without telling anyone and absorb it with extra effort",
+   "Ask the team to cancel the sprint and replan it so the urgent feature can be included",
+   "Refer it to the product owner, who decides priority while the sprint goal is protected"
+  ],
+  "answer": 3,
+  "explain": "The product owner owns the order of work, and the developers manage the sprint plan to protect the sprint goal. Seniority does not bypass this; only the product owner can cancel a sprint; silent additions destroy transparency."
+ },
+ {
+  "module": "m6",
+  "q": "A Kanban team's Test column is at its WIP limit and developers say they are idle because they cannot pull new work. What should the team do?",
+  "options": [
+   "Raise the WIP limit in Test so that more work can flow through",
+   "Start new development work and park it until Test has capacity",
+   "Help finish items in Test by swarming on the bottleneck",
+   "Remove WIP limits entirely, since they are causing idle time"
   ],
   "answer": 2,
-  "explain": "Triggers exist so that pre-approved responses can be executed promptly. A workshop or seeking fresh permission wastes the planning already done, and waiting defeats the purpose of having a trigger."
+  "explain": "Swarming on the bottleneck improves flow — 'stop starting, start finishing'. Raising or removing limits hides the constraint, and starting new work increases WIP and lengthens cycle time."
  },
  {
-  "module": "m5",
-  "q": "A team’s burndown chart has been almost flat for three sprints, but the team reports finishing many stories every sprint. What is the MOST likely explanation, and the best next step?",
+  "module": "m6",
+  "q": "A team's average WIP is 30 items and average throughput is 10 items per week. Management wants average cycle time to fall to about 1.5 weeks without adding people. What is the BEST approach?",
   "options": [
-   "The team is inflating its estimates; ask it to re-estimate stories with fewer points",
-   "Scope grows as fast as work is done; use a burnup and review it with the product owner",
-   "The team is not working hard enough; increase daily monitoring of individual output",
-   "The charting software is miscalculating progress; stop using the charts until it is fixed"
+   "Ask the team to work overtime until cycle time falls",
+   "Reduce WIP to about 15 items by limiting new starts",
+   "Add more columns to the board to make work visible",
+   "Measure lead time instead, as it better reflects delays"
   ],
   "answer": 1,
-  "explain": "A flat burndown with steady delivery usually means scope is growing. A burnup shows completed work and total scope separately, enabling a scope conversation with the product owner. The other options assume bad faith or tool failure without evidence."
+  "explain": "By Little's Law, cycle time = WIP ÷ throughput: 30 ÷ 10 = 3 weeks; at the same throughput, 15 ÷ 10 = 1.5 weeks. Overtime is unsustainable, extra columns do not change flow, and changing the metric does not change performance."
  },
  {
-  "module": "m5",
+  "module": "m6",
+  "q": "A buyer needs a supplier for a research-like data platform whose scope is highly uncertain, but wants the supplier motivated to control costs. Which contract type is MOST suitable?",
+  "options": [
+   "Fixed price with economic price adjustment",
+   "Firm fixed price",
+   "Cost plus incentive fee",
+   "Purchase order for a fixed quantity"
+  ],
+  "answer": 2,
+  "explain": "Cost-reimbursable contracts suit high uncertainty, and an incentive fee shares overruns and savings, motivating cost control. Fixed-price types need clear scope; a simple purchase order fits standard goods."
+ },
+ {
+  "module": "m6",
+  "q": "A garment factory's defect data shows that three causes account for most rejected pieces. Which tool should the quality lead use to communicate where to focus improvement efforts?",
+  "options": [
+   "A control chart",
+   "A scatter diagram",
+   "A flowchart",
+   "A Pareto chart"
+  ],
+  "answer": 3,
+  "explain": "A Pareto chart ranks causes by frequency so the team can focus on the vital few. A scatter diagram tests relationships between variables, a flowchart shows process steps, and a control chart shows process stability over time."
+ },
+ {
+  "module": "m6",
   "q": "A programme dashboard has shown every project green for six months. Last week two projects turned red overnight, each reporting a slip of more than two months. What should the PMO do to prevent this in future?",
   "options": [
    "Require PMs to justify any red status in writing to the board before reporting",
@@ -5533,7 +7341,79 @@ TRACK.exam.push([
   "explain": "This is watermelon reporting. Objective thresholds tied to forecasts, plus a culture that welcomes bad news early, keep status honest. Adding justification burdens to red, removing red or reporting less often all make hidden problems more likely."
  },
  {
-  "module": "m5",
+  "module": "m6",
+  "q": "The project manager is negotiating a hardware contract. The supplier insists on a 15% price increase. The PM has a confirmed offer from another qualified supplier at a 5% increase. How should this alternative be used?",
+  "options": [
+   "Keep it hidden, because revealing alternatives weakens a negotiating position",
+   "As the PM’s BATNA, setting a walk-away point and strengthening the negotiation",
+   "As a reason to end the negotiation now and sign with the other supplier",
+   "As leverage to threaten reporting the supplier to the industry regulator"
+  ],
+  "answer": 1,
+  "explain": "A strong BATNA sets the walk-away point and strengthens the negotiating position. Hiding it gives no benefit, ending talks immediately may forgo a better deal, and threatening regulators is inappropriate."
+ },
+ {
+  "module": "m6",
+  "q": "A software system has been deployed and users are working with it. The vendor is asking for final payment, but no formal acceptance has been recorded. What should the project manager do FIRST?",
+  "options": [
+   "Hold a formal acceptance review against the agreed criteria and obtain sign-off",
+   "Withhold payment until every outstanding enhancement request is completed",
+   "Archive the project documents and pass the vendor’s invoice to finance for payment",
+   "Approve final payment, since users are already working with the system"
+  ],
+  "answer": 0,
+  "explain": "Formal acceptance against agreed criteria should precede contract closure and payment. Paying without acceptance invites disputes, demanding new enhancements is outside the contract, and archiving comes after acceptance."
+ },
+ {
+  "module": "m7",
+  "q": "A team member has added an attractive analytics screen that no stakeholder requested, delaying a planned feature. What does this BEST describe, and what should the PM do?",
+  "options": [
+   "Gold plating; agree with the team that work must trace to approved items",
+   "Progressive elaboration; record it as normal refinement of the requirements",
+   "Scope creep; raise a change request against the requesting stakeholder",
+   "Healthy innovation; recognise it publicly to encourage creative initiative"
+  ],
+  "answer": 0,
+  "explain": "Adding unrequested extras is gold plating, which adds cost and risk. It is not stakeholder-driven scope creep, nor normal elaboration; rewarding it would encourage more unapproved work."
+ },
+ {
+  "module": "m7",
+  "q": "A project’s forecast shows it will finish 2% over budget. The governance board has set a cost tolerance of ±5%. What should the project manager do?",
+  "options": [
+   "Request an urgent exception meeting with the board to approve the overrun",
+   "Re-baseline the budget immediately to reflect the new cost forecast",
+   "Stop non-essential work until the board formally approves the overrun",
+   "Manage the variance within the project and report it in the normal cycle"
+  ],
+  "answer": 3,
+  "explain": "Within tolerance, the PM manages by exception and reports normally. An urgent board meeting, stopping work or re-baselining are reactions reserved for forecasts outside tolerance or approved changes."
+ },
+ {
+  "module": "m7",
+  "q": "An organisation wants a PMO that sets mandatory reporting standards and reviews project compliance, but leaves day-to-day management with project managers in business units. Which PMO type fits?",
+  "options": [
+   "Supportive",
+   "Directive",
+   "Portfolio-only",
+   "Controlling"
+  ],
+  "answer": 3,
+  "explain": "A controlling PMO requires compliance and assures quality with moderate control. A supportive PMO only advises; a directive PMO manages projects directly; ‘portfolio-only’ is not one of the standard types."
+ },
+ {
+  "module": "m7",
+  "q": "A risk owner reports that the warning sign defined for a high-priority risk has just appeared, and an approved contingency plan exists within the PM’s authority. What should the project manager do NEXT?",
+  "options": [
+   "Schedule a risk workshop to reassess all risks before taking action",
+   "Implement the contingency plan and update the risk register and issue log",
+   "Ask the sponsor for permission before executing the contingency plan",
+   "Wait to see whether the risk actually materialises before using reserves"
+  ],
+  "answer": 1,
+  "explain": "Triggers exist so that pre-approved responses can be executed promptly. A workshop or seeking fresh permission wastes the planning already done, and waiting defeats the purpose of having a trigger."
+ },
+ {
+  "module": "m7",
   "q": "Two vendors are being considered. Vendor A costs 50,000 more but has a 10% chance of a 200,000 delay penalty. Vendor B has a 40% chance of the same penalty. Based on expected monetary value, which is the better choice?",
   "options": [
    "Vendor B, because it is 50,000 cheaper upfront",
@@ -5545,267 +7425,123 @@ TRACK.exam.push([
   "explain": "A: 50,000 + (0.10 × 200,000) = 70,000. B: 0 + (0.40 × 200,000) = 80,000. A is better by 10,000 in expected cost. Upfront price or probability alone ignores the full picture, and the values are not equal."
  },
  {
-  "module": "m6",
-  "q": "Two senior engineers have argued for a week about which database to use, and the team is now split into camps. The decision is important and the deadline is three weeks away. What should the project manager do FIRST?",
-  "options": [
-   "Meet both to understand their criteria, then facilitate an evidence-based joint decision",
-   "Choose the database yourself, based on your own analysis, to end the argument",
-   "Ask them to compromise by using both databases, one for each part of the system",
-   "Escalate the disagreement to the sponsor and ask for a binding decision by the end of this week"
-  ],
-  "answer": 0,
-  "explain": "The issue is important and there is time, so collaborating on interests and objective criteria gives the best, most committed outcome. Forcing a choice loses buy-in, a forced compromise may produce a poor technical result, and escalation is premature."
- },
- {
-  "module": "m6",
-  "q": "A new team member is very enthusiastic but has never used the team’s testing framework. According to situational leadership, which style should the PM use for this task?",
-  "options": [
-   "Directing — clear instructions and close follow-up",
-   "Delegating — let them work it out independently",
-   "Supporting — focus on encouragement with little instruction",
-   "Avoiding — step back until they ask for help"
-  ],
-  "answer": 0,
-  "explain": "High enthusiasm with low competence calls for directing. Delegating and supporting assume skills they do not yet have, and waiting leaves them to struggle."
- },
- {
-  "module": "m6",
-  "q": "A project team grows from 8 to 12 members. By how many communication channels does the team’s communication complexity increase?",
-  "options": [
-   "4",
-   "28",
-   "66",
-   "38"
-  ],
-  "answer": 3,
-  "explain": "8 people: 8 × 7 ÷ 2 = 28 channels. 12 people: 12 × 11 ÷ 2 = 66 channels. The increase is 66 − 28 = 38. The other options are the head-count change or one of the totals."
- },
- {
-  "module": "m6",
-  "q": "In a retrospective, team members say they hesitate to raise problems because a previous manager publicly criticised people for mistakes. What is the BEST action for the project manager?",
-  "options": [
-   "Reassure the team that the previous manager has left, so the problem is now solved",
-   "Share your own mistakes, thank people for raising problems and use blameless reviews",
-   "Make raising problems mandatory and track who contributes in each retrospective",
-   "Arrange a team-building outing so that people get to know each other better"
-  ],
-  "answer": 1,
-  "explain": "Psychological safety is rebuilt through consistent leader behaviour and blameless practices. Simply stating that things have changed, tracking compliance or a one-off social event does not create lasting safety."
- },
- {
-  "module": "m6",
-  "q": "A functional manager refuses to release a database specialist your project needs next month, saying ‘my team is fully booked’. What should the project manager do FIRST?",
-  "options": [
-   "Escalate to the sponsor and ask them to instruct the manager to release the specialist now",
-   "Explore the manager’s constraints and options such as partial allocation or other timing",
-   "Hire an external database contractor immediately so that the schedule is not delayed",
-   "Remove the database work from scope and report the change to the steering committee"
-  ],
-  "answer": 1,
-  "explain": "Negotiate on interests: understanding why the manager says no often reveals workable options. Escalation, hiring or cutting scope may be needed later but skip the negotiation the PM can do first."
- },
- {
-  "module": "m6",
-  "q": "The project manager is negotiating a hardware contract. The supplier insists on a 15% price increase. The PM has a confirmed offer from another qualified supplier at a 5% increase. How should this alternative be used?",
-  "options": [
-   "As the PM’s BATNA, setting a walk-away point and strengthening the negotiation",
-   "Keep it hidden, because revealing alternatives weakens a negotiating position",
-   "As a reason to end the negotiation now and sign with the other supplier",
-   "As leverage to threaten reporting the supplier to the industry regulator"
-  ],
-  "answer": 0,
-  "explain": "A strong BATNA sets the walk-away point and strengthens the negotiating position. Hiding it gives no benefit, ending talks immediately may forgo a better deal, and threatening regulators is inappropriate."
- },
- {
-  "module": "m6",
-  "q": "A steering committee member says your 8-page weekly status report is ‘too long to read’, and decisions are being delayed. What should you do?",
-  "options": [
-   "Redesign it as a one-page, decision-first summary with links, agreed with key readers",
-   "Keep the report as it is, since all of the information it contains is needed for governance",
-   "Stop sending written reports and rely on discussion at steering committee meetings",
-   "Send the report daily so the information is fresher and easier to act on"
-  ],
-  "answer": 0,
-  "explain": "Tailoring communication to audience needs is the sender’s responsibility. Keeping the format ignores the feedback, dropping written reports removes a record, and increasing frequency worsens the overload."
- },
- {
   "module": "m7",
-  "q": "A project manager uses an AI assistant to draft a status summary. The draft states that the project is ‘12% under budget’, but the PM is not sure where that figure came from. What should the PM do BEFORE sending it?",
-  "options": [
-   "Send it as drafted, since AI tools are usually accurate with simple numbers",
-   "Remove all the numbers from the report to avoid any risk of inaccuracy",
-   "Verify the figure against the cost reports and correct the draft if needed",
-   "Ask the AI assistant to confirm the figure and cite where it came from"
-  ],
-  "answer": 2,
-  "explain": "AI-generated figures must be checked against authoritative data; the PM remains accountable. Assuming accuracy, removing all numbers or asking the same tool to confirm itself does not verify anything."
- },
- {
-  "module": "m7",
-  "q": "A team member wants to upload a spreadsheet of customer names, phone numbers and complaints to a free online AI tool to get a summary of complaint themes. The organisation has an approved enterprise AI assistant. What should the project manager advise?",
-  "options": [
-   "Use the free tool, because generating summaries does not store any data",
-   "Avoid AI altogether and have the team read every single complaint manually",
-   "Use the free tool, but upload only half of the data to limit exposure",
-   "Use the approved enterprise tool and mask personal data before analysis"
-  ],
-  "answer": 3,
-  "explain": "Approved tools plus data minimisation protect customers and the organisation. Free consumer tools may retain data, avoiding AI altogether wastes a legitimate capability, and uploading half the data still exposes personal information."
- },
- {
-  "module": "m7",
-  "q": "Six weeks after a new procurement system went live, usage is low. Surveys show users understand why the change matters and want it, but feel unsure how to complete key tasks. Which ADKAR element should the next intervention target?",
-  "options": [
-   "Awareness — more communication about why the change is needed",
-   "Knowledge and Ability — hands-on training and floor support",
-   "Desire — incentives to use the new system",
-   "Reinforcement — recognition for heavy users"
-  ],
-  "answer": 1,
-  "explain": "Awareness and desire are already present; the first barrier is knowing how and being able to perform. More why-messaging, incentives or recognition will not fix a skills gap."
- },
- {
-  "module": "m7",
-  "q": "An organisation wants a PMO that sets mandatory reporting standards and reviews project compliance, but leaves day-to-day management with project managers in business units. Which PMO type fits?",
-  "options": [
-   "Supportive",
-   "Directive",
-   "Controlling",
-   "Portfolio-only"
-  ],
-  "answer": 2,
-  "explain": "A controlling PMO requires compliance and assures quality with moderate control. A supportive PMO only advises; a directive PMO manages projects directly; ‘portfolio-only’ is not one of the standard types."
- },
- {
-  "module": "m7",
-  "q": "A project’s forecast shows it will finish 2% over budget. The governance board has set a cost tolerance of ±5%. What should the project manager do?",
-  "options": [
-   "Request an urgent exception meeting with the board to approve the overrun",
-   "Manage the variance within the project and report it in the normal cycle",
-   "Stop non-essential work until the board formally approves the overrun",
-   "Re-baseline the budget immediately to reflect the new cost forecast"
-  ],
-  "answer": 1,
-  "explain": "Within tolerance, the PM manages by exception and reports normally. An urgent board meeting, stopping work or re-baselining are reactions reserved for forecasts outside tolerance or approved changes."
- },
- {
-  "module": "m7",
-  "q": "A senior supervisor publicly criticises a new digital process, and adoption on her team is the lowest in the organisation. What should the project manager do FIRST?",
-  "options": [
-   "Report her behaviour to HR as a breach of the change programme’s standards",
-   "Meet her privately to understand her concerns and involve her in solving them",
-   "Exclude her team from the rollout until adoption elsewhere is fully complete",
-   "Double the training sessions for her team to build skills and confidence"
-  ],
-  "answer": 1,
-  "explain": "Resistance often contains useful information, and influential sceptics can become strong champions. Disciplinary action, exclusion or more training skip understanding the root cause."
- },
- {
-  "module": "m7",
-  "q": "An AI model that prioritises maintenance work orders performed well at launch, but after a year planners report that its recommendations are increasingly wrong. What is the MOST likely cause and best response?",
-  "options": [
-   "Scope creep; freeze the requirements and re-baseline the model’s features",
-   "A hallucination problem; rewrite the prompts and add output guardrails",
-   "Model drift; monitor performance on current data and plan retraining",
-   "Team resistance; run change management workshops with the planners"
-  ],
-  "answer": 2,
-  "explain": "Performance decline as real-world data changes is model drift, handled through monitoring and retraining. Scope creep, prompt rewriting and change workshops do not address degraded model accuracy."
- },
- {
-  "module": "m8",
-  "q": "A software system has been deployed and users are working with it. The vendor is asking for final payment, but no formal acceptance has been recorded. What should the project manager do FIRST?",
-  "options": [
-   "Approve final payment, since users are already working with the system",
-   "Withhold payment until every outstanding enhancement request is completed",
-   "Archive the project documents and pass the vendor’s invoice to finance for payment",
-   "Hold a formal acceptance review against the agreed criteria and obtain sign-off"
-  ],
-  "answer": 3,
-  "explain": "Formal acceptance against agreed criteria should precede contract closure and payment. Paying without acceptance invites disputes, demanding new enhancements is outside the contract, and archiving comes after acceptance."
- },
- {
-  "module": "m8",
-  "q": "Halfway through a project, the organisation’s strategy changes and the sponsor cancels the project. What should the project manager do?",
-  "options": [
-   "Stop all activity immediately and reassign the team, without further documentation",
-   "Continue the work until the original end date to protect the investment already made",
-   "Ask the team to keep working informally in case the sponsor later reverses the decision",
-   "Carry out closure: document what was done, close contracts, capture lessons, archive"
-  ],
-  "answer": 3,
-  "explain": "Early termination still requires orderly closure. Walking away loses knowledge and creates contractual risk; continuing or working informally ignores a legitimate governance decision."
- },
- {
-  "module": "m8",
-  "q": "During closure, the team identifies that late involvement of the security team caused a three-week delay. What is the BEST way to make sure this lesson is applied?",
-  "options": [
-   "Record it in the final project report with a clear description of the impact and cause",
-   "Update templates or gate criteria to require early security review, with an owner",
-   "Email the lesson to all project managers and ask them to apply it on new projects",
-   "Discuss it openly at the closing celebration so the whole team remembers it"
-  ],
-  "answer": 1,
-  "explain": "A lesson is learned only when practice changes; embedding it in templates or gate criteria with an owner makes it stick. A report entry, an email or a conversation alone is easily forgotten."
- },
- {
-  "module": "m8",
-  "q": "Six months after closure, the business owner reports that a planned 30% reduction in processing time has not been achieved. Who is primarily responsible for managing the realisation of this benefit?",
-  "options": [
-   "The business owner of the benefit, with support from others as needed",
-   "The project manager of the closed project, who planned the benefit",
-   "The vendor that built the system, under its warranty obligations",
-   "The PMO, which owns and tracks all benefits across the organisation"
-  ],
-  "answer": 0,
-  "explain": "Benefits arise in operations and are owned by a named business owner, who can call on the former PM or others for help. The PM’s accountability ended with the project; vendors and PMOs support but do not own the benefit."
- },
- {
-  "module": "m8",
-  "q": "A vendor bidding on your project offers you free tickets to an international cricket match while the evaluation is under way. What should you do?",
-  "options": [
-   "Accept, as long as you continue to score the vendor fairly and objectively",
-   "Accept and share the tickets with your team so that no one person benefits",
-   "Accept, and disclose the gift after the contract is awarded",
-   "Decline the offer, follow the gift policy and report it if required"
-  ],
-  "answer": 3,
-  "explain": "Accepting a valuable gift during an evaluation creates undue influence or its appearance. Fair scoring, sharing with others or later disclosure do not remove the conflict."
- },
- {
-  "module": "m8",
   "q": "Before a board meeting, the sponsor asks the PM to report the project as amber instead of red, promising that the problems will be fixed next month. What should the PM do?",
   "options": [
-   "Report the true status and offer a recovery plan with the decisions needed",
-   "Report amber as asked, since the sponsor is accountable for the project",
    "Report green to avoid alarming the board before the fixes are in place",
+   "Report amber as asked, since the sponsor is accountable for the project",
+   "Report the true status and offer a recovery plan with the decisions needed",
    "Avoid attending the board meeting and let the sponsor present the status"
   ],
-  "answer": 0,
+  "answer": 2,
   "explain": "Honesty requires accurate reporting; adding a recovery plan keeps the conversation constructive. Changing the status at anyone’s request misleads the board, and avoidance leaves the board uninformed."
  },
  {
-  "module": "m8",
-  "q": "On an agile project, a stakeholder at the sprint review asks for a new report that is not in the backlog. What should the project manager do FIRST?",
+  "module": "m7",
+  "q": "An inspection of a garment-factory extension finds that the fire exits do not meet the national building code, although they match the approved drawings. The buyer's compliance audit is in six weeks. What should the project manager do FIRST?",
   "options": [
-   "Add the report to the current sprint immediately to satisfy the stakeholder",
-   "Raise a formal change request and submit it to the change control board",
-   "Work with the product owner to add it to the product backlog for prioritisation",
-   "Tell the stakeholder that the release scope is fixed and cannot be changed now"
+   "Assess the non-compliance and its consequences with the safety engineer, then agree corrective actions and owners",
+   "Ask the buyer to postpone its audit until the exits are rebuilt",
+   "Record the finding as a lesson learned for future projects",
+   "Instruct the contractor to rebuild the exits immediately at its own cost and report the outcome to the auditors"
   ],
-  "answer": 2,
-  "explain": "In agile delivery, new requests go to the product owner, who prioritises the backlog. Changing the current sprint disrupts the team’s commitment, a change control board is a predictive mechanism, and declaring scope fixed contradicts adaptive practice."
+  "answer": 0,
+  "explain": "Non-compliance must be analysed for consequences and corrected with clear owners. Instructing the contractor before understanding the cause and contract position, delaying the audit or merely recording a lesson are weaker first steps."
+ },
+ {
+  "module": "m7",
+  "q": "A change adding a new payment method was approved two weeks ago. Testers are still using the old requirements and the training material has not changed. What was MOST likely missed?",
+  "options": [
+   "Analysing the change's impact on scope, schedule, cost and risk before the board approved it",
+   "Obtaining the sponsor's approval for the change",
+   "Adding the change to the risk register",
+   "Updating project documents and communicating the approved change to everyone affected"
+  ],
+  "answer": 3,
+  "explain": "After approval, change control includes communicating the decision and updating all affected documents. The approval itself happened; the follow-through did not."
  },
  {
   "module": "m8",
-  "q": "A project manager is preparing for a job interview. Which portfolio entry is MOST likely to demonstrate competence?",
+  "q": "Six weeks after a new procurement system went live, usage is low. Surveys show users understand why the change matters and want it, but feel unsure how to complete key tasks. Which ADKAR element should the next intervention target?",
   "options": [
-   "‘Responsible for project documentation, meetings, risk logs and stakeholder reporting’",
-   "‘Excellent communicator and team player with strong leadership skills’",
-   "‘Familiar with many project management tools, methods and frameworks’",
-   "‘Led a 10-person team to migrate 600 courses on time; support tickets fell 35%’"
+   "Awareness — more communication about why the change is needed",
+   "Reinforcement — recognition for heavy users",
+   "Desire — incentives to use the new system",
+   "Knowledge and Ability — hands-on training and floor support"
   ],
   "answer": 3,
-  "explain": "Context, action and a measured result provide evidence of capability. Task lists, generic adjectives and tool familiarity do not show outcomes."
+  "explain": "Awareness and desire are already present; the first barrier is knowing how and being able to perform. More why-messaging, incentives or recognition will not fix a skills gap."
+ },
+ {
+  "module": "m8",
+  "q": "A senior supervisor publicly criticises a new digital process, and adoption on her team is the lowest in the organisation. What should the project manager do FIRST?",
+  "options": [
+   "Report her behaviour to HR as a breach of the change programme’s standards",
+   "Exclude her team from the rollout until adoption elsewhere is fully complete",
+   "Meet her privately to understand her concerns and involve her in solving them",
+   "Double the training sessions for her team to build skills and confidence"
+  ],
+  "answer": 2,
+  "explain": "Resistance often contains useful information, and influential sceptics can become strong champions. Disciplinary action, exclusion or more training skip understanding the root cause."
+ },
+ {
+  "module": "m8",
+  "q": "A team member wants to upload a spreadsheet of customer names, phone numbers and complaints to a free online AI tool to get a summary of complaint themes. The organisation has an approved enterprise AI assistant. What should the project manager advise?",
+  "options": [
+   "Use the approved enterprise tool and mask personal data before analysis",
+   "Avoid AI altogether and have the team read every single complaint manually",
+   "Use the free tool, but upload only half of the data to limit exposure",
+   "Use the free tool, because generating summaries does not store any data"
+  ],
+  "answer": 0,
+  "explain": "Approved tools plus data minimisation protect customers and the organisation. Free consumer tools may retain data, avoiding AI altogether wastes a legitimate capability, and uploading half the data still exposes personal information."
+ },
+ {
+  "module": "m8",
+  "q": "A project manager uses an AI assistant to draft a status summary. The draft states that the project is ‘12% under budget’, but the PM is not sure where that figure came from. What should the PM do BEFORE sending it?",
+  "options": [
+   "Send it as drafted, since AI tools are usually accurate with simple numbers",
+   "Verify the figure against the cost reports and correct the draft if needed",
+   "Remove all the numbers from the report to avoid any risk of inaccuracy",
+   "Ask the AI assistant to confirm the figure and cite where it came from"
+  ],
+  "answer": 1,
+  "explain": "AI-generated figures must be checked against authoritative data; the PM remains accountable. Assuming accuracy, removing all numbers or asking the same tool to confirm itself does not verify anything."
+ },
+ {
+  "module": "m8",
+  "q": "Delays in municipal permits are blocking a 5G site rollout, and only the city office can grant them. The project team has no influence there. What is the BEST action?",
+  "options": [
+   "Pause the whole rollout until every permit arrives",
+   "Start construction on the blocked sites without permits and seek retrospective approval to protect the schedule",
+   "Engage the sponsor and regulatory-affairs team to work with the city office, and re-sequence other sites",
+   "Remove the affected sites from the project's scope"
+  ],
+  "answer": 2,
+  "explain": "Some impediments can only be resolved by stakeholders outside the team. Collaborating with those who can influence the outcome, while re-planning to limit the damage, is better than waiting, breaking rules or cutting scope."
+ },
+ {
+  "module": "m8",
+  "q": "Midway through a hospital project, a currency devaluation raises the cost of imported medical equipment by 18%. What should the project manager do FIRST?",
+  "options": [
+   "Assess the impact on budget, scope and the business case, then present options to governance",
+   "Cancel the equipment order and look for local suppliers",
+   "Absorb the increase quietly from the contingency reserve so that the sponsor and board are not alarmed",
+   "Wait for the exchange rate to recover before acting"
+  ],
+  "answer": 0,
+  "explain": "External changes must be assessed for their impact and brought to the right decision-makers with options. Acting before assessment, hiding the variance or waiting are weaker."
+ },
+ {
+  "module": "m8",
+  "q": "A PMO's lessons-learned library holds 400 entries, but project managers say they never use it. Which change would MOST improve continuous improvement?",
+  "options": [
+   "Require every project manager to read all 400 entries at kick-off and sign to confirm they have done so",
+   "Turn the most frequent lessons into updates to templates, checklists and gate criteria",
+   "Add more entries from current projects to make the library complete",
+   "Delete the library and start again with a new tool"
+  ],
+  "answer": 1,
+  "explain": "Lessons change practice when they are built into the organisation's process assets. Reading or adding more entries does not change behaviour on its own."
  }
 ]);

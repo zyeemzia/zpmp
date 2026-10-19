@@ -1,4 +1,4 @@
-# ZyeemZia™ Project Management Protocol (ZPMP)
+# ZyeemZia™ Project Management Professional (ZPMP)
 
 **Live course: https://zpmp.zyeemzia.com/** · Book: https://zpmp.zyeemzia.com/book.html · PDF: https://zpmp.zyeemzia.com/ZPMP-Book.pdf
 

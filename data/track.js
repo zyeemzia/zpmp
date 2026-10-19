@@ -2,62 +2,174 @@ window.TRACK = window.TRACK || { modules: [], exam: [] };
 TRACK.meta = {
   "code": "ZPMP",
   "brand": "ZyeemZia™",
-  "name": "Project Management Protocol",
-  "full": "ZyeemZia™ Project Management Protocol",
+  "name": "Project Management Professional",
+  "full": "ZyeemZia™ Project Management Professional",
   "short": "ZPMP",
   "domain": "zpmp.zyeemzia.com",
   "pdf": "ZPMP-Book.pdf",
   "storeKey": "zpmp.v1",
-  "tagline": "Deliver value, not just plans.",
-  "lead": "A modern, practical certification track for people who run projects: predictive, agile and hybrid delivery, risk and earned value, leadership, and AI-powered project management, organised around one memorable framework.",
-  "signature": { "type": "loop", "name": "The ZPMP Value Loop", "caption": "Eight stages every successful project moves through, again and again: frame the value, shape the work, plan, deliver, steer, lead, scale and close." },
-  "hours": "40–50",
-  "level": "Foundation → Professional",
-  "audience": ["Project and programme managers", "Team leads and Scrum Masters", "Engineers and analysts moving into delivery roles", "Founders and NGO managers running initiatives"],
+  "tagline": "Lead people, run the process, master the business environment.",
+  "lead": "A modern project management professional programme aligned to the topics of the PMP® Examination Content Outline (July 2026): people, process and business environment across predictive, agile and hybrid delivery, with value, AI and sustainability built in and every outline task mapped to one memorable eight-stage loop.",
+  "signature": {
+    "type": "loop",
+    "name": "The ZPMP Professional Loop",
+    "centerSub": "Professional Loop",
+    "caption": "Eight stages a project professional moves through again and again: frame the value, lead the team, engage stakeholders, plan the work, resource it, deliver it, govern it and adapt to change. People, process and the business environment in one continuous loop."
+  },
+  "hours": "45–55",
+  "level": "Professional",
+  "audience": [
+    "Project and programme managers preparing for professional-level practice",
+    "Agile delivery leads, product owners and Scrum Masters",
+    "Engineers, analysts and consultants moving into delivery roles",
+    "PMO staff, founders and NGO managers running initiatives"
+  ],
   "passMark": 80,
   "distinctionMark": 90,
   "examSize": 40,
   "examMinutes": 60,
+  "examWeights": {
+    "m1": 4,
+    "m2": 5,
+    "m3": 4,
+    "m4": 6,
+    "m5": 5,
+    "m6": 5,
+    "m7": 6,
+    "m8": 5
+  },
   "capstone": {
-    "title": "Capstone: Run a project through the ZPMP Value Loop",
-    "brief": "Pick a real project from your work or community, or a realistic one (for example: launching a mobile banking feature in Dhaka, opening a new clinic, or migrating a university to a new learning platform). Take it through all eight stages of the ZPMP Value Loop and produce a compact project pack that a sponsor could approve and a team could execute.",
+    "title": "Capstone: Run a project through the ZPMP Professional Loop",
+    "brief": "Pick a real project from your work or community, or a realistic one (for example: launching a mobile banking feature in Dhaka, opening a new clinic, or moving a university to a new learning platform). Take it through all eight stages of the ZPMP Professional Loop, covering the people, process and business environment domains, and produce a compact project pack that a sponsor could approve, a team could execute and a governance board could oversee.",
     "deliverables": [
-      "One-page project charter with business case, objectives (OKRs) and success criteria",
-      "Stakeholder register with power–interest map and engagement plan",
-      "Scope: product backlog or WBS with acceptance criteria and a definition of done",
-      "Estimates and a schedule: critical path or release plan, with assumptions",
-      "Budget with contingency and management reserve, plus an earned value baseline",
-      "Risk register: top 10 risks and opportunities with owners and responses",
-      "Team charter, RACI and communication plan",
-      "Change-management plan (ADKAR or Kotter) and an AI-use plan with privacy rules",
-      "Simulated status report at the halfway point using EVM and flow metrics",
-      "Closing report with benefits realisation plan and lessons learned"
+      "Business case, charter and shared vision with measurable success criteria (Frame)",
+      "Team charter with ground rules, RACI and leadership approach (Lead)",
+      "Stakeholder register, expectation alignment map, knowledge transfer plan and communication plan (Engage)",
+      "Integrated plan summary with the chosen approach, plus a prioritised backlog or WBS with acceptance criteria (Plan)",
+      "Schedule or release forecast, resource plan and budget with contingency and management reserve (Resource)",
+      "Procurement and quality approach and a simulated mid-point status dashboard using earned value or flow metrics (Deliver)",
+      "Governance and escalation thresholds, compliance register, change log and top-10 risk register (Govern)",
+      "Impediment log, change-adoption plan, external change radar and lessons learned with process-asset updates (Adapt)"
     ],
     "rubric": [
-      { "criterion": "Value & alignment", "levels": ["Objectives vague", "Clear objectives and business case", "Measurable OKRs tied to benefits and owners"] },
-      { "criterion": "Approach & tailoring", "levels": ["Life cycle not justified", "Life cycle chosen with reasons", "Hybrid design tailored to uncertainty and constraints"] },
-      { "criterion": "Scope & requirements", "levels": ["Incomplete scope", "Complete backlog/WBS", "Prioritised, testable, with change control"] },
-      { "criterion": "Planning & forecasting", "levels": ["Single-point dates", "Estimated schedule and budget", "Ranges, reserves and a forecasting method"] },
-      { "criterion": "Risk & control", "levels": ["Few risks listed", "Register with responses", "Quantified top risks, triggers and EVM thresholds"] },
-      { "criterion": "People & communication", "levels": ["Roles unclear", "RACI and comms plan", "Engagement strategy and team health practices"] },
-      { "criterion": "Change, AI & ethics", "levels": ["Not addressed", "Basic plan", "Adoption plan, responsible AI use and ethical risks covered"] },
-      { "criterion": "Closing & learning", "levels": ["No closure plan", "Closing checklist", "Benefits tracking and lessons that change practice"] }
+      {
+        "criterion": "Value & vision",
+        "levels": [
+          "Objectives vague",
+          "Clear objectives and business case",
+          "Measurable outcomes tied to benefits, owners and a shared vision"
+        ]
+      },
+      {
+        "criterion": "Leadership & team",
+        "levels": [
+          "Roles unclear",
+          "Team charter and RACI",
+          "Empowering leadership, ground rules and conflict approach that fit the team"
+        ]
+      },
+      {
+        "criterion": "Stakeholders & communication",
+        "levels": [
+          "Few stakeholders listed",
+          "Register and communication plan",
+          "Expectations aligned and monitored, knowledge transfer planned"
+        ]
+      },
+      {
+        "criterion": "Integrated planning & scope",
+        "levels": [
+          "Separate, inconsistent plans",
+          "Approach chosen and scope defined",
+          "Integrated, tailored plan that delivers value incrementally"
+        ]
+      },
+      {
+        "criterion": "Schedule, resources & finance",
+        "levels": [
+          "Single-point dates and costs",
+          "Estimated schedule, resources and budget",
+          "Ranges, reserves and a forecasting method"
+        ]
+      },
+      {
+        "criterion": "Delivery, quality & status",
+        "levels": [
+          "No quality or supplier approach",
+          "Quality and procurement planned",
+          "Honest metrics, supplier management and transition readiness"
+        ]
+      },
+      {
+        "criterion": "Governance, compliance & risk",
+        "levels": [
+          "Not addressed",
+          "Risk register and change process",
+          "Thresholds, compliance evidence and quantified top risks"
+        ]
+      },
+      {
+        "criterion": "Adaptation & improvement",
+        "levels": [
+          "No learning or change plan",
+          "Lessons and adoption plan",
+          "External changes tracked, impediments removed and lessons built into process assets"
+        ]
+      }
     ]
   },
   "certificate": {
     "title": "Certificate of Achievement",
-    "statement": "has successfully completed all modules of the ZyeemZia™ Project Management Protocol and passed the ZPMP certification exam",
-    "skills": ["Value-driven planning", "Agile & hybrid delivery", "Risk & earned value", "Leadership & communication", "AI-powered project management"]
+    "statement": "has successfully completed all modules of the ZyeemZia™ Project Management Professional (ZPMP) programme, organised around the people, process and business environment domains, and passed the ZPMP certification exam",
+    "skills": [
+      "Leading teams & engaging stakeholders",
+      "Integrated, value-based planning",
+      "Predictive, agile & hybrid delivery",
+      "Governance, compliance & risk",
+      "Adapting to change, AI & sustainability"
+    ]
   },
-  "disclaimer": "ZPMP is an independent certification programme created and issued by ZyeemZia. It is not affiliated with, endorsed by, or a substitute for PMI®, PMP®, CAPM®, Google, Coursera or any other organisation. PMI, PMP, CAPM and PMBOK are registered marks of the Project Management Institute, Inc.",
+  "disclaimer": "ZPMP (ZyeemZia™ Project Management Professional) is an independent certification programme created and issued by ZyeemZia. It is not PMI's Project Management Professional (PMP)® certification, does not award or count as the PMP®, and is not affiliated with, endorsed by or sponsored by the Project Management Institute, Inc. (PMI). Its curriculum is organised around the topics of PMI's PMP® Examination Content Outline (July 2026) to help learners prepare. PMI, PMP, Project Management Professional and PMBOK are registered marks of PMI. Not affiliated with Google, Coursera or any other organisation.",
   "studyPlan": [
-    ["Week 1", "m1 Frame", "Read lessons, build your project charter"],
-    ["Week 2", "m2 Shape", "Stakeholder map and backlog for your capstone"],
-    ["Week 3", "m3 Plan", "Estimates, critical path and budget"],
-    ["Week 4", "m4 Deliver", "Run a two-week sprint or Kanban board"],
-    ["Week 5", "m5 Steer", "Risk register and EVM practice"],
-    ["Week 6", "m6 Lead", "Team charter, RACI, communication plan"],
-    ["Week 7", "m7 Scale", "AI-use plan and change-management plan"],
-    ["Week 8", "m8 Close", "Practice exam, capstone pack, certification exam"]
+    [
+      "Week 1",
+      "m1 Frame",
+      "Foundations and the outline map; draft your business case, charter and vision"
+    ],
+    [
+      "Week 2",
+      "m2 Lead",
+      "Team charter, RACI and leadership approach for your capstone"
+    ],
+    [
+      "Week 3",
+      "m3 Engage",
+      "Stakeholder register, alignment map, knowledge transfer and communication plans"
+    ],
+    [
+      "Week 4",
+      "m4 Plan",
+      "Integrated plan, scope breakdown and value-based priorities"
+    ],
+    [
+      "Week 5",
+      "m5 Resource",
+      "Estimates, schedule or release forecast, resources, budget and EVM practice"
+    ],
+    [
+      "Week 6",
+      "m6 Deliver",
+      "Procurement, quality, status dashboard and closure plan"
+    ],
+    [
+      "Week 7",
+      "m7 Govern",
+      "Governance thresholds, compliance register, change log and risk register"
+    ],
+    [
+      "Week 8",
+      "m8 Adapt",
+      "Impediments, improvement, change and external radar; practice exam, capstone pack and certification exam"
+    ]
   ]
 };
