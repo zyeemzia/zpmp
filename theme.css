@@ -1,0 +1,32 @@
+/* ZPMP — "project control room": navy ink, signal orange, steel blue; Gantt-bar motif. */
+:root {
+  --bg: #f4f6f9; --surface: #ffffff; --surface-2: #e9edf3; --ink: #14203a; --ink-2: #4a5874; --ink-3: #8592a8; --line: #d8dee8;
+  --accent: #d9480f; --accent-ink: #ffffff; --accent-soft: #fde9df; --accent-2: #2b5c8a; --accent-2-soft: #e1ebf5;
+  --good: #1f7a4a; --good-soft: #dff2e7; --bad: #b42a2a; --bad-soft: #f9e2e0; --warn: #c47f00; --warn-soft: #fbefd6;
+  --hero-bg: #13203a; --hero-ink: #f4f6f9; --hero-ink-2: #aeb9cc; --hero-accent: #ff8a4c;
+  --motif: repeating-linear-gradient(0deg, transparent 0 26px, rgba(255,255,255,.05) 26px 27px),
+    linear-gradient(90deg, transparent 8%, rgba(255,138,76,.22) 8% 30%, transparent 30%) 0 32px / 100% 10px no-repeat,
+    linear-gradient(90deg, transparent 24%, rgba(111,168,220,.22) 24% 52%, transparent 52%) 0 59px / 100% 10px no-repeat,
+    linear-gradient(90deg, transparent 46%, rgba(255,138,76,.18) 46% 66%, transparent 66%) 0 86px / 100% 10px no-repeat,
+    linear-gradient(90deg, transparent 60%, rgba(111,168,220,.2) 60% 88%, transparent 88%) 0 113px / 100% 10px no-repeat;
+  --sg-line: #3a4b6e; --sg-accent: #ff8a4c; --sg-accent-2: #6fa8dc; --sg-node: #13203a; --sg-ink: #f4f6f9; --sg-ink-2: #aeb9cc;
+  --f-display: "Archivo", "IBM Plex Sans", "Segoe UI", sans-serif; --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; --f-mono: "IBM Plex Mono", Consolas, monospace;
+  --radius: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1120; --surface: #121a2c; --surface-2: #1a2438; --ink: #e8edf6; --ink-2: #a6b2c8; --ink-3: #6d7a92; --line: #26324a;
+    --accent: #ff7a3d; --accent-ink: #1a0d05; --accent-soft: #3a2014; --accent-2: #7fb2e6; --accent-2-soft: #16273d;
+    --good: #5fd08f; --good-soft: #12301f; --bad: #ff7b72; --bad-soft: #3a1717; --warn: #f2b24c; --warn-soft: #3a2b10;
+    --hero-bg: #070c18; --hero-ink: #eef2f9; --hero-ink-2: #9aa7bf; --hero-accent: #ff8a4c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1120; --surface: #121a2c; --surface-2: #1a2438; --ink: #e8edf6; --ink-2: #a6b2c8; --ink-3: #6d7a92; --line: #26324a;
+  --accent: #ff7a3d; --accent-ink: #1a0d05; --accent-soft: #3a2014; --accent-2: #7fb2e6; --accent-2-soft: #16273d;
+  --good: #5fd08f; --good-soft: #12301f; --bad: #ff7b72; --bad-soft: #3a1717; --warn: #f2b24c; --warn-soft: #3a2b10;
+  --hero-bg: #070c18; --hero-ink: #eef2f9; --hero-ink-2: #9aa7bf; --hero-accent: #ff8a4c;
+  color-scheme: dark;
+}
+.hero h1, .mod-num, .mod-big, .bb-cover b { font-stretch: 112%; }
