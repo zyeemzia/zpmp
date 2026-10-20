@@ -105,7 +105,7 @@ TRACK.modules.push({
     {
      "type": "callout",
      "kind": "example",
-     "text": "Integrating a payment gateway: O = 4 days, M = 6 days, P = 14 days. Triangular = (4 + 6 + 14) ÷ 3 = **8 days**. PERT = (4 + 24 + 14) ÷ 6 = **7 days**. σ = (14 − 4) ÷ 6 ≈ **1.67 days**. So roughly 68% confidence of 5.3–8.7 days and 95% confidence of 3.7–10.3 days. Report: '**about 7 days, very likely between 4 and 11**'.",
+     "text": "Integrating a payment gateway: O = 4 days, M = 6 days, P = 14 days. Triangular = (4 + 6 + 14) ÷ 3 = **8 days**. PERT = (4 + 24 + 14) ÷ 6 = **7 days**. σ = (14 − 4) ÷ 6 ≈ **1.67 days**. So roughly 68% confidence of 5.3–8.7 days and 95% confidence of 3.7–10.3 days. Report: '**about 7 days, very likely between 4 and 10**'.",
      "title": "Worked three-point example"
     },
     {
@@ -133,6 +133,36 @@ TRACK.modules.push({
        "about −5% to +10%"
       ]
      ]
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "Estimate ranges narrow as you learn",
+     "labels": [
+      "ROM",
+      "Budget",
+      "Definitive"
+     ],
+     "series": [
+      {
+       "name": "Low end",
+       "values": [
+        -25,
+        -10,
+        -5
+       ]
+      },
+      {
+       "name": "High end",
+       "values": [
+        75,
+        25,
+        10
+       ]
+      }
+     ],
+     "unit": "%",
+     "caption": "The commonly quoted ranges from the table above; your organisation may use different classes. Notice how lopsided the early range is: overruns are far more likely than underruns."
     },
     {
      "type": "callout",
@@ -250,6 +280,17 @@ TRACK.modules.push({
        "term": "Reference-class forecasting",
        "def": "Adjusting an estimate using the actual outcomes of a group of similar past projects."
       }
+     ]
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Estimates are forecasts: give ranges and narrow them as you learn.",
+      "Choose by stage: analogous early, parametric for repeatable work, bottom-up for baselines, three-point for risky work.",
+      "PERT mean = (O + 4M + P) ÷ 6, and σ ≈ (P − O) ÷ 6.",
+      "Counter anchoring, optimism and hidden padding with reference-class data and visible reserves.",
+      "Relative sizing works because the conversation surfaces hidden knowledge."
      ]
     },
     {
@@ -543,6 +584,96 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "topology",
+     "title": "Clinic go-live network (activity on node)",
+     "caption": "The bold links trace the critical path A → B → D → F (14 days, zero total float). The lower path through C and E has 4 days of float, all of it free float on E.",
+     "nodes": [
+      {
+       "id": "A",
+       "kind": "process",
+       "label": "A Requirements",
+       "sub": "3 d · ES 0 · TF 0",
+       "x": 0,
+       "y": 3
+      },
+      {
+       "id": "B",
+       "kind": "process",
+       "label": "B Build module",
+       "sub": "4 d · ES 3 · TF 0",
+       "x": 2,
+       "y": 1
+      },
+      {
+       "id": "C",
+       "kind": "process",
+       "label": "C Buy tablets",
+       "sub": "2 d · ES 3 · TF 4",
+       "x": 2,
+       "y": 5
+      },
+      {
+       "id": "D",
+       "kind": "process",
+       "label": "D Integrate",
+       "sub": "5 d · ES 7 · TF 0",
+       "x": 4,
+       "y": 1
+      },
+      {
+       "id": "E",
+       "kind": "process",
+       "label": "E Set up tablets",
+       "sub": "3 d · ES 5 · TF 4",
+       "x": 4,
+       "y": 5
+      },
+      {
+       "id": "F",
+       "kind": "process",
+       "label": "F Pilot, go-live",
+       "sub": "2 d · ES 12 · TF 0",
+       "x": 6,
+       "y": 3
+      }
+     ],
+     "links": [
+      {
+       "a": "A",
+       "b": "B",
+       "label": "FS",
+       "style": "bold"
+      },
+      {
+       "a": "B",
+       "b": "D",
+       "label": "FS",
+       "style": "bold"
+      },
+      {
+       "a": "D",
+       "b": "F",
+       "label": "FS",
+       "style": "bold"
+      },
+      {
+       "a": "A",
+       "b": "C",
+       "label": "FS"
+      },
+      {
+       "a": "C",
+       "b": "E",
+       "label": "FS"
+      },
+      {
+       "a": "E",
+       "b": "F",
+       "label": "FS"
+      }
+     ]
+    },
+    {
      "type": "formula",
      "title": "Scheduling formulas (start-at-zero convention)",
      "items": [
@@ -651,6 +782,54 @@ TRACK.modules.push({
      "rows": 5
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "Release burnup for R2 – Merchant QR payments",
+     "labels": [
+      "S0",
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8"
+     ],
+     "series": [
+      {
+       "name": "Release scope",
+       "values": [
+        240,
+        240,
+        240,
+        240,
+        250,
+        250,
+        250,
+        250,
+        250
+       ]
+      },
+      {
+       "name": "Completed points",
+       "values": [
+        0,
+        28,
+        59,
+        88,
+        118,
+        149,
+        178,
+        209,
+        240
+       ]
+      }
+     ],
+     "yLabel": "Story points",
+     "caption": "Illustrative data. A burnup shows scope and progress separately, so the 10-point scope increase in sprint 4 is visible instead of hiding inside a flat line; the gap at the end is the work still to finish."
+    },
+    {
      "type": "steps",
      "title": "Baseline and manage the schedule",
      "items": [
@@ -745,6 +924,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "The critical path is the longest path; zero total float marks it, and near-critical paths need watching.",
+      "The forward pass takes the largest predecessor EF; the backward pass takes the smallest successor LS.",
+      "Free float protects successors; total float protects the end date.",
+      "Forecast agile releases from a velocity range, adjusted for capacity, and show scope changes on a burnup.",
+      "Coordinate with operations and other projects before baselining; re-baseline only through change control."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -794,7 +984,7 @@ TRACK.modules.push({
       {
        "q": "A hybrid project's schedule shows a go-live in the same week as the bank's year-end closing, when operations staff are unavailable. What should the project manager do before baselining?",
        "options": [
-        "Baseline the schedule and deal with the clash nearer the time",
+        "Baseline the schedule now and deal with the year-end clash nearer the time, when more is known",
         "Ask operations to postpone year-end closing",
         "Coordinate with operations and adjust the plan or the go-live window before baselining",
         "Remove operations staff from the go-live plan"
@@ -942,6 +1132,33 @@ TRACK.modules.push({
      "title": "Levelling vs smoothing on site"
     },
     {
+     "type": "chart",
+     "kind": "bar",
+     "title": "Smoothing the painting crew",
+     "labels": [
+      "Week 6",
+      "Week 7"
+     ],
+     "series": [
+      {
+       "name": "Before smoothing",
+       "values": [
+        12,
+        4
+       ]
+      },
+      {
+       "name": "After smoothing",
+       "values": [
+        8,
+        8
+       ]
+      }
+     ],
+     "yLabel": "Painters needed",
+     "caption": "From the example above. The total effort is unchanged and the end date does not move, because the corridor work used only its own float."
+    },
+    {
      "type": "text",
      "text": "Sooner or later someone will ask for the project to finish earlier. Compression is possible, but never free: you pay with **money**, **risk** or **scope**. Your job is to make those trade-offs clear before anyone commits."
     },
@@ -1048,6 +1265,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Derive resource needs from the WBS or backlog, including lead times and resource calendars.",
+      "Negotiate for shared people by understanding the other manager's interests before escalating.",
+      "Levelling respects hard limits and may move the end date; smoothing stays within float.",
+      "Crashing costs money and fast-tracking adds rework risk; crash the lowest cost slope on the critical path first.",
+      "Limit multitasking: stable, focused teams finish more."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -1086,7 +1314,7 @@ TRACK.modules.push({
       {
        "q": "A functional manager will not release a specialist your project needs next month because his own team has a peak. What should the project manager do FIRST?",
        "options": [
-        "Escalate to the sponsor immediately",
+        "Escalate to the sponsor immediately and ask her to instruct the functional manager to release him",
         "Hire a contractor without discussing it",
         "Understand the manager's constraints and explore options that meet both needs",
         "Remove the specialist's work from the scope"
@@ -1098,7 +1326,7 @@ TRACK.modules.push({
        "q": "A developer is assigned to four projects at 25% each and all four are late. What is the MOST likely cause?",
        "options": [
         "Context switching and waiting are slowing all four projects",
-        "The developer lacks the skills needed",
+        "The developer lacks the skills and experience that the four projects need",
         "The estimates for the four projects were padded",
         "The projects use different development approaches"
        ],
@@ -1152,43 +1380,33 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "layers",
-     "title": "How a project budget is built (top first)",
-     "items": [
-      {
-       "label": "Project budget",
-       "parts": [
-        "Cost baseline + management reserve"
-       ]
-      },
-      {
-       "label": "Management reserve",
-       "parts": [
-        "For unknown-unknowns",
-        "Outside the baseline; needs management approval"
-       ]
-      },
-      {
-       "label": "Cost baseline",
-       "parts": [
-        "Approved, time-phased budget",
-        "Control accounts + contingency reserves"
-       ]
-      },
-      {
-       "label": "Contingency reserves",
-       "parts": [
-        "For identified risks (known-unknowns)",
-        "Inside the baseline"
-       ]
-      },
-      {
-       "label": "Work package and activity estimates",
-       "parts": [
-        "Bottom-up costs of the planned work"
-       ]
-      }
-     ]
+     "type": "tree",
+     "title": "How a project budget is built: outpatient wing (Tk crore)",
+     "caption": "Contingency sits inside the cost baseline and is managed by the PM for identified risks; management reserve sits outside it and needs sponsor approval. The amounts match the worked example below.",
+     "root": {
+      "label": "Project budget 4.90",
+      "text": "What the organisation commits",
+      "children": [
+       {
+        "label": "Management reserve 0.30",
+        "text": "Unknown-unknowns; sponsor approves use"
+       },
+       {
+        "label": "Cost baseline 4.60",
+        "text": "Approved, time-phased",
+        "children": [
+         {
+          "label": "Contingency reserve 0.40",
+          "text": "Identified risks; PM within rules"
+         },
+         {
+          "label": "Work package estimates 4.20",
+          "text": "Rolled up into control accounts"
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "type": "table",
@@ -1247,6 +1465,42 @@ TRACK.modules.push({
      "kind": "insight",
      "text": "Plotting the cumulative cost baseline over time usually produces an **S-curve**: slow spending at the start, a steep middle and a flattening end. Compare it with funding tranches from the finance team or donor; if planned spend exceeds available funding in any period, re-sequence the work — this is called **funding limit reconciliation**.",
      "title": "The S-curve and funding"
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "Planned spend vs funding: 60-bed wing",
+     "labels": [
+      "Start",
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4"
+     ],
+     "series": [
+      {
+       "name": "Cumulative planned spend",
+       "values": [
+        0,
+        5,
+        19,
+        36,
+        41.2
+       ]
+      },
+      {
+       "name": "Cumulative funding",
+       "values": [
+        0,
+        11,
+        22,
+        33,
+        44
+       ]
+      }
+     ],
+     "yLabel": "Tk crore",
+     "caption": "Illustrative phasing for the case at the end of this lesson. Total funding exceeds the baseline, yet planned spend overtakes funding in Q3, so equipment purchases must be re-sequenced or financed."
     },
     {
      "type": "callout",
@@ -1379,6 +1633,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Cost baseline = work estimates + contingency; project budget = cost baseline + management reserve.",
+      "The PM manages contingency for identified risks; management reserve needs sponsor approval.",
+      "Check the S-curve against funding tranches and re-sequence when spend runs ahead of funding.",
+      "Agile funding is often per team per period; the backlog decides what the money buys.",
+      "Use simulation percentiles such as P50 and P80 to choose a commitment level openly."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -1406,7 +1671,7 @@ TRACK.modules.push({
       {
        "q": "A Monte Carlo result says 'P80 = 16 months'. This means:",
        "options": [
-        "The project will take exactly 16 months to complete",
+        "The project will take exactly 16 months to complete from today",
         "There is only a 16% chance of finishing on time",
         "About 80% of simulated runs finished within 16 months",
         "The project will be 80% complete at month 16"
@@ -1515,6 +1780,52 @@ TRACK.modules.push({
      "title": "The memory trick"
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "Warehouse app: PV, EV and AC to month 4",
+     "labels": [
+      "Month 0",
+      "Month 1",
+      "Month 2",
+      "Month 3",
+      "Month 4"
+     ],
+     "series": [
+      {
+       "name": "PV",
+       "values": [
+        0,
+        100,
+        200,
+        300,
+        400
+       ]
+      },
+      {
+       "name": "EV",
+       "values": [
+        0,
+        90,
+        180,
+        265,
+        350
+       ]
+      },
+      {
+       "name": "AC",
+       "values": [
+        0,
+        105,
+        210,
+        315,
+        420
+       ]
+      }
+     ],
+     "yLabel": "BDT thousand",
+     "caption": "Month-4 values come from the worked example below; earlier months are illustrative. EV below PV means behind schedule, and AC above EV means over budget for the work done."
+    },
+    {
      "type": "formula",
      "items": [
       {
@@ -1568,40 +1879,41 @@ TRACK.modules.push({
      "answer": "PV = 40% × 1,000,000 = **400,000**. EV = 35% × 1,000,000 = **350,000**. AC = **420,000**. SV = 350,000 − 400,000 = **−50,000** (behind). CV = 350,000 − 420,000 = **−70,000** (over). SPI = 350/400 = **0.875**. CPI = 350/420 ≈ **0.833**.\nEAC typical = 1,000,000 ÷ 0.833 = **1,200,000**. ETC = 1,200,000 − 420,000 = **780,000**. VAC = 1,000,000 − 1,200,000 = **−200,000**. TCPI = (1,000,000 − 350,000) ÷ (1,000,000 − 420,000) = 650/580 ≈ **1.12**.\nEAC atypical = 420,000 + 650,000 = **1,070,000**. EAC with CPI × SPI = 420,000 + 650,000 ÷ (0.833 × 0.875 ≈ 0.729) ≈ **1,311,000**.\nTo the sponsor: ‘We are about 12% behind schedule and getting 83 paisa of value for every taka spent. If this continues we will finish around BDT 1.2 million; finishing on budget would need every remaining taka to deliver 1.12 taka of planned work — far better than our current 0.83 — so we need a decision on scope, approach or budget.’"
     },
     {
-     "type": "table",
-     "head": [
-      "SPI",
-      "CPI",
-      "Plain-language status",
-      "Typical response"
-     ],
-     "rows": [
-      [
-       "> 1",
-       "> 1",
-       "Ahead and under budget",
-       "Check estimates were not padded; consider releasing funds"
-      ],
-      [
-       "> 1",
-       "< 1",
-       "Ahead but over budget",
-       "Maybe crashing or overtime — is the speed worth the cost?"
-      ],
-      [
-       "< 1",
-       "> 1",
-       "Behind but under budget",
-       "Often under-resourced; add capacity if the date matters"
-      ],
-      [
-       "< 1",
-       "< 1",
-       "Behind and over budget",
-       "Root-cause analysis, re-plan, escalate if beyond tolerance"
-      ]
-     ],
-     "title": "Reading SPI and CPI together"
+     "type": "matrix",
+     "title": "Reading SPI and CPI together",
+     "x": "CPI (cost efficiency)",
+     "y": "SPI (schedule efficiency)",
+     "caption": "The axes cross at 1.0. Only the bottom-left quadrant is clearly bad, but every quadrant has a question to ask; even good news may mean padded estimates.",
+     "quadrants": [
+      {
+       "title": "Ahead, over budget",
+       "items": [
+        "Overtime or crashing?",
+        "Is the speed worth the cost?"
+       ]
+      },
+      {
+       "title": "Ahead, under budget",
+       "items": [
+        "Were estimates padded?",
+        "Consider releasing funds"
+       ]
+      },
+      {
+       "title": "Behind, over budget",
+       "items": [
+        "Root-cause analysis and re-plan",
+        "Escalate if beyond tolerance"
+       ]
+      },
+      {
+       "title": "Behind, under budget",
+       "items": [
+        "Often under-resourced",
+        "Add capacity if the date matters"
+       ]
+      }
+     ]
     },
     {
      "type": "callout",
@@ -1729,6 +2041,17 @@ TRACK.modules.push({
        "term": "Budget at completion (BAC)",
        "def": "The total approved budget for the work, the sum of all planned value."
       }
+     ]
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "PV, EV and AC combine scope, schedule and cost; EV comes first in every formula.",
+      "SPI or CPI below 1.0 is bad news; read them together to choose a response.",
+      "Choose the EAC formula that matches why the variance happened.",
+      "A TCPI far above the current CPI signals an unrealistic budget, not a motivational target.",
+      "Variances outside tolerance go to governance with options."
      ]
     },
     {
@@ -1916,6 +2239,55 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "tree",
+     "title": "The contract-type family",
+     "caption": "Moving from the fixed-price branch towards cost-reimbursable contracts shifts cost risk from the seller to the buyer. Time and materials sits in between and is often capped to limit the buyer's exposure.",
+     "root": {
+      "label": "Contract types",
+      "children": [
+       {
+        "label": "Fixed price",
+        "text": "Cost risk mainly on seller",
+        "children": [
+         {
+          "label": "FFP"
+         },
+         {
+          "label": "FPIF"
+         },
+         {
+          "label": "FP with price adjustment"
+         }
+        ]
+       },
+       {
+        "label": "Time and materials",
+        "text": "Hybrid; risk mainly on buyer",
+        "children": [
+         {
+          "label": "Capped T&M"
+         }
+        ]
+       },
+       {
+        "label": "Cost-reimbursable",
+        "text": "Cost risk mainly on buyer",
+        "children": [
+         {
+          "label": "CPFF"
+         },
+         {
+          "label": "CPIF"
+         },
+         {
+          "label": "CPAF"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
      "type": "keypoints",
      "items": [
       "**Capped time and materials** — pay for time used, up to an agreed ceiling.",
@@ -2021,6 +2393,56 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "sequence",
+     "title": "New scope under a fixed-price contract",
+     "actors": [
+      "Users",
+      "Project manager",
+      "Vendor",
+      "Sponsor"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "Request insurance-claim interface"
+      },
+      {
+       "from": 1,
+       "to": 1,
+       "label": "Check SOW: is this new scope?"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Change request under contract clause"
+      },
+      {
+       "from": 2,
+       "to": 1,
+       "label": "Impact: price and schedule",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 3,
+       "label": "Options with value, cost and risk"
+      },
+      {
+       "from": 3,
+       "to": 1,
+       "label": "Decision: approve, defer or reject",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Written contract amendment"
+      }
+     ],
+     "caption": "A fixed price covers the agreed scope only. Notice that nothing is built until the change is priced, decided by the person with authority and written into the contract."
+    },
+    {
      "type": "template",
      "title": "Vendor performance scorecard",
      "purpose": "Review each key supplier monthly or per release using agreed, objective measures.",
@@ -2109,6 +2531,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Procurement runs from make-or-buy through solicitation, award and management to formal closure.",
+      "Contract type allocates cost risk: fixed price mainly to the seller, cost-reimbursable mainly to the buyer.",
+      "Agile-friendly contracts use priced increments, capped T&M, scope swaps and early exit.",
+      "Negotiate on interests, knowing your BATNA and walk-away point.",
+      "Manage suppliers on agreed objective measures and route scope changes through the contract's change clause."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -2171,7 +2604,7 @@ TRACK.modules.push({
        "options": [
         "Terminate the contract for poor performance",
         "Review performance against the agreed measures with the supplier and agree a recovery plan",
-        "Accept the explanation, since effort is high",
+        "Accept the account manager's explanation, since the supplier's team is clearly putting in high effort",
         "Withhold all payments until the end of the project"
        ],
        "answer": 1,
@@ -2351,6 +2784,100 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "chart",
+     "kind": "bar",
+     "title": "Pareto view: defects by cause",
+     "labels": [
+      "Requirements",
+      "Integration",
+      "Migration",
+      "UI",
+      "Config",
+      "Other"
+     ],
+     "series": [
+      {
+       "name": "Defects found in UAT",
+       "values": [
+        42,
+        25,
+        14,
+        9,
+        6,
+        4
+       ]
+      }
+     ],
+     "yLabel": "Defects",
+     "caption": "Illustrative data. Sorted from largest to smallest, the first two causes (unclear requirements and integration errors) account for 67 of 100 defects, so better requirements and integration testing are the improvements to fund first."
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "Control chart: concrete cube strength",
+     "labels": [
+      "W1",
+      "W2",
+      "W3",
+      "W4",
+      "W5",
+      "W6",
+      "W7",
+      "W8",
+      "W9",
+      "W10"
+     ],
+     "series": [
+      {
+       "name": "Upper control limit",
+       "values": [
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36
+       ]
+      },
+      {
+       "name": "Weekly mean strength",
+       "values": [
+        32,
+        31.5,
+        32.5,
+        33,
+        31,
+        32,
+        32.5,
+        37.5,
+        32,
+        31.5
+       ]
+      },
+      {
+       "name": "Lower control limit",
+       "values": [
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28
+       ]
+      }
+     ],
+     "yLabel": "MPa",
+     "caption": "Illustrative data. Points scattered between the limits are normal variation; week 8 falls outside the upper limit, so the team investigates a special cause (for example a batching change) even though the result looks 'good'."
+    },
+    {
      "type": "keypoints",
      "items": [
       "A visible **definition of done** applied to every increment",
@@ -2445,6 +2972,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Quality means meeting requirements and fitness for use; grade is a category of features.",
+      "Assurance improves the process; control checks the product.",
+      "Prevention is cheaper than failure, and external failures cost the most.",
+      "Regulatory and sustainability standards are quality requirements with planned evidence.",
+      "Use Pareto charts to find the vital few causes and control charts to judge whether a process is stable."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -2497,7 +3035,7 @@ TRACK.modules.push({
         "After launch, when users report problems",
         "Only if the regulator audits the app",
         "As quality requirements from the start, with planned evidence and acceptance criteria",
-        "During final testing, by a specialist consultant"
+        "During final testing, by hiring a specialist accessibility consultant to review the finished app"
        ],
        "answer": 2,
        "explain": "Regulatory standards are quality requirements. Gathering them early and planning evidence avoids costly late rework."
@@ -2606,8 +3144,9 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "flow",
+     "type": "cycle",
      "title": "One sprint at a glance",
+     "center": "Sprint",
      "items": [
       {
        "label": "Sprint Planning",
@@ -2629,7 +3168,8 @@ TRACK.modules.push({
        "label": "Retrospective",
        "text": "Team improves how it works"
       }
-     ]
+     ],
+     "caption": "The retrospective feeds straight into the next Sprint Planning, so each sprint starts slightly better than the last. Backlog refinement is ongoing work, not a separate event."
     },
     {
      "type": "callout",
@@ -2776,6 +3316,77 @@ TRACK.modules.push({
      "title": "How to read a CFD"
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "Cumulative flow: a testing bottleneck",
+     "labels": [
+      "W1",
+      "W2",
+      "W3",
+      "W4",
+      "W5",
+      "W6",
+      "W7",
+      "W8"
+     ],
+     "series": [
+      {
+       "name": "Arrived",
+       "values": [
+        10,
+        18,
+        26,
+        34,
+        42,
+        50,
+        58,
+        66
+       ]
+      },
+      {
+       "name": "Started",
+       "values": [
+        6,
+        12,
+        18,
+        24,
+        30,
+        36,
+        42,
+        48
+       ]
+      },
+      {
+       "name": "Ready for test",
+       "values": [
+        3,
+        8,
+        13,
+        18,
+        23,
+        28,
+        33,
+        38
+       ]
+      },
+      {
+       "name": "Done",
+       "values": [
+        2,
+        6,
+        10,
+        13,
+        15,
+        17,
+        19,
+        21
+       ]
+      }
+     ],
+     "yLabel": "Items (cumulative)",
+     "caption": "Illustrative data. The gap between 'Ready for test' and 'Done' widens every week, so work is piling up in testing while Done flattens; adding WIP limits and swarming on testing would close the gap."
+    },
+    {
      "type": "scenario",
      "title": "A full test column",
      "situation": "Your board shows Test at its WIP limit of 3, with two items waiting in 'Develop – done'. Two developers say they have nothing to do because they cannot pull new work. What should the team do?",
@@ -2837,6 +3448,17 @@ TRACK.modules.push({
        "term": "Cumulative flow diagram",
        "def": "A stacked area chart showing the number of items in each workflow stage over time."
       }
+     ]
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Scrum has one product owner, a Scrum Master and developers; five events; three artifacts, each with a commitment.",
+      "Requests during a sprint go to the product owner, who protects the sprint goal.",
+      "Kanban limits WIP so teams stop starting and start finishing.",
+      "Little's Law: cycle time = WIP ÷ throughput, so less WIP means faster delivery.",
+      "In a CFD, a widening band signals a bottleneck and a flat Done line means nothing is shipping."
      ]
     },
     {
@@ -2951,6 +3573,60 @@ TRACK.modules.push({
       }
      ],
      "title": "Burndown vs burnup"
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "Sprint burndown hiding added scope",
+     "labels": [
+      "D0",
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6",
+      "D7",
+      "D8",
+      "D9",
+      "D10"
+     ],
+     "series": [
+      {
+       "name": "Ideal",
+       "values": [
+        40,
+        36,
+        32,
+        28,
+        24,
+        20,
+        16,
+        12,
+        8,
+        4,
+        0
+       ]
+      },
+      {
+       "name": "Remaining work",
+       "values": [
+        40,
+        37,
+        33,
+        29,
+        29,
+        29,
+        28,
+        22,
+        15,
+        8,
+        2
+       ]
+      }
+     ],
+     "yLabel": "Points remaining",
+     "caption": "Illustrative data. The flat stretch on days 3–6 looks like a stalled team, but 8 points of new work were added and finished at the same time; only a burnup would show that."
     },
     {
      "type": "framework",
@@ -3076,6 +3752,37 @@ TRACK.modules.push({
      "title": "Forecasting honestly with throughput"
     },
     {
+     "type": "chart",
+     "kind": "bar",
+     "title": "Simulated finish week: 1,000 runs",
+     "labels": [
+      "Wk 7",
+      "Wk 8",
+      "Wk 9",
+      "Wk 10",
+      "Wk 11",
+      "Wk 12",
+      "Wk 13",
+      "Wk 14"
+     ],
+     "series": [
+      {
+       "name": "Runs finishing that week",
+       "values": [
+        20,
+        80,
+        180,
+        240,
+        220,
+        150,
+        80,
+        30
+       ]
+      }
+     ],
+     "caption": "Illustrative simulation. Adding up from the left, half the runs finish by week 10 (P50) and 890 of 1,000 by week 12, so 'about 85% likely by week 12' is an honest commitment."
+    },
+    {
      "type": "scenario",
      "situation": "A marketing director wants ‘one firm date’ for an app launch. Your throughput forecast gives 50% by 12 May and 85% by 2 June. What is the BEST response?",
      "options": [
@@ -3189,6 +3896,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Burnups show scope change; burndowns can hide it.",
+      "Velocity is a team's planning aid: never compare teams or make it a target.",
+      "Define RAG criteria in advance and reward early bad news to avoid watermelon reporting.",
+      "Forecast with ranges and confidence levels, for example from throughput simulation.",
+      "Keep artifacts tailored, owned, reconciled and accessible."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -3207,7 +3925,7 @@ TRACK.modules.push({
        "options": [
         "Velocity is too difficult to calculate consistently across sprints",
         "Points are team-relative, so comparisons mislead and invite inflation",
-        "Teams with the highest velocity will burn out sooner",
+        "Teams with the highest velocity will burn out sooner and leave the organisation",
         "Velocity is only a valid measure for Kanban teams, not Scrum teams"
        ],
        "answer": 1,
@@ -3376,6 +4094,43 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "timeline",
+     "title": "From readiness criteria to closure",
+     "caption": "Transition starts months before go-live, and the project is not closed at go-live. Notice that hypercare ends on exit criteria, not on a date alone.",
+     "items": [
+      {
+       "when": "Go-live −3 months",
+       "label": "Readiness criteria agreed",
+       "text": "Operations defines 'ready to receive'"
+      },
+      {
+       "when": "Go-live −2 weeks",
+       "label": "Rehearsal and go / no-go",
+       "text": "Support process tested; decision recorded"
+      },
+      {
+       "when": "Go-live",
+       "label": "Hypercare starts",
+       "text": "Project team supports operations, often 2–6 weeks"
+      },
+      {
+       "when": "Exit criteria met",
+       "label": "Formal acceptance",
+       "text": "Owner signs; warranties and risks transferred"
+      },
+      {
+       "when": "Close-out",
+       "label": "Contracts and finances closed",
+       "text": "Lessons shared, records archived, team released"
+      },
+      {
+       "when": "Later",
+       "label": "Benefits reviewed",
+       "text": "Business owner measures against targets"
+      }
+     ]
+    },
+    {
      "type": "callout",
      "kind": "insight",
      "title": "Closure in agile and product settings",
@@ -3502,6 +4257,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Agree closure and transition criteria early, with operations.",
+      "Verified is not the same as accepted: only formal acceptance closes scope.",
+      "Validate readiness through rehearsal and a recorded go or no-go decision.",
+      "Close contracts, finances, resources, risks and lessons, and hand benefits to a named owner.",
+      "Cancelled projects need the same disciplined closure."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -3509,7 +4275,7 @@ TRACK.modules.push({
        "options": [
         "Stop all work immediately and release the team without records",
         "Perform closure: document status, close contracts, capture lessons",
-        "Continue until the original end date to protect the investment",
+        "Continue the work until the original end date to protect the money already invested",
         "Hand all materials to the PMO without notes and move to new work"
        ],
        "answer": 1,
@@ -3530,7 +4296,7 @@ TRACK.modules.push({
        "q": "Why should open risks be transferred at closure?",
        "options": [
         "So the risk register can be deleted at handover",
-        "To justify increasing the final project budget",
+        "To justify an increase to the final project budget and its reserves",
         "It is not necessary once the project has closed",
         "Some risks continue into operations and need an owner"
        ],
@@ -3554,7 +4320,7 @@ TRACK.modules.push({
         "Go live and train the service desk afterwards",
         "Present the failed readiness criteria at a go or no-go review with options and their risks",
         "Delay go-live indefinitely until everything is perfect",
-        "Ask the development team to act as the service desk permanently"
+        "Ask the development team to act as the permanent service desk so that the go-live date can be kept"
        ],
        "answer": 1,
        "explain": "Readiness for transition should be validated against agreed criteria, and the decision made formally with clear options, not assumed."
@@ -3740,6 +4506,61 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "sequence",
+     "title": "Escalating by exception",
+     "actors": [
+      "Team",
+      "Project manager",
+      "Sponsor",
+      "Steering committee"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "New forecast: +7% cost"
+      },
+      {
+       "from": 1,
+       "to": 1,
+       "label": "Compare with tolerances (±5%)"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Beyond PM tolerance: options"
+      },
+      {
+       "from": 2,
+       "to": 1,
+       "label": "Decision: resequence work",
+       "reply": true
+      },
+      {
+       "from": 0,
+       "to": 1,
+       "label": "Later forecast: +12% cost"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Beyond sponsor tolerance"
+      },
+      {
+       "from": 2,
+       "to": 3,
+       "label": "Exception report with options"
+      },
+      {
+       "from": 3,
+       "to": 2,
+       "label": "Release reserve or reduce scope",
+       "reply": true
+      }
+     ],
+     "caption": "Each level decides only what exceeds the level below, using the thresholds in the table above. Notice that options travel up with every escalation, not just the problem."
+    },
+    {
      "type": "keypoints",
      "title": "Defining success metrics",
      "items": [
@@ -3871,6 +4692,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Governance sets who decides what, with tolerances so the PM manages by exception.",
+      "Start from the organisation's process assets and tailor them rather than reinventing them.",
+      "Define success metrics and escalation thresholds before you need them.",
+      "Responsibility, respect, fairness and honesty guide ethical choices: disclose conflicts and never misreport status."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -3923,7 +4754,7 @@ TRACK.modules.push({
         "Design a new governance framework from scratch",
         "Review the organisation's process assets, such as gate procedures and templates, and tailor them",
         "Ask the team to propose their own governance rules",
-        "Wait for the steering committee to define governance"
+        "Wait for the steering committee to meet and define the project's governance rules, roles and reporting from scratch"
        ],
        "answer": 1,
        "explain": "OPAs let governance be established quickly and consistently; the PM tailors them to the project rather than reinventing them."
@@ -4023,6 +4854,38 @@ TRACK.modules.push({
        "text": "Decide what proof will show compliance, who produces it and where it is kept."
       }
      ]
+    },
+    {
+     "type": "cycle",
+     "title": "The compliance loop",
+     "center": "Provable compliance",
+     "items": [
+      {
+       "label": "Identify sources",
+       "text": "Laws, contracts, standards and policies, with specialists"
+      },
+      {
+       "label": "Classify and own",
+       "text": "Rate breach severity; name an owner"
+      },
+      {
+       "label": "Build in",
+       "text": "Requirements, stories, acceptance criteria, gates"
+      },
+      {
+       "label": "Collect evidence",
+       "text": "Tests, certificates, logs in one repository"
+      },
+      {
+       "label": "Review and audit",
+       "text": "Internal checks before external ones"
+      },
+      {
+       "label": "Scan the horizon",
+       "text": "Rule changes feed back into identification"
+      }
+     ],
+     "caption": "Compliance is not a one-off check before go-live. Horizon scanning closes the loop, because rules can change in the middle of a project."
     },
     {
      "type": "template",
@@ -4258,6 +5121,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Confirm compliance sources early with specialists, and give each obligation an owner.",
+      "Build obligations into requirements, stories, acceptance criteria and gates.",
+      "Plan the evidence and keep it in one controlled place.",
+      "Watch for threats such as schedule pressure, supplier gaps, rule changes and unapproved tools.",
+      "Measure coverage and open findings, and report them to governance."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -4275,7 +5149,7 @@ TRACK.modules.push({
        "q": "What is the BEST way to make sure compliance obligations are not forgotten in an agile project?",
        "options": [
         "Run a compliance review just before go-live",
-        "Ask the compliance team to approve every story",
+        "Ask the compliance team to review and formally approve every single story before work starts",
         "Leave compliance to the vendor",
         "Write obligations into stories, acceptance criteria and the definition of done"
        ],
@@ -4288,7 +5162,7 @@ TRACK.modules.push({
         "Let them start and collect permits later",
         "Stop the unpermitted work and resolve the permits under the contract terms",
         "Report the subcontractor to the regulator immediately",
-        "Ask the site team to supervise them closely instead"
+        "Ask the site team to supervise the subcontractor closely instead, so the schedule is protected"
        ],
        "answer": 1,
        "explain": "Working without permits is non-compliance with possible harm and stop-work consequences. The work must not proceed until the obligation is met."
@@ -4307,7 +5181,7 @@ TRACK.modules.push({
       {
        "q": "Which is a threat to compliance that an approved-tools list and data classification help prevent?",
        "options": [
-        "A delayed hardware shipment",
+        "A delayed hardware shipment held at customs by an overseas supplier",
         "Team members pasting customer data into unapproved AI tools",
         "A change in the sponsor",
         "A slow sprint review"
@@ -4395,6 +5269,63 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "sequence",
+     "title": "Change request CR-014 through the board",
+     "actors": [
+      "Requester",
+      "Project manager",
+      "Change board",
+      "Sponsor",
+      "Team"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "Submit change request"
+      },
+      {
+       "from": 1,
+       "to": 1,
+       "label": "Log it; analyse time, cost, risk, value"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Impact analysis and recommendation"
+      },
+      {
+       "from": 2,
+       "to": 3,
+       "label": "Budget increase beyond board limit"
+      },
+      {
+       "from": 3,
+       "to": 2,
+       "label": "Funding approved",
+       "reply": true
+      },
+      {
+       "from": 2,
+       "to": 1,
+       "label": "CR-014 approved",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 0,
+       "label": "Decision and reason",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 4,
+       "label": "Update baselines; implement; verify"
+      }
+     ],
+     "caption": "The board decides within its delegated limit and refers the funding question to the sponsor. Notice that the requester hears the outcome before the team starts building."
+    },
+    {
      "type": "compare",
      "title": "Two ways to absorb change",
      "columns": [
@@ -4425,6 +5356,32 @@ TRACK.modules.push({
      "kind": "insight",
      "text": "Many hybrid projects let the product owner reorder the backlog freely **within** an agreed budget and milestone, but send anything that moves a milestone, increases total budget or affects a contract to formal change control. Write the thresholds down in the plan.",
      "title": "Hybrid change thresholds"
+    },
+    {
+     "type": "tree",
+     "title": "Which path does a change take?",
+     "caption": "Write these routes into the plan so nobody has to argue about them later. The more a change touches commitments outside the team, the higher it goes.",
+     "root": {
+      "label": "New change on a hybrid project",
+      "children": [
+       {
+        "label": "Within product goal, budget and milestone",
+        "text": "Product owner orders it in the backlog"
+       },
+       {
+        "label": "Moves a milestone or total budget",
+        "text": "Integrated change control (change board)"
+       },
+       {
+        "label": "Affects a contract",
+        "text": "Contract change clause, then the board"
+       },
+       {
+        "label": "Changes objectives or the business case",
+        "text": "Sponsor or steering committee"
+       }
+      ]
+     }
     },
     {
      "type": "template",
@@ -4576,6 +5533,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Scope creep comes from unmanaged requests; gold plating from unrequested extras.",
+      "Predictive change runs through integrated change control: log, analyse, decide, update, communicate.",
+      "Agile change flows through the backlog while the sprint goal is protected.",
+      "Hybrids need written thresholds that decide which path a change takes.",
+      "Keep the change log visible and deliverables under configuration control."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -4603,7 +5571,7 @@ TRACK.modules.push({
       {
        "q": "A change request for a new interface has been approved by the change control board. What should happen NEXT?",
        "options": [
-        "Start building the interface immediately without updating documents",
+        "Start building the interface immediately and update the documents later, once it is working",
         "Wait for the sponsor to inform the team",
         "Communicate the decision, update baselines and documents, then implement and verify the change",
         "Ask the requester to submit the request again in writing"
@@ -4616,7 +5584,7 @@ TRACK.modules.push({
        "options": [
         "Publishing the change log with the status of each request",
         "Asking stakeholders to stop requesting changes",
-        "Holding a weekly meeting for each requester",
+        "Holding a separate weekly status meeting with each individual requester",
         "Approving all requests to reduce follow-ups"
        ],
        "answer": 0,
@@ -4625,7 +5593,7 @@ TRACK.modules.push({
       {
        "q": "On a hybrid project, the product owner may reorder the app backlog within its budget and milestone. A requested change would move the milestone by four weeks. Which path should it take?",
        "options": [
-        "The product owner decides, as with any backlog change",
+        "The product owner decides alone, as with any other backlog reordering",
         "The team decides during sprint planning",
         "No path, because milestones cannot change",
         "Formal change control, because it affects an agreed milestone"
@@ -4738,40 +5706,34 @@ TRACK.modules.push({
      "title": "Ways to find risks (use more than one)"
     },
     {
-     "type": "table",
-     "head": [
-      "Level 1",
-      "Level 2 examples",
-      "Typical questions"
-     ],
-     "rows": [
-      [
-       "Technical",
-       "Requirements, technology maturity, integration, performance, data migration",
-       "Have we built this before? How many interfaces?"
-      ],
-      [
-       "External",
-       "Suppliers, regulation, market, weather, currency, politics",
-       "What could change outside our control?"
-      ],
-      [
-       "Organisational",
-       "Funding, priorities, shared resources, other projects",
-       "Could our people or budget be pulled away?"
-      ],
-      [
-       "Project management",
-       "Estimating, planning, communication, control",
-       "How confident are we in our estimates?"
-      ],
-      [
-       "People & change",
-       "Adoption, skills, morale, key-person dependency",
-       "Will users actually change how they work?"
+     "type": "tree",
+     "title": "A starter risk breakdown structure",
+     "caption": "Walk each branch with the team and ask what could go wrong there: have we built this before, what could change outside our control, could people or money be pulled away, how good are our estimates, will users really change? Empty branches usually mean a blind spot, not an absence of risk.",
+     "root": {
+      "label": "Project risk sources",
+      "children": [
+       {
+        "label": "Technical",
+        "text": "Integration, data migration, performance"
+       },
+       {
+        "label": "External",
+        "text": "Suppliers, regulation, weather, currency"
+       },
+       {
+        "label": "Organisational",
+        "text": "Funding, priorities, shared resources"
+       },
+       {
+        "label": "Project management",
+        "text": "Estimating, planning, communication"
+       },
+       {
+        "label": "People and change",
+        "text": "Adoption, skills, key-person dependency"
+       }
       ]
-     ],
-     "title": "A starter risk breakdown structure"
+     }
     },
     {
      "type": "text",
@@ -4848,6 +5810,43 @@ TRACK.modules.push({
      "text": "Multiply probability by impact to get a risk score (1–25). Plot each risk on a 5×5 grid: the top-right zone (scores of roughly 15+) gets immediate, owned responses; the middle zone gets watched; the bottom-left zone may be accepted and monitored."
     },
     {
+     "type": "matrix",
+     "title": "Probability–impact: what to do in each zone",
+     "x": "Impact",
+     "y": "Probability",
+     "caption": "A 2×2 summary of the 5×5 grid. The bottom-right zone is easy to neglect because it rarely happens, yet it is where fallback plans and reserves earn their keep.",
+     "quadrants": [
+      {
+       "title": "Likely, minor",
+       "items": [
+        "Reduce cheaply",
+        "Watch the trend"
+       ]
+      },
+      {
+       "title": "Act now",
+       "items": [
+        "Owned response with budget",
+        "Report to governance"
+       ]
+      },
+      {
+       "title": "Accept and monitor",
+       "items": [
+        "Keep on the watch list",
+        "Review at each cycle"
+       ]
+      },
+      {
+       "title": "Rare, severe",
+       "items": [
+        "Fallback plan and trigger",
+        "Consider transfer or insurance"
+       ]
+      }
+     ]
+    },
+    {
      "type": "formula",
      "items": [
       {
@@ -4906,6 +5905,34 @@ TRACK.modules.push({
      "title": "Reading a Monte Carlo output"
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "S-curve from a schedule simulation",
+     "labels": [
+      "1 Mar",
+      "10 Mar",
+      "15 Mar",
+      "20 Mar",
+      "31 Mar",
+      "10 Apr"
+     ],
+     "series": [
+      {
+       "name": "Chance of finishing by this date",
+       "values": [
+        8,
+        35,
+        50,
+        80,
+        94,
+        99
+       ]
+      }
+     ],
+     "unit": "%",
+     "caption": "Illustrative output. Read across from 50% and 80% to find P50 (15 March) and P80 (20 March); notice how each extra step of confidence costs more calendar time."
+    },
+    {
      "type": "terms",
      "items": [
       {
@@ -4940,6 +5967,17 @@ TRACK.modules.push({
        "term": "P80",
        "def": "The value, such as a date or cost, that 80% of simulated outcomes meet or beat."
       }
+     ]
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Risks are uncertain and future, issues have already happened, and opportunities are positive risks.",
+      "Write risks as cause, event and effect, and use several identification techniques.",
+      "Define probability and impact scales before scoring.",
+      "EMV = probability × impact; it supports judgement but does not replace it.",
+      "Read P50 and P80 from a simulation to set honest commitments."
      ]
     },
     {
@@ -5204,10 +6242,15 @@ TRACK.modules.push({
       {
        "label": "REG",
        "title": "Regulation",
-       "text": "Risk-based laws such as the EU AI Act and sector rules impose duties depending on use; check obligations in every market served."
+       "text": "Risk-based laws such as the EU AI Act, whose obligations phase in over several years, and sector rules impose duties that depend on the use case. Check the current timetable and obligations in every market served."
+      },
+      {
+       "label": "VER",
+       "title": "Unverified outputs",
+       "text": "AI-generated plans, code, summaries and estimates can be fluent but wrong. Name who checks each output before it is used or shared."
       }
      ],
-     "title": "Distinctive risks of AI projects"
+     "title": "Distinctive risks of AI projects and AI-assisted work"
     },
     {
      "type": "table",
@@ -5239,6 +6282,45 @@ TRACK.modules.push({
        "Joint risk reviews"
       ]
      ]
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "Risk exposure against contingency",
+     "labels": [
+      "Month 1",
+      "Month 2",
+      "Month 3",
+      "Month 4",
+      "Month 5",
+      "Month 6"
+     ],
+     "series": [
+      {
+       "name": "Open threat exposure (EMV)",
+       "values": [
+        180,
+        165,
+        150,
+        160,
+        110,
+        70
+       ]
+      },
+      {
+       "name": "Contingency remaining",
+       "values": [
+        200,
+        190,
+        180,
+        150,
+        135,
+        120
+       ]
+      }
+     ],
+     "yLabel": "Tk lakh",
+     "caption": "Illustrative data. A trend tells a steering committee more than a single heat map: in month 4 exposure rose above the remaining contingency, which is exactly when a decision was needed."
     },
     {
      "type": "scenario",
@@ -5305,6 +6387,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "A risk management plan sets method, roles, scales, appetite, thresholds and reporting.",
+      "Choose responses for threats and opportunities, each with an owner, trigger, actions and budget.",
+      "Transfer moves the money, not the event; watch residual and secondary risks.",
+      "Security, sustainability and AI risks, including unverified AI outputs, belong in the same register.",
+      "Tailor risk reporting to each audience and show the trend."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -5346,7 +6439,7 @@ TRACK.modules.push({
         "Accept it passively and note it in the register",
         "Ignore it, as it is outside the project’s authority",
         "Escalate it to the programme manager and confirm ownership",
-        "Avoid it by recommending that the project is cancelled"
+        "Avoid it by recommending that the whole project is cancelled now"
        ],
        "answer": 2,
        "explain": "Escalation is correct when the response belongs at a higher level; the PM confirms acceptance and records it."
@@ -5354,7 +6447,7 @@ TRACK.modules.push({
       {
        "q": "A test environment holds copies of real customer records with weak access controls. How should the project treat this?",
        "options": [
-        "As an IT department matter outside the project's scope",
+        "As an IT department matter that sits outside the project's scope and budget",
         "As acceptable, since it is only a test environment",
         "As a project risk with an owner and a response, such as masking the data",
         "As an issue to raise only if a breach occurs"
@@ -5627,6 +6720,56 @@ TRACK.modules.push({
      "text": "On a predictive hospital-construction project in Chattogram, imported lifts were held at customs over a documentation error, threatening the critical path. The PM logged the issue, gave it one owner, and within a day brought the sponsor three options: pay for expedited clearance through an agent, re-sequence interior works to use the float elsewhere, or accept a two-week slip. The sponsor chose the first two together, and the milestone held."
     },
     {
+     "type": "sequence",
+     "title": "Lifts held at the port: from issue to decision in a day",
+     "actors": [
+      "Site engineer",
+      "Project manager",
+      "Customs agent",
+      "Sponsor"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "Lifts held at customs: document error"
+      },
+      {
+       "from": 1,
+       "to": 1,
+       "label": "Log issue; check critical-path impact"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Can clearance be expedited?"
+      },
+      {
+       "from": 2,
+       "to": 1,
+       "label": "Yes: 3 days, with a fee",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 3,
+       "label": "Three options, trade-offs, recommendation"
+      },
+      {
+       "from": 3,
+       "to": 1,
+       "label": "Expedite and resequence interiors",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 0,
+       "label": "Resequence interior works now"
+      }
+     ],
+     "caption": "The PM gathers the facts that make the options real before going to the sponsor. Notice the sponsor is asked to choose, not to investigate."
+    },
+    {
      "type": "template",
      "title": "Impediment and issue log",
      "purpose": "Track every blocker and issue to resolution, with one owner each.",
@@ -5713,13 +6856,23 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Impediments block the team now; issues already affect objectives; risks have not happened yet.",
+      "Prioritise blockers by impact, reach and age, and keep them visible.",
+      "Choose an intervention (remove, work around, negotiate, escalate, prevent or re-plan) and change it when it stops working.",
+      "Escalate with impact, options, a recommendation and a decision date."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
        "q": "A blocker threatens a release milestone and the team and PM cannot resolve it. What is the appropriate next step?",
        "options": [
         "Wait and raise it with the team at the next retrospective",
-        "Keep it from the board until a fix is found",
+        "Keep it off the board and out of reports until a fix has been found",
         "Escalate promptly to the right decision-maker with options",
         "Remove the blocked item from the definition of done"
        ],
@@ -5740,7 +6893,7 @@ TRACK.modules.push({
       {
        "q": "A risk in the register, 'supplier may deliver servers late', has just happened: the supplier confirms a three-week delay. What should the project manager do?",
        "options": [
-        "Leave it in the risk register and raise its probability to 100%",
+        "Leave it in the risk register, raise its probability to 100% and keep monitoring the trigger",
         "Record it in the issue log, activate the planned response and close the risk entry",
         "Wait to see whether the delay affects the critical path",
         "Ask the supplier to submit a new risk statement"
@@ -5764,7 +6917,7 @@ TRACK.modules.push({
        "options": [
         "A different intervention, such as escalation with options, is needed",
         "The team should stop raising it",
-        "More reminders should be sent",
+        "More frequent and more urgent reminders should be sent to the other team",
         "The blocker should be removed from the board"
        ],
        "answer": 0,
@@ -5923,8 +7076,9 @@ TRACK.modules.push({
      "title": "From observed to applied"
     },
     {
-     "type": "flow",
-     "title": "A simple improvement cycle",
+     "type": "cycle",
+     "title": "A simple improvement cycle (PDCA)",
+     "center": "Improve",
      "items": [
       {
        "label": "Plan",
@@ -5942,7 +7096,38 @@ TRACK.modules.push({
        "label": "Act",
        "text": "Keep, adapt or drop it; standardise what works"
       }
-     ]
+     ],
+     "caption": "Each turn of the loop tests one small change against a baseline. 'Act' either standardises what worked or starts the next Plan with what was learned."
+    },
+    {
+     "type": "chart",
+     "kind": "bar",
+     "title": "Check step: when are defects found?",
+     "labels": [
+      "Early sprints",
+      "Middle sprints",
+      "Last two weeks"
+     ],
+     "series": [
+      {
+       "name": "Before the change",
+       "values": [
+        10,
+        30,
+        60
+       ]
+      },
+      {
+       "name": "After integration tests from sprint 2",
+       "values": [
+        35,
+        45,
+        20
+       ]
+      }
+     ],
+     "unit": "%",
+     "caption": "Illustrative data for the lesson in the register above. Comparing the share of defects found in each period against the earlier baseline shows the change worked, so it is standardised in the test strategy template."
     },
     {
      "type": "callout",
@@ -6045,6 +7230,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "A lesson is learned only when behaviour or practice changes.",
+      "Retrospectives should end with one to three owned actions that are reviewed next time.",
+      "Use PDCA: test small changes, measure against a baseline, then keep, adapt or drop them.",
+      "Embed lessons in templates, checklists, contracts and gate criteria, and pull them in at kick-off."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -6052,7 +7247,7 @@ TRACK.modules.push({
        "options": [
         "It is stored in the organisation’s archive",
         "A practice has changed and is used on new projects",
-        "It was discussed in detail at the closure meeting",
+        "It was discussed in detail by everyone at the closure meeting",
         "The sponsor has read the final report"
        ],
        "answer": 1,
@@ -6061,7 +7256,7 @@ TRACK.modules.push({
       {
        "q": "A retrospective produces 14 improvement ideas. What is the BEST next step?",
        "options": [
-        "Assign all 14 ideas to the PM to implement",
+        "Assign all 14 ideas to the project manager to implement",
         "Email them all to the sponsor for a decision",
         "Pick one to three actions with owners and dates",
         "Wait until the next retrospective to discuss"
@@ -6073,7 +7268,7 @@ TRACK.modules.push({
        "q": "During closure, the team finds that late involvement of the security team caused a three-week delay. What BEST ensures the lesson is applied?",
        "options": [
         "Record it in the final report",
-        "Email it to all project managers",
+        "Email a detailed write-up of the lesson to every project manager in the organisation so they all know",
         "Mention it at the closing party",
         "Update the planning template and gate checklist to require security review in the first phase"
        ],
@@ -6085,7 +7280,7 @@ TRACK.modules.push({
        "options": [
         "Measure defect rates against the earlier baseline and decide whether to keep, adapt or drop it",
         "Make the rule permanent across the organisation",
-        "Try a different rule immediately",
+        "Try a different code-review rule immediately, so the team keeps experimenting with new practices",
         "Ask the sponsor whether she likes the rule"
        ],
        "answer": 0,
@@ -6097,7 +7292,7 @@ TRACK.modules.push({
         "Read them only if problems arise",
         "Review them with the team and build relevant actions into the plan and risk register",
         "Archive them, since every project is different",
-        "Send them to the sponsor for approval"
+        "Send them to the sponsor for approval and wait for her to decide which ones apply to this project"
        ],
        "answer": 1,
        "explain": "Lessons are valuable when pulled into new projects at the start, not only pushed out at the end of old ones."
@@ -6194,6 +7389,31 @@ TRACK.modules.push({
      "kind": "pro",
      "text": "ADKAR is sequential. If a branch manager lacks **desire**, more training (knowledge) will not help. Survey or interview, find the earliest element that is weak, and fix that first.",
      "title": "Find the first barrier"
+    },
+    {
+     "type": "chart",
+     "kind": "bar",
+     "title": "Warehouse scanning rollout: ADKAR survey",
+     "labels": [
+      "Awareness",
+      "Desire",
+      "Knowledge",
+      "Ability",
+      "Reinforcement"
+     ],
+     "series": [
+      {
+       "name": "Average score (1–5)",
+       "values": [
+        4.2,
+        2.4,
+        3.8,
+        3.1,
+        2.0
+       ]
+      }
+     ],
+     "caption": "Illustrative survey results. Reinforcement scores lowest, but Desire is the first weak element in the sequence, so that is where to act first; more training would not help yet."
     },
     {
      "type": "text",
@@ -6379,6 +7599,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Assess culture before planning how to land a change.",
+      "ADKAR is sequential: find and fix the first weak element.",
+      "Kotter's steps lead organisation-wide change, from urgency and a guiding coalition to anchoring in culture.",
+      "Treat resistance as information about root causes.",
+      "When the organisation changes around the project, re-confirm sponsor, stakeholders and business case."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -6428,7 +7659,7 @@ TRACK.modules.push({
       {
        "q": "Halfway through a project, the organisation merges with a competitor and the sponsor leaves. What should the project manager do FIRST?",
        "options": [
-        "Continue as planned, since the charter is still signed",
+        "Continue as planned, since the original charter is still signed and the budget has already been approved",
         "Stop all work until the merger is complete",
         "Confirm a new sponsor and re-check stakeholders and the business case with governance",
         "Ask the team to speed up before priorities change"
@@ -6599,6 +7830,12 @@ TRACK.modules.push({
      "title": "Where an AI assistant helps (and where to be careful)"
     },
     {
+     "type": "callout",
+     "kind": "warning",
+     "title": "Verify before you rely",
+     "text": "AI outputs can be fluent and wrong, can repeat bias from their training data and carry no accountability. Treat them as drafts: check facts and numbers against source data, look for one-sided assumptions (for example in resource or vendor recommendations), note where AI helped produce significant deliverables, and keep a named person accountable for every decision."
+    },
+    {
      "type": "framework",
      "items": [
       {
@@ -6630,10 +7867,148 @@ TRACK.modules.push({
      "title": "Data-privacy rules for AI use"
     },
     {
+     "type": "topology",
+     "title": "Safe path for AI-assisted project work",
+     "caption": "Data leaves the team only through classification and redaction, and only to an approved tool. Nothing the tool returns reaches project records until a named reviewer has checked it.",
+     "zones": [
+      {
+       "label": "Approved",
+       "x": 2,
+       "y": 0.5,
+       "w": 2,
+       "h": 1.6,
+       "tone": "good"
+      },
+      {
+       "label": "Not approved",
+       "x": 5,
+       "y": 0.5,
+       "w": 2,
+       "h": 1.6,
+       "tone": "bad"
+      }
+     ],
+     "nodes": [
+      {
+       "id": "ai",
+       "kind": "model",
+       "label": "Approved AI tool",
+       "sub": "enterprise agreement",
+       "x": 3,
+       "y": 1
+      },
+      {
+       "id": "pub",
+       "kind": "model",
+       "label": "Consumer chatbot",
+       "sub": "inputs may be retained",
+       "x": 6,
+       "y": 1
+      },
+      {
+       "id": "cls",
+       "kind": "shield",
+       "label": "Classify, redact",
+       "sub": "no names, no secrets",
+       "x": 3,
+       "y": 3
+      },
+      {
+       "id": "team",
+       "kind": "team",
+       "label": "Project team",
+       "sub": "notes, plans, data",
+       "x": 3,
+       "y": 5
+      },
+      {
+       "id": "rev",
+       "kind": "user",
+       "label": "Named reviewer",
+       "sub": "facts, numbers, bias",
+       "x": 0.5,
+       "y": 3
+      },
+      {
+       "id": "doc",
+       "kind": "doc",
+       "label": "Project records",
+       "sub": "verified outputs only",
+       "x": 0.5,
+       "y": 5
+      }
+     ],
+     "links": [
+      {
+       "a": "team",
+       "b": "cls",
+       "label": "prompt"
+      },
+      {
+       "a": "cls",
+       "b": "ai",
+       "label": "minimised"
+      },
+      {
+       "a": "ai",
+       "b": "rev",
+       "label": "draft"
+      },
+      {
+       "a": "rev",
+       "b": "doc",
+       "label": "verified"
+      },
+      {
+       "a": "team",
+       "b": "pub",
+       "label": "blocked",
+       "style": "attack"
+      }
+     ]
+    },
+    {
      "type": "callout",
      "kind": "definition",
      "text": "Organisations increasingly align AI work with frameworks such as the **NIST AI Risk Management Framework** and the management-system standard **ISO/IEC 42001**. A PM does not need to be an expert, but should ask early: ‘Which AI policy and risk process applies to this project?’",
      "title": "Useful references for AI governance"
+    },
+    {
+     "type": "timeline",
+     "title": "AI and sustainability rules: recent milestones",
+     "caption": "Several of these were still being phased in or revised during 2025–26, so treat the later dates as a prompt to check the current official timetable for each market you serve.",
+     "items": [
+      {
+       "when": "Jan 2023",
+       "label": "NIST AI Risk Management Framework",
+       "text": "Voluntary framework for managing AI risk"
+      },
+      {
+       "when": "Jun 2023",
+       "label": "IFRS S1 and S2 issued",
+       "text": "Global baseline for sustainability and climate disclosures"
+      },
+      {
+       "when": "Dec 2023",
+       "label": "ISO/IEC 42001 published",
+       "text": "Management-system standard for AI"
+      },
+      {
+       "when": "Aug 2024",
+       "label": "EU AI Act in force",
+       "text": "Obligations then apply in stages"
+      },
+      {
+       "when": "2025",
+       "label": "First AI Act duties apply",
+       "text": "Prohibited practices, AI literacy, general-purpose model rules"
+      },
+      {
+       "when": "2026–27",
+       "label": "High-risk AI obligations",
+       "text": "Phasing in; timing subject to revision"
+      }
+     ]
     },
     {
      "type": "framework",
@@ -6655,6 +8030,12 @@ TRACK.modules.push({
       }
      ],
      "title": "ESG in project decisions"
+    },
+    {
+     "type": "callout",
+     "kind": "definition",
+     "title": "Sustainability reporting is tightening",
+     "text": "Many organisations now report against sustainability disclosure standards, such as the ISSB's IFRS S1 and S2, and regional rules such as the EU's Corporate Sustainability Reporting Directive, whose scope and timing were revised from 2025. Requirements differ by country and company size, so ask early which ones apply and what data the project must supply."
     },
     {
      "type": "keypoints",
@@ -6740,6 +8121,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Scan political, economic, social, technological, legal and environmental change continuously.",
+      "Turn relevant changes into backlog items, change requests or risks, and inform governance.",
+      "Use only approved AI tools, with classified and minimised data, and have a named person verify outputs for errors and bias.",
+      "AI is also an external force that can make planned scope obsolete.",
+      "Build ESG into objectives, option appraisal, supplier criteria and gate reporting."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -6748,7 +8140,7 @@ TRACK.modules.push({
         "Anonymised meeting notes with internal-only information",
         "A customer list with names and phone numbers",
         "Administrator passwords for the test environment",
-        "A signed contract with pricing, in a public chatbot"
+        "A signed contract with full pricing details, pasted into a public chatbot"
        ],
        "answer": 0,
        "explain": "Anonymised internal data in an approved tool is the low-risk option."
@@ -6778,7 +8170,7 @@ TRACK.modules.push({
       {
        "q": "A competitor launches an AI feature that makes one of your planned features far less valuable. What should the product owner and PM do?",
        "options": [
-        "Continue, because the feature is in the approved roadmap",
+        "Continue building it as planned, because the feature is already in the approved product roadmap",
         "Cancel the whole project",
         "Copy the competitor's feature exactly",
         "Reassess the backlog's value in light of the change and reprioritise with stakeholders"
@@ -6792,7 +8184,7 @@ TRACK.modules.push({
         "A standing review of external changes at quarterly planning and gate reviews",
         "A one-off environmental scan at initiation",
         "Waiting for the sponsor to report changes",
-        "Reading industry news when the project is in trouble"
+        "Reading industry news and competitor announcements whenever the project gets into trouble"
        ],
        "answer": 0,
        "explain": "The external environment must be reviewed continually; a standing agenda item makes it routine."
@@ -6881,6 +8273,43 @@ TRACK.modules.push({
        "Impediment board; front-desk adoption plan; new national ID rule assessed; retrospectives and benefits plan",
        "Impediment log, change impact assessment, lessons register"
       ]
+     ]
+    },
+    {
+     "type": "timeline",
+     "title": "Cumilla booking project on one line",
+     "caption": "The loop stages overlap in time: Engage and Govern work continue throughout, and the external ID rule arrives mid-delivery. Benefits are judged after the project closes.",
+     "items": [
+      {
+       "when": "Month 0",
+       "label": "Frame",
+       "text": "Business case, charter and vision with doctors and front desk"
+      },
+      {
+       "when": "Month 1",
+       "label": "Engage and Plan",
+       "text": "SMS-first agreed; integrated plan and backlog"
+      },
+      {
+       "when": "Month 2",
+       "label": "First increment",
+       "text": "Booking live for one department, usability tested"
+      },
+      {
+       "when": "Month 4",
+       "label": "National ID rule",
+       "text": "External change assessed through change control"
+      },
+      {
+       "when": "Month 6–6.5",
+       "label": "Go-live, four departments",
+       "text": "P80 forecast; hypercare and handover"
+      },
+      {
+       "when": "Month 9+",
+       "label": "Benefits review",
+       "text": "No-show rate against the 22% baseline"
+      }
      ]
     },
     {
@@ -7108,6 +8537,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "The eight stages overlap and repeat on every real project.",
+      "Your capstone pack shows each stage through concrete artefacts.",
+      "For situational questions: read the qualifier, recognise the context, reduce, rank and re-check.",
+      "Prefer answers that analyse first, involve the right people and respect the approach in use."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -7274,7 +8713,7 @@ TRACK.exam.push([
   "options": [
    "Start the feature immediately, because the request comes from a senior manager",
    "Add it to the sprint backlog without telling anyone and absorb it with extra effort",
-   "Ask the team to cancel the sprint and replan it so the urgent feature can be included",
+   "Ask the team to cancel the sprint and replan it so that the urgent feature can be included straight away",
    "Refer it to the product owner, who decides priority while the sprint goal is protected"
   ],
   "answer": 3,
@@ -7429,7 +8868,7 @@ TRACK.exam.push([
   "q": "Before a board meeting, the sponsor asks the PM to report the project as amber instead of red, promising that the problems will be fixed next month. What should the PM do?",
   "options": [
    "Report green to avoid alarming the board before the fixes are in place",
-   "Report amber as asked, since the sponsor is accountable for the project",
+   "Report amber as asked, since the sponsor is accountable for the project and its reporting",
    "Report the true status and offer a recovery plan with the decisions needed",
    "Avoid attending the board meeting and let the sponsor present the status"
   ],
@@ -7479,7 +8918,7 @@ TRACK.exam.push([
    "Report her behaviour to HR as a breach of the change programme’s standards",
    "Exclude her team from the rollout until adoption elsewhere is fully complete",
    "Meet her privately to understand her concerns and involve her in solving them",
-   "Double the training sessions for her team to build skills and confidence"
+   "Double the number of training sessions for her team to build their skills and confidence"
   ],
   "answer": 2,
   "explain": "Resistance often contains useful information, and influential sceptics can become strong champions. Disciplinary action, exclusion or more training skip understanding the root cause."

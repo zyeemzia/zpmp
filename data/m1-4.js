@@ -176,6 +176,40 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "tree",
+     "title": "One portfolio, several kinds of work",
+     "caption": "The portfolio chooses and balances investments; the program coordinates related projects for a combined benefit, while a one-off project and a long-lived product sit beside it. Notice that only the program's children share a single benefit target.",
+     "root": {
+      "label": "Portfolio: digital banking 2026–28",
+      "text": "Chooses, funds and stops investments",
+      "children": [
+       {
+        "label": "Program: rural financial inclusion",
+        "text": "Combined benefit: more active rural accounts",
+        "children": [
+         {
+          "label": "App launch project"
+         },
+         {
+          "label": "Agent training project"
+         },
+         {
+          "label": "Marketing campaign"
+         }
+        ]
+       },
+       {
+        "label": "Project: core system migration",
+        "text": "Temporary; ends at cut-over"
+       },
+       {
+        "label": "Product: wallet app",
+        "text": "Stable team, continuous releases"
+       }
+      ]
+     }
+    },
+    {
      "type": "text",
      "text": "The modern project manager is less a task-master and more a **value-focused integrator and leader**. You connect strategy to delivery, people to purpose and plans to reality. On agile teams some traditional PM duties are shared by a product owner, a team coach and the team itself; your contribution shifts toward coordination across teams, stakeholders, risk, budget and governance."
     },
@@ -318,6 +352,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "A project is temporary, unique and purposeful; operations sustain the business and products evolve over many releases.",
+      "Portfolios choose the right investments, programs coordinate related work for combined benefits, and projects create the results.",
+      "The modern PM integrates scope, money, risk and people, whoever holds each role on the team.",
+      "Run repetitive work as operations; start a project when the goal is to change that work."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -357,7 +401,7 @@ TRACK.modules.push({
        "q": "Why do many digital organisations fund stable product teams rather than one-off projects?",
        "options": [
         "To deliver change continuously and keep product knowledge in one team",
-        "Because product work does not need budgets or funding decisions",
+        "Because product work does not need budgets, business cases or any funding decisions",
         "Because project management is no longer needed in digital firms",
         "To reduce how often teams need to talk directly to customers"
        ],
@@ -370,7 +414,7 @@ TRACK.modules.push({
         "The project manager has lost authority and should take the backlog back",
         "Responsibilities are shared by role, and the PM integrates them into one picture",
         "The project is badly organised because one person should own every decision",
-        "The steering group should approve every backlog change before each sprint"
+        "The steering group should approve every backlog change before each sprint is allowed to start"
        ],
        "answer": 1,
        "explain": "In agile and hybrid settings some traditional PM duties sit with other roles. The modern PM integrates scope, schedule, money, risk and people across those roles rather than owning every decision personally."
@@ -552,7 +596,39 @@ TRACK.modules.push({
      "type": "callout",
      "kind": "warning",
      "title": "Editions change, ideas last",
-     "text": "Professional standards are revised from time to time. Newer editions tend to group these ideas into fewer, broader principles, give more weight to a **holistic view** of the project and to **sustainability**, and organise the domains differently. Learn the ideas here, then check the exact edition and outline used by any external exam you plan to take."
+     "text": "Professional standards are revised from time to time. The twelve principles and eight domains above follow the **seventh-edition** generation of the PMBOK® Guide (2021). The **eighth edition** (2025) groups the ideas into fewer, broader principles, gives more weight to a **holistic view** of the project and to **sustainability**, reorganises the performance domains and brings process guidance back alongside them. The ideas taught here carry across editions; check the exact edition and outline used by any external exam you plan to take."
+    },
+    {
+     "type": "timeline",
+     "title": "How the reference guidance has evolved",
+     "caption": "The shift is from a process catalogue towards principles and domains, and then towards a blend of both, while the exam outline moved weight to the business environment. Always confirm which editions an external exam currently references.",
+     "items": [
+      {
+       "when": "2017",
+       "label": "PMBOK® Guide, 6th edition",
+       "text": "Process-based: 49 processes in 10 knowledge areas, with agile guidance published alongside"
+      },
+      {
+       "when": "Jan 2021",
+       "label": "PMP® exam on a new outline",
+       "text": "People 42%, Process 50%, Business Environment 8%"
+      },
+      {
+       "when": "2021",
+       "label": "PMBOK® Guide, 7th edition",
+       "text": "Principle-based: 12 principles and 8 performance domains"
+      },
+      {
+       "when": "2025",
+       "label": "PMBOK® Guide, 8th edition",
+       "text": "Fewer, broader principles; domains reorganised; process guidance restored alongside"
+      },
+      {
+       "when": "Jul 2026",
+       "label": "New PMP® exam outline",
+       "text": "People 33%, Process 41%, Business Environment 26%"
+      }
+     ]
     },
     {
      "type": "keypoints",
@@ -655,6 +731,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Judge success by outcomes, benefits and value, not by outputs delivered on time.",
+      "Principles guide judgement when no process fits; performance domains show where effort must go well.",
+      "Standards are revised: learn the ideas, then confirm the edition and outline your exam uses.",
+      "Sustainability and stewardship are everyday design choices, not add-ons at the end."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -691,7 +777,7 @@ TRACK.modules.push({
        "explain": "Systems thinking means seeing interactions and ripple effects across parts of the project and organisation."
       },
       {
-       "q": "Which performance domain focuses on choosing between predictive, adaptive and hybrid delivery?",
+       "q": "A team is debating whether to run sprints or a phase-gated plan for a new product. In the eight-domain model, which performance domain covers this decision?",
        "options": [
         "Development approach and life cycle",
         "Planning",
@@ -856,6 +942,47 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "matrix",
+     "title": "Choosing a starting approach",
+     "x": "Uncertainty in how to build it (method, technology)",
+     "y": "Uncertainty in what to build (requirements)",
+     "caption": "Plot each piece of work, not just the whole project: different parts often land in different quadrants. Far beyond the top-right corner lies chaos, where you stabilise first and plan later.",
+     "quadrants": [
+      {
+       "title": "Iterate on the what",
+       "items": [
+        "Prototypes and user feedback",
+        "Iterative or agile",
+        "e.g. new service design"
+       ]
+      },
+      {
+       "title": "Complex: adapt",
+       "items": [
+        "Agile or hybrid",
+        "Short cycles, small experiments",
+        "e.g. novel digital product"
+       ]
+      },
+      {
+       "title": "Clear: plan it",
+       "items": [
+        "Predictive",
+        "Standard plans and checklists",
+        "e.g. repeat construction"
+       ]
+      },
+      {
+       "title": "Complicated: analyse",
+       "items": [
+        "Predictive or hybrid",
+        "Expert reviews and spikes",
+        "e.g. known need, new platform"
+       ]
+      }
+     ]
+    },
+    {
      "type": "table",
      "title": "Tailoring factors",
      "head": [
@@ -994,6 +1121,37 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "tree",
+     "title": "Split the work, then assign an approach to each part",
+     "caption": "A hospital outpatient upgrade broken into components, each with the approach that fits its uncertainty and cost of change. The PM's job is to manage the joins between them through integration milestones.",
+     "root": {
+      "label": "Outpatient upgrade project",
+      "text": "Hybrid by design",
+      "children": [
+       {
+        "label": "Building works",
+        "text": "Predictive: fixed design, costly change"
+       },
+       {
+        "label": "Medical equipment",
+        "text": "Predictive procurement and install"
+       },
+       {
+        "label": "Booking software",
+        "text": "Agile: two-week sprints with staff"
+       },
+       {
+        "label": "Staff training",
+        "text": "Incremental: ward-by-ward waves"
+       },
+       {
+        "label": "Post-launch support",
+        "text": "Kanban flow for small changes"
+       }
+      ]
+     }
+    },
+    {
      "type": "scenario",
      "title": "Choosing an approach for a bank",
      "situation": "A commercial bank in Dhaka must deliver a new regulatory reporting system by a fixed central-bank deadline, with requirements defined in a published circular. In the same project the bank wants a new customer self-service portal whose features are still being debated by marketing. What approach should the PM recommend?",
@@ -1051,6 +1209,16 @@ TRACK.modules.push({
        "term": "Tailoring",
        "def": "Deliberately adapting the approach, processes and artefacts to fit the project's context."
       }
+     ]
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Match the approach to two uncertainties: what to build and how to build it.",
+      "Iterative improves the same thing, incremental adds usable pieces, and agile combines both.",
+      "Design hybrids deliberately: split the work, assign an approach per part and manage the joins.",
+      "Tailoring never ends; review the approach at retrospectives and phase gates."
      ]
     },
     {
@@ -1205,12 +1373,90 @@ TRACK.modules.push({
      "title": "Same project, different verdicts"
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "Cutting-room system: cumulative cash flow",
+     "labels": [
+      "Year 0",
+      "Year 1",
+      "Year 2",
+      "Year 3"
+     ],
+     "series": [
+      {
+       "name": "Undiscounted",
+       "values": [
+        -50,
+        -30,
+        -10,
+        10
+       ]
+      },
+      {
+       "name": "Discounted at 10%",
+       "values": [
+        -50,
+        -31.82,
+        -15.29,
+        -0.26
+       ]
+      }
+     ],
+     "yLabel": "Tk lakh",
+     "caption": "Calculated from the example above. The undiscounted line crosses zero at 2.5 years (simple payback), but the discounted line never quite does within three years, which is why the NPV is slightly negative."
+    },
+    {
      "type": "text",
      "text": "**OKRs (Objectives and Key Results)** are a popular way to connect strategy to work. An **objective** is a short, inspiring, qualitative statement of where you want to go. **Key results** are two to five measurable outcomes that show you got there. Projects and initiatives are the bets you place to move the key results."
     },
     {
      "type": "text",
      "text": "The **project charter** is the birth certificate of a project. Issued by the sponsor, it formally authorises the project to exist, names the project manager and gives that person authority to use organisational resources. Without one, you are leading work nobody has officially agreed to."
+    },
+    {
+     "type": "sequence",
+     "title": "From idea to authorised project",
+     "actors": [
+      "Project manager",
+      "Sponsor",
+      "Portfolio board",
+      "Team"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "Draft lean business case and charter"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Submit case for a funding decision"
+      },
+      {
+       "from": 2,
+       "to": 1,
+       "label": "Approve with budget and conditions",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 0,
+       "label": "Sign charter: name PM, grant authority"
+      },
+      {
+       "from": 0,
+       "to": 3,
+       "label": "Co-create vision and success measures"
+      },
+      {
+       "from": 3,
+       "to": 0,
+       "label": "Explain the vision back in own words",
+       "reply": true
+      }
+     ],
+     "caption": "Funding and authority come before commitments to vendors or staff. The last step is the cheapest test of whether the vision is really shared."
     },
     {
      "type": "template",
@@ -1363,6 +1609,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "The business case answers why this, why now and is it worth it, and stays the yardstick for later decisions.",
+      "Show more than one measure: payback and simple ROI ignore the timing of money; NPV does not.",
+      "The sponsor's signed charter authorises the project and the PM before vendors are engaged or money is spent.",
+      "A shared vision names purpose, beneficiaries, change, evidence and boundaries, and is tested, promoted and refreshed."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -1412,7 +1668,7 @@ TRACK.modules.push({
       {
        "q": "Developers and the operations team both say they support the vision 'faster container release', yet operations keeps rejecting finished screens. What should the project manager do FIRST?",
        "options": [
-        "Repeat the vision at every meeting until both groups accept it",
+        "Repeat the vision clearly at every meeting and stand-up until both groups finally accept it",
         "Ask the sponsor to rule which group is right and close the matter",
         "Analyse why the groups interpret the vision differently and agree a shared measure",
         "Let operations write the acceptance criteria and accept the delay"
@@ -1481,6 +1737,36 @@ TRACK.modules.push({
        "11"
       ]
      ]
+    },
+    {
+     "type": "chart",
+     "kind": "bar",
+     "title": "Domain weights: previous outline vs July 2026",
+     "labels": [
+      "People",
+      "Process",
+      "Business Environment"
+     ],
+     "series": [
+      {
+       "name": "Outline used from 2021",
+       "values": [
+        42,
+        50,
+        8
+       ]
+      },
+      {
+       "name": "July 2026 outline",
+       "values": [
+        33,
+        41,
+        26
+       ]
+      }
+     ],
+     "unit": "%",
+     "caption": "Published domain weights. The business environment more than triples its share, which is why ZPMP gives it two full modules."
     },
     {
      "type": "table",
@@ -1654,7 +1940,7 @@ TRACK.modules.push({
      "type": "callout",
      "kind": "insight",
      "title": "Approaches run through every domain",
-     "text": "The outline expects predictive, agile and hybrid ways of working to appear in **every** domain, with roughly 40% of questions set in predictive contexts and 60% in agile or hybrid ones. ZPMP follows the same balance: most lessons show at least one predictive and one agile or hybrid example, and the exam mixes them."
+     "text": "The outline expects predictive, agile and hybrid ways of working to appear in **every** domain, and agile and hybrid contexts are expected to make up a large share of questions (check the exact split in the current official outline). ZPMP keeps a similar balance: most lessons show at least one predictive and one agile or hybrid example, and the exam mixes them."
     },
     {
      "type": "compare",
@@ -1663,7 +1949,7 @@ TRACK.modules.push({
       {
        "title": "More weight on the business environment",
        "items": [
-        "About a quarter of the outline, up from a small share in the previous (2021) outline",
+        "About a quarter of the outline (26%), up from 8% in the outline used from 2021",
         "Governance, compliance, change, risk and improvement",
         "Changes outside the project: regulation, technology, market and geopolitics"
        ]
@@ -1687,50 +1973,44 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "framework",
+     "type": "cycle",
      "title": "The ZPMP Professional Loop: eight stages",
+     "center": "ZPMP Loop",
      "items": [
       {
-       "label": "1",
-       "title": "Frame",
+       "label": "Frame",
        "text": "Understand value, choose the approach and create a shared vision."
       },
       {
-       "label": "2",
-       "title": "Lead",
+       "label": "Lead",
        "text": "Build and lead the team: roles, leadership, motivation, conflict and coaching."
       },
       {
-       "label": "3",
-       "title": "Engage",
+       "label": "Engage",
        "text": "Engage stakeholders, align and manage expectations, transfer knowledge and communicate."
       },
       {
-       "label": "4",
-       "title": "Plan",
+       "label": "Plan",
        "text": "Integrate the plan, define and break down scope, and steer delivery towards value."
       },
       {
-       "label": "5",
-       "title": "Resource",
+       "label": "Resource",
        "text": "Estimate and schedule the work, secure people and equipment, and manage the money."
       },
       {
-       "label": "6",
-       "title": "Deliver",
+       "label": "Deliver",
        "text": "Run delivery with suppliers and built-in quality, measure status honestly and close well."
       },
       {
-       "label": "7",
-       "title": "Govern",
+       "label": "Govern",
        "text": "Set governance, meet compliance duties, control change and manage risk."
       },
       {
-       "label": "8",
-       "title": "Adapt",
+       "label": "Adapt",
        "text": "Remove impediments, improve continuously, support change and respond to the outside world."
       }
-     ]
+     ],
+     "caption": "Read it clockwise from Frame. The people stages (Lead, Engage) never stop, the process stages repeat every iteration, and what you learn in Adapt feeds the next Frame."
     },
     {
      "type": "callout",
@@ -1794,7 +2074,7 @@ TRACK.modules.push({
     {
      "type": "scenario",
      "title": "Study the whole spectrum",
-     "situation": "A study partner says: 'Since 60% of the outline is agile or hybrid, I will skip predictive topics such as critical path and earned value and focus only on Scrum.' What is the best advice?",
+     "situation": "A study partner says: 'Most questions are set in agile or hybrid contexts, so I will skip predictive topics such as critical path and earned value and focus only on Scrum.' What is the best advice?",
      "options": [
       {
        "text": "Agree, because agile questions will dominate the exam.",
@@ -1852,6 +2132,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "The July 2026 outline weights People 33%, Process 41% and Business Environment 26%.",
+      "Tasks describe responsibilities; enablers are examples, not a syllabus to memorise.",
+      "Every domain mixes predictive, agile and hybrid contexts, so study all three.",
+      "ZPMP follows the outline's topics but is independent of PMI and does not award the PMP®."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -1877,15 +2167,15 @@ TRACK.modules.push({
        "explain": "Enablers illustrate what a task involves. They are examples, not an exhaustive or mandatory list."
       },
       {
-       "q": "Roughly what share of the outline's questions is set in agile or hybrid contexts?",
+       "q": "How does the July 2026 outline treat predictive, agile and hybrid approaches?",
        "options": [
-        "About 60%",
-        "About 20%",
-        "About 40%",
-        "About 90%"
+        "They appear across all three domains, so any task may be set in any approach",
+        "They are tested only in the Process domain, through planning and scheduling tasks",
+        "Only agile and hybrid approaches remain; predictive delivery has been removed",
+        "They form a separate fourth domain with its own weighting and tasks"
        ],
        "answer": 0,
-       "explain": "About 40% represents predictive approaches and the remaining 60% is split between agile and hybrid."
+       "explain": "Approaches are not a domain of their own: predictive, agile and hybrid contexts run through People, Process and Business Environment tasks alike, so all three must be studied."
       },
       {
        "q": "Which ZPMP module teaches removing impediments and managing issues?",
@@ -1904,7 +2194,7 @@ TRACK.modules.push({
         "She can, because ZPMP follows the same outline",
         "She cannot: ZPMP is an independent ZyeemZia programme, and the PMP® is awarded only by PMI",
         "She can after one year of project experience",
-        "She can if she also completes the capstone with distinction"
+        "She can, provided she also completes the ZPMP capstone project with a distinction grade and logs the hours"
        ],
        "answer": 1,
        "explain": "ZPMP follows the outline's topics but is independent. It does not award or count as the PMP®, which PMI alone issues."
@@ -2069,6 +2359,41 @@ TRACK.modules.push({
      "title": "DACI for decisions"
     },
     {
+     "type": "tree",
+     "title": "Decision rights on a hybrid hospital-records project",
+     "caption": "Each box shows what that role decides, so every decision has one owner. Notice that the vendor's architect is consulted on interfaces but does not approve them, which removes the deadlock in this lesson's scenario.",
+     "root": {
+      "label": "Sponsor",
+      "text": "Go-live; budget changes above 5%",
+      "children": [
+       {
+        "label": "Project manager",
+        "text": "Plan, risks, escalations",
+        "children": [
+         {
+          "label": "Integration lead",
+          "text": "Approves interface changes (the one A)"
+         },
+         {
+          "label": "Vendor architect",
+          "text": "Consulted on interface changes"
+         }
+        ]
+       },
+       {
+        "label": "Product owner",
+        "text": "Backlog priority and acceptance",
+        "children": [
+         {
+          "label": "Delivery team",
+          "text": "Technical design within standards"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
      "type": "compare",
      "columns": [
       {
@@ -2090,6 +2415,43 @@ TRACK.modules.push({
       }
      ],
      "title": "Choosing a decision method"
+    },
+    {
+     "type": "matrix",
+     "title": "Pick a decision method by stakes and time",
+     "x": "Time available to decide",
+     "y": "Stakes and need for buy-in",
+     "caption": "A rule of thumb, not a law: high stakes with time to spare justify consensus or consent, while emergencies justify a single decider. Agree the default for each kind of decision in the team charter.",
+     "quadrants": [
+      {
+       "title": "Decide with input",
+       "items": [
+        "One decider, quick consultation",
+        "Command only in emergencies"
+       ]
+      },
+      {
+       "title": "Consensus or consent",
+       "items": [
+        "Strong buy-in needed",
+        "Use fist-of-five to test support"
+       ]
+      },
+      {
+       "title": "Delegate it",
+       "items": [
+        "Person closest to the work decides",
+        "Within agreed boundaries"
+       ]
+      },
+      {
+       "title": "Consent or vote",
+       "items": [
+        "Proceed unless reasoned objection",
+        "Majority vote if it does not matter much"
+       ]
+      }
+     ]
     },
     {
      "type": "table",
@@ -2193,6 +2555,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Turn the vision into team goals, a co-written team charter and explicit decision rights.",
+      "Every RACI row needs exactly one Accountable; watch for bottlenecks and too many Consulted.",
+      "DACI separates who drives a decision from the one person who approves it.",
+      "Match the decision method to the stakes and the time available."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -2200,7 +2572,7 @@ TRACK.modules.push({
        "options": [
         "Two people marked Responsible on one task",
         "Several people marked Informed on a decision",
-        "The sponsor marked Consulted on a deliverable",
+        "The sponsor marked only as Consulted on a major project deliverable",
         "Three people marked Accountable for one decision"
        ],
        "answer": 3,
@@ -2232,7 +2604,7 @@ TRACK.modules.push({
        "q": "Why should a team write its own charter rather than receive one from the project manager?",
        "options": [
         "Because team charters have no legal standing if the PM writes them",
-        "Because it saves the project manager time during the first sprint",
+        "Because it saves the project manager a great deal of time during the busy first sprint",
         "Because sponsors are not allowed to read team-level documents",
         "Because people commit more strongly to expectations they helped to shape"
        ],
@@ -2245,7 +2617,7 @@ TRACK.modules.push({
         "Agree common standards, such as responsiveness and escalation, then let each team tailor its own working practices",
         "Make the app team follow the construction team's procedures in full",
         "Let each team work in isolation and coordinate only at go-live",
-        "Write one detailed procedure for both teams and enforce it strictly"
+        "Write one detailed procedure covering both teams' work, approve it formally and enforce it strictly on every task"
        ],
        "answer": 0,
        "explain": "Shared standards keep the joins working, while each team tailors practices to its own approach. Forcing one style on both, or isolating them, causes friction."
@@ -2341,6 +2713,43 @@ TRACK.modules.push({
       ]
      ],
      "title": "Situational leadership: match style to readiness"
+    },
+    {
+     "type": "matrix",
+     "title": "Situational leadership: direction and support",
+     "x": "Supportive behaviour",
+     "y": "Directive behaviour",
+     "caption": "The same person can sit in different quadrants for different tasks. Move clockwise from Directing through Coaching and Supporting to Delegating as competence and commitment on that task grow.",
+     "quadrants": [
+      {
+       "title": "Directing",
+       "items": [
+        "New to the task, keen",
+        "Clear instructions, close follow-up"
+       ]
+      },
+      {
+       "title": "Coaching",
+       "items": [
+        "Some skill, confidence dipping",
+        "Direct, explain and encourage"
+       ]
+      },
+      {
+       "title": "Delegating",
+       "items": [
+        "Skilled and committed",
+        "Agree outcomes, step back"
+       ]
+      },
+      {
+       "title": "Supporting",
+       "items": [
+        "Capable but hesitant",
+        "Ask, listen, share decisions"
+       ]
+      }
+     ]
     },
     {
      "type": "framework",
@@ -2544,6 +2953,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Servant leaders remove impediments, shield focus and grow people, and still make hard calls.",
+      "Adapt direction and support to each person's readiness on the specific task.",
+      "Agree delegation levels per decision area and honour them; quiet overrides destroy empowerment.",
+      "Psychological safety grows when bad news is thanked, leaders admit mistakes and reviews are blameless."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -2584,7 +3003,7 @@ TRACK.modules.push({
        "options": [
         "The leader uses authority to enable the team’s success",
         "The leader avoids making decisions for the team",
-        "It only works in Scrum teams with a dedicated coach",
+        "It only works in Scrum teams that have a dedicated, full-time agile coach",
         "It means doing the team’s work for them when needed"
        ],
        "answer": 0,
@@ -2671,6 +3090,43 @@ TRACK.modules.push({
      "kind": "definition",
      "text": "A two-factor view (associated with Frederick Herzberg) separates **hygiene factors** — pay, working conditions, policies, job security — whose absence causes dissatisfaction, from **motivators** — achievement, recognition, responsibility, growth — that create real engagement. Fixing hygiene stops complaints; it rarely creates enthusiasm on its own.",
      "title": "Hygiene factors vs motivators"
+    },
+    {
+     "type": "matrix",
+     "title": "Two-factor diagnosis",
+     "x": "Motivators present (growth, recognition, purpose)",
+     "y": "Hygiene factors met (pay, conditions, workload)",
+     "caption": "Hygiene and motivators are separate dials, so fixing one does not move the other. Locate the team before choosing a response: the bottom row needs conditions fixed, the left column needs meaning and challenge.",
+     "quadrants": [
+      {
+       "title": "Comfortable, disengaged",
+       "items": [
+        "Few complaints, little initiative",
+        "Add autonomy, mastery, purpose"
+       ]
+      },
+      {
+       "title": "Engaged and settled",
+       "items": [
+        "The target state",
+        "Keep recognising and stretching"
+       ]
+      },
+      {
+       "title": "Unhappy and flat",
+       "items": [
+        "Complaints and low energy",
+        "Fix conditions first"
+       ]
+      },
+      {
+       "title": "Motivated but aggrieved",
+       "items": [
+        "Loves the work, resents conditions",
+        "Escalate workload or pay issues"
+       ]
+      }
+     ]
     },
     {
      "type": "table",
@@ -2844,6 +3300,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Fix hygiene problems by changing conditions; build engagement with autonomy, mastery and purpose.",
+      "Diagnose the cause of low energy before you try to motivate.",
+      "Emotional intelligence starts with noticing your own triggers and pausing before you respond.",
+      "Inclusion is designed: material in advance, rotating facilitation and several ways to contribute."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -2860,7 +3326,7 @@ TRACK.modules.push({
       {
        "q": "Which action BEST increases autonomy?",
        "options": [
-        "Giving a detailed checklist and method for every task",
+        "Giving a detailed checklist and step-by-step method for every task they take on",
         "Letting the team choose its own testing approach within standards",
         "Adding a team bonus for finishing work faster than planned",
         "Holding daily status calls to review each person’s tasks"
@@ -2893,7 +3359,7 @@ TRACK.modules.push({
       {
        "q": "In a hybrid team, two members who work in a second language rarely speak in design meetings but send strong ideas by message afterwards. What should the PM do?",
        "options": [
-        "Ask them to speak up more in meetings and set a speaking target",
+        "Ask them to speak up more in meetings and set each of them a personal speaking target",
         "Share agendas early and add a written round to each design meeting",
         "Stop holding live design meetings and decide everything by email",
         "Leave it, because their ideas still reach the team eventually"
@@ -3003,6 +3469,43 @@ TRACK.modules.push({
       ]
      ],
      "title": "Thomas–Kilmann modes: when to use each"
+    },
+    {
+     "type": "matrix",
+     "title": "Five conflict modes on two axes",
+     "x": "Cooperativeness (concern for their goals)",
+     "y": "Assertiveness (concern for your goals)",
+     "caption": "Compromising sits in the middle of the grid, partly assertive and partly cooperative. Only collaborating aims to satisfy both sides fully, which is why it is the default for important issues when time allows.",
+     "quadrants": [
+      {
+       "title": "Competing",
+       "items": [
+        "Safety, legal, ethical non-negotiables",
+        "Risk: resentment"
+       ]
+      },
+      {
+       "title": "Collaborating",
+       "items": [
+        "Important issue, time available",
+        "Risk: slow for trivia"
+       ]
+      },
+      {
+       "title": "Avoiding",
+       "items": [
+        "Trivial issue or emotions too hot",
+        "Risk: problems grow"
+       ]
+      },
+      {
+       "title": "Accommodating",
+       "items": [
+        "Matters more to them, or you are wrong",
+        "Risk: your concerns pile up"
+       ]
+      }
+     ]
     },
     {
      "type": "callout",
@@ -3175,6 +3678,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Analyse the source and context of a conflict before choosing a mode.",
+      "Collaborating is the default for important issues; forcing is for safety, legal and ethical non-negotiables.",
+      "Handle conflict early, privately and on the facts, then write down the agreement.",
+      "For ground-rule breaches, talk privately first and use the agreed escalation path if they repeat."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -3215,7 +3728,7 @@ TRACK.modules.push({
        "options": [
         "Which of the two managers is more senior in the organisation",
         "Which group complained to the sponsor first",
-        "How quickly a compromise can be announced to both groups",
+        "How quickly a split-the-difference compromise can be announced to both groups and the sponsor",
         "Which constraints are fixed, which are flexible, and the risk of each option"
        ],
        "answer": 3,
@@ -3227,7 +3740,7 @@ TRACK.modules.push({
         "Follow the escalation step the team agreed in its charter",
         "Ignore it to protect the relationship",
         "Rewrite the ground rule so the breach no longer counts",
-        "Raise it in front of the whole team at the stand-up"
+        "Raise it in front of the whole team at the next stand-up so everyone sees the rule enforced"
        ],
        "answer": 0,
        "explain": "Repeated breaches after private conversations call for the agreed escalation path. Public criticism damages safety, and dropping the rule tells the team rules do not matter."
@@ -3281,6 +3794,81 @@ TRACK.modules.push({
       }
      ],
      "title": "Remote and hybrid essentials"
+    },
+    {
+     "type": "topology",
+     "title": "One team, four locations, one shared workspace",
+     "caption": "With 09:00–17:00 local days, all four locations overlap for only about one hour (UTC 08:00–09:00) in European winter and two hours in summer. That is why the team works async-first and protects the overlap for live collaboration.",
+     "nodes": [
+      {
+       "id": "hub",
+       "kind": "cloud",
+       "label": "Shared workspace",
+       "sub": "docs, board, log",
+       "x": 3,
+       "y": 1
+      },
+      {
+       "id": "po",
+       "kind": "user",
+       "label": "Product owner",
+       "sub": "Dhaka, UTC+6",
+       "x": 0,
+       "y": 4
+      },
+      {
+       "id": "dev",
+       "kind": "laptop",
+       "label": "Developer",
+       "sub": "Khulna, UTC+6",
+       "x": 2,
+       "y": 4
+      },
+      {
+       "id": "ven",
+       "kind": "team",
+       "label": "Vendor team",
+       "sub": "Kuala Lumpur, UTC+8",
+       "x": 4,
+       "y": 4
+      },
+      {
+       "id": "cli",
+       "kind": "user",
+       "label": "Client lead",
+       "sub": "Frankfurt, UTC+1/+2",
+       "x": 6,
+       "y": 4
+      }
+     ],
+     "links": [
+      {
+       "a": "hub",
+       "b": "po",
+       "label": "async"
+      },
+      {
+       "a": "hub",
+       "b": "dev",
+       "label": "async"
+      },
+      {
+       "a": "hub",
+       "b": "ven",
+       "label": "async"
+      },
+      {
+       "a": "hub",
+       "b": "cli",
+       "label": "async"
+      },
+      {
+       "a": "po",
+       "b": "dev",
+       "label": "live",
+       "style": "dashed"
+      }
+     ]
     },
     {
      "type": "checklist",
@@ -3470,6 +4058,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Distributed teams need designed working agreements: channels, response times, overlap windows and decision records.",
+      "Default to async work and protect a short overlap for real-time collaboration.",
+      "Use cultural dimensions as questions to ask, never as labels for individuals.",
+      "Coach with GROW questions and give feedback with SBI: situation, observable behaviour, impact.",
+      "Agree who checks automatic meeting summaries before they are shared."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -3478,7 +4077,7 @@ TRACK.modules.push({
         "Have everyone join from their own device for equal participation",
         "Ask remote members to come into the office for meetings",
         "Record the meetings so remote members can catch up afterwards",
-        "Hold separate meetings for the in-room and remote members"
+        "Hold separate meetings for the in-room members and the remote members, then merge the notes"
        ],
        "answer": 0,
        "explain": "Equal participation through individual devices removes the in-room advantage."
@@ -3489,7 +4088,7 @@ TRACK.modules.push({
         "You were unprofessional in front of the client",
         "You arrived 20 minutes after the client call started",
         "You have a negative attitude with clients",
-        "You do not care about the project or the client"
+        "You do not seem to care about the project, the team or the client"
        ],
        "answer": 1,
        "explain": "Behaviour is observable and specific; the others are interpretations."
@@ -3520,7 +4119,7 @@ TRACK.modules.push({
        "q": "A distributed team's meeting tool produces automatic summaries. Last week a summary recorded a decision the team had not actually made. What is the BEST fix?",
        "options": [
         "Ban the tool for all meetings",
-        "Ask the vendor to improve the tool's accuracy",
+        "Ask the vendor to improve the tool's accuracy and wait for the next release",
         "Accept small errors as the price of speed",
         "Agree that a named person checks each summary before it is shared"
        ],
@@ -3629,6 +4228,46 @@ TRACK.modules.push({
        "Peripheral departments, general public",
        "Light-touch updates; watch for changes in position"
       ]
+     ]
+    },
+    {
+     "type": "matrix",
+     "title": "Hospital records move: power–interest grid",
+     "x": "Interest in the project",
+     "y": "Power over the project",
+     "caption": "Positions move: the fire authority sits in 'keep satisfied' until the design gate, when its interest jumps. Re-plot the grid at each gate and after major changes.",
+     "quadrants": [
+      {
+       "title": "Keep satisfied",
+       "items": [
+        "City fire authority",
+        "Finance director",
+        "Brief concisely, consult on what touches them"
+       ]
+      },
+      {
+       "title": "Manage closely",
+       "items": [
+        "Hospital CEO (sponsor)",
+        "Head of Nursing",
+        "Involve in decisions, no surprises"
+       ]
+      },
+      {
+       "title": "Monitor",
+       "items": [
+        "Peripheral departments",
+        "Light-touch updates"
+       ]
+      },
+      {
+       "title": "Keep informed",
+       "items": [
+        "Ward clerks",
+        "Junior doctors' association",
+        "Regular updates, feedback channels"
+       ]
+      }
      ]
     },
     {
@@ -3889,6 +4528,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Identify stakeholders in sweeps, including the quiet ones who can block go-live.",
+      "Use power–interest for a first view and salience (power, legitimacy, urgency) to prioritise.",
+      "Plan engagement from the gap between current and desired engagement.",
+      "Trust comes from reliability and openness, not from authority or documents.",
+      "Update the analysis at gates, after major changes and when positions shift."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -3939,7 +4589,7 @@ TRACK.modules.push({
        "q": "A powerful head of operations doubts your hybrid project because a previous project missed its dates. Which action will MOST build his trust over time?",
        "options": [
         "Ask the sponsor to instruct him to support the project",
-        "Send him a detailed plan showing that this project is different",
+        "Send him a detailed plan and lessons-learned report showing why this project is different from the last one",
         "Invite him to every sprint review and steering meeting",
         "Make small, specific commitments to him and keep every one, sharing bad news early"
        ],
@@ -4119,6 +4769,69 @@ TRACK.modules.push({
      "text": "A bank and three tea estates near Sylhet are moving worker wages from cash to mobile wallets. Estate owners expected savings within one quarter; the workers' union expected nobody to lose access to wages; the bank expected full identity checks. In one facilitated session the groups agreed a **phased rollout**, help desks on pay days, and a six-month cash fallback. The agreed position became the release plan's success criteria."
     },
     {
+     "type": "sequence",
+     "title": "Aligning expectations on the tea-estate project",
+     "actors": [
+      "Project manager",
+      "Estate owners",
+      "Workers' union",
+      "Bank",
+      "Sponsor"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "What would make this a failure?"
+      },
+      {
+       "from": 1,
+       "to": 0,
+       "label": "No savings within a quarter",
+       "reply": true
+      },
+      {
+       "from": 0,
+       "to": 2,
+       "label": "What would make this a failure?"
+      },
+      {
+       "from": 2,
+       "to": 0,
+       "label": "Any worker unable to draw wages",
+       "reply": true
+      },
+      {
+       "from": 0,
+       "to": 3,
+       "label": "What would make this a failure?"
+      },
+      {
+       "from": 3,
+       "to": 0,
+       "label": "Incomplete identity checks",
+       "reply": true
+      },
+      {
+       "from": 0,
+       "to": 0,
+       "label": "Map conflicts against objectives"
+      },
+      {
+       "from": 0,
+       "to": 4,
+       "label": "Joint session: phased rollout, cash fallback"
+      },
+      {
+       "from": 4,
+       "to": 0,
+       "label": "Agreed position becomes success criteria",
+       "reply": true
+      }
+     ],
+     "caption": "Each group is asked the same failure question separately, so conflicts surface before the joint session rather than during it. The outcome is recorded and confirmed, not just discussed."
+    },
+    {
      "type": "text",
      "text": "Some expectation gaps are really **capability** gaps. A sponsor new to agile may expect a fixed feature list on a fixed date; a new product owner may expect the team to decide priorities. Mentoring closes these gaps faster than argument. Look for mentoring opportunities, organise them deliberately and act on them."
     },
@@ -4198,6 +4911,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Aligning brings views together early; managing keeps delivery and expectations matched later.",
+      "Ask about failure and first checks to surface unstated assumptions.",
+      "Resolve conflicting expectations in a facilitated session tested against the objectives, and record the result.",
+      "Close capability gaps with mentoring, such as a short briefing on agile forecasting."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -4206,7 +4929,7 @@ TRACK.modules.push({
         "Running a satisfaction survey after a release",
         "Agreeing success criteria with several stakeholder groups before planning",
         "Demonstrating completed features at a sprint review",
-        "Updating a forecast after a delay"
+        "Updating and re-sending the release forecast after a supplier delay is confirmed"
        ],
        "answer": 1,
        "explain": "Aligning brings different expectations together into one agreed set, typically early or at major decisions. The other options keep delivery and expectations matched over time, which is managing."
@@ -4228,7 +4951,7 @@ TRACK.modules.push({
         "Bring both groups together to surface the conflict and agree trade-offs against the objectives",
         "Side with the estate owners, who are paying",
         "Ask the union to put its concerns in writing for the steering group",
-        "Plan to satisfy both fully with extra budget"
+        "Plan to satisfy both groups fully by requesting extra budget and a later launch date from the bank"
        ],
        "answer": 0,
        "explain": "Conflicting expectations should be surfaced and resolved through facilitated discussion tied to the objectives, not decided for one side or hidden."
@@ -4236,7 +4959,7 @@ TRACK.modules.push({
       {
        "q": "A new sponsor keeps asking for exact feature-by-date commitments on an agile project. Which action addresses the root cause?",
        "options": [
-        "Give the commitments to keep her satisfied",
+        "Give her the exact feature-by-date commitments she wants, to keep her satisfied",
         "Escalate to the portfolio board",
         "Stop inviting her to sprint reviews",
         "Offer a short mentoring session on how agile release forecasts work"
@@ -4250,7 +4973,7 @@ TRACK.modules.push({
         "What would make you say this project failed?",
         "Do you approve the current plan?",
         "Have you read the charter?",
-        "Can you sign off the requirements today?"
+        "Can you sign off the full list of requirements today?"
        ],
        "answer": 0,
        "explain": "Asking about failure brings out hidden priorities and assumptions; the other questions invite a yes or no."
@@ -4300,8 +5023,9 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "flow",
+     "type": "cycle",
      "title": "The expectation management cycle",
+     "center": "Expectations matched",
      "items": [
       {
        "label": "Identify",
@@ -4323,7 +5047,8 @@ TRACK.modules.push({
        "label": "Respond",
        "text": "Adjust, explain or change"
       }
-     ]
+     ],
+     "caption": "The loop never stops: every response changes what customers expect next, so measure again after each adjustment. Showing early is the cheapest step in the loop."
     },
     {
      "type": "formula",
@@ -4525,6 +5250,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Expectations drift; watch for absences, surprises and escalations that bypass you.",
+      "Translate expectations into acceptance criteria and measures such as CSAT, promoter score and first-time acceptance.",
+      "Show the real thing early: demos, samples, pilots and walkthroughs.",
+      "When gaps appear, acknowledge, diagnose, bring evidence, offer options and follow up; never spin."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -4533,7 +5268,7 @@ TRACK.modules.push({
         "A bank's retail customers using a new app",
         "Citizens applying for passports online",
         "The operations team that will run the new system",
-        "A regulator reviewing compliance evidence"
+        "A regulator reviewing the project's compliance evidence before launch"
        ],
        "answer": 2,
        "explain": "Internal customers are teams inside the organisation who receive or depend on the result, such as the operations team."
@@ -4563,7 +5298,7 @@ TRACK.modules.push({
       {
        "q": "The system meets its specification, but doctors are unhappy because it adds steps to their work. What kind of problem is this MOST likely to be?",
        "options": [
-        "A defect the vendor must fix free of charge",
+        "A defect in the build that the vendor must fix free of charge under warranty",
         "A resource problem",
         "A procurement fraud",
         "An expectation that was never turned into acceptance criteria"
@@ -4577,7 +5312,7 @@ TRACK.modules.push({
         "Showing material samples and model rooms before finishes are installed",
         "Sending monthly percentage-complete reports",
         "Avoiding contact with the client until handover",
-        "Promising upgrades to keep morale high"
+        "Promising free upgrades at handover to keep the client's morale and goodwill high"
        ],
        "answer": 0,
        "explain": "Showing the real thing early, through samples and walkthroughs, lets customers react before work is complete."
@@ -4655,6 +5390,43 @@ TRACK.modules.push({
      "kind": "definition",
      "title": "Key-person risk",
      "text": "Teams sometimes ask how many people could be unavailable before work stops, often called the **bus factor**. A bus factor of one means a single absence can halt part of the project. It is a risk to record and treat like any other."
+    },
+    {
+     "type": "matrix",
+     "title": "Where to act first on knowledge risk",
+     "x": "Exposure (holder leaving, overloaded or external)",
+     "y": "Criticality if the knowledge is lost",
+     "caption": "Start in the top-right corner: critical knowledge held by someone who may soon be unavailable. A bus factor of one usually puts an item there.",
+     "quadrants": [
+      {
+       "title": "Capture steadily",
+       "items": [
+        "Decision logs, runbooks",
+        "Spread through pairing over time"
+       ]
+      },
+      {
+       "title": "Transfer now",
+       "items": [
+        "Pairing, reverse shadowing",
+        "Reserve sprint capacity"
+       ]
+      },
+      {
+       "title": "Accept and monitor",
+       "items": [
+        "Low impact, holder stable",
+        "Revisit at gates"
+       ]
+      },
+      {
+       "title": "Share lightly",
+       "items": [
+        "Show-and-tell, short notes",
+        "Recorded walkthroughs"
+       ]
+      }
+     ]
     },
     {
      "type": "framework",
@@ -4751,6 +5523,33 @@ TRACK.modules.push({
      "text": "At a Narayanganj knitwear exporter, the ERP vendor's consultants were due to leave four weeks after go-live. For the first two weeks client staff watched the consultants run month-end tasks; for the next two the roles were reversed and the consultants only watched. Each task was signed off when a client staff member completed it alone, with the runbook, without help."
     },
     {
+     "type": "timeline",
+     "title": "Vendor exit by reverse shadowing",
+     "caption": "Responsibility moves in two clear steps, and the exit date depends on evidence that client staff can work alone, not on the calendar alone.",
+     "items": [
+      {
+       "when": "Go-live",
+       "label": "Consultants still run the system",
+       "text": "Runbooks drafted for each month-end task"
+      },
+      {
+       "when": "Weeks 1–2",
+       "label": "Client staff shadow",
+       "text": "Watch, ask questions, update the runbooks"
+      },
+      {
+       "when": "Weeks 3–4",
+       "label": "Roles reversed",
+       "text": "Client staff perform; consultants only watch"
+      },
+      {
+       "when": "Exit",
+       "label": "Task-by-task sign-off",
+       "text": "Each task completed alone, with the runbook"
+      }
+     ]
+    },
+    {
      "type": "callout",
      "kind": "warning",
      "title": "A document dump is not a transfer",
@@ -4845,12 +5644,22 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Find knowledge that is both critical and exposed, and treat single points of knowledge as risks.",
+      "Explicit knowledge moves through documents; tacit knowledge needs pairing, shadowing and practice.",
+      "Plan capacity for transfer and add it to the definition of done.",
+      "Transfer is complete only when the receiver can perform the task alone."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
        "q": "Which is an example of tacit knowledge?",
        "options": [
-        "A signed contract with the hardware supplier",
+        "A signed contract with the hardware supplier, including its service-level schedule",
         "The approved network diagram",
         "A senior clerk's sense of which customer files are likely to contain errors",
         "The test scripts stored in the repository"
@@ -4864,7 +5673,7 @@ TRACK.modules.push({
         "When client staff can perform the tasks without the vendor's help",
         "When the vendor delivers all documentation",
         "When the final invoice is paid",
-        "When the vendor runs a one-day training course"
+        "When the vendor has run a one-day training course for all of the client's support staff"
        ],
        "answer": 0,
        "explain": "Transfer is proven when receivers can perform the work alone. Documents and training are inputs, not proof."
@@ -4872,7 +5681,7 @@ TRACK.modules.push({
       {
        "q": "A project depends on one engineer who alone understands a critical interface. How should this be treated?",
        "options": [
-        "As an issue to escalate immediately to the sponsor",
+        "As an issue to escalate immediately to the sponsor and the vendor's account manager",
         "As acceptable, because experts are always scarce",
         "As a reason to stop all new work",
         "As a key-person risk with a planned response such as pairing"
@@ -4883,7 +5692,7 @@ TRACK.modules.push({
       {
        "q": "Which action BEST fosters an environment for knowledge transfer on an agile team?",
        "options": [
-        "Rewarding the fastest individual problem-solver each sprint",
+        "Rewarding the fastest individual problem-solver at the end of each sprint with a public bonus",
         "Including knowledge sharing in the definition of done and sprint capacity",
         "Storing all documents in personal folders for security",
         "Asking experts to answer questions only by email"
@@ -4952,6 +5761,36 @@ TRACK.modules.push({
       }
      ],
      "title": "Communication channels"
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "Channels grow faster than headcount",
+     "labels": [
+      "2",
+      "4",
+      "6",
+      "8",
+      "10",
+      "12",
+      "15"
+     ],
+     "series": [
+      {
+       "name": "Channels n(n − 1) ÷ 2",
+       "values": [
+        1,
+        6,
+        15,
+        28,
+        45,
+        66,
+        105
+       ]
+      }
+     ],
+     "yLabel": "Communication channels",
+     "caption": "Calculated with the formula for team sizes from 2 to 15 people. Doubling a team from 6 to 12 more than quadruples the channels, which is why larger teams need deliberate structure and shared information."
     },
     {
      "type": "compare",
@@ -5108,6 +5947,45 @@ TRACK.modules.push({
      "text": "Status reports are not just updates; they are inputs to **decisions**. Align the report with the governance thresholds the board has set, flag clearly when a tolerance is forecast to be breached, and state the decision you need. A report that makes the board's job easy gets faster decisions."
     },
     {
+     "type": "sequence",
+     "title": "From team data to a governance decision",
+     "actors": [
+      "Team",
+      "Project manager",
+      "PMO",
+      "Steering group"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "Board, forecast, risks (daily, per sprint)"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Standard metrics and tolerances (monthly)"
+      },
+      {
+       "from": 1,
+       "to": 3,
+       "label": "One page: forecast breach + decision needed"
+      },
+      {
+       "from": 3,
+       "to": 1,
+       "label": "Decision: descope, fund or re-baseline",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 0,
+       "label": "Update backlog and plan; explain why"
+      }
+     ],
+     "caption": "The report exists to trigger a decision. Notice that the loop closes back at the team, so people see what their data led to."
+    },
+    {
      "type": "scenario",
      "situation": "Your weekly 6-page status email has a 20% open rate, and the sponsor was surprised by a delay you reported three weeks ago. What is the BEST next step?",
      "options": [
@@ -5168,6 +6046,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "A communication strategy decides who needs what, why, how and how often, and checks that it landed.",
+      "Channels grow as n(n − 1) ÷ 2, so complexity rises much faster than headcount.",
+      "Use interactive methods for decisions and sensitive news; push and pull for updates and reference.",
+      "Lead reports with status, forecast and decisions needed, tied to governance tolerances."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -5197,7 +6085,7 @@ TRACK.modules.push({
        "options": [
         "Send the same report weekly instead of monthly",
         "Add an executive summary to page 20",
-        "Stop sending reports and rely on informal conversations",
+        "Stop sending written reports altogether and rely on informal corridor conversations with each member instead",
         "Ask members what they need, then lead with status, forecasts and decisions needed on one page"
        ],
        "answer": 3,
@@ -5209,7 +6097,7 @@ TRACK.modules.push({
         "Reporting only good news so the board stays confident",
         "Flagging when a forecast will breach an agreed tolerance and stating the decision needed",
         "Using a different format each month to keep interest",
-        "Sending the full risk register with every report"
+        "Sending the full risk register and every issue log as attachments with every monthly report"
        ],
        "answer": 1,
        "explain": "Governance relies on reports tied to agreed thresholds and clear decision requests."
@@ -5218,7 +6106,7 @@ TRACK.modules.push({
        "q": "A distributed team keeps losing track of decisions made in private chats. Which practice BEST promotes transparency?",
        "options": [
         "Record decisions in a shared channel or decision log visible to the team",
-        "Hold a daily two-hour meeting to repeat decisions",
+        "Hold a daily two-hour meeting where all recent decisions are repeated to the whole team",
         "Let only the project manager make decisions",
         "Ban private messages entirely"
        ],
@@ -5412,6 +6300,43 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "timeline",
+     "title": "One consolidated roadmap for a hybrid hospital project",
+     "caption": "Predictive milestones and agile release forecasts sit on one line, so the PMO sees a single picture. Notice that the software forecast is a range while the building handover is a baseline date.",
+     "items": [
+      {
+       "when": "Month 0",
+       "label": "Plan approved",
+       "text": "Baselines for the building; product goal and roadmap for the software"
+      },
+      {
+       "when": "Month 1",
+       "label": "Servers ordered early",
+       "text": "16-week lead time, so procurement starts before design is final"
+      },
+      {
+       "when": "Month 4",
+       "label": "Integration milestone",
+       "text": "Booking app MVP tested against the patient database"
+      },
+      {
+       "when": "Month 7",
+       "label": "Building handover",
+       "text": "Baseline milestone under formal change control"
+      },
+      {
+       "when": "Month 7–8",
+       "label": "App release 2",
+       "text": "Forecast as a range from measured velocity"
+      },
+      {
+       "when": "Month 9",
+       "label": "Go-live and transition",
+       "text": "Hypercare, then the benefit owner takes over"
+      }
+     ]
+    },
+    {
      "type": "text",
      "text": "The **execution strategy** answers *how* the work will actually be delivered: which approach for each part, who builds it, how teams are organised, how value reaches users and how many teams must coordinate. Recommend it with reasons, because it drives most later plans."
     },
@@ -5596,6 +6521,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Assess needs, complexity and magnitude before deciding how to plan.",
+      "An integrated plan makes scope, schedule, cost, risk and people agree, using baselines, roadmaps or both.",
+      "Identify critical information requirements, such as sustainability data, early enough to collect them.",
+      "Recommend an execution strategy with reasons, and fix team-level flow before adopting a scaling framework.",
+      "Review the consolidated plan for dependencies, gaps, conflicts and continued business value."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -5615,7 +6551,7 @@ TRACK.modules.push({
         "Hiring more teams to increase delivery capacity",
         "Reducing dependencies and fixing flow at team level",
         "Buying a scaling tool licence for all teams",
-        "Writing a long process manual for every role"
+        "Writing a long, detailed process manual for every role in every team"
        ],
        "answer": 1,
        "explain": "Many scaling problems are multiplied team-level problems; fix them first."
@@ -5626,7 +6562,7 @@ TRACK.modules.push({
         "At closure, by estimating emissions from the final accounts",
         "During planning, by building data collection into the plan and supplier contracts",
         "Only if the donor asks again during execution",
-        "After the project, by the operations team"
+        "After the project closes, by the operations team using utility bills and supplier invoices"
        ],
        "answer": 1,
        "explain": "Critical information requirements should be identified early so that data collection is built into plans, tools and contracts."
@@ -5635,7 +6571,7 @@ TRACK.modules.push({
        "q": "What is the MAIN purpose of reviewing the consolidated project plan before approval?",
        "options": [
         "To find dependencies, gaps and conflicts between the parts and confirm the business value still holds",
-        "To make the plan as long and detailed as possible",
+        "To make the plan as long and detailed as possible so that every future question is already answered in advance",
         "To transfer responsibility for the plan to the PMO",
         "To lock the plan so it never changes during execution"
        ],
@@ -5647,7 +6583,7 @@ TRACK.modules.push({
        "options": [
         "Converting the agile backlog into a detailed task-level Gantt chart",
         "Reporting the two parts separately with no link between them",
-        "Asking the agile team to adopt the predictive change control process for every story",
+        "Asking the agile team to adopt the predictive change control process for every story and every backlog reorder",
         "A milestone roadmap that joins the hardware schedule with release forecasts shown as ranges"
        ],
        "answer": 3,
@@ -5848,6 +6784,53 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "tree",
+     "title": "Traceability: from objective to acceptance test",
+     "caption": "Every story should trace up to an objective and down to a test. A story with no parent is a candidate for gold plating; a requirement with no test cannot be shown to be met.",
+     "root": {
+      "label": "Objective: onboard rural customers in one visit",
+      "children": [
+       {
+        "label": "Requirement: onboarding works offline",
+        "children": [
+         {
+          "label": "Story: capture ID photo offline",
+          "children": [
+           {
+            "label": "Test: photo stored encrypted"
+           },
+           {
+            "label": "Test: syncs within 2 minutes"
+           }
+          ]
+         },
+         {
+          "label": "Story: save form data offline",
+          "children": [
+           {
+            "label": "Test: draft survives app restart"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "label": "Requirement: agent verifies data",
+        "children": [
+         {
+          "label": "Story: review screen before submit",
+          "children": [
+           {
+            "label": "Test: errors flagged before upload"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
      "type": "scenario",
      "title": "Two loud voices",
      "situation": "In a requirements workshop for a new loan-origination system, two senior credit managers dominate the discussion. Branch officers — the main future users — are silent. What should the facilitator do?",
@@ -5912,6 +6895,16 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Elicit problems, not solutions, and match the technique to the situation.",
+      "A scope statement lists deliverables, acceptance criteria, exclusions, constraints and assumptions.",
+      "Good stories follow INVEST and carry testable Given/When/Then acceptance criteria.",
+      "Agreement fits the approach (formal approval, product goal and reviews, or both) and is traced to objectives and tests."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -5939,7 +6932,7 @@ TRACK.modules.push({
       {
        "q": "Which acceptance criterion is best written?",
        "options": [
-        "The search page should load quickly for all users, especially at busy times",
+        "The search page should load quickly for all users, especially at the busiest times of the day",
         "The search should be user-friendly, intuitive and easy for every customer to use",
         "Search works properly and always returns the right results to the user who asked",
         "Given 500 concurrent users, When a user searches, Then results show within 2 seconds"
@@ -5953,7 +6946,7 @@ TRACK.modules.push({
         "To estimate stories consistently across the whole team",
         "To decide which stories may enter the next sprint",
         "To set a shared quality standard every increment must meet",
-        "To replace acceptance criteria with one shared list"
+        "To replace story-level acceptance criteria with one shared checklist for the team"
        ],
        "answer": 2,
        "explain": "The definition of done is the quality commitment applied to all work; acceptance criteria are story-specific."
@@ -5961,7 +6954,7 @@ TRACK.modules.push({
       {
        "q": "A hybrid project has a fixed regulatory module and an evolving customer app. How should scope agreement be handled?",
        "options": [
-        "Sign off every app story in advance to match the regulatory module",
+        "Sign off every app story in advance, in full detail, so that both parts follow the same formal approval process as the regulatory module",
         "Formally approve the regulatory scope, and agree the budget, milestone and product goal within which the app backlog may change",
         "Avoid any formal approval so both parts stay flexible",
         "Let the vendor define the scope for both parts"
@@ -5973,7 +6966,7 @@ TRACK.modules.push({
        "q": "Why should a scope statement list exclusions explicitly?",
        "options": [
         "Because exclusions reduce the cost of the project",
-        "Because regulators require exclusions in every scope statement",
+        "Because regulators and auditors require a list of exclusions in every scope statement",
         "Because it removes the need for acceptance criteria",
         "Because it prevents different assumptions about what will be delivered"
        ],
@@ -6007,44 +7000,46 @@ TRACK.modules.push({
      "title": "Work breakdown structure"
     },
     {
-     "type": "layers",
-     "title": "WBS example — new hospital outpatient wing (top level first)",
-     "items": [
-      {
-       "label": "1. Outpatient wing project",
-       "parts": [
-        "Total scope"
-       ]
-      },
-      {
-       "label": "Level 2: major deliverables",
-       "parts": [
-        "1.1 Design",
-        "1.2 Structure",
-        "1.3 Building services",
-        "1.4 Fit-out and equipment",
-        "1.5 Commissioning and handover",
-        "1.6 Project management"
-       ]
-      },
-      {
-       "label": "Level 3: components (example for 1.3)",
-       "parts": [
-        "1.3.1 Electrical",
-        "1.3.2 HVAC",
-        "1.3.3 Medical gas",
-        "1.3.4 Fire safety systems"
-       ]
-      },
-      {
-       "label": "Work packages (example for 1.3.3)",
-       "parts": [
-        "Pipework installed",
-        "Outlets fitted",
-        "Pressure tested and certified"
-       ]
-      }
-     ]
+     "type": "tree",
+     "title": "WBS example: new hospital outpatient wing",
+     "caption": "Every element is a deliverable (a noun), and the children of each element add up to all of its work. Only one branch is opened here: 1.3.3 Medical gas would break down further into work packages such as pipework installed, outlets fitted, and pressure tested and certified.",
+     "root": {
+      "label": "1 Outpatient wing",
+      "children": [
+       {
+        "label": "1.1 Design"
+       },
+       {
+        "label": "1.2 Structure"
+       },
+       {
+        "label": "1.3 Services",
+        "children": [
+         {
+          "label": "1.3.1 Electrical"
+         },
+         {
+          "label": "1.3.2 HVAC"
+         },
+         {
+          "label": "1.3.3 Medical gas"
+         },
+         {
+          "label": "1.3.4 Fire safety"
+         }
+        ]
+       },
+       {
+        "label": "1.4 Fit-out"
+       },
+       {
+        "label": "1.5 Handover"
+       },
+       {
+        "label": "1.6 Project mgmt"
+       }
+      ]
+     }
     },
     {
      "type": "keypoints",
@@ -6239,12 +7234,23 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "A WBS decomposes deliverables (nouns) down to work packages and obeys the 100% rule.",
+      "Scope statement, WBS and WBS dictionary together form the scope baseline.",
+      "A product backlog is ordered and refined continuously by the product owner and team.",
+      "Split epics vertically so each slice delivers user value; story maps plan thin releases.",
+      "In a hybrid, a backlog can sit under a WBS element that carries the budget and milestone."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
        "q": "What does the 100% rule state?",
        "options": [
-        "Every task must be 100% complete before the next starts",
+        "Every task must be 100% complete and signed off before the next task can start",
         "Child elements must sum to exactly the work of their parent",
         "All stakeholders must approve the WBS before work begins",
         "The whole budget must be allocated to work packages"
@@ -6266,7 +7272,7 @@ TRACK.modules.push({
       {
        "q": "On a predictive project, the scope baseline consists of:",
        "options": [
-        "The charter, budget and schedule baseline",
+        "The project charter, the approved budget and the schedule baseline",
         "The product backlog and the sprint backlog",
         "The risk register, issue log and assumption log",
         "Approved scope statement, WBS and WBS dictionary"
@@ -6280,7 +7286,7 @@ TRACK.modules.push({
         "It is ordered and refined continuously as learning occurs",
         "It is fixed once the sponsor has approved its contents",
         "It contains only technical tasks defined by developers",
-        "It is owned and ordered by the sponsor for each release"
+        "It is owned and ordered by the sponsor before each release begins"
        ],
        "answer": 0,
        "explain": "The product backlog evolves; the product owner orders it and the team helps refine it."
@@ -6393,21 +7399,38 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "compare",
+     "type": "matrix",
      "title": "Value vs effort matrix",
-     "columns": [
+     "x": "Effort",
+     "y": "Value",
+     "caption": "Score items relative to each other, not in absolute units. Big bets are not rejected; they are sliced so that some value arrives early.",
+     "quadrants": [
       {
-       "title": "High value",
+       "title": "Quick wins",
        "items": [
-        "Low effort → **Quick wins**: do first",
-        "High effort → **Big bets**: plan carefully, slice thinly"
+        "Do first",
+        "e.g. SMS bill alerts"
        ]
       },
       {
-       "title": "Low value",
+       "title": "Big bets",
        "items": [
-        "Low effort → **Fill-ins**: do if spare capacity",
-        "High effort → **Money pits**: avoid or drop"
+        "Plan carefully",
+        "Slice thinly, release in increments"
+       ]
+      },
+      {
+       "title": "Fill-ins",
+       "items": [
+        "Do if spare capacity",
+        "Never at the expense of Musts"
+       ]
+      },
+      {
+       "title": "Money pits",
+       "items": [
+        "Avoid or drop",
+        "Say 'not now' openly"
        ]
       }
      ]
@@ -6442,6 +7465,52 @@ TRACK.modules.push({
        "text": "Some users actively dislike it — e.g. heavy gamification for business users."
       }
      ]
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "Kano: how fulfilment drives satisfaction",
+     "labels": [
+      "Absent",
+      "Weak",
+      "Adequate",
+      "Strong",
+      "Excellent"
+     ],
+     "series": [
+      {
+       "name": "Basic",
+       "values": [
+        -10,
+        -6,
+        -2,
+        -0.5,
+        0
+       ]
+      },
+      {
+       "name": "Performance",
+       "values": [
+        -6,
+        -3,
+        0,
+        3,
+        6
+       ]
+      },
+      {
+       "name": "Delighter",
+       "values": [
+        0,
+        0.5,
+        1.5,
+        3.5,
+        7
+       ]
+      }
+     ],
+     "yLabel": "Satisfaction (illustrative)",
+     "caption": "Illustrative shapes, not measured data. Basics only remove anger, performance features pay back in proportion, and delighters cost nothing when absent but lift satisfaction sharply when present."
     },
     {
      "type": "formula",
@@ -6605,6 +7674,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Name the components of value with stakeholders before ordering the work.",
+      "MoSCoW, value vs effort, Kano and WSJF support judgement; they do not replace it.",
+      "WSJF is cost of delay divided by job size, so small, urgent, valuable work goes first.",
+      "Release valuable increments early through MVPs, pilots, phased rollouts or feature toggles.",
+      "New evidence should change the order, and the product owner explains why."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -6644,7 +7724,7 @@ TRACK.modules.push({
        "q": "A team can release an SMS alert feature in three months or wait 18 months for a full system that includes it. Stakeholders say the alerts address the main complaint. What does value-based delivery suggest?",
        "options": [
         "Wait for the full system so everything is released together",
-        "Cancel the full system, since the alerts solve the problem",
+        "Cancel the full system, since the SMS alerts already solve the main complaint",
         "Release the alerts early if it is feasible, and continue the full system",
         "Ask users to vote on whether they want alerts"
        ],
@@ -6836,6 +7916,42 @@ TRACK.modules.push({
      "rows": 6
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "Booking system: no-show rate against target",
+     "labels": [
+      "Baseline",
+      "Go-live",
+      "Month 3",
+      "Month 6",
+      "Month 9"
+     ],
+     "series": [
+      {
+       "name": "No-show rate",
+       "values": [
+        22,
+        21,
+        17,
+        14,
+        12
+       ]
+      },
+      {
+       "name": "Target",
+       "values": [
+        12,
+        12,
+        12,
+        12,
+        12
+       ]
+      }
+     ],
+     "unit": "%",
+     "caption": "Illustrative readings for the example in the plan above. The project closes soon after go-live, so most of the improvement is measured and owned by the hospital administrator, not the project team."
+    },
+    {
      "type": "callout",
      "kind": "warning",
      "text": "Some outcomes are negative for someone — extra steps for a department, a role that disappears. Record these **dis-benefits** honestly. Also watch for benefit leakage: time saved that is simply absorbed rather than redeployed to valuable work.",
@@ -6915,6 +8031,17 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Outputs enable outcomes, and outcomes create benefits, mostly after the project closes.",
+      "Every benefit needs a business owner, a measure, a baseline, a target and a date.",
+      "Re-examine value at gates and releases; stopping early can be the right call.",
+      "Record dis-benefits and watch for benefit leakage.",
+      "Confirm a working measurement system exists before handing over."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -6922,7 +8049,7 @@ TRACK.modules.push({
        "options": [
         "To make the benefits report more complete",
         "Without a starting value, change cannot be measured",
-        "Because auditors require one for every benefit",
+        "Because internal auditors require a baseline figure for every benefit",
         "Because the baseline sets the project budget"
        ],
        "answer": 1,
@@ -6943,7 +8070,7 @@ TRACK.modules.push({
        "q": "Who should normally own a business benefit such as 'lower support costs'?",
        "options": [
         "A business manager who will run the new capability",
-        "The project manager who delivered the capability",
+        "The project manager who planned and delivered the new capability",
         "The vendor that supplied and supports the system",
         "The quality team that verified the deliverables"
        ],
@@ -6953,7 +8080,7 @@ TRACK.modules.push({
       {
        "q": "At a phase gate, a new regulation means the product will reach only half its expected market. The project is on time and on budget. What should the project manager recommend?",
        "options": [
-        "Continue, because the project is performing to plan",
+        "Continue as planned, because the project is on time, on budget and performing to its baselines",
         "Pause all work until the regulation is withdrawn",
         "Re-examine the business case with updated value and present options, including stopping",
         "Increase scope to make up for the lost market"
@@ -6964,7 +8091,7 @@ TRACK.modules.push({
       {
        "q": "Which shows that a benefits measurement system is really in place?",
        "options": [
-        "The business case lists the benefits in detail",
+        "The approved business case lists every expected benefit in detail with its estimated value",
         "A named owner, data source, baseline and reporting route exist for each benefit",
         "The project has a dashboard showing tasks completed",
         "The sponsor has said the benefits are likely"
@@ -7188,7 +8315,7 @@ TRACK.exam.push([
   "q": "A warehouse system passed every acceptance test, but three weeks after go-live the operations team, an internal customer, says it 'slows everything down' and satisfaction scores are falling. What should the project manager do?",
   "options": [
    "Point to the signed acceptance and close the discussion",
-   "Ask the vendor to add servers and tune the database, since slowness usually means the system lacks capacity",
+   "Ask the vendor to add servers and tune the database, since slowness after go-live usually means the system lacks capacity",
    "Restart hypercare for three months as a precaution",
    "Work with operations to find the gap between their expectations and the delivered workflow, then agree actions"
   ],
@@ -7202,7 +8329,7 @@ TRACK.exam.push([
    "Have named staff perform the key tasks with her observing, using updated runbooks, before she leaves",
    "Ask her to deliver the handover documentation in her final week",
    "Record all of her remaining meetings for future reference",
-   "Extend her contract by a further year so that her knowledge remains available if problems arise"
+   "Extend her contract by a further year so that her knowledge remains available if any problems arise later"
   ],
   "answer": 0,
   "explain": "Knowledge transfer is proven when receivers can perform the work. Documents and recordings help, but tacit knowledge moves through practice; extending the contract only postpones the risk."
